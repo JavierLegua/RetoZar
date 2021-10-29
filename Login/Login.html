@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de inicio</title>
+    <script src="Login.js"></script>
+</head>
+<body>
+    
+    <header>
+        <h1>Bienvenido a TeamMaker</h1>
+    </header>
+
+    <main>
+        <FORm:post id="form" name="form">
+            <label for="usuario">Usuario : </label> 
+            <input id="usuario" type="text" name="Usuario / DNI" pattern="[0-9]{8}[A-Z]{1}" title="El DNI no es correcto">
+            <br><br><br>
+            <label for="password">Contraseña : </label>  
+            <input id="password" type="password" name="Contraseña" pattern="[0-9]{8}[A-Z]{1}" title="La contraseña es correcta">
+            <br><br><br>
+            <input id="hola" type="submit" name="Entrar" onclick="entrar()">
+        </FORm:post>
+    </main> 
+    <footer>
+
+    </footer>
+</body>
+</html>
