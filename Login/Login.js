@@ -14,11 +14,16 @@ function comprobarDni(dni_user){
 }
 
 function comprobarPass(password, dni){
-
-    if(password != dni){
+    dni = toString(dni);
+    var numerosDni = dni.substring(0,8);
+    var letraDni = dni.substring(8,9);
+    var dni_final = numerosDni + letraDni.toUpperCase();
+    if(password != dni_final){
         document.getElementById("password_error").innerHTML="La contraseña no coincide o es incorrecta";
+        document.write(password + " " + dni)
     } else  {
         document.getElementById("password_error").innerHTML="";
+        document.write(password + " " + dni)
     }
 
 }
