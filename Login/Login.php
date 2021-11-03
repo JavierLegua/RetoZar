@@ -22,9 +22,9 @@
             <br><br>
             <P id="password_error"></P>
             <label for="password">Contraseña : </label>  
-            <input id="password" type="password" name="Contraseña" pattern="[0-9]{8}[A-Z]{1}" title="La contraseña es correcta" onblur="comprobarPass(this.value, document.getElementById('usuario').value)">
+            <input id="password" type="password" name="Contraseña" pattern="[0-9]{8}[A-Z]{1}" title="La contraseña es correcta">
             <br><br><br>
-            <input id="hola" type="submit" name="Entrar" onclick="entrar()">
+            <input id="hola" type="submit" name="Entrar" onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)">
         </FORm:post>
     </main> 
     <footer>
