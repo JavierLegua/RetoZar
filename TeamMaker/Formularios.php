@@ -13,15 +13,16 @@
     </header>
     <main>
         <FORm:post id="alumno" name="alumno">
-            <!-- <P id="ejemplo"></P> -->
-            <label for="Dni"></label>
-            <input id="usuario" type="text" name="Usuario / DNI" pattern="[0-9]{8}[A-Z]{1}" title="El DNI no es correcto" onblur="comprobarDni(this.value)" value="DNI : ">
+            <p id="errorDni"></p>
+            <input id="dni" type="text" name="Usuario / DNI" pattern="[0-9]{8}[A-Z]{1}" title="El DNI debe cumplir con el formato correcto" placeholder="dni" required>
             <br><br>
-            <P id="password_error"></P>
-            <label for="password">Contraseña : </label>  
-            <input id="password" type="password" name="Contraseña" pattern="[0-9]{8}[A-Z]{1}" title="La contraseña es correcta">
-            <br><br><br>
-            <input id="hola" type="submit" name="Entrar" onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)">
+            <input id="password" type="password" name="Contraseña" placeholder="contraseña (auto-generada)" onblur="this.value = document.getElementById('dni').value" required>
+            <br><br>
+            <input id="name" type="text" name="Nombre" pattern="[A-Za-z]{2,}" title="El nombre solo puede contener letras" placeholder="nombre" required>
+            <br><br>
+            <input id="fecha_nac" type="date" name="Fecha de nacimiento" required>
+            <br><br>
+            <input id="crear" type="submit" name="Crear Alumno" onclick="comprobacionDni(document.getElementById('dni').value)" onclick="comprobacionPass(document.getElementById('dni').value)">
         </FORm:post>
     </main> 
     <footer>
