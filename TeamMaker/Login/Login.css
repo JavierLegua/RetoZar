@@ -1,6 +1,107 @@
+html{
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 100% 25%;
+}
+
+header{
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
 p#dni_error{
     color: red;
 }
+
 p#password_error{
     color: red;
 }
+
+main{
+    text-align: center;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+h1{
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    font-size: 100px;
+    font-style: italic;
+}
+
+input{
+    font-size: 100%;
+    outline: none;
+    width: 700px;
+    height: 60px;
+    margin-bottom: 1%;
+}
+
+input[type=submit]{
+    font-size: 100%;
+    outline: none;
+    width: 275px;
+    height: 75px;
+    margin-top: 2%;
+}
+
+#img_header0{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header1{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header2{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header3{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header4{
+    padding-top: 0;
+    background-image: url("Logo.png");
+    background-size: 100%;
+}
+#img_header5{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header6{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header7{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header8{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+
+
