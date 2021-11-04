@@ -12,7 +12,16 @@
 <body>
     
     <header>
-        
+        <div id="img_header0"></div>
+        <div id="img_header1"></div>
+        <div id="img_header2"></div>
+        <div id="img_header3"></div>
+        <div id="img_header4"></div>
+        <div id="img_header5"></div>
+        <div id="img_header6"></div>
+        <div id="img_header7"></div>
+        <div id="img_header8"></div>
+
     </header>
 
     <main>
@@ -27,7 +36,12 @@
         </FORm:post>
     </main> 
     <footer>
-
+        <div id="img_footer0"></div>
+        <div id="img_footer1"></div>
+        <div id="img_footer2"></div>
+        <div id="img_footer3"></div>
+        <div id="img_footer4"></div>
+        <div id="img_footer5"></div>
     </footer>
 </body>
 </html>

@@ -1,4 +1,6 @@
-
+html{
+    padding: 0;
+}
 
 body{
     display: grid;
@@ -7,6 +9,7 @@ body{
 }
 
 header{
+    padding-top: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 100%;
@@ -53,6 +56,52 @@ input[type=submit]{
     width: 275px;
     height: 75px;
     margin-top: 2%;
+}
+
+#img_header0{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header1{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header2{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header3{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header4{
+    padding-top: 0;
+    background-image: url("Logo.png");
+    background-size: 100%;
+}
+#img_header5{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header6{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header7{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
+}
+#img_header8{
+    padding-top: 0;
+    background-image: url("Fondo.png");
+    background-size: 100%;
 }
 
 
