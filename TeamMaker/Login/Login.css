@@ -56,22 +56,7 @@ input{
     margin-bottom: 1%;
 }
 
-#img_header0{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_header1{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_header2{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_header3{
+#img_header0, #img_header1, #img_header2, #img_header3, #img_header5, #img_header6, #img_header7, #img_header8{
     padding-top: 0;
     background-image: url("Fondo.png");
     background-size: 100%;
@@ -82,52 +67,8 @@ input{
     background-size: 90%;
     background-position: center;
 }
-#img_header5{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_header6{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_header7{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_header8{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_footer0{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_footer1{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_footer2{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_footer3{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_footer4{
-    padding-top: 0;
-    background-image: url("Fondo.png");
-    background-size: 100%;
-}
-#img_footer5{
+
+#img_footer0, #img_footer1, #img_footer2, #img_footer3, #img_footer4, #img_footer5{
     padding-top: 0;
     background-image: url("Fondo.png");
     background-size: 100%;
@@ -149,33 +90,29 @@ input{
     background-color: #a7fabe;
 }
 
-@media (max-width:576px){
-
+@media only screen and (min-width: 200px) and (max-width: 585px){
     *{
         padding: 0;
         margin: 0;
     }
-    
     body{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 10% 200% 5%;
+        grid-template-rows: 70% 500% 50%;
         overflow: hidden;
     }
-    
+
     header{
         padding-top: 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 100%;
     }
-    
     footer{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 100%;
     }
-    
     #dni_error{
         color: red;
     }
@@ -183,14 +120,14 @@ input{
     #password_error{
         color: red;
     }
-    
     main{
-        padding-bottom: 75px;
+/*         padding-bottom: 75px;
         padding-top: 65px;
         text-align: center;
         grid-row-start: 2;
         grid-row-end: 2;
-        background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
+        background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1); */
+        background-color: rgb(24, 24, 24);
     }
     
     h1{
@@ -198,9 +135,10 @@ input{
         font-weight: bold;
         font-size: 100px;
         font-style: italic;
-        color:rgb(24, 24, 24);
+        /* color: rgb(24, 24, 24); */
+        color:rgb(252, 0, 0);
     }
-    
+
     input{
         font-size: 100%;
         outline: none;
@@ -208,81 +146,23 @@ input{
         height: 60px;
         margin-bottom: 1%;
     }
-    
-    #img_header0{
+    #img_header0, #img_header1, #img_header2, #img_header3, #img_header5, #img_header6, #img_header7, #img_header8{
         padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_header1{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_header2{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_header3{
-        padding-top: 0;
-        background-image: url("Fondo.png");
+        /* background-image: url("Fondo.png"); */
+        background-color: rgb(24, 24, 24);
         background-size: 100%;
     }
     #img_header4{
         padding-top: 0;
-        background-image: url("Logo.png");
+        /* background-image: url("Logo.png"); */
+        background-color: rgb(24, 24, 24);
         background-size: 90%;
         background-position: center;
     }
-    #img_header5{
+    #img_footer0, #img_footer1, #img_footer2, #img_footer3, #img_footer4, #img_footer5{
         padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_header6{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_header7{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_header8{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_footer0{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_footer1{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_footer2{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_footer3{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_footer4{
-        padding-top: 0;
-        background-image: url("Fondo.png");
-        background-size: 100%;
-    }
-    #img_footer5{
-        padding-top: 0;
-        background-image: url("Fondo.png");
+        /* background-image: url("Fondo.png"); */
+        background-color: rgb(24, 24, 24);
         background-size: 100%;
     }
     #usuario{
@@ -301,6 +181,4 @@ input{
         border-radius: 50px;
         background-color: #a7fabe;
     }
-
 }
-
