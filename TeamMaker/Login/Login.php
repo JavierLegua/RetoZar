@@ -28,11 +28,12 @@
         <h1>Bienvenido a TeamMaker</h1>
 
         <FORm:post id="form" name="form">
-            <P id="dni_error"></P>
-            <input id="usuario" type="text" name="Usuario / DNI" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese de escribir el DNI correctamente" onblur="comprobarDni(this.value)" placeholder="Usuario/DNI"><br>
-            <P id="password_error"></P>  
-            <input id="password" type="password" name="Contraseña" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese que coincida" placeholder="Contraseña"><br>
-            <input id="hola" type="submit" name="Entrar" onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)" value="Acceder"> 
+            
+            <input id="usuario" type="text" name="Usuario / DNI" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese de escribir el DNI correctamente" onblur="comprobarDni(this.value)" placeholder="Usuario/DNI">
+            <p id="dni_error"></p>
+            <input id="password" type="password" name="Contraseña" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese que coincida" placeholder="Contraseña">
+            <p id="password_error"></p> 
+            <input id="acceder" type="submit" name="Entrar" onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)" value="Acceder"> 
         </FORm:post>
     </main> 
     <footer>
