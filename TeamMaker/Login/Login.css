@@ -90,7 +90,7 @@ input{
     border-radius: 50px;
     background-color: #a7fabe;
 }
-button{
+input[type='button']{
     margin-top: 50px;
     font-size: 100%;
     outline: none;
