@@ -102,6 +102,26 @@ input[type='button']{
     border-radius: 50px;
     background-color: #a7fabe;
 }
+main.mainAdmin{
+    padding-bottom: 3%;
+    padding-top: 5%;
+}
+input.admin{
+    margin-top:3%;
+    margin-bottom: 4.5%;
+    width: 30%;
+    height: 15%;
+}
+input.adminSalir{
+    margin-top: 0;
+    margin-bottom:7.5%;
+    width: 15%;
+    height: 15%;
+
+}
+h1.adminH1{
+    margin-bottom:2%;
+}
 
 @media only screen and (min-width: 200px) and (max-width: 577px){
     *{
@@ -190,6 +210,26 @@ input[type='button']{
         border: solid 2px #78C48D;
         border-radius: 50px;
         background-color: #a7fabe;
+    }
+    main.mainAdmin{
+        padding-bottom: 10%;
+        padding-top: 15%;
+    }
+    input.admin{
+        margin-top:15%;
+        margin-bottom: 10%;
+        width: 60%;
+        height: 15%;
+    }
+    input.adminSalir{
+        margin-top: 5%;
+        margin-bottom:25%;
+        width: 40%;
+        height: 15%;
+    
+    }
+    h1.adminH1{
+        margin-bottom:2%;
     }
 }
 
