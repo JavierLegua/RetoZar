@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Login/Login.css">
     <title>Administrador supremo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +25,11 @@
 
     <main>
         <h1>Bienvenido Usuario</h1>
+
+
+        <input type="button" value="Gestionar centros">
+        <input type="button" value="Gestionar administrador de centros">
+        <input type="button" value="Salir">
     </main>
 
     <footer>
