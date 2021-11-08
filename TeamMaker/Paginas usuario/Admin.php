@@ -23,14 +23,10 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="mainAdmin">
-        <h1 class="adminH1">Bienvenido Usuario</h1>
+    <main>
+        <h1>Bienvenido Usuario</h1>
 
-<<<<<<< HEAD
-        <input type="button" value="Gestionar profesores" class="admin"> <br>
-=======
-        <input type="button" value="Gestionar profesores" class="admin"><br>
->>>>>>> main
+        <input type="button" value="Gestionar profesores" class="admin">
         <input type="button" value="Salir" class="adminSalir">
 
     </main>
