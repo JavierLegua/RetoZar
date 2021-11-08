@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Login/Login.css">
     <title>Administrador supremo</title>
+    <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
     <main>
         <h1>Bienvenido Usuario</h1>
 
-        <input type="button" value="Gestionar centros" class="adminTop"> <br>
+        <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('../Gestiones/GestionarCentros.php')"> <br>
         <input type="button" value="Gestionar administrador de centros" class="adminTop"> <br>
         <input type="button" value="Salir" class="adminTopSalir">
         
