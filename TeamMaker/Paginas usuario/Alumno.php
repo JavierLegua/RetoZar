@@ -26,8 +26,8 @@
     <main>
         <h1>Bienvenido Usuario</h1>
 
-        <input type="button" value="Responder test" class="alumno">
-        <input type="button" value="Revisar respuestas" class="alumno">
+        <input type="button" value="Responder test" class="alumno"> <br>
+        <input type="button" value="Revisar respuestas" class="alumno"> <br>
         <input type="button" value="Salir" class="alumnoSalir">
 
     </main>

@@ -26,8 +26,8 @@
     <main>
         <h1>Bienvenido Usuario</h1>
 
-        <input type="button" value="Gestionar centros" class="adminTop">
-        <input type="button" value="Gestionar administrador de centros" class="adminTop">
+        <input type="button" value="Gestionar centros" class="adminTop"> <br>
+        <input type="button" value="Gestionar administrador de centros" class="adminTop"> <br>
         <input type="button" value="Salir" class="adminTopSalir">
         
     </main>

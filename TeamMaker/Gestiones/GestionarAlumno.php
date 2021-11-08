@@ -25,10 +25,10 @@
 
     <main>
 
-        <input type="button" value="Añadir alumno" class="Galumno">
-        <input type="button" value="Editar alumno" class="Galumno">
-        <input type="button" value="Eliminar alumno" class="Galumno">
-        <input type="button" value="Salir" class="GalumnoSalir">
+        <input type="button" value="Añadir alumno" class="Galumno"> <br>
+        <input type="button" value="Editar alumno" class="Galumno"> <br>
+        <input type="button" value="Eliminar alumno" class="Galumno"> <br>
+        <input type="button" value="Salir" class="GalumnoSalir"> <br>
 
     </main>
 
