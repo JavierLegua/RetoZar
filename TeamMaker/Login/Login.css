@@ -90,6 +90,16 @@ input{
     border-radius: 50px;
     background-color: #a7fabe;
 }
+button{
+    margin-top: 50px;
+    font-size: 100%;
+    outline: none;
+    width: 275px;
+    height: 75px;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+}
 
 @media only screen and (min-width: 200px) and (max-width: 577px){
     *{
@@ -135,7 +145,7 @@ input{
     h1{
         font-family: 'Courgette', cursive;
         font-weight: bold;
-        font-size: 330%;
+        font-size: 300%;
         font-style: italic;
         color: rgb(24, 24, 24);
         margin-bottom: 5%;
@@ -165,10 +175,10 @@ input{
         background-size: 100%;
     }
     #usuario{
-        margin-top: 50px;
+        margin-top: 7.5%;
     }
     #password{
-        margin-top: 20px;
+        margin-top: 3.5%;
     }
     #acceder{
         margin-top: 10%;
