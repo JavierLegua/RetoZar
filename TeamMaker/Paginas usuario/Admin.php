@@ -26,7 +26,7 @@
     <main>
         <h1>Bienvenido Usuario</h1>
 
-        <input type="button" value="Gestionar profesores" class="admin">
+        <input type="button" value="Gestionar profesores" class="admin"> <br>
         <input type="button" value="Salir" class="adminSalir">
 
     </main>
