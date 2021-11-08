@@ -26,10 +26,10 @@
     <main>
         <h1>Bienvenido Usuario</h1>
 
-        <input type="button" value="Gestionar alumnos" class="profesor">
-        <input type="button" value="Gestionar grupos" class="profesor">
-        <input type="button" value="Ver respuestas" class="profesor">
-        <input type="button" value="Equipos sugeridos" class="profesor">
+        <input type="button" value="Gestionar alumnos" class="profesor"> <br>
+        <input type="button" value="Gestionar grupos" class="profesor"> <br>
+        <input type="button" value="Ver respuestas" class="profesor"> <br>
+        <input type="button" value="Equipos sugeridos" class="profesor"> <br>
         <input type="button" value="Salir" class="profesorSalir">
 
     </main>
