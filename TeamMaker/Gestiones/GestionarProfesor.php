@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Login/Login.css">
-    <title>Administrador centro</title>
+    <title>Gestionar Profesor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -24,10 +24,11 @@
     </header>
 
     <main>
-        <h1>Bienvenido Usuario</h1>
 
-        <input type="button" value="Gestionar profesores" class="admin"> <br>
-        <input type="button" value="Salir" class="adminSalir">
+        <input type="button" value="Añadir profesor" class="Gprofesor"> <br>
+        <input type="button" value="Editar profesor" class="Gprofesor"> <br>
+        <input type="button" value="Eliminar profesor" class="Gprofesor"> <br>
+        <input type="button" value="Salir" class="GprofesorSalir"> <br>
 
     </main>
 

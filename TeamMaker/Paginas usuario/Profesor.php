@@ -26,8 +26,8 @@
     <main>
         <h1>Bienvenido Usuario</h1>
 
-        <input type="button" value="Gestionar alumnos" class="profesor"> <br>
-        <input type="button" value="Gestionar grupos" class="profesor"> <br>
+        <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../Gestiones/GestionarAlumno.php')"> <br>
+        <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')" > <br>
         <input type="button" value="Ver respuestas" class="profesor"> <br>
         <input type="button" value="Equipos sugeridos" class="profesor"> <br>
         <input type="button" value="Salir" class="profesorSalir">

@@ -26,3 +26,7 @@ function comprobacionPass(password, dni){
     }
 
 }
+
+function redirigir(ruta){
+    location.href=ruta;
+}
