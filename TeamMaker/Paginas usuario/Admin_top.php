@@ -26,10 +26,10 @@
     <main>
         <h1>Bienvenido Usuario</h1>
 
-
         <input type="button" value="Gestionar centros">
         <input type="button" value="Gestionar administrador de centros">
         <input type="button" value="Salir">
+        
     </main>
 
     <footer>
