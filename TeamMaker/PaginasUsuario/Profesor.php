@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,7 +28,7 @@
     </header>
 
     <main class="profesorMain">
-        <h1 class="profesorH1">Bienvenido Usuario</h1>
+        <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../Gestiones/GestionarAlumno.php')">
         <input type="button" value="Ver respuestas" class="profesor"> <br>

@@ -23,7 +23,7 @@
         <div id="img_header8"></div>
     </header>
 
-    <main>
+    <main class="Gestion">
 
         <input type="button" value="Añadir alumno" class="Galumno"> <br>
         <input type="button" value="Editar alumno" class="Galumno"> <br>

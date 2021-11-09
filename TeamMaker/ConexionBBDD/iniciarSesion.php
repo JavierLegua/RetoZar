@@ -57,20 +57,20 @@ session_start();
                         // contar numero de filas
                         $nfilas=$consulta->rowCount();
                         if($nfilas==1){
-                            
-                            echo "1 fila";
+                            $sql="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
+                            $consulta = $conexion->prepare($sql);
+                            $consulta->execute();
+                            $fila = $consulta->fetch();  
+                            $_SESSION['nombre']=$fila->Nombre;
+                            header("refresh:0;url=../PaginasUsuario/Profesor.php");
                         }else{
                             $sql="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
                             $consulta = $conexion->prepare($sql);
                             $consulta->execute();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
-                            header("refresh:0;url=../Paginas usuario/Alumno.php");
+                            header("refresh:0;url=../PaginasUsuario/Alumno.php");
                         }
-                    
-
-
-
                     
                     } 
                 else if ($nfilas==0)
