@@ -28,14 +28,18 @@
     <main>
         <h1>Bienvenido a TeamMaker</h1>
 
-        <FORm:post id="form" name="form">
+        <form id="form" action="../ConexionBBDD/iniciarSesion.php" name="form" method="POST">
             
-            <input id="usuario" type="text" name="Usuario / DNI" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese de escribir el DNI correctamente" onblur="comprobarDni(this.value)" placeholder="Usuario/DNI">
+            <input id="usuario" type="text" name="DNI" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese de escribir el DNI correctamente"  placeholder="Usuario/DNI">
             <p id="dni_error"></p>
-            <input id="password" type="password" name="Contraseña" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese que coincida" placeholder="Contraseña">
+            <input id="password" type="password" name="clave" title="Asegurese que coincida" placeholder="Contraseña">
             <p id="password_error"></p> 
-            <input id="acceder" type="submit" name="Entrar" onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)" value="Acceder"> 
-        </FORm:post>
+            <input id="acceder" type="submit" name="Entrar" value="Acceder"> 
+            <!--
+                onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)"
+                onblur="comprobarDni(this.value)"
+            -->
+</form>
     </main> 
     <footer>
         <div id="img_footer0"></div>

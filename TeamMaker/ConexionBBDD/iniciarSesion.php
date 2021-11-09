@@ -20,7 +20,7 @@ session_start();
 
         if(!isset($_POST['Entrar']))
             {
-                header("refresh:3;url=index.php");
+                header("refresh:3;url=../Login/Login.php");
                 echo "Redireccionando en 3 segundos";
                 die();
             }
@@ -28,12 +28,12 @@ session_start();
 
         $conexion=conectarBD();
 
-           $usuario=$_POST['usuario'];
+           $usuario=$_POST['DNI'];
            $clave=$_POST['clave'];
            
            //Escribir Consulta
-                $sql="SELECT * FROM usuarios WHERE login=\"$usuario\" and password =\"$clave\""; 
-           
+                $sql="SELECT * FROM USUARIO WHERE DNI=\"$usuario\" and Clave =\"$clave\""; 
+                //echo "<br>".$sql."<br>"; 
 
            // Ejecutar consulta
         
@@ -49,9 +49,13 @@ session_start();
                 if($nfilas==1)
                     {
                         $fila = $consulta->fetch();   
-                        $_SESSION['usuario']=$fila->login;
-                        header("refresh:3;url=inicio.php");
+                        $_SESSION['usuario']=$fila->DNI;
+                        echo "Sesuib ubucuada ok";
+                       // header("refresh:3;url=inicio.php");
                     
+
+
+                       
                     
                     } 
                 else if ($nfilas==0)

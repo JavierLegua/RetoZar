@@ -2,7 +2,7 @@
    
     function conectarBD()
         {
-            $servidor = "192.168.4.243";
+            $servidor = "localhost";
             $usuario = "makelele";
             $password = "Makelele123@";
             $baseDatos = "TeamMaker";
