@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,8 +27,8 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="alumnoMain">
-        <h1 class="alumnoH1">Bienvenido Usuario</h1>
+    <main>
+        <h1>Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Responder test" class="alumno"> <br>
         <input type="button" value="Revisar respuestas" class="alumno"> <br>
