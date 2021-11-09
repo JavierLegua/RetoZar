@@ -42,26 +42,42 @@ session_start();
 
             // contar numero de filas
                 $nfilas=$consulta->rowCount();
-                echo "El número de filas devuelto es: $nfilas";
-                echo "<br>";
             
             // verificar el LOGIN
                 if($nfilas==1)
                     {
                         $fila = $consulta->fetch();   
                         $_SESSION['usuario']=$fila->DNI;
-                        echo "Sesuib ubucuada ok";
-                       // header("refresh:3;url=inicio.php");
+
+                        $sql="SELECT * from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
+                        // Ejecutar consulta
+        
+                        $consulta = $conexion->prepare($sql);
+                        $consulta->execute();
+                        // contar numero de filas
+                        $nfilas=$consulta->rowCount();
+                        if($nfilas==1){
+                            
+                            echo "1 fila";
+                        }else{
+                            $sql="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
+                            $consulta = $conexion->prepare($sql);
+                            $consulta->execute();
+                            $fila = $consulta->fetch();  
+                            $_SESSION['nombre']=$fila->Nombre;
+                            header("refresh:0;url=../PaginasUsuario/Alumno.php");
+                        }
                     
 
 
-                       
+
                     
                     } 
                 else if ($nfilas==0)
                     {
 
                         echo "Nombre de usuario y/o contraseña incorrecto. Será redireccionado en 2 segundos";
+                        header("refresh:2;url=../Login/Login.php");
                     }
                 else
                     {

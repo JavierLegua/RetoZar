@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,16 +31,18 @@
 
         <form id="form" action="../ConexionBBDD/iniciarSesion.php" name="form" method="POST">
             
-            <input id="usuario" type="text" name="DNI" pattern="[0-9]{8}[A-Z]{1}" title="Asegurese de escribir el DNI correctamente"  placeholder="Usuario/DNI">
+            <input id="usuario" type="text" name="DNI" title="Asegurese de escribir el DNI correctamente"  placeholder="Usuario/DNI">
             <p id="dni_error"></p>
             <input id="password" type="password" name="clave" title="Asegurese que coincida" placeholder="Contraseña">
             <p id="password_error"></p> 
             <input id="acceder" type="submit" name="Entrar" value="Acceder"> 
             <!--
-                onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)"
+                pattern="[0-9]{8}[A-Z]{1}"
                 onblur="comprobarDni(this.value)"
+                onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)"
+                
             -->
-</form>
+        </form>
     </main> 
     <footer>
         <div id="img_footer0"></div>
