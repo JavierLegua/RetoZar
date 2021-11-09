@@ -212,6 +212,85 @@ input.GadminSalir{
 }
 
 
+input.Galumno{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+
+input.GalumnoSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+}
+
+input.Gcentro{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+
+input.GcentroSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+}
+
+input.Gclase{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+
+input.GclaseSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+}
+input.Gequipo{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+
+input.GequipoSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+}
+input.Gprofesor{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+
+input.GprofesorSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+}
+
+
 @media only screen and (min-width: 200px) and (max-width: 577px){
     *{
         padding: 0;
