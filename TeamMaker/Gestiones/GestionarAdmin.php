@@ -23,7 +23,7 @@
         <div id="img_header8"></div>
     </header>
 
-    <main>
+    <main class="Gestion">
 
         <input type="button" value="Crear administrador" class="Gadmin"> <br>
         <input type="button" value="Modificar administrador" class="Gadmin"> <br>

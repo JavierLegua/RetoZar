@@ -23,7 +23,7 @@
         <div id="img_header8"></div>
     </header>
 
-    <main>
+    <main class="Gestion">
 
         <input type="button" value="Crear equipo" class="Gequipo"> <br>
         <input type="button" value="Modificar equipo" class="Gequipo"> <br>

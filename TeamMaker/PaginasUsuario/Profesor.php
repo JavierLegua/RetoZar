@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Login/Login.css">
-    <title>Administrador centro</title>
+    <title>Profesor</title>
     <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,11 +27,14 @@
         <div id="img_header8"></div>
     </header>
 
-    <main>
-        <h1>Bienvenido Usuario</h1>
+    <main class="profesorMain">
+        <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
-        <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')"> <br>
-        <input type="button" value="Salir" class="adminSalir">
+        <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../Gestiones/GestionarAlumno.php')">
+        <input type="button" value="Ver respuestas" class="profesor"> <br>
+        <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')" >
+        <input type="button" value="Equipos sugeridos" class="profesor"> <br>
+        <input type="button" value="Salir" class="profesorSalir" onclick="redirigir('../Login/Login.php')">
 
     </main>
 

@@ -23,7 +23,7 @@
         <div id="img_header8"></div>
     </header>
 
-    <main>
+    <main class="Gestion">
 
         <input type="button" value="Crear centro" class="Gcentro"> <br>
         <input type="button" value="Modificar centro" class="Gcentro"> <br>
