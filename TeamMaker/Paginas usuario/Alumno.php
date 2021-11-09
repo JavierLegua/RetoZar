@@ -29,7 +29,7 @@
 
         <input type="button" value="Responder test" class="alumno"> <br>
         <input type="button" value="Revisar respuestas" class="alumno"> <br>
-        <input type="button" value="Salir" class="alumnoSalir">
+        <input type="button" value="Salir" class="alumnoSalir" onclick="redirigir('../Login/Login.php')">
 
     </main>
 

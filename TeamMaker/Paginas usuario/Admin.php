@@ -28,7 +28,7 @@
         <h1 class="adminH1">Bienvenido Usuario</h1>
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')"> <br>
-        <input type="button" value="Salir" class="adminSalir">
+        <input type="button" value="Salir" class="adminSalir" onclick="redirigir('../Login/Login.php')">
 
     </main>
 

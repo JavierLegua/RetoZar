@@ -29,7 +29,7 @@
 
         <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('../Gestiones/GestionarCentros.php')"> <br>
         <input type="button" value="Gestionar administrador de centros" class="adminTop"> <br>
-        <input type="button" value="Salir" class="adminTopSalir">
+        <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('../Login/Login.php')">
         
     </main>
 
