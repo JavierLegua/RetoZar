@@ -42,12 +42,14 @@ session_start();
 
             // contar numero de filas
                 $nfilas=$consulta->rowCount();
+                
             
             // verificar el LOGIN
                 if($nfilas==1)
                     {
                         $fila = $consulta->fetch();   
                         $_SESSION['usuario']=$fila->DNI;
+                        $usuario=$_SESSION['usuario'];
 
                         $sql="SELECT * from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
                         // Ejecutar consulta
@@ -62,7 +64,21 @@ session_start();
                             $consulta->execute();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
-                            header("refresh:0;url=../PaginasUsuario/Profesor.php");
+
+                            $sql="SELECT Rol from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
+                            $consulta = $conexion->prepare($sql);
+                            $consulta->execute();
+                            $fila = $consulta->fetch();  
+                            $_SESSION['rol']=$fila->Rol;
+
+                            if($_SESSION['rol']=='Profesor'){
+                                header("refresh:0;url=../PaginasUsuario/Profesor.php");
+                            }else if($_SESSION['rol']=='SuperAdmin'){
+                                header("refresh:0;url=../PaginasUsuario/Admin_top.php");
+                            }else{
+                                header("refresh:0;url=../PaginasUsuario/Admin.php");
+                            }
+
                         }else{
                             $sql="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
                             $consulta = $conexion->prepare($sql);
