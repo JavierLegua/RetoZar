@@ -25,9 +25,10 @@
     </header>
 
     <main class="mainAdmin">
-        <h1 class="adminH1">Bienvenido Usuario</h1>
+        <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')"> <br>
+        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('../Profesor.php')"> <br>
         <input type="button" value="Salir" class="adminSalir" onclick="redirigir('../Login/Login.php')">
 
     </main>
