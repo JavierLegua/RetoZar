@@ -39,7 +39,7 @@
                 onclick="comprobarPass(document.getElementById('password').value, document.getElementById('usuario').value)"
                 onblur="comprobarDni(this.value)"
             -->
-</form>
+        </form>
     </main> 
     <footer>
         <div id="img_footer0"></div>

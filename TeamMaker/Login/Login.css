@@ -48,11 +48,15 @@ h1{
     color:rgb(24, 24, 24);
 }
 
+form{
+    height: 50%;
+}
+
 input{
     font-size: 100%;
     outline: none;
     width: 40%;
-    height: 15%;
+    height: 25%;
     margin-bottom: 1%;
 }
 
@@ -86,7 +90,7 @@ input{
     font-size: 100%;
     outline: none;
     width: 15%;
-    height: 15%;
+    height: 25%;
     border: solid 2px #78C48D;
     border-radius: 50px;
     background-color: #a7fabe;
@@ -238,11 +242,15 @@ h1.profesorH1{
         margin-bottom: 5%;
     }
 
+    form{
+        height: 50%;
+    }
+
     input{
         font-size: 75%;
         outline: none;
         width: 75%;
-        height: 10%;
+        height: 20%;
         margin-bottom: 1%;
     }
     #img_header0, #img_header2{
@@ -272,14 +280,14 @@ h1.profesorH1{
         font-size: 100%;
         outline: none;
         width: 40%;
-        height: 20%;
+        height: 30%;
         border: solid 2px #78C48D;
         border-radius: 50px;
         background-color: #a7fabe;
     }
     main.mainAdmin{
-        padding-bottom: 15%;
-        padding-top: 15%;
+        padding-bottom: 20%;
+        padding-top: 20%;
     }
     input.admin{
         margin-top:15%;
@@ -412,11 +420,15 @@ h1.profesorH1{
         margin-bottom: 5%;
     }
 
+    form{
+        height: 50%;
+    }
+
     input{
         font-size: 75%;
         outline: none;
         width: 75%;
-        height: 10%;
+        height: 20%;
         margin-bottom: 1%;
     }
     #img_header0, #img_header2{
@@ -446,7 +458,7 @@ h1.profesorH1{
         font-size: 100%;
         outline: none;
         width: 40%;
-        height: 20%;
+        height: 30%;
         border: solid 2px #78C48D;
         border-radius: 50px;
         background-color: #a7fabe;
@@ -586,12 +598,16 @@ h1.profesorH1{
         color: rgb(24, 24, 24);
         margin-bottom: 5%;
     }
+
+    form{
+        height: 50%;
+    }
     
     input{
         font-size: 75%;
         outline: none;
         width: 75%;
-        height: 10%;
+        height: 20%;
         margin-bottom: 1%;
     }
     #img_header0, #img_header1, #img_header3, #img_header4{
@@ -621,7 +637,7 @@ h1.profesorH1{
         font-size: 100%;
         outline: none;
         width: 40%;
-        height: 20%;
+        height: 30%;
         border: solid 2px #78C48D;
         border-radius: 50px;
         background-color: #a7fabe;
