@@ -24,8 +24,8 @@
         <div id="img_header8"></div>
     </header>
 
-    <main>
-        <h1>Bienvenido Usuario</h1>
+    <main class="adminTopMain">
+        <h1 class="adminTopH1">Bienvenido Usuario</h1>
 
         <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('../Gestiones/GestionarCentros.php')"> <br>
         <input type="button" value="Gestionar administrador de centros" class="adminTop"> <br>

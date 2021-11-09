@@ -24,8 +24,8 @@
         <div id="img_header8"></div>
     </header>
 
-    <main>
-        <h1>Bienvenido Usuario</h1>
+    <main class="alumnoMain">
+        <h1 class="alumnoH1">Bienvenido Usuario</h1>
 
         <input type="button" value="Responder test" class="alumno"> <br>
         <input type="button" value="Revisar respuestas" class="alumno"> <br>

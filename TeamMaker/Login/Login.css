@@ -101,6 +101,7 @@ input[type='button']{
     border: solid 2px #78C48D;
     border-radius: 50px;
     background-color: #a7fabe;
+    color: rgb(24, 24, 24);
 }
 main.mainAdmin{
     padding-bottom: 3%;
@@ -113,8 +114,8 @@ input.admin{
     height: 15%;
 }
 input.adminSalir{
-    margin-top: 0;
-    margin-bottom:7.5%;
+    margin-top: 5%;
+    margin-bottom:4.5%;
     width: 15%;
     height: 15%;
 
@@ -122,6 +123,70 @@ input.adminSalir{
 h1.adminH1{
     margin-bottom:2%;
 }
+main.adminTopMain{
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+input.adminTop{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    width: 30%;
+    height: 15%;
+}
+input.adminTopSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+
+}
+h1.adminTopH1{
+    margin-bottom:2%;
+}
+
+main.alumnoMain{
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+input.alumno{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    width: 30%;
+    height: 15%;
+}
+input.alumnoSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+
+}
+h1.alumnoH1{
+    margin-bottom:2%;
+}
+main.profesorMain{
+    padding-bottom: 3%;
+    padding-top: 1.5%;
+}
+input.profesor{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+input.profesorSalir{
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
+    width: 15%;
+    height: 15%;
+
+}
+h1.profesorH1{
+    margin-bottom:2%;
+}
+
 
 @media only screen and (min-width: 200px) and (max-width: 577px){
     *{
@@ -222,13 +287,76 @@ h1.adminH1{
         height: 15%;
     }
     input.adminSalir{
-        margin-top: 5%;
-        margin-bottom:25%;
+        margin-top: 15%;
+        margin-bottom:15%;
         width: 40%;
         height: 15%;
     
     }
     h1.adminH1{
+        margin-bottom:2%;
+    }
+    main.adminTopMain{
+        padding-bottom: 15%;
+        padding-top: 10%;
+    }
+    input.adminTop{
+        font-size: 75%;
+        margin-top:10%;
+        margin-bottom: 5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.adminTopSalir{
+        margin-top: 25%;
+        margin-bottom:15%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.adminTopH1{
+        margin-bottom:2%;
+    }
+    main.alumnoMain{
+        padding-bottom: 15%;
+        padding-top: 10%;
+    }
+    input.alumno{
+        margin-top:10%;
+        margin-bottom: 5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.alumnoSalir{
+        margin-top: 25%;
+        margin-bottom:15%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.alumnoH1{
+        margin-bottom:2%;
+    }
+    main.profesorMain{
+        padding-bottom: 15%;
+        padding-top: 5%;
+    }
+    input.profesor{
+        margin-top:2.5%;
+        margin-bottom: 5%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.profesorSalir{
+        margin-top: 7.5%;
+        margin-bottom:25%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.profesorH1{
         margin-bottom:2%;
     }
 }
@@ -242,6 +370,7 @@ h1.adminH1{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 3.5fr 15fr 2.5fr;
+        overflow: scroll;
     }
 
     header{
@@ -341,6 +470,70 @@ h1.adminH1{
     h1.adminH1{
         margin-bottom:2%;
     }
+    main.adminTopMain{
+        padding-bottom: 15%;
+        padding-top: 10%;
+    }
+    input.adminTop{
+        font-size: 75%;
+        margin-top:10%;
+        margin-bottom: 5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.adminTopSalir{
+        margin-top: 25%;
+        margin-bottom:15%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.adminTopH1{
+        margin-bottom:2%;
+    }
+
+    main.alumnoMain{
+        padding-bottom: 15%;
+        padding-top: 10%;
+    }
+    input.alumno{
+        margin-top:10%;
+        margin-bottom: 5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.alumnoSalir{
+        margin-top: 25%;
+        margin-bottom:15%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.alumnoH1{
+        margin-bottom:2%;
+    }
+    main.profesorMain{
+        padding-bottom: 15%;
+        padding-top: 5%;
+    }
+    input.profesor{
+        margin-top:2.5%;
+        margin-bottom: 5%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.profesorSalir{
+        margin-top: 7.5%;
+        margin-bottom:25%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.profesorH1{
+        margin-bottom:2%;
+    }
 }
     
 @media only screen and (min-width: 873px) and (max-width: 1152px){
@@ -352,6 +545,7 @@ h1.adminH1{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 3.5fr 15fr 2.5fr;
+        overflow: scroll;
     }
     
     header{
@@ -448,6 +642,69 @@ h1.adminH1{
         height: 15%;
     }
     h1.adminH1{
+        margin-bottom:2%;
+    }
+    main.adminTopMain{
+        padding-bottom: 15%;
+        padding-top: 10%;
+    }
+    input.adminTop{
+        font-size: 75%;
+        margin-top:10%;
+        margin-bottom: 5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.adminTopSalir{
+        margin-top: 25%;
+        margin-bottom:15%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.adminTopH1{
+        margin-bottom:2%;
+    }
+    main.alumnoMain{
+        padding-bottom: 15%;
+        padding-top: 10%;
+    }
+    input.alumno{
+        margin-top:10%;
+        margin-bottom: 5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.alumnoSalir{
+        margin-top: 25%;
+        margin-bottom:15%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.alumnoH1{
+        margin-bottom:2%;
+    }
+    main.profesorMain{
+        padding-bottom: 15%;
+        padding-top: 5%;
+    }
+    input.profesor{
+        margin-top:2.5%;
+        margin-bottom: 5%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        width: 60%;
+        height: 10%;
+    }
+    input.profesorSalir{
+        margin-top: 7.5%;
+        margin-bottom:25%;
+        width: 40%;
+        height: 10%;
+    
+    }
+    h1.profesorH1{
         margin-bottom:2%;
     }
 }
