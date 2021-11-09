@@ -65,7 +65,7 @@ session_start();
                             $consulta->execute();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
-                            header("refresh:0;url=../PaginasUsuario/Alumno.php");
+                            header("refresh:0;url=../Paginas usuario/Alumno.php");
                         }
                     
 
