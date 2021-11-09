@@ -28,9 +28,9 @@
         <h1 class="adminTopH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('../Gestiones/GestionarCentros.php')">
-        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('../Profesor.php')"> <br>
+        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('Profesor.php')"> <br>
         <input type="button" value="Gestionar administrador de centros" class="adminTop">
-        <input type="button" value="Funciones de administrador de centro" class="admin" onclick="redirigir('../Admin.php')"> <br>
+        <input type="button" value="Funciones de administrador de centro" class="admin" onclick="redirigir('Admin.php')"> <br>
         <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('../Login/Login.php')">
         
     </main>
