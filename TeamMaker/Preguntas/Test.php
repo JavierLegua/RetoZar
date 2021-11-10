@@ -7,8 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estilos/Style.css">
-    <title>Alumno</title>
-    <script src="../Funciones.js"></script>
+    <title>TEST</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -28,11 +27,9 @@ session_start();
     </header>
 
     <main class="alumnoMain">
-        <h1>Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
+        <h1>AQUI COMIENZA EL TEST</h1>
 
-        <input type="button" value="Responder test" class="alumno" onclick="redirigir('../Preguntas/conectarTestBBDD.php')"> <br>
-        <input type="button" value="Revisar respuestas" class="alumno"> <br>
-        <input type="button" value="Salir" class="alumnoSalir" onclick="redirigir('../Login/Login.php')">
+        <h3><?php echo $_SESSION['enunciado'] ?></h3>
 
     </main>
 
