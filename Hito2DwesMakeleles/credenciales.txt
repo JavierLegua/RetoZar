@@ -1,0 +1,10 @@
+Hito 2 DWES Los Makeleles
+
+IP-->192.168.4.243/TeamMaker/Login/Login.php
+
+Datos de inicio de sesión:
+Alumno --> Usuario/DNI-11122233P y la clave es el mismo usuario
+Profesor --> Usuario/DNI-73107701Q y la clave es el mismo usuario
+Administrador de centro --> Usuario/DNI-11223344B y la clave es el mismo usuario
+Super administrador --> Usuario/DNI-11122233V y la clave es el mismo usuario
+
