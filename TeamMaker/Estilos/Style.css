@@ -109,17 +109,17 @@ input[type='button']{
 }
 main.mainAdmin{
     padding-bottom: 3%;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 input.admin{
-    margin-top:3%;
-    margin-bottom: 4.5%;
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
     width: 30%;
     height: 15%;
 }
 input.adminSalir{
-    margin-top: 5%;
-    margin-bottom:4.5%;
+    margin-top: 2.5%;
+    margin-bottom:8.5%;
     width: 15%;
     height: 15%;
 
@@ -152,7 +152,7 @@ h1.adminTopH1{
 
 main.alumnoMain{
     padding-bottom: 3%;
-    padding-top: 3%;
+    padding-top: 5%;
 }
 input.alumno{
     margin-top:1.5%;
@@ -194,10 +194,10 @@ h1.profesorH1{
 }
 main.Gestion{
     padding-bottom: 3%;
-    padding-top: 1.5%;
+    padding-top: 3%;
 }
 
-input.Gadmin{
+input.Ginput{
     margin-top:1.5%;
     margin-bottom: 1.5%;
     margin-left: 0.5%;
@@ -206,94 +206,15 @@ input.Gadmin{
     height: 15%;
 }
 
-input.GadminSalir{
-    margin-top: 2.5%;
-    margin-bottom:8.5%;
+input.GinputSalir{
+    margin-top: 3%;
+    margin-bottom:12%;
     width: 15%;
     height: 15%;
 }
-
-
-input.Galumno{
-    margin-top:1.5%;
-    margin-bottom: 1.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    width: 30%;
-    height: 15%;
-}
-
-input.GalumnoSalir{
-    margin-top: 2.5%;
-    margin-bottom:8.5%;
-    width: 15%;
-    height: 15%;
-}
-
-input.Gcentro{
-    margin-top:1.5%;
-    margin-bottom: 1.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    width: 30%;
-    height: 15%;
-}
-
-input.GcentroSalir{
-    margin-top: 2.5%;
-    margin-bottom:8.5%;
-    width: 15%;
-    height: 15%;
-}
-
-input.Gclase{
-    margin-top:1.5%;
-    margin-bottom: 1.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    width: 30%;
-    height: 15%;
-}
-
-input.GclaseSalir{
-    margin-top: 2.5%;
-    margin-bottom:8.5%;
-    width: 15%;
-    height: 15%;
-}
-input.Gequipo{
-    margin-top:1.5%;
-    margin-bottom: 1.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    width: 30%;
-    height: 15%;
-}
-
-input.GequipoSalir{
-    margin-top: 2.5%;
-    margin-bottom:8.5%;
-    width: 15%;
-    height: 15%;
-}
-input.Gprofesor{
-    margin-top:1.5%;
-    margin-bottom: 1.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    width: 30%;
-    height: 15%;
-}
-
-input.GprofesorSalir{
-    margin-top: 2.5%;
-    margin-bottom:8.5%;
-    width: 15%;
-    height: 15%;
-}
-
 
 @media only screen and (min-width: 200px) and (max-width: 577px){
+
     *{
         padding: 0;
         margin: 0;
@@ -387,20 +308,20 @@ input.GprofesorSalir{
         background-color: #a7fabe;
     }
     main.mainAdmin{
-        padding-bottom: 20%;
-        padding-top: 20%;
+        padding-bottom: 15%;
+        padding-top: 15%;
     }
     input.admin{
-        margin-top:15%;
-        margin-bottom: 10%;
+        margin-top:10%;
+        margin-bottom: 5%;
         width: 60%;
-        height: 15%;
+        height: 10%;
     }
     input.adminSalir{
-        margin-top: 15%;
+        margin-top: 25%;
         margin-bottom:15%;
         width: 40%;
-        height: 15%;
+        height: 10%;
     
     }
     h1.adminH1{
@@ -408,7 +329,7 @@ input.GprofesorSalir{
     }
     main.adminTopMain{
         padding-bottom: 15%;
-        padding-top: 10%;
+        padding-top: 15%;
     }
     input.adminTop{
         margin-top:2.5%;
@@ -417,6 +338,7 @@ input.GprofesorSalir{
         margin-right: 2.5%;
         width: 60%;
         height: 10%;
+        font-size: 75%;
     }
     input.adminTopSalir{
         margin-top: 7.5%;
@@ -430,7 +352,7 @@ input.GprofesorSalir{
     }
     main.alumnoMain{
         padding-bottom: 15%;
-        padding-top: 10%;
+        padding-top: 15%;
     }
     input.alumno{
         margin-top:10%;
@@ -450,7 +372,7 @@ input.GprofesorSalir{
     }
     main.profesorMain{
         padding-bottom: 15%;
-        padding-top: 5%;
+        padding-top: 10%;
     }
     input.profesor{
         margin-top:2.5%;
@@ -475,90 +397,21 @@ input.GprofesorSalir{
         padding-top: 20%;
     }
     
-    input.Gadmin{
+    input.Ginput{
         margin-top:1%;
         margin-bottom: 6%;
         width: 60%;
         height: 20%;
     }
     
-    input.GadminSalir{
+    input.GinputSalir{
         margin-top: 20%;
         margin-bottom:20%;
         width: 40%;
         height: 20%;
     }
-    
-    
-    input.Galumno{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GalumnoSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    
-    input.Gcentro{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GcentroSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    
-    input.Gclase{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GclaseSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    input.Gequipo{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GequipoSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    input.Gprofesor{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GprofesorSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-}
 
+}
 @media only screen and (min-width: 578px) and (max-width: 872px){
     *{
         padding: 0;
@@ -654,19 +507,19 @@ input.GprofesorSalir{
     }
     main.mainAdmin{
         padding-bottom: 15%;
-        padding-top: 15%;
+        padding-top: 10%;
     }
     input.admin{
-        margin-top:15%;
-        margin-bottom: 10%;
+        margin-top:10%;
+        margin-bottom: 5%;
         width: 60%;
-        height: 15%;
+        height: 10%;
     }
     input.adminSalir{
-        margin-top: 5%;
-        margin-bottom:25%;
+        margin-top: 25%;
+        margin-bottom:15%;
         width: 40%;
-        height: 15%;
+        height: 10%;
     
     }
     h1.adminH1{
@@ -742,90 +595,21 @@ input.GprofesorSalir{
         padding-top: 20%;
     }
     
-    input.Gadmin{
+    input.Ginput{
         margin-top:1%;
         margin-bottom: 6%;
         width: 60%;
         height: 20%;
     }
     
-    input.GadminSalir{
+    input.GinputSalir{
         margin-top: 20%;
         margin-bottom:20%;
         width: 40%;
         height: 20%;
     }
     
-    
-    input.Galumno{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GalumnoSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    
-    input.Gcentro{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GcentroSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    
-    input.Gclase{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GclaseSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    input.Gequipo{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GequipoSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    input.Gprofesor{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GprofesorSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-}
-    
+}   
 @media only screen and (min-width: 873px) and (max-width: 1152px){
     *{
         padding: 0;
@@ -921,19 +705,19 @@ input.GprofesorSalir{
     }
     main.mainAdmin{
         padding-bottom: 15%;
-        padding-top: 15%;
+        padding-top: 10%;
     }
     input.admin{
-        margin-top:15%;
-        margin-bottom: 10%;
+        margin-top:10%;
+        margin-bottom: 5%;
         width: 60%;
-        height: 15%;
+        height: 10%;
     }
     input.adminSalir{
-        margin-top: 5%;
-        margin-bottom:25%;
+        margin-top: 25%;
+        margin-bottom:15%;
         width: 40%;
-        height: 15%;
+        height: 10%;
     }
     h1.adminH1{
         margin-bottom:2%;
@@ -1007,90 +791,18 @@ input.GprofesorSalir{
         padding-top: 20%;
     }
     
-    input.Gadmin{
+    input.Ginput{
         margin-top:1%;
         margin-bottom: 6%;
         width: 60%;
         height: 20%;
     }
     
-    input.GadminSalir{
+    input.GinputSalir{
         margin-top: 20%;
         margin-bottom:20%;
         width: 40%;
         height: 20%;
     }
-    
-    
-    input.Galumno{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GalumnoSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    
-    input.Gcentro{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GcentroSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    
-    input.Gclase{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GclaseSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    input.Gequipo{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GequipoSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
-    input.Gprofesor{
-        margin-top:1%;
-        margin-bottom: 6%;
-        width: 60%;
-        height: 20%;
-    }
-    
-    input.GprofesorSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
-        width: 40%;
-        height: 20%;
-    }
+
 }
-
-
-
-

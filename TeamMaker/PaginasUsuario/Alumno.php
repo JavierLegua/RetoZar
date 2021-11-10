@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Login/Login.css">
+    <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Alumno</title>
     <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@ session_start();
         <div id="img_header8"></div>
     </header>
 
-    <main>
+    <main class="alumnoMain">
         <h1>Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Responder test" class="alumno"> <br>
