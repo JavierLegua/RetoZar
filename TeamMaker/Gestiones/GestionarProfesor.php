@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Login/Login.css">
+    <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Gestionar Profesor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +25,10 @@
 
     <main class="Gestion">
 
-        <input type="button" value="Añadir profesor" class="Gprofesor"> <br>
-        <input type="button" value="Editar profesor" class="Gprofesor"> <br>
-        <input type="button" value="Eliminar profesor" class="Gprofesor"> <br>
-        <input type="button" value="Salir" class="GprofesorSalir"> <br>
+        <input type="button" value="Añadir profesor" class="Ginput"> <br>
+        <input type="button" value="Editar profesor" class="Ginput"> <br>
+        <input type="button" value="Eliminar profesor" class="Ginput"> <br>
+        <input type="button" value="Salir" class="GinputSalir"> <br>
 
     </main>
 

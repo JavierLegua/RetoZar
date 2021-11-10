@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Login/Login.css">
+    <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Gestionar Equipo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +25,10 @@
 
     <main class="Gestion">
 
-        <input type="button" value="Crear equipo" class="Gequipo"> <br>
-        <input type="button" value="Modificar equipo" class="Gequipo"> <br>
-        <input type="button" value="Eliminar equipo" class="Gequipo"> <br>
-        <input type="button" value="Salir" class="GequipoSalir"> <br>
+        <input type="button" value="Crear equipo" class="Ginput"> <br>
+        <input type="button" value="Modificar equipo" class="Ginput"> <br>
+        <input type="button" value="Eliminar equipo" class="Ginput"> <br>
+        <input type="button" value="Salir" class="GinputSalir"> <br>
 
     </main>
 
