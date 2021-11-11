@@ -5,15 +5,13 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$consultaSQL = "SELECT * FROM ALUMNO";
+$sql = "SELECT USUARIO.DNI as DNI, USUARIO.NOMBRE as nombre, ALUMNO.id_curso as id_curso FROM ALUMNO, USUARIO WHERE ALUMNO.USUARIO_DNI=USUARIO.DNI";
 
-  $sentencia = $conexion->prepare($consultaSQL);
-  $sentencia->execute();
+$consulta=$conexion->prepare($sql);
+$consulta->execute();
 
-  $alumnos = $sentencia->fetch();
-  for ($i=0; $i < count($alumnos); $i++) { 
-      echo $alumnos[$i]->USUARIO_DNI;
-  }
+$alumnos=$consulta->fetchAll();
+
 
 ?>
 
@@ -26,30 +24,24 @@ $consultaSQL = "SELECT * FROM ALUMNO";
     <script src="../../Funciones.js"></script>
 </head>
 <body>
-    <table>
+  <table>
     <thead>
-          <tr>
-            <th>DNI</th>
-            <th>Curso</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          if ($alumnos && $sentencia->rowCount() > 0) {
-            foreach ($alumnos as $fila) {
-              ?>
-              <tr>
-                <td><?php $DNI=$fila->USUARIO_DNI; echo $DNI; ?></td>
-                <td><?php $id=$fila->id_curso; echo $id; ?></td>
-              </tr>
-              <?php
-            }
-          }
-          ?>
-        <tbody>
-    </table>
-
-    <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')">
+      <tr>
+        <td>DNI</td>
+        <td>Curso</td>
+        <td>Nombre</td>
+      </tr>
+    </thead>
+    <tbody>
+    <?php
+      for ($i=0; $i < count($alumnos); $i++) { 
+        echo "<tr>
+            <td>".$alumnos[$i]->DNI."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->id_curso."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->nombre."&nbsp&nbsp&nbsp</td></tr><br>";
+      }
+    ?>
+    </tbody>
+  </table>
+  <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')">
 </body>
 </html>
 
