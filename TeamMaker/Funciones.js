@@ -32,5 +32,6 @@ function redirigir(ruta){
 }
 
 function siguientePregunta(){
+    $conexion = conectarBD();
     
 }
