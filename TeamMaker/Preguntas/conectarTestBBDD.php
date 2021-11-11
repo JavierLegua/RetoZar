@@ -40,13 +40,16 @@ session_start();
                 $idPregunta = $_SESSION['idPregunta'];
                 $enunciado = $_SESSION['enunciado'];
             
-                echo "<br>$idPregunta";
-                echo "<br>$enunciado";
+                /* echo "<br>$idPregunta";
+                echo "<br>$enunciado"; */
+
+                header("refresh:2;url=../Preguntas/Test.php");
+                echo "</br>Redireccionando al Test en 2 segundos";
+                die();
 
                 
             /*
                 for ($i=1; $i < $nfilas + 1  ; $i++) { 
-                    echo "
                 }
                     {
                         $fila = $consulta->fetch();   

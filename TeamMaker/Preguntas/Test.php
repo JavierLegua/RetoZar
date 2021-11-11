@@ -28,9 +28,17 @@ session_start();
 
     <main class="alumnoMain">
         <h1>AQUI COMIENZA EL TEST</h1>
-
-        <h3><?php echo $_SESSION['enunciado'] ?></h3>
-
+        <br><br>
+        <h2><?php echo $_SESSION['idPregunta']?></h2>
+        <br><br>
+        <h2><?php echo $_SESSION['enunciado']?></h2>
+        <br><br>
+        <input type="radio" name="radio" value="VERDADERO" class="radio">
+        <label for="verdadero"><strong><h3>VERDADERO</h3></strong></label>
+        <input type="radio" name="radio" value="FALSO" class="radio">
+        <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
+        <br><br>
+        <input type="button" name="Siguiente" value="Siguiente" onclick="siguientePregunta()">
     </main>
 
     <footer>
