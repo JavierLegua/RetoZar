@@ -14,7 +14,7 @@
             try {
                 $conexion = new PDO("mysql:host=$servidor;dbname=$baseDatos", $usuario, $password, $opciones);      
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Conexión realizada Satisfactoriamente";
+                //echo "Conexión realizada Satisfactoriamente";
                 return $conexion;
               }
          
