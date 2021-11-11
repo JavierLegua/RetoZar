@@ -20,6 +20,7 @@ $alumnos=$consulta->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../../Estilos/Style.css"> -->
     <title>Editar alumnos</title>
     <script src="../../Funciones.js"></script>
 </head>
@@ -30,13 +31,16 @@ $alumnos=$consulta->fetchAll();
         <td>DNI</td>
         <td>Curso</td>
         <td>Nombre</td>
+        <td>Editar alumno</td>
       </tr>
     </thead>
     <tbody>
     <?php
       for ($i=0; $i < count($alumnos); $i++) { 
+        $dni = $alumnos[$i]->DNI;
+        $_SESSION['dni']=$dni;
         echo "<tr>
-            <td>".$alumnos[$i]->DNI."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->id_curso."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->nombre."&nbsp&nbsp&nbsp</td></tr><br>";
+            <td>".$alumnos[$i]->DNI."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->id_curso."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->nombre."&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp <input id=\"crear\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td></tr>";
       }
     ?>
     </tbody>
