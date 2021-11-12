@@ -1,4 +1,4 @@
-
+    
 function comprobacionDni(dni_user){
 
     var vLetras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
@@ -32,6 +32,9 @@ function redirigir(ruta){
 }
 
 function siguientePregunta(){
-    $conexion = conectarBD();
-    
+    var contador = 0;
+    for (let i = 1; i < 80; i++) {
+        document.write("");
+    }
+    location.reload();
 }
