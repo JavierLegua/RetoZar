@@ -20,9 +20,9 @@
 
     if($nfilas==1){
         echo "Usuario eliminado correctamente <br>";
-        echo "Redirigiendo a la lista de profesores";
-        header("refresh:3;url=ListarProfesor.php");
+        echo "Redirigiendo a la lista de administradores";
+        header("refresh:3;url=ListarAdmin.php");
     }else{
-        echo "Ha habido un error a la hora de eliminar el profesor";
+        echo "Ha habido un error a la hora de eliminar el administrador";
     }
     ?>
