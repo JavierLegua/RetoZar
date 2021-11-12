@@ -32,6 +32,7 @@ $alumnos=$consulta->fetchAll();
         <td>Curso</td>
         <td>Nombre</td>
         <td>Editar alumno</td>
+        <td>Borrar alumno</td>
       </tr>
     </thead>
     <tbody>
@@ -40,7 +41,7 @@ $alumnos=$consulta->fetchAll();
         $dni = $alumnos[$i]->DNI;
         $_SESSION['dni']=$dni;
         echo "<tr>
-            <td>".$alumnos[$i]->DNI."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->id_curso."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->nombre."&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp <input id=\"crear\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td></tr>";
+            <td>".$alumnos[$i]->DNI."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->id_curso."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->nombre."&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp <input id=\"editar\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td>&nbsp&nbsp&nbsp <input id=\"eliminar\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td></tr>";
       }
     ?>
     </tbody>

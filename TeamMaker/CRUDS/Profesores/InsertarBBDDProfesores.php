@@ -23,7 +23,7 @@ session_start();
            $nombre=$_POST['nombre'];
            $usuario=$_POST['DNI'];
            $clave=$_POST['Clave'];
-           $curso=$_POST['curso'];
+           $rol=$_POST['Rol'];
 
     
     //Escribir Consulta
@@ -35,8 +35,8 @@ session_start();
         $consulta->execute();
     } catch (Exception $e) {
         echo("Usuario ya introducido <br>");
-        echo "Redirigiendo al menu de creación de alumnos";
-        header("refresh:3;url=CrearAlumno.php");
+        echo "Redirigiendo al menu de creación de profesores";
+        header("refresh:3;url=CrearProfesor.php");
     }
     // Ejecutar consulta
 
@@ -49,7 +49,7 @@ session_start();
     
     if($nfilas==1){
         //Escribir Consulta
-        $sql="INSERT INTO ALUMNO VALUES (\"$usuario\",\"$curso\")"; 
+        $sql="INSERT INTO PROFESOR VALUES (\"$usuario\",\"$rol\")"; 
    /*      echo "<br>".$sql."<br>";  */
 
         // Ejecutar consulta
@@ -64,14 +64,16 @@ session_start();
         echo("$nfilas"); */
         if($nfilas==1){
             echo "Usuario insertado correctamente <br>";
-            echo "Redirigiendo al menu de creación de alumnos";
-            header("refresh:3;url=CrearAlumno.php");
+            echo "Redirigiendo al menu de creación de profesores";
+            header("refresh:3;url=CrearProfesor.php");
         }else{
-            echo "Error al insertar en tabla alumno";
+            echo "Error al insertar en tabla profesor<br>";
+            echo "Redirigiendo al menu de creación de profesores";
+            header("refresh:3;url=CrearProfesor.php");
         }
 
     }else{
-        header("refresh:3;url=CrearAlumno.php");
+        header("refresh:3;url=CrearProfesor.php");
         echo "Redireccionando en 3 segundos";
     }
           

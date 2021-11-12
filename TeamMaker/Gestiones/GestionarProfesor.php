@@ -26,8 +26,7 @@
     <main class="Gestion">
 
         <input type="button" value="Añadir profesor" class="Ginput"> <br>
-        <input type="button" value="Editar profesor" class="Ginput"> <br>
-        <input type="button" value="Eliminar profesor" class="Ginput"> <br>
+        <input type="button" value="Menu de profesores" class="Ginput"> <br>
         <input type="button" value="Salir" class="GinputSalir"> <br>
 
     </main>

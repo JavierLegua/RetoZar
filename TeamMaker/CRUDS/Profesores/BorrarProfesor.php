@@ -20,8 +20,8 @@
 
     if($nfilas==1){
         echo "Usuario eliminado correctamente <br>";
-        echo "Redirigiendo a la lista de alumnos";
-        header("refresh:3;url=ListarAlumnos.php");
+        echo "Redirigiendo a la lista de profesores";
+        header("refresh:3;url=ListarProfesor.php");
     }else{
         echo "Ha habido un error a la hora de eliminar el alumno";
     }

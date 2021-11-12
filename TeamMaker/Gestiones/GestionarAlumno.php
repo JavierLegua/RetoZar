@@ -27,8 +27,7 @@
     <main class="Gestion">
 
         <input type="button" value="Añadir alumno" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/CrearAlumno.php')"> <br>
-        <input type="button" value="Editar alumno" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/ListarAlumno.php')"> <br>
-        <input type="button" value="Eliminar alumno" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/BorrarAlumno.php')"> <br>
+        <input type="button" value="Menu alumnos" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/ListarAlumnos.php')"> <br>
         <input type="button" value="Salir" class="GinputSalir"> <br>
 
     </main>
