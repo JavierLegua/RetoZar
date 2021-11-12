@@ -18,7 +18,7 @@ session_start();
 
     <?php
 
-
+        
         $conexion=conectarBD();
         
 
@@ -35,23 +35,18 @@ session_start();
                 $nfilas=$consulta->rowCount();
 
                 $fila = $consulta->fetch();
-                $_SESSION['idPregunta']=$fila->idPregunta;
-                $_SESSION['enunciado']=$fila->Enunciado;
-                $idPregunta = $_SESSION['idPregunta'];
-                $enunciado = $_SESSION['enunciado'];
+                $idPregunta=$fila->idPregunta;
+                $enunciado=$fila->Enunciado;
+                $_SESSION['contador']=$consulta->fetch();
             
-                echo "<br>$idPregunta";
-                echo "<br>$enunciado";
-
-               /*  header("refresh:2;url=../Preguntas/Test.php");
-                echo "</br>Redireccionando al Test en 2 segundos";
-                die(); */
-
-                
-            
-                for ($i=1; $i < $nfilas + 1  ; $i++) { 
-                    echo "<br>$idPregunta";
+                for ($i=0; $i < $nfilas; $i++) { 
+                    echo "<br>".$idPregunta;
+                    echo "<br>".$enunciado."<br>";
+                    $fila = $consulta->fetch();
+                    $idPregunta=$fila->idPregunta;
+                    $enunciado=$fila->Enunciado;
                 }
+
                 /*
                     {
                         $fila = $consulta->fetch();   

@@ -32,9 +32,11 @@ function redirigir(ruta){
 }
 
 function siguientePregunta(){
-    var contador = 0;
-    for (let i = 1; i < 80; i++) {
-        document.write("");
+    var contador = 1;
+    for (let i = 0; i < 80; i++) {
+        document.write(contador);
+        document.write("$_SESSION['contador']<br>");
+        contador++;
     }
-    location.reload();
+    //location.reload();
 }
