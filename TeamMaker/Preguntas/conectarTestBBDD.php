@@ -18,7 +18,6 @@ session_start();
 
     <?php
 
-        
         $conexion=conectarBD();
         
 
@@ -37,9 +36,8 @@ session_start();
                 $fila = $consulta->fetch();
                 $idPregunta=$fila->idPregunta;
                 $enunciado=$fila->Enunciado;
-                $_SESSION['contador']=$consulta->fetch();
             
-                for ($i=0; $i < $nfilas; $i++) { 
+                for ($i=1; $i < $nfilas +1; $i++) { 
                     echo "<br>".$idPregunta;
                     echo "<br>".$enunciado."<br>";
                     $fila = $consulta->fetch();
