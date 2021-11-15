@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estilos/Style.css">
-    <title>Administrador supremo</title>
+    <title>Gestionar cursos</title>
     <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +24,12 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="adminTopMain">
-        <h1 class="adminTopH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
+    <main class="Gestion">
 
-        <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('../Gestiones/GestionarCentros.php')">
-        <input type="button" value="Funciones de profesor" class="adminTop" onclick="redirigir('Profesor.php')"> <br>
-        <input type="button" value="Gestionar administrador de centros" class="adminTop" onclick="redirigir('../Gestiones/GestionarAdmin.php')">
-        <input type="button" value="Funciones de administrador de centro" class="adminTop" onclick="redirigir('Admin.php')"> <br>
-        <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('../Login/Login.php')">
-        
+        <input type="button" value="Crear curso" class="Ginput" onclick="redirigir('../CRUDS/Cursos/CrearCurso.php')"> <br>
+        <input type="button" value="Menu de cursos" class="Ginput" onclick="redirigir('../CRUDS/Curso/ListarCurso.php')"> <br>
+        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../../Login/Login.php')"> <br>
+
     </main>
 
     <footer>

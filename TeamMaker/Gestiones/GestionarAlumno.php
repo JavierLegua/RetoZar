@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Gestionar Alumno</title>
+    <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -25,9 +26,8 @@
 
     <main class="Gestion">
 
-        <input type="button" value="Añadir alumno" class="Ginput"> <br>
-        <input type="button" value="Editar alumno" class="Ginput"> <br>
-        <input type="button" value="Eliminar alumno" class="Ginput"> <br>
+        <input type="button" value="Añadir alumno" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/CrearAlumno.php')"> <br>
+        <input type="button" value="Menu alumnos" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/ListarAlumnos.php')"> <br>
         <input type="button" value="Salir" class="GinputSalir"> <br>
 
     </main>

@@ -30,3 +30,11 @@ function comprobacionPass(password, dni){
 function redirigir(ruta){
     location.href=ruta;
 }
+
+function redirigir_alumnos(ruta, dni){
+    location.href=ruta+'?dni='+dni;
+}
+
+function siguientePregunta(){
+    
+}
