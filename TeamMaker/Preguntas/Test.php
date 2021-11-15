@@ -1,5 +1,89 @@
 <?php
-session_start();
+session_start(); 
+include "../funciones.php";
+
+if (isset($_SESSION['rol'])) {
+    session_destroy();
+    header("refresh:0;url=../index.php");
+}
+
+if (isset($_SESSION['completado']) && $_SESSION['completado']==true ) {
+    session_destroy();
+    header("refresh:0;url=../index.php");
+}
+
+if (!isset($_SESSION['primera_vez'])) {
+    $_SESSION['primera_vez']=true;
+}else{
+    $_SESSION['primera_vez']=false;
+}
+
+
+if(isset($_POST['enviar'])){
+
+    header("refresh:0;url=adios.php");
+
+}
+
+$idAlumno=$_SESSION['user'];
+$nombre=$_SESSION['nombre'];
+$_SESSION['centro']=centroAlumno($idAlumno);
+$centro = $_SESSION['centro'];
+
+$conexion=conectarBD();
+
+
+if ($_SESSION['primera_vez']) {
+    $sql="SELECT * FROM preguntas WHERE idPreguntas NOT IN (SELECT preguntas_idPreguntas FROM alumno_has_preguntas WHERE alumno_usuario_idUsuario=$idAlumno)";
+    $consulta = $conexion->prepare($sql);
+    $consulta->execute();
+    $preguntasPorResponder = $consulta->fetchAll();
+
+    if ($consulta->rowCount()==0) {
+        $_SESSION['completado']=true;
+        header("Location: revisar.php");
+    }
+
+    shuffle($preguntasPorResponder);
+    $_SESSION['preguntasPorResponder'] =$preguntasPorResponder;
+
+
+    $_SESSION['i']=0;
+    $i=$_SESSION['i'];
+
+    $preguntasRespondidas=[];
+    $_SESSION['preguntasRespondidas']=$preguntasRespondidas;
+
+
+}else {
+    $preguntasPorResponder = $_SESSION['preguntasPorResponder'];
+    $i=$_SESSION['i'];
+
+    $preguntasRespondidas = $_SESSION['preguntasRespondidas'];
+}
+
+if (isset($_POST['siguiente']) && $_POST['siguiente']==$i) {
+    $preguntasRespondidas[$i]=$preguntasPorResponder[$i];
+    $_SESSION['preguntasRespondidas']=$preguntasRespondidas;
+
+    $idPregunta=$preguntasPorResponder[$i]->idPreguntas;
+    $respuesta=$_POST['respuesta'];
+
+    echo "i = ".$i."<br>";
+    echo "ID: ".$idPregunta."<br>";
+    echo "Nombre: ".$preguntasPorResponder[$i]->enunciado."<br>";
+    echo "Respuesta ".$respuesta."%<br>";
+    $i++;
+    $_SESSION['i']=$i;
+
+    $sql="INSERT INTO alumno_has_preguntas VALUES ('$idAlumno','$idPregunta','$respuesta')";
+    echo $sql;
+
+    $consulta = $conexion->prepare($sql);
+    $consulta->execute();
+
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,7 +123,7 @@ session_start();
         <input type="radio" name="radio" value="FALSO" class="radio">
         <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
         <br><br>
-        <input type="button" name="Siguiente" value="Siguiente" onclick="siguientePregunta()">
+        <input type="button" name="siguiente" value="Siguiente">
     </main>
 
     <footer>
