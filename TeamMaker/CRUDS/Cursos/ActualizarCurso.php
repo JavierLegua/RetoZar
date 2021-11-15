@@ -5,30 +5,34 @@
     $conexion=conectarBD();
 
     $nombre=$_POST['nombre'];
-    $usuario=$_POST['DNI'];
-    $clave=$_POST['Clave'];
-    $curso=$_POST['curso'];
-    $dni = $_SESSION['DNI_VIEJO'];
+    $idcurso=$_POST['idCurso'];
+    $centro=$_POST['idCentro'];
 
-    $sql3 = "UPDATE ALUMNO SET id_curso=\"".$curso."\" WHERE USUARIO_DNI=\"$usuario\"";
+    $sql = "SELECT * FROM CURSO";
 
-    $sql2 = "UPDATE USUARIO SET DNI=\"".$usuario."\", nombre=\"".$nombre."\",Clave =\"".$clave."\" WHERE DNI=\"".$dni."\"";
+    $consulta=$conexion->prepare($sql);
+    $consulta->execute();
+
+    $curso=$consulta->fetch();
+
+    $idCursoViejo=$curso->idCurso;
+
+
+    $sql2 = "UPDATE CURSO SET idCurso=\"".$idcurso."\", nombre=\"".$nombre."\",CENTRO_idCentro =\"".$centro."\" WHERE idCurso=\"".$idCursoViejo."\"";
 
 
     $consulta1=$conexion->prepare($sql2);
     $consulta1->execute(); 
-
-
-    $consulta=$conexion->prepare($sql3);
-    $consulta->execute();
     
     $nfilas=$consulta->rowCount();
 
     if($nfilas==1){
-        echo "Usuario actualizado correctamente <br>";
-        echo "Redirigiendo a la lista de alumnos";
-        header("refresh:3;url=ListarAlumnos.php");
+        echo "Curso actualizado correctamente <br>";
+        echo "Redirigiendo a la lista de cursos";
+        header("refresh:3;url=ListarCurso.php");
     }else{
-        echo "Ha habido un error a la hora de actualizar el alumno";
+        echo "Ha habido un error a la hora de actualizar el curso <br>";
+        echo "Redirigiendo a la lista de cursos";
+        header("refresh:3;url=ListarCurso.php");
     }
     ?>

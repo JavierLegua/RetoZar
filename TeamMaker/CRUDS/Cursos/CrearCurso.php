@@ -27,7 +27,7 @@
 
     <main class="crudMain">
 
-        <h1>Creación de alumnos</h1>
+        <h1>Creación de curso</h1>
 
         <form method="post" action="InsertarBBDDCurso.php">
 

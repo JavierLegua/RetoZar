@@ -38,3 +38,11 @@ function redirigir_alumnos(ruta, dni){
 function siguientePregunta(){
     
 }
+
+function redirigir_curso(ruta, curso){
+    location.href=ruta+'?curso='+curso;
+}
+
+function redirigir_centro(ruta, centro){
+    location.href=ruta+'?centro='+centro;
+}

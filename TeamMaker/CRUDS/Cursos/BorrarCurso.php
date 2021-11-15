@@ -5,10 +5,10 @@
     $conexion=conectarBD();
 
 
-    $dni = $_GET['dni'];
+    $idCursoViejo=$_GET['curso'];
 
 
-    $sql = "DELETE FROM USUARIO WHERE DNI=\"".$dni."\"";
+    $sql = "DELETE FROM CURSO WHERE idCurso=\"".$idCursoViejo."\"";
 
 
     $consulta=$conexion->prepare($sql);
@@ -19,10 +19,12 @@
   
 
     if($nfilas==1){
-        echo "Usuario eliminado correctamente <br>";
-        echo "Redirigiendo a la lista de alumnos";
-        header("refresh:3;url=ListarAlumnos.php");
+        echo "Curso eliminado correctamente <br>";
+        echo "Redirigiendo a la lista de cursos";
+        header("refresh:3;url=ListarCurso.php");
     }else{
-        echo "Ha habido un error a la hora de eliminar el alumno";
+        echo "Ha habido un error a la hora de eliminar el curso";
+        echo "Redirigiendo a la lista de cursos";
+        header("refresh:3;url=ListarCurso.php");
     }
     ?>

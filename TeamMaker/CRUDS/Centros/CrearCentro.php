@@ -1,14 +1,14 @@
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Estilos/Style.css">
-    <title>Gestionar cursos</title>
-    <script src="../Funciones.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Estilos/Style.css">
+    <title>Crear centro</title>
+    <script src="../../Funciones.js"></script>
 </head>
 <body>
     
@@ -22,13 +22,22 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+
     </header>
 
-    <main class="Gestion">
+    <main class="crudMain">
 
-        <input type="button" value="Crear curso" class="Ginput" onclick="redirigir('../CRUDS/Cursos/CrearCurso.php')"> <br>
-        <input type="button" value="Menu de cursos" class="Ginput" onclick="redirigir('../CRUDS/Cursos/ListarCurso.php')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../../Login/Login.php')"> <br>
+        <h1>Creación de centros</h1>
+
+        <form method="post" action="InsertarBBDDCentro.php">
+
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+            <input type="text" name="direccion" id="direccion" placeholder="direccion" required>
+            <input type="text" name="idCentro" id="idCentro" placeholder="idCentro" required>
+            <input id="crear" type="submit" name="Crear Centro">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentro.php')">
+
+        </form>
 
     </main>
 
@@ -40,6 +49,8 @@
         <div id="img_footer4"></div>
         <div id="img_footer5"></div>
     </footer>
+
+    
 
 </body>
 </html>

@@ -21,21 +21,21 @@ session_start();
 
     //Cogemos los datos introducidos en los campos
            $nombre=$_POST['nombre'];
-           $curso=$_POST['idCurso'];
+           $direccion=$_POST['direccion'];
            $centro=$_POST['idCentro'];
 
     
     //Escribir Consulta
-    $sql1="INSERT INTO CURSO VALUES (\"$curso\",\"$nombre\",\"$centro\")"; 
+    $sql1="INSERT INTO CENTRO VALUES (\"$centro\",\"$nombre\",\"$direccion\")"; 
     //echo "<br>".$sql."<br>"; 
 
     try {
         $consulta = $conexion->prepare($sql1);
         $consulta->execute();
     } catch (Exception $e) {
-        echo("Curso ya introducido <br>");
-        echo "Redirigiendo al menu de creación de cursos";
-        header("refresh:3;url=CrearCurso.php");
+        echo("Centro ya introducido <br>");
+        echo "Redirigiendo al menu de creación de centros";
+        header("refresh:3;url=CrearCentro.php");
     }
     // Ejecutar consulta
 
@@ -48,13 +48,13 @@ session_start();
     
     if($nfilas==1){
 
-        echo "Curso creado correctamente <br>";
-        header("refresh:3;url=CrearCurso.php");
+        echo "Centro creado correctamente <br>";
+        header("refresh:3;url=CrearCentro.php");
         echo "Redireccionando en 3 segundos";
 
 
     }else{
-        header("refresh:3;url=CrearCurso.php");
+        header("refresh:3;url=CrearCentro.php");
         echo "Redireccionando en 3 segundos";
     }
           

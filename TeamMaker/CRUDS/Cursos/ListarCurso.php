@@ -5,12 +5,12 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$sql = "SELECT USUARIO.DNI as DNI, USUARIO.NOMBRE as nombre, ALUMNO.id_curso as id_curso FROM ALUMNO, USUARIO WHERE ALUMNO.USUARIO_DNI=USUARIO.DNI";
+$sql = "SELECT * FROM CURSO";
 
 $consulta=$conexion->prepare($sql);
 $consulta->execute();
 
-$alumnos=$consulta->fetchAll();
+$curso=$consulta->fetchAll();
 
 
 ?>
@@ -21,32 +21,30 @@ $alumnos=$consulta->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../../Estilos/Style.css"> -->
-    <title>Editar alumnos</title>
+    <title>Editar Cursos</title>
     <script src="../../Funciones.js"></script>
 </head>
 <body>
   <table>
     <thead>
       <tr>
-        <td>DNI</td>
+        <td>Id curso</td>
         <td>Curso</td>
-        <td>Nombre</td>
-        <td>Editar alumno</td>
-        <td>Borrar alumno</td>
+        <td>Id centro</td>
+        <td>Editar curso</td>
+        <td>Borrar curso</td>
       </tr>
     </thead>
     <tbody>
     <?php
-      for ($i=0; $i < count($alumnos); $i++) { 
-        $dni = $alumnos[$i]->DNI;
-        $_SESSION['dni']=$dni;
+      for ($i=0; $i < count($curso); $i++) { 
         echo "<tr>
-            <td>".$alumnos[$i]->DNI."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->id_curso."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->nombre."&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp <input id=\"editar\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td>&nbsp&nbsp&nbsp <input id=\"eliminar\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td></tr>";
+            <td>".$curso[$i]->idCurso."&nbsp&nbsp&nbsp</td><td>".$curso[$i]->Nombre."&nbsp&nbsp&nbsp</td><td>".$curso[$i]->CENTRO_idCentro."&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp <input id=\"editar\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('EditarCurso.php','".$curso[$i]->idCurso."')\"></td><td>&nbsp&nbsp&nbsp <input id=\"eliminar\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('BorrarCurso.php','".$curso[$i]->idCurso."')\"></td></tr>";
       }
     ?>
     </tbody>
   </table>
-  <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')">
+  <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')">
 </body>
 </html>
 
