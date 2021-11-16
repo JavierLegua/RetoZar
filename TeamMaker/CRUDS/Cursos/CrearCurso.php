@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear Curso</title>
     <script src="../../Funciones.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -27,15 +30,15 @@
 
     <main class="crudMain">
 
-        <h1>Creación de curso</h1>
+        <h1 class="crudH1">Creación de cursos</h1>
 
         <form method="post" action="InsertarBBDDCurso.php">
 
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-            <input type="text" name="idCurso" id="idCurso" placeholder="idCurso" required>
-            <input type="text" name="idCentro" id="idCentro" placeholder="idCentro" required>
-            <input id="crear" type="submit" name="Crear Curso">
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputGr" required><br>
+            <input type="text" name="idCurso" id="idCurso" placeholder="idCurso" class="inputGr" required><br>
+            <input type="text" name="idCentro" id="idCentro" placeholder="idCentro" class="inputGr" required><br>
+            <input id="crear" type="submit" name="Crear Curso" class="inputGrEnviar"><br>
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')" class="inputGrVolver">
 
         </form>
 
