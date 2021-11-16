@@ -22,9 +22,9 @@
     $consulta=$conexion->prepare($sql3);
     $consulta->execute();
     
-    $nfilas=$consulta->rowCount();
+    $nfilas=$consulta->rowCount()+$consulta1->rowCount();
 
-    if($nfilas==1){
+    if($nfilas==1 || $nfilas==2){
         echo "Usuario actualizado correctamente <br>";
         echo "Redirigiendo a la lista de alumnos";
         header("refresh:3;url=ListarAlumnos.php");

@@ -28,7 +28,7 @@
         <input type="button" value="Crear equipo" class="Ginput"> <br>
         <input type="button" value="Modificar equipo" class="Ginput"> <br>
         <input type="button" value="Eliminar equipo" class="Ginput"> <br>
-        <input type="button" value="Salir" class="GinputSalir"> <br>
+        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../../Login/Login.php')"> <br>
 
     </main>
 
