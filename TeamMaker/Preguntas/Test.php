@@ -1,9 +1,13 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Estilos/Style.css">
+    <!-- <link rel="stylesheet" href="../Estilos/Style.css"> -->
     <title>TEST</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,15 +15,57 @@
 </head>
 <body>
     <?php
+        $conexion=conectarBD();
+        
+
+           //Escribir Consulta
+                $sql="SELECT * FROM PREGUNTA"; 
+                //echo "<br>".$sql."<br>"; 
+
+           // Ejecutar consulta
+        
+                $consulta = $conexion->prepare($sql);
+                $consulta->execute();
+
+            // contar numero de filas
+                $nfilas=$consulta->rowCount();
+
+                $fila = $consulta->fetch();
+                $idPregunta=$fila->idPregunta;
+                $enunciado=$fila->Enunciado; 
+           
+
+/*                 for ($i=1; $i < $nfilas +1; $i++) { 
+                    echo "<br>".$idPregunta;
+                    echo "<br>".$enunciado."<br>";
+                    $fila = $consulta->fetch();
+                    $idPregunta=$fila->idPregunta;
+                    $enunciado=$fila->Enunciado; 
+                }
+    */
+    
     if(isset($_POST['siguiente']))
         {
-            echo "hay que insertar la respustar en la base de datos";
 
+            $respuesta = $_POST['radio'];
+            
+
+            echo $_SESSION['usuario']." ". "iniciado <br>";
+            echo $idPregunta;
+            
+            echo $enunciado;
+            echo "<br>";
+            echo $respuesta;
+            //$sql="INSERT INTO responde VALUES (\"$idPregunta\",\"$dni_usuario\",\"$respuesta\")";
+            //echo $sql;
+    
+            //$consulta = $conexion->prepare($sql);
+            //$consulta->execute();
         }
 
         //CARGA LA SIGUIENTE PREGUNTA.
 
-
+        $conexion = null;
     ?>
 
     <header>
@@ -36,10 +82,6 @@
 
     <main class="alumnoMain">
         <h1>AQUI COMIENZA EL TEST</h1>
-        <br><br>
-        <h2><?php echo $_SESSION['idPregunta']?></h2>
-        <br><br>
-        <h2><?php echo $_SESSION['enunciado']?></h2>
         <br><br>
 
         <form action="Test.php" name="form" method="post">

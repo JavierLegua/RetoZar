@@ -35,8 +35,9 @@ session_start();
 
                 $fila = $consulta->fetch();
                 $idPregunta=$fila->idPregunta;
-                $enunciado=$fila->Enunciado;
-            
+                $enunciado=$fila->Enunciado; 
+           
+
                 for ($i=1; $i < $nfilas +1; $i++) { 
                     echo "<br>".$idPregunta;
                     echo "<br>".$enunciado."<br>";
