@@ -7,7 +7,7 @@ session_start();
 <head>
 <?php
    
-   include "../ConexionBBDD/includes/funciones.php";
+   include "../BBDD/includes/funciones.php";
 
 ?>
 
