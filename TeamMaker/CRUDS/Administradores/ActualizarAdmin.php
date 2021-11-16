@@ -24,7 +24,6 @@
     
     $nfilas=$consulta->rowCount()+$consulta1->rowCount();
 
-    echo($nfilas);
     if($nfilas==1 || $nfilas==2){
         echo "Usuario actualizado correctamente <br>";
         echo "Redirigiendo a la lista de administradores";
