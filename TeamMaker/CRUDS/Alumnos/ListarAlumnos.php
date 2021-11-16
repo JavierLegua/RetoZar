@@ -24,8 +24,8 @@ $alumnos=$consulta->fetchAll();
     <title>Editar alumnos</title>
     <script src="../../Funciones.js"></script>
 </head>
-<body>
-  <header>
+<body class="listarBody">
+  <header class="listarHeader">
     <div id="img_header0"></div>
     <div id="img_header1"></div>
     <div id="img_header2"></div>
@@ -36,29 +36,31 @@ $alumnos=$consulta->fetchAll();
     <div id="img_header7"></div>
     <div id="img_header8"></div>
   </header>
-  <table>
-    <thead>
-      <tr>
-        <td>DNI</td>
-        <td>Curso</td>
-        <td>Nombre</td>
-        <td>Editar alumno</td>
-        <td>Borrar alumno</td>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-      for ($i=0; $i < count($alumnos); $i++) { 
-        $dni = $alumnos[$i]->DNI;
-        $_SESSION['dni']=$dni;
-        echo "<tr>
-            <td>".$alumnos[$i]->DNI."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->id_curso."&nbsp&nbsp&nbsp</td><td>".$alumnos[$i]->nombre."&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp <input id=\"editar\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td>&nbsp&nbsp&nbsp <input id=\"eliminar\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td></tr>";
-      }
-    ?>
-    </tbody>
-  </table>
-  <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')">
-  <footer>
+  <div class="listTodo">
+    <table>
+      <thead>
+        <tr>
+          <td>DNI</td>
+          <td>Curso</td>
+          <td>Nombre</td>
+          <td>Editar alumno</td>
+          <td>Borrar alumno</td>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+        for ($i=0; $i < count($alumnos); $i++) { 
+          $dni = $alumnos[$i]->DNI;
+          $_SESSION['dni']=$dni;
+          echo "<tr>
+              <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td></tr>";
+        }
+      ?>
+      </tbody>
+    </table>
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')">
+  </div>
+  <footer class="listFoot">
     <div id="img_footer0"></div>
     <div id="img_footer1"></div>
     <div id="img_footer2"></div>
