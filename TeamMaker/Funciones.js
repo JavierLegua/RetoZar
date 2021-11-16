@@ -34,13 +34,3 @@ function redirigir(ruta){
 function redirigir_alumnos(ruta, dni){
     location.href=ruta+'?dni='+dni;
 }
-
-function siguientePregunta(){
-    var dato=document.querySelector('input[name="radio"]:checked').value;
-
-    if (dato=="VERDADERO" || dato == "FALSO") {
-        
-    }else{
-        alert("Contesta");
-    }
-}

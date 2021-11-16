@@ -10,7 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <?php
+    if(isset($_POST['siguiente']))
+        {
+            echo "hay que insertar la respustar en la base de datos";
+
+        }
+
+        //CARGA LA SIGUIENTE PREGUNTA.
+
+
+    ?>
+
     <header>
         <div id="img_header0"></div>
         <div id="img_header1"></div>
@@ -31,13 +42,14 @@
         <h2><?php echo $_SESSION['enunciado']?></h2>
         <br><br>
 
-        <form action="" name="form">
+        <form action="Test.php" name="form" method="post">
+            <input type="hidden" name="idPregunta" value="idPregunta">
             <input type="radio" name="radio" value="VERDADERO" class="radio">
             <label for="verdadero"><strong><h3>VERDADERO</h3></strong></label>
             <input type="radio" name="radio" value="FALSO" class="radio">
             <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
             <br><br>
-            <input type="button" name="siguiente" value="Siguiente" id="Siguiente" onclick="siguientePregunta()">
+            <input type="submit" name="siguiente" value="Siguiente" id="Siguiente" >
         </form>
     </main>
 
@@ -52,5 +64,3 @@
 
 </body>
 </html>
-
-<script src="../Funciones.js"></script>
