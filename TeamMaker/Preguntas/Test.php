@@ -16,10 +16,12 @@
 <body>
     <?php
         $conexion=conectarBD();
-        
+
+        $respuesta = $_POST['radio'];
+        $dni_usuario = $_SESSION['usuario'];
 
            //Escribir Consulta
-                $sql="SELECT * FROM PREGUNTA"; 
+                $sql="SELECT * FROM PREGUNTA WHERE idPregunta NOT IN (SELECT PREGUNTA_idPregunta FROM responde where ALUMNO_USUARIO_DNI = \"$dni_usuario\")"; 
                 //echo "<br>".$sql."<br>"; 
 
            // Ejecutar consulta
@@ -35,42 +37,33 @@
                 $enunciado=$fila->Enunciado; 
            
 
-/*                 for ($i=1; $i < $nfilas +1; $i++) { 
-                    echo "<br>".$idPregunta;
-                    echo "<br>".$enunciado."<br>";
+                echo $idPregunta. "-". $enunciado;
+                
+
+             /*for ($i=1; $i < $nfilas +1; $i++) { 
                     $fila = $consulta->fetch();
                     $idPregunta=$fila->idPregunta;
                     $enunciado=$fila->Enunciado; 
-                }
-    */
+                }*/
     
-    if(isset($_POST['siguiente']))
-        {
-            $respuesta = $_POST['radio'];
-            
-            echo $_SESSION['usuario']." ". "iniciado <br>";
-            $dni_usuario = $_SESSION['usuario'];
+    if(isset($_POST['siguiente'])){
 
-            //CARGAR PREGUNTA.
-            $sql2 = "SELECT * FROM PREGUNTA WHERE idPregunta NOT IN (SELECT PREGUNTA_idPregunta FROM responde where ALUMNO_USUARIO_DNI = DNI)";
-            echo $sql2;
+            echo "<br>--".$respuesta."--<br>";
 
-            $consulta2 = $conexion->prepare($sql2);
-            $consulta2->execute();
-
-
-            echo "prueba";
-            echo $idPregunta;
-            echo "<br>".$enunciado;
-            echo "<br>";
-            echo "El usuario ".$_SESSION['nombre']." ha respondido ".$respuesta;
             $sql1="INSERT INTO responde VALUES (\"$idPregunta\",\"$dni_usuario\",\"$respuesta\")";
             //echo $sql1;
     
-            $consulta1 = $conexion->prepare($sql1);
-            $consulta1->execute();
+            $consulta = $conexion->prepare($sql1);
+            $consulta->execute();
 
-            
+        
+            //CARGAR PREGUNTA.
+            //$sql2 = "SELECT * FROM PREGUNTA WHERE idPregunta NOT IN (SELECT PREGUNTA_idPregunta FROM responde where ALUMNO_USUARIO_DNI = USUARIO.DNI)";
+            //echo $sql2;
+
+            //$consulta2 = $conexion->prepare($sql2);
+            //$consulta2->execute();
+
              
          $conexion = null;
         }
@@ -91,7 +84,7 @@
     </header>
 
     <main class="alumnoMain">
-        <h1>AQUI COMIENZA EL TEST</h1>
+        <!--<h1>AQUI COMIENZA EL TEST</h1>-->
         <br><br>
 
         <form action="Test.php" name="form" method="post">
