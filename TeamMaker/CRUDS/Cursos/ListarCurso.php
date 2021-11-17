@@ -20,11 +20,23 @@ $curso=$consulta->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../../Estilos/Style.css"> -->
+    <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar Cursos</title>
     <script src="../../Funciones.js"></script>
 </head>
-<body>
+<body class="listarBody">
+  <header class="listarHeader">
+    <div id="img_header0"></div>
+    <div id="img_header1"></div>
+    <div id="img_header2"></div>
+    <div id="img_header3"></div>
+    <div id="img_header4"></div>
+    <div id="img_header5"></div>
+    <div id="img_header6"></div>
+    <div id="img_header7"></div>
+    <div id="img_header8"></div>
+  </header>
+  <div class="listTodo">
   <table>
     <thead>
       <tr>
@@ -39,12 +51,21 @@ $curso=$consulta->fetchAll();
     <?php
       for ($i=0; $i < count($curso); $i++) { 
         echo "<tr>
-            <td>".$curso[$i]->idCurso."&nbsp&nbsp&nbsp</td><td>".$curso[$i]->Nombre."&nbsp&nbsp&nbsp</td><td>".$curso[$i]->CENTRO_idCentro."&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp <input id=\"editar\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('EditarCurso.php','".$curso[$i]->idCurso."')\"></td><td>&nbsp&nbsp&nbsp <input id=\"eliminar\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('BorrarCurso.php','".$curso[$i]->idCurso."')\"></td></tr>";
+            <td>".$curso[$i]->idCurso."</td><td>".$curso[$i]->Nombre."</td><td>".$curso[$i]->CENTRO_idCentro."</td><td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('EditarCurso.php','".$curso[$i]->idCurso."')\"></td><td><input class=\"buttonList\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('BorrarCurso.php','".$curso[$i]->idCurso."')\"></td></tr>";
       }
     ?>
     </tbody>
   </table>
-  <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')">
+  <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')">
+  </div>
+  <footer class="listFoot">
+    <div id="img_footer0"></div>
+    <div id="img_footer1"></div>
+    <div id="img_footer2"></div>
+    <div id="img_footer3"></div>
+    <div id="img_footer4"></div>
+    <div id="img_footer5"></div>
+  </footer>
 </body>
 </html>
 

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear centro</title>
     <script src="../../Funciones.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -27,15 +30,15 @@
 
     <main class="crudMain">
 
-        <h1>Creación de centros</h1>
+        <h1 class="crudH1">Creación de centros</h1>
 
         <form method="post" action="InsertarBBDDCentro.php">
 
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-            <input type="text" name="direccion" id="direccion" placeholder="direccion" required>
-            <input type="text" name="idCentro" id="idCentro" placeholder="idCentro" required>
-            <input id="crear" type="submit" name="Crear Centro">
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentro.php')">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputGr" required><br>
+            <input type="text" name="direccion" id="direccion" placeholder="direccion" class="inputGr" required><br>
+            <input type="text" name="idCentro" id="idCentro" placeholder="idCentro" class="inputGr" required><br>
+            <input id="crear" type="submit" name="Crear Centro" class="inputGrEnviar"><br>
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentro.php')" class="inputGrVolver">
 
         </form>
 

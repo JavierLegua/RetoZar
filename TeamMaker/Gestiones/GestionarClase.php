@@ -23,12 +23,12 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="Gestion">
+    <main class="Gestion2">
 
-        <input type="button" value="Añadir clase" class="Ginput"> <br>
-        <input type="button" value="Editar clase" class="Ginput"> <br>
-        <input type="button" value="Eliminar clase" class="Ginput"> <br>
-        <input type="button" value="Salir" class="GinputSalir"> <br>
+        <input type="button" value="Añadir clase" class="Ginput2"> <br>
+        <input type="button" value="Editar clase" class="Ginput2"> <br>
+        <input type="button" value="Eliminar clase" class="Ginput2"> <br>
+        <input type="button" value="Salir" class="GinputSalir2"> <br>
 
     </main>
 

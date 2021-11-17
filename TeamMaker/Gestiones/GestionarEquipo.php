@@ -23,12 +23,12 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="Gestion">
+    <main class="Gestion2">
 
-        <input type="button" value="Crear equipo" class="Ginput"> <br>
-        <input type="button" value="Modificar equipo" class="Ginput"> <br>
-        <input type="button" value="Eliminar equipo" class="Ginput"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../../Login/Login.php')"> <br>
+        <input type="button" value="Crear equipo" class="Ginput2"> <br>
+        <input type="button" value="Modificar equipo" class="Ginput2"> <br>
+        <input type="button" value="Eliminar equipo" class="Ginput2"> <br>
+        <input type="button" value="Salir" class="GinputSalir2"> <br>
 
     </main>
 
