@@ -46,26 +46,36 @@
     
     if(isset($_POST['siguiente']))
         {
-
             $respuesta = $_POST['radio'];
             
-
             echo $_SESSION['usuario']." ". "iniciado <br>";
+            $dni_usuario = $_SESSION['usuario'];
+
+            //CARGAR PREGUNTA.
+            $sql2 = "SELECT * FROM PREGUNTA WHERE idPregunta NOT IN (SELECT PREGUNTA_idPregunta FROM responde where ALUMNO_USUARIO_DNI = DNI)";
+            echo $sql2;
+
+            $consulta2 = $conexion->prepare($sql2);
+            $consulta2->execute();
+
+
+            echo "prueba";
             echo $idPregunta;
-            
-            echo $enunciado;
+            echo "<br>".$enunciado;
             echo "<br>";
-            echo $respuesta;
-            //$sql="INSERT INTO responde VALUES (\"$idPregunta\",\"$dni_usuario\",\"$respuesta\")";
-            //echo $sql;
+            echo "El usuario ".$_SESSION['nombre']." ha respondido ".$respuesta;
+            $sql1="INSERT INTO responde VALUES (\"$idPregunta\",\"$dni_usuario\",\"$respuesta\")";
+            //echo $sql1;
     
-            //$consulta = $conexion->prepare($sql);
-            //$consulta->execute();
+            $consulta1 = $conexion->prepare($sql1);
+            $consulta1->execute();
+
+            
+             
+         $conexion = null;
         }
-
-        //CARGA LA SIGUIENTE PREGUNTA.
-
-        $conexion = null;
+        
+       
     ?>
 
     <header>
