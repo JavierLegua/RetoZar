@@ -68,6 +68,7 @@ session_start();
             header("refresh:3;url=CrearAlumno.php");
         }else{
             echo "Error al insertar en tabla alumno";
+            header("refresh:3;url=CrearAlumno.php");
         }
 
     }else{
