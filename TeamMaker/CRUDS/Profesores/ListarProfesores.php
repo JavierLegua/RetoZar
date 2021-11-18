@@ -37,7 +37,7 @@ $profesores=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
-    <table>
+    <table class="table" id="tableProfesor">
       <thead>
         <tr>
           <td>DNI</td>
@@ -53,7 +53,7 @@ $profesores=$consulta->fetchAll();
           $dni = $profesores[$i]->DNI;
           $_SESSION['dni']=$dni;
           echo "<tr>
-              <td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
+              <td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>

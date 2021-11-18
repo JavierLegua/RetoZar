@@ -38,7 +38,7 @@ $admins=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
-    <table>
+    <table class="table" id="tableAdmin">
       <thead>
         <tr>
           <td>DNI</td>
@@ -53,7 +53,7 @@ $admins=$consulta->fetchAll();
           $dni = $admins[$i]->DNI;
           $_SESSION['dni']=$dni;
           echo "<tr>
-              <td>".$admins[$i]->DNI."</td><td>".$admins[$i]->nombre."</td><td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAdmin.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAdmin.php','".$dni."')\"></td></tr>";
+              <td>".$admins[$i]->DNI."</td><td>".$admins[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAdmin.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAdmin.php','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>

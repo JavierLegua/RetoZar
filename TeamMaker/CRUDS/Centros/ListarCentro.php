@@ -37,21 +37,21 @@ $centro=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
-    <table>
+    <table class="table" id="tableCentro">
       <thead>
         <tr>
           <td>Id centro</td>
           <td>Nombre</td>
           <td>Direccion</td>
-          <td>Editar curso</td>
-          <td>Borrar curso</td>
+          <td>Editar centro</td>
+          <td>Borrar centro</td>
         </tr>
       </thead>
       <tbody>
       <?php
         for ($i=0; $i < count($centro); $i++) { 
           echo "<tr>
-              <td>".$centro[$i]->idCentro."</td><td>".$centro[$i]->Nombre."</td><td>".$centro[$i]->Direccion."</td><td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_centro('EditarCentro.php','".$centro[$i]->idCentro."')\"></td><td><input class=\"buttonList\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_centro('BorrarCentro.php','".$centro[$i]->idCentro."')\"></td></tr>";
+              <td>".$centro[$i]->idCentro."</td><td>".$centro[$i]->Nombre."</td><td>".$centro[$i]->Direccion."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_centro('EditarCentro.php','".$centro[$i]->idCentro."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_centro('BorrarCentro.php','".$centro[$i]->idCentro."')\"></td></tr>";
         }
       ?>
       </tbody>

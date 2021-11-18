@@ -37,7 +37,7 @@ $curso=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
-  <table>
+  <table class="table" id="tableCurso">
     <thead>
       <tr>
         <td>Id curso</td>
@@ -51,7 +51,7 @@ $curso=$consulta->fetchAll();
     <?php
       for ($i=0; $i < count($curso); $i++) { 
         echo "<tr>
-            <td>".$curso[$i]->idCurso."</td><td>".$curso[$i]->Nombre."</td><td>".$curso[$i]->CENTRO_idCentro."</td><td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('EditarCurso.php','".$curso[$i]->idCurso."')\"></td><td><input class=\"buttonList\" type=\"button\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('BorrarCurso.php','".$curso[$i]->idCurso."')\"></td></tr>";
+            <td>".$curso[$i]->idCurso."</td><td>".$curso[$i]->Nombre."</td><td>".$curso[$i]->CENTRO_idCentro."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('EditarCurso.php','".$curso[$i]->idCurso."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('BorrarCurso.php','".$curso[$i]->idCurso."')\"></td></tr>";
       }
     ?>
     </tbody>

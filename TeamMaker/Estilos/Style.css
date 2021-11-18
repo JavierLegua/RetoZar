@@ -673,6 +673,83 @@ footer.listFoot{
         background-color: #a7fabe;
     }
 
+    body.listarBody{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 150px 100% 20%;
+        overflow: visible;
+    }
+    
+    div.listTodo{
+        background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
+        text-align: center;
+        padding-top: 5%;
+        padding-bottom: 0;
+        height: 100%;
+        align-items: center;
+    }
+    
+    table.table{
+        align-self: center;
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 50%;
+        height: 10%;
+        border-spacing: 0;
+        border: solid 1px rgb(24,24,24);
+    }
+
+    table#tableAdmin{
+        margin-left: 4%;
+        margin-right: 4%;
+        font-size: 90%;
+    }
+
+    table#tableCentro{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    table#tableCurso{
+        margin-left: 16%;
+        margin-right: 16%;
+    }
+    
+    thead{
+        font-weight: bold;
+        font-size: 100%;
+    }
+    
+    tr{
+        border: solid 1px rgb(24,24,24);
+    }
+    
+    td{
+        border: solid 1px rgb(24,24,24);
+    }
+    
+    input.buttonList{
+        height: 35px;
+        width: 35px;
+        border-radius: 0%;
+        align-items: center;
+        text-align: center;
+        align-self: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+    input.volverListUs{
+        height: 10%;
+        width: 30%;
+        margin-top: 10%;
+    }
+    
+    footer.listFoot{
+        height: 100px;
+    }
+
 }
 @media only screen and (min-width: 578px) and (max-width: 872px){
     *{
