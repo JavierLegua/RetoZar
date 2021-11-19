@@ -1125,18 +1125,22 @@ main.mainEditC{
         margin-bottom: 5%;
     }
     /*
-        Le da estilo al botón 
+        Le da estilo al botón volver de la lista
     */
     input.volverListUs{
         height: 10%;
         width: 30%;
         margin-top: 10%;
     }
-    
+    /*
+        Le da estilo al footer de la lista
+    */
     footer.listFoot{
         height: 100px;
     }
-
+    /*
+        Le da estilo a los input de editar de la pagina editar usuario
+    */
     input.inputEditUs{
         font-size: 100%;
         outline: none;
@@ -1145,11 +1149,17 @@ main.mainEditC{
         margin-bottom: 1%;
         margin-top: 2%;
     }
+    /*
+        Le da estilo a los h1 de la pagina editar usuario
+    */
     h1.h1EditUs{
         font-size: 200%;
         margin-top: 0;
         margin-bottom: 10%;
     }
+    /*
+        Le da estilo al input de enviar de la pagina editar usuario
+    */
     input.inputEditUsEnviar{
         margin-top: 2%;
         margin-bottom: 13%;
@@ -1162,11 +1172,16 @@ main.mainEditC{
         background-color: #a7fabe;
         color: rgb(24, 24, 24);
     }
-    
+    /*
+        Le da estilo al main de la pagina editar usuario
+    */
     main.mainEditUs{
         padding-bottom: 20%;
         padding-top: 20%;
     }
+    /*
+        Le da estilo al main de la pagina editar centro
+    */
     main.mainEditC{
         padding-bottom: 25%;
         padding-top: 25%;
