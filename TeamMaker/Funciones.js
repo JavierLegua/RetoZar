@@ -35,10 +35,6 @@ function redirigir_alumnos(ruta, dni){
     location.href=ruta+'?dni='+dni;
 }
 
-function siguientePregunta(){
-    
-}
-
 function redirigir_curso(ruta, curso){
     location.href=ruta+'?curso='+curso;
 }
