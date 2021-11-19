@@ -36,12 +36,7 @@
 
                 $fila = $consulta->fetch();
                 $idPregunta=$fila->idPregunta;
-                $enunciado=$fila->Enunciado; 
-
-                echo $enunciado;
-
-
-                
+                $enunciado=$fila->Enunciado;                
                            
     ?>
 
@@ -58,8 +53,12 @@
     </header>
 
     <main class="alumnoMain">
-        <!--<h1>AQUI COMIENZA EL TEST</h1>-->
+        <h1>AQUI COMIENZA EL TEST</h1>
         <br><br>
+
+        <?php echo $idPregunta. "-". $enunciado; ?>
+
+        <br>
 
         <form action="Test.php" name="form" method="post">
             <input type="hidden" name="idPregunta" value="<?php echo $idPregunta; ?>">

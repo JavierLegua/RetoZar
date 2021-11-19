@@ -38,6 +38,7 @@
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
             <input type="text" name="curso" id="curso" placeholder="Curso" class="inputUs" required><br>
+            <?php ?>
             <input id="crear" type="submit" name="Crear Alumno" class="inputUsEnviar"><br>
             <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')" class="inputUsVolver">
 
