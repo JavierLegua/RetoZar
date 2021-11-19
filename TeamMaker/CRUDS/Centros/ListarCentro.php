@@ -56,6 +56,27 @@ $centro=$consulta->fetchAll();
       ?>
       </tbody>
     </table>
+
+    <?php 
+      $situacion = $_GET['situacion'];
+      if (isset($situacion)) {
+        switch ($situacion) {
+          case '0':
+            echo "<br><br><p>Error al editar el centro</p>";
+          break;
+          case '1':
+            echo "<br><br><p>Centro editado correctamente</p>";
+          break;
+          case '2':
+            echo "<br><br><p>Centro borrado correctamente</p>";
+          break;
+          case '3':
+            echo "<br><br><p>Error al borrar el centro</p>";
+          break;
+        }
+      }
+    ?>
+
     <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentros.php')">
   </div>
   <footer class="listFoot">

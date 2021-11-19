@@ -58,6 +58,25 @@ $profesores=$consulta->fetchAll();
       ?>
       </tbody>
     </table>
+    <?php 
+      $situacion = $_GET['situacion'];
+      if (isset($situacion)) {
+        switch ($situacion) {
+          case '0':
+            echo "<br><br><p>Error al editar al profesor</p>";
+          break;
+          case '1':
+            echo "<br><br><p>Profesor editado correctamente</p>";
+          break;
+          case '2':
+            echo "<br><br><p>Profesor borrado correctamente</p>";
+          break;
+          case '3':
+            echo "<br><br><p>Error al borrar el profesor</p>";
+          break;
+        }
+      }
+    ?>
     <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarProfesor.php')">
   </div> 
   <footer class="listFoot">

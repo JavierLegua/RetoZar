@@ -33,9 +33,7 @@ session_start();
         $consulta = $conexion->prepare($sql1);
         $consulta->execute();
     } catch (Exception $e) {
-        echo("Curso ya introducido <br>");
-        echo "Redirigiendo al menu de creación de cursos";
-        header("refresh:3;url=CrearCurso.php");
+        header("refresh:0.01;url=CrearCurso.php?situacion=0");
     }
     // Ejecutar consulta
 
@@ -47,15 +45,9 @@ session_start();
     $nfilas=$consulta->rowCount();
     
     if($nfilas==1){
-
-        echo "Curso creado correctamente <br>";
-        header("refresh:3;url=CrearCurso.php");
-        echo "Redireccionando en 3 segundos";
-
-
+        header("refresh:0.01;url=CrearCurso.php?situacion=1");
     }else{
-        header("refresh:3;url=CrearCurso.php");
-        echo "Redireccionando en 3 segundos";
+        header("refresh:0.01;url=CrearCurso.php?situacion=2");
     }
           
 

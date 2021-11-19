@@ -37,6 +37,22 @@
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputGr" required><br>
             <input type="text" name="direccion" id="direccion" placeholder="direccion" class="inputGr" required><br>
             <input type="text" name="idCentro" id="idCentro" placeholder="idCentro" class="inputGr" required><br>
+            <?php 
+                $situacion = $_GET['situacion'];
+                if (isset($situacion)) {
+                    switch ($situacion) {
+                        case '0':
+                            echo "<br><br><p>Centro ya introducido</p>";
+                        break;
+                        case '1':
+                            echo "<br><br><p>Centro creado correctamente</p>";
+                        break;                       
+                        case '2':
+                            echo "<br><br><p>Error al crear centro</p>";
+                        break;
+                    }
+                }
+            ?>
             <input id="crear" type="submit" name="Crear Centro" class="inputGrEnviar"><br>
             <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentro.php')" class="inputGrVolver">
 

@@ -25,12 +25,12 @@
     $nfilas=$consulta->rowCount()+$consulta1->rowCount();
 
     if($nfilas==1 || $nfilas==2){
-        echo "Usuario actualizado correctamente <br>";
-        echo "Redirigiendo a la lista de administradores";
-        header("refresh:3;url=ListarAdmin.php");
+        // echo "Usuario actualizado correctamente <br>";
+        // echo "Redirigiendo a la lista de administradores";
+        header("refresh:0.01;url=ListarAdmin.php?situacion=1");
     }else{
-        echo "Ha habido un error a la hora de actualizar el administrador<br>";
-        echo "Redirigiendo a la lista de administradores";
-        //header("refresh:3;url=ListarAdmin.php");
+        // echo "Ha habido un error a la hora de actualizar el administrador<br>";
+        // echo "Redirigiendo a la lista de administradores";
+        header("refresh:0.01;url=ListarAdmin.php?situacion=0");
     }
     ?>

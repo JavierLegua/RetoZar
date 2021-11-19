@@ -56,6 +56,27 @@ $curso=$consulta->fetchAll();
     ?>
     </tbody>
   </table>
+
+  <?php 
+      $situacion = $_GET['situacion'];
+      if (isset($situacion)) {
+        switch ($situacion) {
+          case '0':
+            echo "<br><br><p>Error al editar el curso</p>";
+          break;
+          case '1':
+            echo "<br><br><p>Curso editado correctamente</p>";
+          break;
+          case '2':
+            echo "<br><br><p>Curso borrado correctamente</p>";
+          break;
+          case '3':
+            echo "<br><br><p>Error al borrar el curso</p>";
+          break;
+        }
+      }
+    ?>
+
   <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')">
   </div>
   <footer class="listFoot">

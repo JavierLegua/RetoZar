@@ -38,7 +38,25 @@
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
             <input type="text" name="curso" id="curso" placeholder="Curso" class="inputUs" required><br>
-            <?php ?>
+            <?php 
+                $situacion = $_GET['situacion'];
+                if (isset($situacion)) {
+                    switch ($situacion) {
+                        case '0':
+                            echo "<br><br><p>Usuario ya introducido</p>";
+                        break;
+                        case '1':
+                            echo "<br><br><p>Alumno creado correctamente</p>";
+                        break;
+                        case '2':
+                            echo "<br><br><p>Error al insertar el alumno</p>";
+                        break;                        
+                        case '3':
+                            echo "<br><br><p>Error desconocido</p>";
+                        break;
+                    }
+                }
+            ?>
             <input id="crear" type="submit" name="Crear Alumno" class="inputUsEnviar"><br>
             <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')" class="inputUsVolver">
 

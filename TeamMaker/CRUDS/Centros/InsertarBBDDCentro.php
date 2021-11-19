@@ -33,9 +33,7 @@ session_start();
         $consulta = $conexion->prepare($sql1);
         $consulta->execute();
     } catch (Exception $e) {
-        echo("Centro ya introducido <br>");
-        echo "Redirigiendo al menu de creación de centros";
-        header("refresh:3;url=CrearCentro.php");
+        header("refresh:0.01;url=CrearCentro.php?situacion=0");
     }
     // Ejecutar consulta
 
@@ -47,15 +45,9 @@ session_start();
     $nfilas=$consulta->rowCount();
     
     if($nfilas==1){
-
-        echo "Centro creado correctamente <br>";
-        header("refresh:3;url=CrearCentro.php");
-        echo "Redireccionando en 3 segundos";
-
-
+        header("refresh:0.01;url=CrearCentro.php?situacion=1");
     }else{
-        header("refresh:3;url=CrearCentro.php");
-        echo "Redireccionando en 3 segundos";
+        header("refresh:0.01;url=CrearCentro.php?situacion=2");
     }
           
 

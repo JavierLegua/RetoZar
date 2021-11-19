@@ -19,12 +19,8 @@
   
 
     if($nfilas==1){
-        echo "Centro eliminado correctamente <br>";
-        echo "Redirigiendo a la lista de centros";
-        header("refresh:3;url=ListarCentro.php");
+        header("refresh:0.01;url=ListarCentro.php?situacion=2");
     }else{
-        echo "Ha habido un error a la hora de eliminar el centro";
-        echo "Redirigiendo a la lista de centro";
-        header("refresh:3;url=ListarCentro.php");
+        header("refresh:0.01;url=ListarCentro.php?situacion=3");
     }
     ?>
