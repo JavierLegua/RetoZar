@@ -52,8 +52,7 @@ $profesores=$consulta->fetchAll();
         for ($i=0; $i < count($profesores); $i++) { 
           $dni = $profesores[$i]->DNI;
           $_SESSION['dni']=$dni;
-          echo "<tr>
-              <td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
+          echo "<tr><td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
