@@ -1,19 +1,50 @@
 <?php
-session_start();
+    session_start();
+    include "../BBDD/includes/funciones.php";
+
+    $contador=1;
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Estilos/Style.css">
+    <!-- <link rel="stylesheet" href="../Estilos/Style.css"> -->
     <title>TEST</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <?php
+        $conexion=conectarBD();
+
+        
+        $dni_usuario = $_SESSION['usuario'];
+
+                //Escribir Consulta
+                $sql="SELECT * FROM PREGUNTA WHERE idPregunta NOT IN (SELECT PREGUNTA_idPregunta FROM responde where ALUMNO_USUARIO_DNI = \"$dni_usuario\") ORDER BY rand()"; 
+                //echo "<br>".$sql."<br>"; 
+
+                // Ejecutar consulta
+        
+                $consulta = $conexion->prepare($sql);
+                $consulta->execute();
+
+                // contar numero de filas
+                $nfilas=$consulta->rowCount();
+
+                $fila = $consulta->fetch();
+                $idPregunta=$fila->idPregunta;
+                $enunciado=$fila->Enunciado; 
+
+                echo $enunciado;
+
+
+                
+                           
+    ?>
+
     <header>
         <div id="img_header0"></div>
         <div id="img_header1"></div>
@@ -27,19 +58,19 @@ session_start();
     </header>
 
     <main class="alumnoMain">
-        <h1>AQUI COMIENZA EL TEST</h1>
+        <!--<h1>AQUI COMIENZA EL TEST</h1>-->
         <br><br>
-        <h2><?php echo $_SESSION['idPregunta']?></h2>
-        <br><br>
-        <h2><?php echo $_SESSION['enunciado']?></h2>
-        <br><br>
-        <input type="radio" name="radio" value="VERDADERO" class="radio">
-        <label for="verdadero"><strong><h3>VERDADERO</h3></strong></label>
-        <input type="radio" name="radio" value="FALSO" class="radio">
-        <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
-        <br><br>
-        <input type="button" name="Siguiente" value="Siguiente" onclick="siguientePregunta()">
-    </main>
+
+        <form action="Test.php" name="form" method="post">
+            <input type="hidden" name="idPregunta" value="<?php echo $idPregunta; ?>">
+            <input type="radio" name="radio" value="VERDADERO" class="radio" required>
+            <label for="verdadero"><strong><h3>VERDADERO</h3></strong></label>
+            <input type="radio" name="radio" value="FALSO" class="radio" required>
+            <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
+            <br><br>
+            <input type="submit" name="siguiente" value="Siguiente" id="Siguiente" >
+        </form>
+        </main>
 
     <footer>
         <div id="img_footer0"></div>
@@ -50,5 +81,23 @@ session_start();
         <div id="img_footer5"></div>
     </footer>
 
+    <?php
+
+        if(isset($_POST['siguiente'])){
+      
+            $respuesta = $_POST['radio'];
+            $idPreguntaAnterior = $_POST['idPregunta'];
+            //echo "<br>--".$respuesta."--<br>";
+
+            $sql1="INSERT INTO responde VALUES (\"$idPreguntaAnterior\",\"$dni_usuario\",\"$respuesta\")";
+            //echo $sql1;
+
+            $consulta1 = $conexion->prepare($sql1);
+            $consulta1->execute();
+
+
+        }
+
+    ?>
 </body>
 </html>
