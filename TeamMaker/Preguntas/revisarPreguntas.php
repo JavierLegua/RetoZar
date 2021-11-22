@@ -12,7 +12,11 @@
     $respuestas=$consulta->fetchAll();
     
 
-?>
+    if (isset($_POST['modificar'])) {
+
+      
+    }
+    ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +30,26 @@
       <tbody>
       <?php
         for ($i=0; $i < count($respuestas); $i++) {   
-            echo "<tr><td>".$respuestas[$i]->enunciado."</td><td>".$respuestas[$i]->respuesta."</td></tr>";
+          echo $respuestas[$i]->enunciado."<br>".$respuestas[$i]->respuesta. '<br>';
+          if (($respuestas[$i]->respuesta)=="VERDADERO") {
+            echo "<input type='radio' name='radio' value='VERDADERO' class='radio' required>";
+            echo "<label for='verdadero'><strong><h3>VERDADERO</h3></strong></label>";
+            echo "<input type='radio' name='radio' value='FALSO' class='radio' required>";
+            echo "<label for='falso'><strong><h3>FALSO</h3></strong></label>";
+          }elseif (($respuestas[$i]->respuesta)=="FALSO") {
+            echo "<input type='radio' name='radio' value='VERDADERO' class='radio' required>";
+            echo "<label for='verdadero'><strong><h3>VERDADERO</h3></strong></label>";
+            echo "<input type='radio' name='radio' value='FALSO' class='radio' required>";
+            echo "<label for='falso'><strong><h3>FALSO</h3></strong></label>";
+          }
+          
+          
+          echo "<br><br>";
+
+          echo "<input type='submit' name='modificar' value='MODIFICAR' id='MODIFICAR'>";
+
+          echo "<br><br><br><br>";
+          
         }
       ?>
       </tbody>

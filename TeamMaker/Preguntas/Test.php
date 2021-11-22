@@ -19,10 +19,9 @@
     <?php
         $conexion=conectarBD();
 
-        
         $dni_usuario = $_SESSION['usuario'];
 
-
+        $cont = "SELECT count(PREGUNTA_idPregunta) FROM responde";
         if(isset($_POST['siguiente'])){
       
             $respuesta = $_POST['radio'];
@@ -35,7 +34,7 @@
             $consulta1 = $conexion->prepare($sql1);
             $consulta1->execute();  
             
-    
+            $cont --;
         }
 
           //Escribir Consulta
@@ -71,9 +70,10 @@
     <main class="alumnoMain">
         <h1> <?php if ($enunciado == "") {
             echo "TEST FINALIZADO, GRACIAS POR COMPLETARLO<br><br>";
-            header("refresh:0;url=revisarPreguntas.php");
+            header("refresh:2;url=revisarPreguntas.php");
           }else{
-            echo "AQUI COMIENZA EL TEST";
+            echo "RESPONDE A LA PREGUNTA ";
+            echo "<br>Te quedan ".$nfilas." preguntas";
           }?>  </h1>
         <br><br>
 
