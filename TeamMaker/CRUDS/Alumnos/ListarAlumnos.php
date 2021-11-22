@@ -45,6 +45,7 @@ $alumnos=$consulta->fetchAll();
           <td>Nombre</td>
           <td>Editar alumno</td>
           <td>Borrar alumno</td>
+          <td>Ver respuestas</td>
         </tr>
       </thead>
       <tbody>
@@ -53,7 +54,8 @@ $alumnos=$consulta->fetchAll();
           $dni = $alumnos[$i]->DNI;
           $_SESSION['dni']=$dni;
           echo "<tr>
-              <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td></tr>";
+              <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td>
+              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../Grupos/MostrarResultados.php','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>

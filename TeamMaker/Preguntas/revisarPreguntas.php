@@ -10,6 +10,7 @@
     $consulta->execute();  
 
     $respuestas=$consulta->fetchAll();
+    
 
 ?>
 
