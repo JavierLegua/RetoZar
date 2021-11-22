@@ -71,7 +71,7 @@
     <main class="alumnoMain">
         <h1> <?php if ($enunciado == "") {
             echo "TEST FINALIZADO, GRACIAS POR COMPLETARLO<br><br>";
-            header("refresh:0;url=revisarPreguntas.php");
+            header("refresh:2;url=revisarPreguntas.php");
           }else{
             echo "AQUI COMIENZA EL TEST";
           }?>  </h1>
