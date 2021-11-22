@@ -25,7 +25,10 @@
       <tbody>
       <?php
         for ($i=0; $i < count($respuestas); $i++) {   
-            echo "<tr><td>".$respuestas[$i]->enunciado."</td><td>".$respuestas[$i]->respuesta."</td></tr>";
+          echo $respuestas[$i]->enunciado."<br>".$respuestas[$i]->respuesta;
+          echo "";
+          echo "<br><br><br>";
+          
         }
       ?>
       </tbody>
