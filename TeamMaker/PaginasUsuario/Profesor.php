@@ -33,12 +33,12 @@ session_start();
             <ul>
                 <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumno </a></li>
                     <ul>
-                        <li><a href="#">Añadir alumno </a></li>
-                        <li><a href="#">Menu alumnos </a></li>
+                        <li><a href="../CRUDS/Alumnos/CrearAlumno.php">Añadir alumno </a></li>
+                        <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos </a></li>
                     </ul>
-                <li><a href="#">Ver respuestas</a></li>
+                <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
                 <li><a href="#">Equipos sugeridos</a></li>
-                <li><a href="#">Salir</a></li>
+                <li><a href="../Login/Login.php">Salir</a></li>
             </ul>
         </nav>
         <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
