@@ -24,10 +24,23 @@ session_start();
         <div id="img_header5"></div>
         <div id="img_header6"></div>
         <div id="img_header7"></div>
-        <div id="img_header8"></div>
-    </header>
+        <div id="img_header8"></div> 
 
+    </header>
+    
     <main class="profesorMain">
+    <nav id="menuProfesor">
+            <ul>
+                <li><a href="#">Gestionar alumno </a></li>
+                    <ul>
+                        <li><a href="#">Añadir alumno </a></li>
+                        <li><a href="#">Menu alumnos </a></li>
+                    </ul>
+                <li><a href="#">Ver respuestas</a></li>
+                <li><a href="#">Equipos sugeridos</a></li>
+                <li><a href="#">Salir</a></li>
+            </ul>
+        </nav>
         <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../Gestiones/GestionarAlumno.php')">
