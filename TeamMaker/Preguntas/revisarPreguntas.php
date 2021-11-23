@@ -8,11 +8,6 @@
 
       $nuevaRespuesta=$_POST['radio'];
       $idPregunta=$_POST['idPregunta'];
-
-      echo $nuevaRespuesta;
-      echo "<br>". $dni_usuario;
-      echo "<br>". $idPregunta;
-      echo "<br>";
       
       
       $sql1="UPDATE responde SET RESPUESTA_Valor_Respuesta = '$nuevaRespuesta' WHERE responde.PREGUNTA_idPregunta = '$idPregunta' AND responde.ALUMNO_USUARIO_DNI = '$dni_usuario'";
