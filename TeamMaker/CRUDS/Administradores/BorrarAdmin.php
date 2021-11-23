@@ -19,10 +19,11 @@
   
 
     if($nfilas==1){
-        echo "Usuario eliminado correctamente <br>";
-        echo "Redirigiendo a la lista de administradores";
-        header("refresh:3;url=ListarAdmin.php");
+        // echo "Usuario eliminado correctamente <br>";
+        // echo "Redirigiendo a la lista de administradores";
+        header("refresh:0.01;url=ListarAdmin.php?situacion=2");
     }else{
-        echo "Ha habido un error a la hora de eliminar el administrador";
+        // echo "Ha habido un error a la hora de eliminar el administrador";
+        header("refresh:0.01;url=ListarAdmin.php?situacion=3");
     }
     ?>

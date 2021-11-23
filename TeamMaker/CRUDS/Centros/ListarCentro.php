@@ -5,13 +5,12 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$sql = "SELECT USUARIO.DNI as DNI, USUARIO.Nombre as nombre FROM PROFESOR, USUARIO WHERE PROFESOR.USUARIO_DNI=USUARIO.DNI and PROFESOR.Rol='Admin'";
-
+$sql = "SELECT * FROM CENTRO";
 
 $consulta=$conexion->prepare($sql);
 $consulta->execute();
 
-$admins=$consulta->fetchAll();
+$centro=$consulta->fetchAll();
 
 
 ?>
@@ -22,7 +21,7 @@ $admins=$consulta->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
-    <title>Editar administradores</title>
+    <title>Editar Centros</title>
     <script src="../../Funciones.js"></script>
 </head>
 <body class="listarBody">
@@ -38,46 +37,47 @@ $admins=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
-    <table class="table" id="tableAdmin">
+    <table class="table" id="tableCentro">
       <thead>
         <tr>
-          <td>DNI</td>
+          <td>Id centro</td>
           <td>Nombre</td>
-          <td>Editar administrador</td>
-          <td>Borrar administrador</td>
+          <td>Direccion</td>
+          <td>Editar centro</td>
+          <td>Borrar centro</td>
         </tr>
       </thead>
       <tbody>
       <?php
-        for ($i=0; $i < count($admins); $i++) { 
-          $dni = $admins[$i]->DNI;
-          $_SESSION['dni']=$dni;
+        for ($i=0; $i < count($centro); $i++) { 
           echo "<tr>
-              <td>".$admins[$i]->DNI."</td><td>".$admins[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAdmin.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAdmin.php','".$dni."')\"></td></tr>";
+              <td>".$centro[$i]->idCentro."</td><td>".$centro[$i]->Nombre."</td><td>".$centro[$i]->Direccion."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_centro('EditarCentro.php','".$centro[$i]->idCentro."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_centro('BorrarCentro.php','".$centro[$i]->idCentro."')\"></td></tr>";
         }
       ?>
       </tbody>
     </table>
+
     <?php 
       $situacion = $_GET['situacion'];
       if (isset($situacion)) {
         switch ($situacion) {
           case '0':
-            echo "<br><br><p>Error al editar al administrador</p>";
+            echo "<br><br><p>Error al editar el centro</p>";
           break;
           case '1':
-            echo "<br><br><p>Administrador editado correctamente</p>";
+            echo "<br><br><p>Centro editado correctamente</p>";
           break;
           case '2':
-            echo "<br><br><p>Administrador borrado correctamente</p>";
+            echo "<br><br><p>Centro borrado correctamente</p>";
           break;
           case '3':
-            echo "<br><br><p>Error al borrar el administrador</p>";
+            echo "<br><br><p>Error al borrar el centro</p>";
           break;
         }
       }
     ?>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAdmin.php')">
+
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentros.php')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>

@@ -28,7 +28,7 @@
 
         <input type="button" value="Crear administrador" class="Ginput" onclick="redirigir('../CRUDS/Administradores/CrearAdmin.php')"> <br>
         <input type="button" value="Menu de administradores" class="Ginput" onclick="redirigir('../CRUDS/Administradores/ListarAdmin.php')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../../Login/Login.php')"> <br>
+        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../Login/Login.php')"> <br>
 
     </main>
 

@@ -5,23 +5,21 @@
 session_start();
 include "../../BBDD/includes/funciones.php";
 
-$dni = $_GET['dni'];
-
-$_SESSION['DNI_VIEJO']=$dni;
 
 $conexion=conectarBD();
 
-$sql = "SELECT USUARIO.DNI as DNI, USUARIO.NOMBRE as nombre FROM PROFESOR, USUARIO WHERE PROFESOR.USUARIO_DNI=USUARIO.DNI and PROFESOR.Rol='Admin' and PROFESOR.USUARIO_DNI=\"".$dni."\"";
+$idCentroViejo=$_GET['centro'];
 
+$sql = "SELECT * FROM CENTRO WHERE idCentro=\"".$idCentroViejo."\"";
 
 $consulta=$conexion->prepare($sql);
 $consulta->execute();
 
-$admins=$consulta->fetch();
+$centro=$consulta->fetch();
 
-$dni=$admins->DNI;
-$nombre=$admins->nombre;
-$rol=$admins->Rol;
+$idCentro=$centro->idCentro;
+$nombre=$centro->Nombre;
+$direccion=$centro->Direccion;
 
 
 ?>
@@ -32,7 +30,7 @@ $rol=$admins->Rol;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
-    <title>Editar administrador</title>
+    <title>Editar Curso</title>
     <script src="../../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,14 +48,13 @@ $rol=$admins->Rol;
         <div id="img_header7"></div>
         <div id="img_header8"></div>
     </header>
-    <main class="mainEditUs">
-        <h1 class="h1EditUs">Introduce los nuevos datos del administrador</h1>
-        <form action="ActualizarAdmin.php" method="post">
-            <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>         
-            <input class="inputEditUs" type="text" name="DNI" id="DNI" placeholder="<?php echo $dni?>" required>
-            <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required>
-            <input class="inputEditUs" type="text" name="Rol" id="Rol" placeholder="Admin" onblur="this.value = 'Admin'" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(EditarAdmin.php,<?php $dni?>)">
+    <main class="mainEditC">
+        <h1 class="h1EditUs">Introduce los nuevos datos del centro</h1>
+        <form action="ActualizarCentro.php" method="post">
+            <input class="inputEditUs" type="text" name="idCentro" id="idCentro" placeholder="<?php echo $idCentro?>" required>         
+            <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
+            <input class="inputEditUs" type="text" name="direccion" id="direccion" placeholder="<?php echo $direccion?>" required><br>
+            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(EditarCentro.php)">
         </form>
     </main>
     <footer>

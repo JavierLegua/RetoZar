@@ -19,10 +19,11 @@
   
 
     if($nfilas==1){
-        echo "Usuario eliminado correctamente <br>";
-        echo "Redirigiendo a la lista de profesores";
-        header("refresh:3;url=ListarProfesor.php");
+        // echo "Usuario eliminado correctamente <br>";
+        // echo "Redirigiendo a la lista de profesores";
+        header("refresh:0.01;url=ListarProfesores.php?situacion=2");
     }else{
-        echo "Ha habido un error a la hora de eliminar el profesor";
+        // echo "Ha habido un error a la hora de eliminar el profesor";
+        header("refresh:0.01;url=ListarProfesores.php?situacion=2");
     }
     ?>

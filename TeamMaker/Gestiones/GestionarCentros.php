@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Gestionar Centro</title>
+    <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -25,10 +26,9 @@
 
     <main class="Gestion">
 
-        <input type="button" value="Crear centro" class="Ginput"> <br>
-        <input type="button" value="Modificar centro" class="Ginput"> <br>
-        <input type="button" value="Eliminar centro" class="Ginput"> <br>
-        <input type="button" value="Salir" class="GinputSalir"> <br>
+        <input type="button" value="Crear centro" class="Ginput" onclick="redirigir('../CRUDS/Centros/CrearCentro.php')"> <br>
+        <input type="button" value="Menu gestión de centros" class="Ginput" onclick="redirigir('../CRUDS/Centros/ListarCentro.php')"> <br>
+        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../Login/Login.php')"> <br>
 
     </main>
 

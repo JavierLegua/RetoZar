@@ -34,3 +34,11 @@ function redirigir(ruta){
 function redirigir_alumnos(ruta, dni){
     location.href=ruta+'?dni='+dni;
 }
+
+function redirigir_curso(ruta, curso){
+    location.href=ruta+'?curso='+curso;
+}
+
+function redirigir_centro(ruta, centro){
+    location.href=ruta+'?centro='+centro;
+}

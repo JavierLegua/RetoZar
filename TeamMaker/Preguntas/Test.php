@@ -1,8 +1,7 @@
 <?php
     session_start();
     include "../BBDD/includes/funciones.php";
-
-    $contador=1;
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,35 +13,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <script src="../Funciones.js"></script>
 </head>
 <body>
     <?php
         $conexion=conectarBD();
 
-        
         $dni_usuario = $_SESSION['usuario'];
 
-                //Escribir Consulta
-                $sql="SELECT * FROM PREGUNTA WHERE idPregunta NOT IN (SELECT PREGUNTA_idPregunta FROM responde where ALUMNO_USUARIO_DNI = \"$dni_usuario\") ORDER BY rand()"; 
-                //echo "<br>".$sql."<br>"; 
+        $cont = "SELECT count(PREGUNTA_idPregunta) FROM responde";
+        if(isset($_POST['siguiente'])){
+      
+            $respuesta = $_POST['radio'];
+            $idPreguntaAnterior = $_POST['idPregunta'];
+            //echo "<br>--".$respuesta."--<br>";
 
-                // Ejecutar consulta
-        
-                $consulta = $conexion->prepare($sql);
-                $consulta->execute();
+            $sql1="INSERT INTO responde VALUES (\"$idPreguntaAnterior\",\"$dni_usuario\",\"$respuesta\")";
+            //echo $sql1;
 
-                // contar numero de filas
-                $nfilas=$consulta->rowCount();
+            $consulta1 = $conexion->prepare($sql1);
+            $consulta1->execute();  
+            
+            $cont --;
+        }
 
-                $fila = $consulta->fetch();
-                $idPregunta=$fila->idPregunta;
-                $enunciado=$fila->Enunciado; 
+          //Escribir Consulta
+          $sql="SELECT * FROM PREGUNTA WHERE idPregunta NOT IN (SELECT PREGUNTA_idPregunta FROM responde where ALUMNO_USUARIO_DNI = \"$dni_usuario\") ORDER BY rand()"; 
+          //echo "<br>".$sql."<br>"; 
 
-                echo $enunciado;
+          // Ejecutar consulta
+  
+          $consulta = $conexion->prepare($sql);
+          $consulta->execute();
 
+          // contar numero de filas
+          $nfilas=$consulta->rowCount();
 
-                
-                           
+          $fila = $consulta->fetch();
+          $idPregunta=$fila->idPregunta;
+          $enunciado=$fila->Enunciado;     
+             
     ?>
 
     <header>
@@ -58,7 +68,17 @@
     </header>
 
     <main class="alumnoMain">
-        <!--<h1>AQUI COMIENZA EL TEST</h1>-->
+        <h1> <?php if ($enunciado == "") {
+            echo "TEST FINALIZADO, GRACIAS POR COMPLETARLO<br><br>";
+            header("refresh:2;url=revisarPreguntas.php");
+          }else{
+            echo "RESPONDE A LA PREGUNTA ";
+            echo "<br>Te quedan ".$nfilas." preguntas";
+          }?>  </h1>
+        <br><br>
+
+        <?php echo $enunciado; ?>
+
         <br><br>
 
         <form action="Test.php" name="form" method="post">
@@ -69,7 +89,10 @@
             <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
             <br><br>
             <input type="submit" name="siguiente" value="Siguiente" id="Siguiente" >
+            <br><br>
         </form>
+
+        <button class="Salir" onclick="redirigir('../PaginasUsuario/Alumno.php')" >Salir del Test</button>
         </main>
 
     <footer>
@@ -81,23 +104,5 @@
         <div id="img_footer5"></div>
     </footer>
 
-    <?php
-
-        if(isset($_POST['siguiente'])){
-      
-            $respuesta = $_POST['radio'];
-            $idPreguntaAnterior = $_POST['idPregunta'];
-            //echo "<br>--".$respuesta."--<br>";
-
-            $sql1="INSERT INTO responde VALUES (\"$idPreguntaAnterior\",\"$dni_usuario\",\"$respuesta\")";
-            //echo $sql1;
-
-            $consulta1 = $conexion->prepare($sql1);
-            $consulta1->execute();
-
-
-        }
-
-    ?>
 </body>
 </html>

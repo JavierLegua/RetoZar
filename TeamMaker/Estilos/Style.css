@@ -1,37 +1,59 @@
-*{
+/*
+Evita que se formen bordes sin estilo del contenedor de html
+*/
+* {
     padding: 0;
     margin: 0;
 }
 
-body{
+/*
+divide todo el cuerpo de la pagina en 3 filas y una columna (header, main, footer)
+aparte no permite que se pueda scrollear en la pagina
+*/
+body {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 30% 100% 20%;
     overflow: hidden;
 }
 
-header{
+/*
+divide la cabezera en 9 columnas y una fila para poder crear una cabezera con imagenes
+*/
+header {
     padding-top: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 }
 
-footer{
+/*
+divide la última sección de la página en 5 columnas y una fila para poder crear una cabezera con imagenes
+*/
+footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 }
 
-#dni_error{
+/*
+hace que si hay un fallo con el dni en la ventana de Login, esta marque un texto de color rojo
+*/
+#dni_error {
     color: red;
 }
 
-#password_error{
+/*
+hace que si hay un fallo con la contraseña en la ventana de Login, esta marque un texto de color rojo
+*/
+#password_error {
     color: red;
 }
 
-main{
+/*
+le da estilo a la seccion main, centrando los objetos y dandole un color de fondo especifico
+*/
+main {
     padding-bottom: 5%;
     padding-top: 4%;
     text-align: center;
@@ -40,19 +62,28 @@ main{
     background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
 }
 
-h1{
+/*
+se encarga de cambiar la fuente de los enunciados, dandole un formato en negrita y en cursiva además, cambiando el tamaño y el color 
+*/
+h1 {
     font-family: 'Courgette', cursive;
     font-weight: bold;
     font-size: 650%;
     font-style: italic;
-    color:rgb(24, 24, 24);
+    color: rgb(24, 24, 24);
 }
 
-form{
+/*
+le da una altura a los formularios
+*/
+form {
     height: 50%;
 }
 
-input{
+/*
+se encarga de personalizar los campos de los formularios dandoles tamaño y posicionandolos
+*/
+input {
     font-size: 100%;
     outline: none;
     width: 40%;
@@ -60,31 +91,65 @@ input{
     margin-bottom: 1%;
 }
 
-#img_header0, #img_header1, #img_header2, #img_header3, #img_header5, #img_header6, #img_header7, #img_header8{
+/*
+crea la cabezera dandole imagenes a cada segmento
+*/
+#img_header0,
+#img_header1,
+#img_header2,
+#img_header3,
+#img_header5,
+#img_header6,
+#img_header7,
+#img_header8 {
     padding-top: 0;
     background-image: url("Fondo.png");
     background-size: 100%;
 
 }
-#img_header4{
+
+/*
+crea la seccion central cabezera donde se introduce el logo
+*/
+#img_header4 {
     padding-top: 0;
     background-image: url("Logo.png");
     background-size: 90%;
     background-position: center;
 }
 
-#img_footer0, #img_footer1, #img_footer2, #img_footer3, #img_footer4, #img_footer5{
+/*
+crea la seccion inferior dandole imagenes a cada segmento
+*/
+#img_footer0,
+#img_footer1,
+#img_footer2,
+#img_footer3,
+#img_footer4,
+#img_footer5 {
     padding-top: 0;
     background-image: url("Fondo.png");
     background-size: 100%;
 }
-#usuario{
+
+/*
+especifico del input con id usuario
+*/
+#usuario {
     margin-top: 4%;
 }
-#password{
+
+/*
+especifico del input con id password
+*/
+#password {
     margin-top: 1%;
 }
-#acceder{
+
+/*
+especifico del input con id acceder, situado en la pagina Login dándole un estilo personalizado
+*/
+#acceder {
     margin-top: 2%;
     margin-bottom: 7%;
     font-size: 100%;
@@ -95,7 +160,11 @@ input{
     border-radius: 50px;
     background-color: #a7fabe;
 }
-input[type='button']{
+
+/*
+especifico de todos los input que sean de tipo boton, dándole un estilo personalizado cambiando color, formato...
+*/
+input[type='button'] {
     margin-top: 2%;
     margin-bottom: 7%;
     font-size: 100%;
@@ -107,98 +176,200 @@ input[type='button']{
     background-color: #a7fabe;
     color: rgb(24, 24, 24);
 }
-main.mainAdmin{
-    padding-bottom: 3%;
-    padding-top: 3%;
-}
-input.admin{
-    margin-top:1.5%;
-    margin-bottom: 1.5%;
-    width: 30%;
-    height: 15%;
-}
-input.adminSalir{
-    margin-top: 2.5%;
-    margin-bottom:8.5%;
-    width: 15%;
-    height: 15%;
 
-}
-h1.adminH1{
-    margin-bottom:2%;
-}
-main.adminTopMain{
+/*
+especifico del main con clase mainAdmin, dándole espacio en la parte superior e inferior del main
+*/
+main.mainAdmin {
     padding-bottom: 3%;
     padding-top: 1.5%;
 }
-input.adminTop{
-    margin-top:1.5%;
+
+/*
+especifico de todos los input que tengan la clase admin, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.admin {
+    margin-top: 1.5%;
     margin-bottom: 1.5%;
     margin-left: 0.5%;
     margin-right: 0.5%;
     width: 30%;
     height: 15%;
 }
-input.adminTopSalir{
+
+/*
+especifico de todos los input que pertenezcan a la clas adminSalir, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.adminSalir {
     margin-top: 2.5%;
-    margin-bottom:8.5%;
+    margin-bottom: 8.5%;
     width: 15%;
     height: 15%;
 
 }
-h1.adminTopH1{
-    margin-bottom:2%;
+
+/*
+estilo propio de los enunciados h1 que pertenezcan a la clase adminH1
+*/
+h1.adminH1 {
+    margin-bottom: 2%;
 }
 
-main.alumnoMain{
+/*
+especifico del main con clase adminTopMain, dándole espacio en la parte superior e inferior del main
+*/
+main.adminTopMain {
+    padding-bottom: 3%;
+    padding-top: 1.5%;
+}
+
+/*
+especifico de todos los input que tengan la clase adminTop, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.adminTop {
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+
+/*
+especifico de todos los input que pertenezcan a la clas adminTopSalir, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.adminTopSalir {
+    margin-top: 2.5%;
+    margin-bottom: 8.5%;
+    width: 15%;
+    height: 15%;
+
+}
+
+/*
+estilo propio de los enunciados h1 que pertenezcan a la clase adminTopH1
+*/
+h1.adminTopH1 {
+    margin-bottom: 2%;
+}
+
+/*
+especifico del main con clase alumnoMain, dándole espacio en la parte superior e inferior del main
+*/
+main.alumnoMain {
     padding-bottom: 3%;
     padding-top: 5%;
 }
-input.alumno{
-    margin-top:1.5%;
+
+/*
+especifico de todos los input que tengan la clase alumno, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.alumno {
+    margin-top: 1.5%;
     margin-bottom: 1.5%;
     width: 30%;
     height: 15%;
 }
-input.alumnoSalir{
+
+/*
+especifico de todos los input que pertenezcan a la clas alumnoSalir, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.alumnoSalir {
     margin-top: 2.5%;
-    margin-bottom:8.5%;
+    margin-bottom: 8.5%;
     width: 15%;
     height: 15%;
 
 }
-h1.alumnoH1{
-    margin-bottom:2%;
+
+/*
+estilo propio de los enunciados h1 que pertenezcan a la clase alumnoH1
+*/
+h1.alumnoH1 {
+    margin-bottom: 2%;
 }
-main.profesorMain{
+
+/*
+especifico del main con clase profesorMain, dándole espacio en la parte superior e inferior del main
+*/
+main.profesorMain {
     padding-bottom: 3%;
     padding-top: 1.5%;
 }
-input.profesor{
-    margin-top:1.5%;
+
+/*
+especifico de todos los input que tengan la clase profesor, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.profesor {
+    margin-top: 1.5%;
     margin-bottom: 1.5%;
     margin-left: 0.5%;
     margin-right: 0.5%;
     width: 30%;
     height: 15%;
 }
-input.profesorSalir{
+
+/*
+especifico de todos los input que pertenezcan a la clas profesorSalir, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.profesorSalir {
     margin-top: 2.5%;
-    margin-bottom:8.5%;
+    margin-bottom: 8.5%;
     width: 15%;
     height: 15%;
 
 }
-h1.profesorH1{
-    margin-bottom:2%;
+
+/*
+estilo propio de los enunciados h1 que pertenezcan a la clase profesorH1
+*/
+h1.profesorH1 {
+    margin-bottom: 2%;
 }
-main.Gestion{
+
+/*
+especifico del main con clase Gestion, dándole espacio en la parte superior e inferior del main
+*/
+main.Gestion {
     padding-bottom: 3%;
     padding-top: 3%;
 }
 
-input.Ginput{
-    margin-top:1.5%;
+/*
+especifico de todos los input que tengan la clase Ginput, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.Ginput {
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 30%;
+    height: 15%;
+}
+
+/*
+especifico de todos los input que pertenezcan a la clas GinputSalir, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.GinputSalir {
+    margin-top: 3%;
+    margin-bottom: 12%;
+    width: 15%;
+    height: 15%;
+}
+
+/*
+especifico del main con clase Gestion2, dándole espacio en la parte superior e inferior del main
+*/
+main.Gestion2 {
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+/*
+especifico de todos los input que tengan la clase Ginput2, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.Ginput2 {
+    margin-top: 1.5%;
     margin-bottom: 1.5%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -206,46 +377,316 @@ input.Ginput{
     height: 15%;
 }
 
-input.GinputSalir{
+/*
+especifico de todos los input que pertenezcan a la clas GinputSalir2, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.GinputSalir2 {
     margin-top: 3%;
-    margin-bottom:12%;
+    margin-bottom: 12%;
     width: 15%;
     height: 15%;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 577px){
+/*
+especifico del main con clase crudMainUsuario, dándole espacio en la parte superior e inferior del main
+*/
+main.crudMainUsuario {
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
 
-    *{
+/*
+especifico de todos los input que tengan la clase inputUs, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.inputUs {
+    font-size: 100%;
+    outline: none;
+    width: 40%;
+    height: 20%;
+    margin-top: 1%;
+    margin-bottom: 0;
+    margin-right: 1%;
+}
+
+/*
+especifico de todos los input que tengan la clase inputUsEnviar, dándole un estilo personalizado cambiando tamaño, posicion y color
+*/
+input.inputUsEnviar {
+    margin-top: 4%;
+    margin-bottom: 1%;
+    font-size: 100%;
+    outline: none;
+    width: 15%;
+    height: 25%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+}
+
+/*
+especifico de todos los input que tengan la clase inputUsVolver, dándole un estilo personalizado cambiando tamaño, posicion y color
+*/
+input.inputUsVolver {
+    margin-top: 2%;
+    margin-bottom: 8%;
+    font-size: 100%;
+    outline: none;
+    width: 10%;
+    height: 25%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+}
+
+/*
+especifico del main con clase crudMain, dándole espacio en la parte superior e inferior del main
+*/
+main.crudMain {
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+/*
+especifico de todos los input que tengan la clase inputGr, dándole un estilo personalizado cambiando tamaño y posicion
+*/
+input.inputGr {
+    font-size: 100%;
+    outline: none;
+    width: 40%;
+    height: 15%;
+    margin-top: 1%;
+    margin-bottom: 0;
+    margin-right: 1%;
+}
+
+/*
+especifico de todos los input que tengan la clase inputGrEnviar, dándole un estilo personalizado cambiando tamaño, posicion y color
+*/
+input.inputGrEnviar {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-size: 100%;
+    outline: none;
+    width: 15%;
+    height: 25%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+}
+
+/*
+especifico de todos los input que tengan la clase inputGrVolver, dándole un estilo personalizado cambiando tamaño, posicion y color
+*/
+input.inputGrVolver {
+    margin-top: 2%;
+    margin-bottom: 8%;
+    font-size: 100%;
+    outline: none;
+    width: 10%;
+    height: 25%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+}
+
+/*
+especifico las paginas listar, cambiando el tamaño de las 3 filas que se generan con grid, y permiten hacer scroll
+*/
+body.listarBody {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 200px 100% 20%;
+    overflow: visible;
+}
+
+/*
+se encarga de recoger todos los elementos que no sean ni header ni footer en las paginas listar, dándole un fondo personalizado y posicionandolo
+*/
+div.listTodo {
+    background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+/*
+le da estilo a los elementos table posicionandolos, dándoles un tamaño y configurando el borde
+*/
+table {
+    align-self: center;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: 10%;
+    border-spacing: 0;
+    border: solid 1px rgb(24, 24, 24);
+}
+
+/*
+cambia el estilo de la primera fila de la tabla, almacenada en un elemento thead, se aplica un estilo de negrita y mas tamaño de la letra
+*/
+thead {
+    font-weight: bold;
+    font-size: 200%;
+}
+
+/*
+genera bordes en los elementos tr
+*/
+tr {
+    border: solid 1px rgb(24, 24, 24);
+}
+
+/*
+genera bordes en los elementos td
+*/
+td {
+    border: solid 1px rgb(24, 24, 24);
+}
+
+/*
+cambia el posicionamiento de los input pertenecientes a la clase buttonList dentro de las páginas listar
+*/
+input.buttonList {
+    height: 35px;
+    width: 35px;
+    border-radius: 0%;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/*
+cambia el tamaño y la posicion de los input pertenecientes a la clase volverListUs dentro de las páginas listar
+*/
+input.volverListUs {
+    height: 4%;
+    width: 10%;
+    margin-top: 10%;
+}
+
+/*
+aplica un tamaño fijo a los footer pertenecientes a la clase listFoot en las páginas listar 
+*/
+footer.listFoot {
+    height: 150px;
+}
+
+/*
+aplica estilo a los input pertenecientes a la clase inputEditUs cambiando el tamaño y el posicionamiento
+*/
+input.inputEditUs {
+    font-size: 100%;
+    outline: none;
+    width: 60%;
+    height: 20%;
+    margin-bottom: 1%;
+    margin-top: 0;
+}
+
+/*
+cambia el tamaño de la fuente y el posicionamiento de los enunciados h1 pertenecientes a la clase h1EditUs
+*/
+h1.h1EditUs {
+    font-size: 400%;
+    margin-top: 0;
+    margin-bottom: 3%;
+}
+
+/*
+cambia el formato, colores y posicion de los input con clase inputEditUsEnviar
+*/
+input.inputEditUsEnviar {
+    margin-top: 2%;
+    margin-bottom: 13%;
+    font-size: 100%;
+    outline: none;
+    width: 15%;
+    height: 25%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
+
+/*
+especifico del main con clase mainEditUs, dándole espacio en la parte superior e inferior del main
+*/
+main.mainEditUs {
+    padding-bottom: 1.5%;
+    padding-top: 1.5%;
+}
+
+/*
+especifico del main con clase mainEditC, dándole espacio en la parte superior e inferior del main
+*/
+main.mainEditC {
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 577px) {
+
+    /*
+        Impide la creación de bordes sin estilo en toda la página
+    */
+    * {
         padding: 0;
         margin: 0;
     }
-    body{
+
+    /*
+        Se bloquea el scroll de la página web para que se ajuste al completo el tamaño de la páginay se divide en 3 filas de distinto tamaño con el grid
+    */
+    body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 3.5fr 15fr 2.5fr;
         overflow: scroll;
     }
 
-    header{
+    /*
+        Se ajusta a la parte superior y divide la cabecera en 3 columnas de igual tamaño
+    */
+    header {
         padding-top: 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-    footer{
+
+    /*
+        Se divide en 6 columnas para el estilo de fondo
+    */
+    footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-    #dni_error{
+
+    /*
+        Si el dni da error, sale en color rojo
+    */
+    #dni_error {
         color: red;
     }
-    
-    #password_error{
+
+    /*
+        Si la contraseña da error, sale en color rojo
+    */
+    #password_error {
         color: red;
     }
-    main{
-        
+
+    /*
+        Centra el texto, ajusta los objetos y le da una imagen de fondo
+    */
+    main {
+
         padding-bottom: 38%;
         padding-top: 20%;
         text-align: center;
@@ -254,8 +695,11 @@ input.GinputSalir{
         background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
 
     }
-    
-    h1{
+
+    /*
+        Estilo de letra y distintas propiedades de la misma
+    */
+    h1 {
         font-family: 'Courgette', cursive;
         font-weight: bold;
         font-size: 300%;
@@ -264,40 +708,76 @@ input.GinputSalir{
         margin-bottom: 5%;
     }
 
-    form{
+    /*
+        Altura del formulario
+    */
+    form {
         height: 50%;
     }
 
-    input{
+    /*
+        Forma y estilos de los botones y los inputs de tipo texto
+    */
+    input {
         font-size: 75%;
         outline: none;
         width: 75%;
         height: 20%;
         margin-bottom: 1%;
     }
-    #img_header0, #img_header2{
+
+    /*
+        Imagen de fondo de la cabecera, color difuminado
+    */
+    #img_header0,
+    #img_header2 {
         padding-top: 0;
         background-image: url("Fondo.png");
         background-size: 100%;
     }
-    #img_header1{
+
+    /*
+        Imagen del centro en la que está el logo de la empresa
+    */
+    #img_header1 {
         padding-top: 0;
         background-image: url("Logo.png");
         background-size: 90%;
         background-position: center;
     }
-    #img_footer0, #img_footer1, #img_footer2, #img_footer3, #img_footer4, #img_footer5{
+
+    /*
+        Fondo del pie de página
+    */
+    #img_footer0,
+    #img_footer1,
+    #img_footer2,
+    #img_footer3,
+    #img_footer4,
+    #img_footer5 {
         padding-top: 0;
         background-image: url("Fondo.png");
         background-size: 100%;
     }
-    #usuario{
+
+    /*
+        Se ajusta al sitio donde queremos que esté en la página el introducir el ususario en el login
+    */
+    #usuario {
         margin-top: 7.5%;
     }
-    #password{
+
+    /*
+        Se ajusta al sitio donde queremos que esté en la página el introducir la contraseña en el login
+    */
+    #password {
         margin-top: 3.5%;
     }
-    #acceder{
+
+    /*
+        Se ajusta al sitio donde queremos que esté en la página el botón de acceder en el login con sus estilos
+    */
+    #acceder {
         margin-top: 10%;
         font-size: 100%;
         outline: none;
@@ -307,32 +787,56 @@ input.GinputSalir{
         border-radius: 50px;
         background-color: #a7fabe;
     }
-    main.mainAdmin{
+
+    /*
+        Se aplica al main de la clase Administrador
+    */
+    main.mainAdmin {
         padding-bottom: 15%;
         padding-top: 15%;
     }
-    input.admin{
-        margin-top:10%;
+
+    /*
+        Se aplica a los inputs de la clase Administrador
+    */
+    input.admin {
+        margin-top: 10%;
         margin-bottom: 5%;
         width: 60%;
         height: 10%;
     }
-    input.adminSalir{
+
+    /*
+        Se aplica al input de salir de la clase Administrador
+    */
+    input.adminSalir {
         margin-top: 25%;
-        margin-bottom:15%;
+        margin-bottom: 15%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.adminH1{
-        margin-bottom:2%;
+
+    /*
+        Se aplica al titulo un margin del 2% por debajo
+    */
+    h1.adminH1 {
+        margin-bottom: 2%;
     }
-    main.adminTopMain{
+
+    /*
+        Se aplica al main de la clase AdminTop
+    */
+    main.adminTopMain {
         padding-bottom: 15%;
         padding-top: 15%;
     }
-    input.adminTop{
-        margin-top:2.5%;
+
+    /*
+        Se aplica a los inputs de la clase AdminTop
+    */
+    input.adminTop {
+        margin-top: 2.5%;
         margin-bottom: 5%;
         margin-left: 2.5%;
         margin-right: 2.5%;
@@ -340,110 +844,480 @@ input.GinputSalir{
         height: 10%;
         font-size: 75%;
     }
-    input.adminTopSalir{
+
+    /*
+        Se aplica al input de salir de la clase AdminTop
+    */
+    input.adminTopSalir {
         margin-top: 7.5%;
-        margin-bottom:25%;
+        margin-bottom: 25%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.adminTopH1{
-        margin-bottom:2%;
+
+    /*
+        Se aplica al titulo un margin del 2% por debajo
+    */
+    h1.adminTopH1 {
+        margin-bottom: 2%;
     }
-    main.alumnoMain{
+
+    /*
+        Se aplica al main de la clase Alumno
+    */
+    main.alumnoMain {
         padding-bottom: 15%;
         padding-top: 15%;
     }
-    input.alumno{
-        margin-top:10%;
+
+    /*
+        Se aplica a los inputs de la clase Alumno
+    */
+    input.alumno {
+        margin-top: 10%;
         margin-bottom: 5%;
         width: 60%;
         height: 10%;
     }
-    input.alumnoSalir{
+
+    /*
+        Se aplica al input de salir de la clase Alumno
+    */
+    input.alumnoSalir {
         margin-top: 25%;
-        margin-bottom:15%;
+        margin-bottom: 15%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.alumnoH1{
-        margin-bottom:2%;
+
+    /*
+        Se aplica al titulo un margin del 2% por debajo
+    */
+    h1.alumnoH1 {
+        margin-bottom: 2%;
     }
-    main.profesorMain{
+
+    /*
+        Se aplica al main de la clase Profesor
+    */
+    main.profesorMain {
         padding-bottom: 15%;
         padding-top: 10%;
     }
-    input.profesor{
-        margin-top:2.5%;
+
+    /*
+        Se aplica a los inputs de la clase Profesor
+    */
+    input.profesor {
+        margin-top: 2.5%;
         margin-bottom: 5%;
         margin-left: 2.5%;
         margin-right: 2.5%;
         width: 60%;
         height: 10%;
     }
-    input.profesorSalir{
+
+    /*
+        Se aplica al input de salir de la clase Profesor
+    */
+    input.profesorSalir {
         margin-top: 7.5%;
-        margin-bottom:25%;
+        margin-bottom: 25%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.profesorH1{
-        margin-bottom:2%;
+
+    /*
+        Se aplica al titulo un margin del 2% por debajo
+    */
+    h1.profesorH1 {
+        margin-bottom: 2%;
     }
-    main.Gestion{
+
+    /*
+        Se aplica al main con la clase Gestion
+    */
+    main.Gestion {
         padding-bottom: 30%;
         padding-top: 20%;
     }
-    
-    input.Ginput{
-        margin-top:1%;
+
+    /*
+        Se aplica a los inputs con la clase Ginput
+    */
+    input.Ginput {
+        margin-top: 5%;
         margin-bottom: 6%;
         width: 60%;
         height: 20%;
     }
-    
-    input.GinputSalir{
-        margin-top: 20%;
-        margin-bottom:20%;
+
+    /*
+        Se aplica al input de salir con la clase GinputSalir
+    */
+    input.GinputSalir {
+        margin-top: 25%;
+        margin-bottom: 20%;
         width: 40%;
         height: 20%;
     }
 
+    /*
+        Se aplica a los inputs con la clase Gestion2
+    */
+    main.Gestion2 {
+        padding-bottom: 30%;
+        padding-top: 20%;
+    }
+
+    /*
+        Se aplica a los inputs con la clase Ginput2
+    */
+    input.Ginput2 {
+        margin-top: 1%;
+        margin-bottom: 6%;
+        width: 60%;
+        height: 20%;
+    }
+
+    /*
+        Se aplica al input de salir con la clase GinputSalir2
+    */
+    input.GinputSalir2 {
+        margin-top: 20%;
+        margin-bottom: 20%;
+        width: 40%;
+        height: 20%;
+    }
+
+    /*
+        Se aplica a los h1 de los Cruds
+    */
+    h1.crudH1 {
+        margin-bottom: 0;
+        font-size: 300%
+    }
+
+    /*
+        Se aplica a los main del Crud Usuario
+    */
+    main.crudMainUsuario {
+        padding-bottom: 25%;
+        padding-top: 5%;
+    }
+
+    /*
+        Se aplica a los input de la pagina de usuario
+    */
+    input.inputUs {
+        font-size: 100%;
+        outline: none;
+        width: 70%;
+        height: 15%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        margin-right: 1%;
+    }
+
+    /*
+        Se aplica al input Enviar de la pagina de usuario
+    */
+    input.inputUsEnviar {
+        margin-top: 10%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 45%;
+        height: 15%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*
+        Se aplica al input Volver de la pagina de usuario
+    */
+    input.inputUsVolver {
+        margin-top: 5%;
+        margin-bottom: 8%;
+        font-size: 100%;
+        outline: none;
+        width: 30%;
+        height: 15%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*
+        Se aplica al main de los Cruds
+    */
+    main.crudMain {
+        padding-bottom: 30%;
+        padding-top: 10%;
+    }
+
+    /*
+        Se aplica a los input en el Crud de Grupos
+    */
+    input.inputGr {
+        font-size: 100%;
+        outline: none;
+        width: 70%;
+        height: 20%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        margin-right: 1%;
+    }
+
+    /*
+        Este estilo es para el boton enviar del crud de grupos
+    */
+    input.inputGrEnviar {
+        margin-top: 10%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 45%;
+        height: 20%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*
+        Este estilo es para el boton volver del crud de grupos
+    */
+    input.inputGrVolver {
+        margin-top: 5%;
+        margin-bottom: 8%;
+        font-size: 100%;
+        outline: none;
+        width: 30%;
+        height: 20%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*
+        Le da estilo a las listas de los cruds
+    */
+    body.listarBody {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 150px 100% 20%;
+        overflow: visible;
+    }
+
+    /*
+        Le da estilo a los divs en el que están las listas de los cruds
+    */
+    div.listTodo {
+        background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
+        text-align: center;
+        padding-top: 5%;
+        padding-bottom: 0;
+        height: 100%;
+        align-items: center;
+    }
+
+    /*
+        Le da estilo a las tablas en el que están las listas de los cruds
+    */
+    table.table {
+        align-self: center;
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 50%;
+        height: 10%;
+        border-spacing: 0;
+        border: solid 1px rgb(24, 24, 24);
+    }
+
+    /*
+        Le da estilo a las tablas en el que están las listas de la clase ListarAdmin
+    */
+    table#tableAdmin {
+        margin-left: 4%;
+        margin-right: 4%;
+        font-size: 90%;
+    }
+
+    /*
+        Le da estilo a las tablas en el que están las listas de la clase ListarCentro
+    */
+    table#tableCentro {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    /*
+        Le da estilo a las tablas en el que están las listas de la clase ListarCurso
+    */
+    table#tableCurso {
+        margin-left: 16%;
+        margin-right: 16%;
+    }
+
+    /*
+        Le da estilo a los thead de los cruds
+    */
+    thead {
+        font-weight: bold;
+        font-size: 100%;
+    }
+
+    /*
+        Le da estilo a los tr de los cruds
+    */
+    tr {
+        border: solid 1px rgb(24, 24, 24);
+    }
+
+    /*
+        Le da estilo a los td de los cruds
+    */
+    td {
+        border: solid 1px rgb(24, 24, 24);
+    }
+
+    /*
+        Le da estilo al boton de la lista
+    */
+    input.buttonList {
+        height: 35px;
+        width: 35px;
+        border-radius: 0%;
+        align-items: center;
+        text-align: center;
+        align-self: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    /*
+        Le da estilo al botón volver de la lista
+    */
+    input.volverListUs {
+        height: 10%;
+        width: 30%;
+        margin-top: 10%;
+    }
+
+    /*
+        Le da estilo al footer de la lista
+    */
+    footer.listFoot {
+        height: 100px;
+    }
+
+    /*
+        Le da estilo a los input de editar de la pagina editar usuario
+    */
+    input.inputEditUs {
+        font-size: 100%;
+        outline: none;
+        width: 60%;
+        height: 20%;
+        margin-bottom: 1%;
+        margin-top: 2%;
+    }
+
+    /*
+        Le da estilo a los h1 de la pagina editar usuario
+    */
+    h1.h1EditUs {
+        font-size: 200%;
+        margin-top: 0;
+        margin-bottom: 10%;
+    }
+
+    /*
+        Le da estilo al input de enviar de la pagina editar usuario
+    */
+    input.inputEditUsEnviar {
+        margin-top: 2%;
+        margin-bottom: 13%;
+        font-size: 100%;
+        outline: none;
+        width: 30%;
+        height: 30%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+        color: rgb(24, 24, 24);
+    }
+
+    /*
+        Le da estilo al main de la pagina editar usuario
+    */
+    main.mainEditUs {
+        padding-bottom: 20%;
+        padding-top: 20%;
+    }
+
+    /*
+        Le da estilo al main de la pagina editar centro
+    */
+    main.mainEditC {
+        padding-bottom: 25%;
+        padding-top: 25%;
+    }
+
 }
-@media only screen and (min-width: 578px) and (max-width: 872px){
-    *{
+
+/*
+*Mediaquery diseñada para pantallas con un mínimo de 579px y un máximo de 872px de ancho
+*/
+@media only screen and (min-width: 578px) and (max-width: 872px) {
+
+    /*Hace que no se creen bordes sin estilo*/
+    * {
         padding: 0;
         margin: 0;
     }
-    body{
+
+    /*Divide el body en 3 filas además de hablitar el scroll*/
+    body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 3.5fr 15fr 2.5fr;
         overflow: scroll;
     }
 
-    header{
+    /*Ajusta el header y lo divide en 3 columnas*/
+    header {
         padding-top: 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-    footer{
+
+    /*Divide el footer en 6 columnas*/
+    footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-    #dni_error{
+
+    /*Si el dni es erroneo, lo pone color rojo*/
+    #dni_error {
         color: red;
     }
-    
-    #password_error{
+
+    /*Si la contraseña es erronea, lo pone color rojo*/
+    #password_error {
         color: red;
     }
-    main{
-        
+
+    /*Ajusta el apartado de main, centra el texto y le da una imágen de fondo*/
+    main {
+
         padding-bottom: 34%;
         padding-top: 20%;
         text-align: center;
@@ -452,8 +1326,9 @@ input.GinputSalir{
         background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
 
     }
-    
-    h1{
+
+    /*Le da un estilo de letra, color y tamaño a el h1, además de ajustarlo */
+    h1 {
         font-family: 'Courgette', cursive;
         font-weight: bold;
         font-size: 300%;
@@ -462,40 +1337,60 @@ input.GinputSalir{
         margin-bottom: 5%;
     }
 
-    form{
+    /*Ajusta la altura del form*/
+    form {
         height: 50%;
     }
 
-    input{
+    /*Ajusta el estilo de los input*/
+    input {
         font-size: 75%;
         outline: none;
         width: 75%;
         height: 20%;
         margin-bottom: 1%;
     }
-    #img_header0, #img_header2{
+
+    /*Da estilo a las imágenes que componen el fondo del header*/
+    #img_header0,
+    #img_header2 {
         padding-top: 0;
         background-image: url("Fondo.png");
         background-size: 100%;
     }
-    #img_header1{
+
+    /*Da estilo a las imágenes que componen el logo del header*/
+    #img_header1 {
         padding-top: 0;
         background-image: url("Logo.png");
         background-size: 90%;
         background-position: center;
     }
-    #img_footer0, #img_footer1, #img_footer2, #img_footer3, #img_footer4, #img_footer5{
+
+    /*Da estilo a las imágenes que componen el fondo del footer*/
+    #img_footer0,
+    #img_footer1,
+    #img_footer2,
+    #img_footer3,
+    #img_footer4,
+    #img_footer5 {
         padding-top: 0;
         background-image: url("Fondo.png");
         background-size: 100%;
     }
-    #usuario{
+
+    /*Ajusta el apartado de usuario en el login*/
+    #usuario {
         margin-top: 7.5%;
     }
-    #password{
+
+    /*Ajusta el apartado de la contraseña en el login*/
+    #password {
         margin-top: 3.5%;
     }
-    #acceder{
+
+    /*Ajusta y da estilo a el apartado de acceder en el login*/
+    #acceder {
         margin-top: 10%;
         font-size: 100%;
         outline: none;
@@ -505,153 +1400,297 @@ input.GinputSalir{
         border-radius: 50px;
         background-color: #a7fabe;
     }
-    main.mainAdmin{
+
+    /*Ajusta la sección de main en la página de Administrador*/
+    main.mainAdmin {
         padding-bottom: 15%;
         padding-top: 10%;
-    }
-    input.admin{
-        margin-top:10%;
-        margin-bottom: 5%;
-        width: 60%;
-        height: 10%;
-    }
-    input.adminSalir{
-        margin-top: 25%;
-        margin-bottom:15%;
-        width: 40%;
-        height: 10%;
-    
-    }
-    h1.adminH1{
-        margin-bottom:2%;
-    }
-    main.adminTopMain{
-        padding-bottom: 15%;
-        padding-top: 5%;
-    }
-    input.adminTop{
-        margin-top:2.5%;
-        margin-bottom: 5%;
-        margin-left: 2.5%;
-        margin-right: 2.5%;
-        width: 60%;
-        height: 10%;
-    }
-    input.adminTopSalir{
-        margin-top: 7.5%;
-        margin-bottom:25%;
-        width: 40%;
-        height: 10%;
-    
-    }
-    h1.adminTopH1{
-        margin-bottom:2%;
     }
 
-    main.alumnoMain{
-        padding-bottom: 15%;
-        padding-top: 10%;
-    }
-    input.alumno{
-        margin-top:10%;
+    /*Ajusta los inputs en la página de Administrador*/
+    input.admin {
+        margin-top: 10%;
         margin-bottom: 5%;
         width: 60%;
         height: 10%;
     }
-    input.alumnoSalir{
+
+    /*Ajusta el input salir en la página de Administrador*/
+    input.adminSalir {
         margin-top: 25%;
-        margin-bottom:15%;
+        margin-bottom: 15%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.alumnoH1{
-        margin-bottom:2%;
+
+    /*Ajusta el h1 de la página de Administrador*/
+    h1.adminH1 {
+        margin-bottom: 2%;
     }
-    main.profesorMain{
+
+    /*Ajusta la sección de main en la página de Admin Top*/
+    main.adminTopMain {
         padding-bottom: 15%;
         padding-top: 5%;
     }
-    input.profesor{
-        margin-top:2.5%;
+
+    /*Ajusta los inputs en la página de Admin Top*/
+    input.adminTop {
+        margin-top: 2.5%;
         margin-bottom: 5%;
         margin-left: 2.5%;
         margin-right: 2.5%;
         width: 60%;
         height: 10%;
     }
-    input.profesorSalir{
+
+    /*Ajusta el input salir en la página de Admin Top*/
+    input.adminTopSalir {
         margin-top: 7.5%;
-        margin-bottom:25%;
+        margin-bottom: 25%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.profesorH1{
-        margin-bottom:2%;
+
+    /*Ajusta el h1 de la página de Admin Top*/
+    h1.adminTopH1 {
+        margin-bottom: 2%;
     }
-    main.Gestion{
+
+    /*Ajusta la sección de main en la página de Alumno*/
+    main.alumnoMain {
+        padding-bottom: 15%;
+        padding-top: 10%;
+    }
+
+    /*Ajusta los inputs en la página de Alumno*/
+    input.alumno {
+        margin-top: 10%;
+        margin-bottom: 5%;
+        width: 60%;
+        height: 10%;
+    }
+
+    /*Ajusta el input salir en la página de Alumno*/
+    input.alumnoSalir {
+        margin-top: 25%;
+        margin-bottom: 15%;
+        width: 40%;
+        height: 10%;
+
+    }
+
+    /*Ajusta el h1 de la página de Alumno*/
+    h1.alumnoH1 {
+        margin-bottom: 2%;
+    }
+
+    /*Ajusta la sección de main en la página de Profesor*/
+    main.profesorMain {
+        padding-bottom: 15%;
+        padding-top: 5%;
+    }
+
+    /*Ajusta los inputs en la página de Profesor*/
+    input.profesor {
+        margin-top: 2.5%;
+        margin-bottom: 5%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        width: 60%;
+        height: 10%;
+    }
+
+    /*Ajusta el input salir en la página de Profesor*/
+    input.profesorSalir {
+        margin-top: 7.5%;
+        margin-bottom: 25%;
+        width: 40%;
+        height: 10%;
+
+    }
+
+    /*Ajusta el h1 de la página de Profesor*/
+    h1.profesorH1 {
+        margin-bottom: 2%;
+    }
+
+    /*Ajusta la sección de main con id Gestion*/
+    main.Gestion {
         padding-bottom: 30%;
         padding-top: 20%;
     }
-    
-    input.Ginput{
-        margin-top:1%;
+
+    /*Ajusta los inputs con id Ginput*/
+    input.Ginput {
+        margin-top: 1%;
         margin-bottom: 6%;
         width: 60%;
         height: 20%;
     }
-    
-    input.GinputSalir{
+
+    /*Ajusta los inputs con id GinputSalir*/
+    input.GinputSalir {
         margin-top: 20%;
-        margin-bottom:20%;
+        margin-bottom: 20%;
         width: 40%;
         height: 20%;
     }
-    
-}   
-@media only screen and (min-width: 873px) and (max-width: 1152px){
-    *{
+
+    /*Ajusta el h1 de todos los cruds*/
+    h1.crudH1 {
+        margin-bottom: 0;
+        font-size: 300%
+    }
+
+    /*Ajusta el bloque main del crud usuario*/
+    main.crudMainUsuario {
+        padding-bottom: 25%;
+        padding-top: 5%;
+    }
+
+    /*Ajusta los inputs de Usuario*/
+    input.inputUs {
+        font-size: 100%;
+        outline: none;
+        width: 70%;
+        height: 15%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        margin-right: 1%;
+    }
+
+    /*Ajusta el boton de enviar de la pagina de usuario*/
+    input.inputUsEnviar {
+        margin-top: 10%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 45%;
+        height: 15%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*Ajusta el boton volver de la pagina de usuario*/
+    input.inputUsVolver {
+        margin-top: 5%;
+        margin-bottom: 8%;
+        font-size: 100%;
+        outline: none;
+        width: 30%;
+        height: 15%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*Ajusta los bloques main de los cruds*/
+    main.crudMain {
+        padding-bottom: 30%;
+        padding-top: 10%;
+    }
+
+    /*Ajusta los input de el crud de grupos*/
+    input.inputGr {
+        font-size: 100%;
+        outline: none;
+        width: 70%;
+        height: 20%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        margin-right: 1%;
+    }
+
+    /*Ajusta el boton enviar del crud de grupos*/
+    input.inputGrEnviar {
+        margin-top: 10%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 45%;
+        height: 20%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*Ajusta el boton volver del crud de grupos*/
+    input.inputGrVolver {
+        margin-top: 5%;
+        margin-bottom: 8%;
+        font-size: 100%;
+        outline: none;
+        width: 30%;
+        height: 20%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+}
+
+/*
+Mediaquery utilizada para moviles en horizontal, tablets y ventanas minimizadas
+*/
+@media only screen and (min-width: 873px) and (max-width: 1152px) {
+
+    /*Estos ajustes se aplican a toda la paǵina para evitar que se formen bordes sin estilo del contenedor html*/
+    * {
         padding: 0;
         margin: 0;
     }
-    body{
+
+    /*Divide el cuerpo en tres filas y una columna y se bloquea el scroll de la página web*/
+    body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 3.5fr 15fr 2.5fr;
         overflow: scroll;
     }
-    
-    header{
+
+    /*Este estilo se aplica para la parte de la cabecer en 5 columnas y una fila.*/
+    header {
         padding-top: 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-    footer{
+
+    /*Este estilo tiene la misma funcionalidad que el header ya que se necesita el mismo ajuste para que quede como deseamos*/
+    footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-    #dni_error{
+
+    /*Comprueba si el DNI introducido en el login es correcto y si no lo es te muestra un error de color rojo*/
+    #dni_error {
         color: red;
     }
-        
-    #password_error{
+
+    /*Al igual que en el DNI, este estilo comprueba la contraseña y si no es correcta te muestra un error de color rojo*/
+    #password_error {
         color: red;
     }
-    main{
-            
+
+    /*Estos ajustes se aplican a la parte main de las páginas para darle un color de fondo en concreto y centrando todos los objetos que se encuentren en ella*/
+    main {
+
         padding-bottom: 34%;
         padding-top: 5%;
         text-align: center;
         grid-row-start: 2;
         grid-row-end: 2;
         background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
-    
+
     }
-        
-    h1{
+
+    /*Se aplica a todas las etiquetas h1 del proyecto para darle unos ajuste de fuente en concreto*/
+    h1 {
         font-family: 'Courgette', cursive;
         font-weight: bold;
         font-size: 300%;
@@ -660,40 +1699,62 @@ input.GinputSalir{
         margin-bottom: 5%;
     }
 
-    form{
+    /*Se aplica a los formlarios del proyecto dandoles una altura en concreto*/
+    form {
         height: 50%;
     }
-    
-    input{
+
+    /*Este ajuste le da estilo a los input del proyecto para que queden como nosotros deseamos */
+    input {
         font-size: 75%;
         outline: none;
         width: 75%;
         height: 20%;
         margin-bottom: 1%;
     }
-    #img_header0, #img_header1, #img_header3, #img_header4{
+
+    /*Estos estilos van ligados al header ya que son las imagenes que lo componen y se establece la ruta de la imagen que queremos que aparezca*/
+    #img_header0,
+    #img_header1,
+    #img_header3,
+    #img_header4 {
         padding-top: 0;
         background-image: url("Fondo.png");
         background-size: 100%;
     }
-    #img_header2{
+
+    /*Este es el estilo del logo principal que aparece en todas las paginas del proyecto*/
+    #img_header2 {
         padding-top: 0;
         background-image: url("Logo.png");
         background-size: 90%;
         background-position: center;
     }
-    #img_footer0, #img_footer1, #img_footer2, #img_footer3, #img_footer4, #img_footer5{
+
+    /*Estos ajustes van ligados al footer ya que al igual que el header son las imagenes que componen el pie de pagina*/
+    #img_footer0,
+    #img_footer1,
+    #img_footer2,
+    #img_footer3,
+    #img_footer4,
+    #img_footer5 {
         padding-top: 0;
         background-image: url("Fondo.png");
         background-size: 100%;
     }
-    #usuario{
+
+    /*Se aplica al campo usuario del login para ajustarlo donde queremos*/
+    #usuario {
         margin-top: 7.5%;
     }
-    #password{
+
+    /*Es el mismo estilo que el campo usuario del login pero para la contraseña*/
+    #password {
         margin-top: 3.5%;
     }
-    #acceder{
+
+    /*Le da estilo al boton acceder del login dandole el estilo que va a juego con la pagina*/
+    #acceder {
         margin-top: 10%;
         font-size: 100%;
         outline: none;
@@ -703,106 +1764,234 @@ input.GinputSalir{
         border-radius: 50px;
         background-color: #a7fabe;
     }
-    main.mainAdmin{
+
+    /*Se aplica a la seccion main de la pagina de administrador*/
+    main.mainAdmin {
         padding-bottom: 15%;
         padding-top: 10%;
     }
-    input.admin{
-        margin-top:10%;
+
+    /*Se aplica a los botones de la pagina de administrador*/
+    input.admin {
+        margin-top: 10%;
         margin-bottom: 5%;
         width: 60%;
         height: 10%;
     }
-    input.adminSalir{
+
+    /*Este estilo es especifico para el boton salir de la pagina de administrador*/
+    input.adminSalir {
         margin-top: 25%;
-        margin-bottom:15%;
+        margin-bottom: 15%;
         width: 40%;
         height: 10%;
     }
-    h1.adminH1{
-        margin-bottom:2%;
+
+    /*Se utiliza para darle margin al h1 de admin*/
+    h1.adminH1 {
+        margin-bottom: 2%;
     }
-    main.adminTopMain{
+
+    /*Este es estilo se aplica al main del admin top*/
+    main.adminTopMain {
         padding-bottom: 15%;
         padding-top: 5%;
     }
-    input.adminTop{
-        margin-top:2.5%;
+
+    /*Se aplica a los input de admin top*/
+    input.adminTop {
+        margin-top: 2.5%;
         margin-bottom: 5%;
         margin-left: 2.5%;
         margin-right: 2.5%;
         width: 60%;
         height: 10%;
     }
-    input.adminTopSalir{
+
+    /*Se aplica a el boton de salir de la pagina de admin top*/
+    input.adminTopSalir {
         margin-top: 7.5%;
-        margin-bottom:25%;
+        margin-bottom: 25%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.adminTopH1{
-        margin-bottom:2%;
+
+    /*Este estilo se usa al admin top a los bloques h1*/
+    h1.adminTopH1 {
+        margin-bottom: 2%;
     }
-    main.alumnoMain{
+
+    /*Se utiliza para la pagina alumno en el bloque main*/
+    main.alumnoMain {
         padding-bottom: 15%;
         padding-top: 10%;
     }
-    input.alumno{
-        margin-top:10%;
+
+    /*se utiliza para lo input de la pagina alumno*/
+    input.alumno {
+        margin-top: 10%;
         margin-bottom: 5%;
         width: 60%;
         height: 10%;
     }
-    input.alumnoSalir{
+
+    /*Se utiliza para el boton de salir de la pagina alumno*/
+    input.alumnoSalir {
         margin-top: 25%;
-        margin-bottom:15%;
+        margin-bottom: 15%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.alumnoH1{
-        margin-bottom:2%;
+
+    /*Se utiliza para los bloques de h1 de la pagina de alumno*/
+    h1.alumnoH1 {
+        margin-bottom: 2%;
     }
-    main.profesorMain{
+
+    /*Este estilo al igual que los anteriores se aplica para el bloque main de la pagina profesor*/
+    main.profesorMain {
         padding-bottom: 15%;
         padding-top: 5%;
     }
-    input.profesor{
-        margin-top:2.5%;
+
+    /*Se aplica a los input de la pagina profesor*/
+    input.profesor {
+        margin-top: 2.5%;
         margin-bottom: 5%;
         margin-left: 2.5%;
         margin-right: 2.5%;
         width: 60%;
         height: 10%;
     }
-    input.profesorSalir{
+
+    /*Se aplica al boton de salir de la pagina profesor*/
+    input.profesorSalir {
         margin-top: 7.5%;
-        margin-bottom:25%;
+        margin-bottom: 25%;
         width: 40%;
         height: 10%;
-    
+
     }
-    h1.profesorH1{
-        margin-bottom:2%;
+
+    /*Se aplica a los h1 de la pagina de profesor*/
+    h1.profesorH1 {
+        margin-bottom: 2%;
     }
-    main.Gestion{
+
+    /*Este estilo se aplica a los main con id gestion*/
+    main.Gestion {
         padding-bottom: 30%;
         padding-top: 20%;
     }
-    
-    input.Ginput{
-        margin-top:1%;
+
+    /*Se aplica a todos los input con el id ginput*/
+    input.Ginput {
+        margin-top: 1%;
         margin-bottom: 6%;
         width: 60%;
         height: 20%;
     }
-    
-    input.GinputSalir{
+
+    /*Se aplica a los input con el id ginput salir*/
+    input.GinputSalir {
         margin-top: 20%;
-        margin-bottom:20%;
+        margin-bottom: 20%;
         width: 40%;
         height: 20%;
+    }
+
+    /*Se aplica a todos los h1 de los cruds*/
+    h1.crudH1 {
+        margin-bottom: 0;
+        font-size: 300%
+    }
+
+    /*Este estilo se aplica al bloque main del crud usuario*/
+    main.crudMainUsuario {
+        padding-bottom: 25%;
+        padding-top: 5%;
+    }
+
+    /*Se aplica a los input de usuario*/
+    input.inputUs {
+        font-size: 100%;
+        outline: none;
+        width: 70%;
+        height: 15%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        margin-right: 1%;
+    }
+
+    /*Este estilo es para el boton de enviar de la pagina de usuario*/
+    input.inputUsEnviar {
+        margin-top: 10%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 45%;
+        height: 15%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*Este estilo se utiliza para el boton volver de la pagina de usuario*/
+    input.inputUsVolver {
+        margin-top: 5%;
+        margin-bottom: 8%;
+        font-size: 100%;
+        outline: none;
+        width: 30%;
+        height: 15%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*Se aplica a los bloques main de los cruds*/
+    main.crudMain {
+        padding-bottom: 30%;
+        padding-top: 10%;
+    }
+
+    /*Se aplica a los input de el crud de grupos*/
+    input.inputGr {
+        font-size: 100%;
+        outline: none;
+        width: 70%;
+        height: 20%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        margin-right: 1%;
+    }
+
+    /*Este estilo es para el boton enviar del crud de grupos*/
+    input.inputGrEnviar {
+        margin-top: 10%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 45%;
+        height: 20%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+    }
+
+    /*Este estilo es para el boton volver del crud de grupos*/
+    input.inputGrVolver {
+        margin-top: 5%;
+        margin-bottom: 8%;
+        font-size: 100%;
+        outline: none;
+        width: 30%;
+        height: 20%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
     }
 
 }
