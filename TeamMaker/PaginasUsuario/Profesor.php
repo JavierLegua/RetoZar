@@ -31,7 +31,7 @@ session_start();
     <main class="profesorMain">
     <nav id="menuProfesor">
             <ul>
-                <li><a href="#">Gestionar alumno </a></li>
+                <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumno </a></li>
                     <ul>
                         <li><a href="#">Añadir alumno </a></li>
                         <li><a href="#">Menu alumnos </a></li>
