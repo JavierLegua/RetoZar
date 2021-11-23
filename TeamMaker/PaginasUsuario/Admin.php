@@ -22,9 +22,38 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        
     </header>
 
     <main class="mainAdmin">
+            <!-- start nav -->
+            <nav id="menu">
+            <!-- start menu -->
+            <ul>
+            <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
+            <ul>
+            <li><a href="../CRUDS/Profesores/CrearProfesor.php">Añadir profesores</a></li>
+            <li><a href="../CRUDS/Administradores/ListarProfesores.php">Menu de profesores</a></li>
+            </ul>
+            </li>
+            <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a>
+            <ul>
+            <li><a href="../CRUDS/Cursos/CrearCurso.php">Crear curso</a></li>
+            <li><a href="../CRUDS/Cursos/ListarCurso.php">Menu de cursos</a></li>
+            </ul>
+            </li>
+            <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+            <ul>
+            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
+            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            </ul>
+            </li>
+            <li><a href="../Login/Login.php">Salir</a></li>
+            </ul>
+            <!-- end menu -->
+            </nav>
+            <!-- end nav -->
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')">

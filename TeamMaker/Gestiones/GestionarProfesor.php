@@ -26,8 +26,8 @@
     <main class="Gestion">
 
         <input type="button" value="Añadir profesor" class="Ginput" onclick="redirigir('../CRUDS/Profesores/CrearProfesor.php')"> <br>
-        <input type="button" value="Menu de profesores" class="Ginput" onclick="redirigir('../CRUDS/Profesores/ListarProfesores.php')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../../Login/Login.php')"> <br>
+        <input type="button" value="Menu de profesores" class="Ginput" onclick="redirigir('../CRUDS/Administradores/ListarProfesores.php')"> <br>
+        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../Login/Login.php')"> <br>
 
     </main>
 
