@@ -4,6 +4,24 @@
     $dni_usuario = $_SESSION['usuario'];
     $conexion=conectarBD();
 
+    if (isset($_POST['modificar'])) {
+
+      $nuevaRespuesta=$_POST['radio'];
+      $idPregunta=$_POST['idPregunta'];
+
+      echo $nuevaRespuesta;
+      echo "<br>". $dni_usuario;
+      echo "<br>". $idPregunta;
+      echo "<br>";
+      
+      
+      $sql1="UPDATE responde SET RESPUESTA_Valor_Respuesta = '$nuevaRespuesta' WHERE responde.PREGUNTA_idPregunta = '$idPregunta' AND responde.ALUMNO_USUARIO_DNI = '$dni_usuario'";
+
+      $consulta1 = $conexion->prepare($sql1);
+      $consulta1->execute();  
+
+    }
+
     $sql="SELECT PREGUNTA.Enunciado as enunciado, PREGUNTA.idPregunta, responde.RESPUESTA_Valor_Respuesta as respuesta FROM responde, PREGUNTA WHERE responde.ALUMNO_USUARIO_DNI = \"$dni_usuario\" AND PREGUNTA.idPregunta=responde.PREGUNTA_idPregunta";
 
     $consulta = $conexion->prepare($sql);
@@ -11,14 +29,8 @@
 
     $respuestas=$consulta->fetchAll();
 
+    
 
-    if (isset($_POST['modificar'])) {
-
-      /*
-    $sql1="UPDATE responde SET RESPUESTA_Valor_Respuesta = 'VERDADERO' WHERE 
-    responde.PREGUNTA_idPregunta = 1 AND responde.ALUMNO_USUARIO_DNI = '21746379V' AND responde.RESPUESTA_Valor_Respuesta = 'FALSO'";
-*/
-    }
     ?>
 
 <!DOCTYPE html>
@@ -32,13 +44,16 @@
     <table class="table" id="tableProfesor">
       <tbody>
       <?php
+       
         for ($i=0; $i < count($respuestas); $i++) {   
-          echo $respuestas[$i]->enunciado."<br>"/*.$respuestas[$i]->respuesta. '<br>'*/;
+          echo $respuestas[$i]->idPregunta. "-". $respuestas[$i]->enunciado."<br>";
+
+          $id=$respuestas[$i]->idPregunta;
           
           echo "<form action='revisarPreguntas.php' name='form' method='post'>";
-
+          echo "<input type='hidden' name='idPregunta' value='$id'>";
+          echo "<br>";
           if (($respuestas[$i]->respuesta)=="VERDADERO") {
-
             echo "<input type='radio' name='radio' value='VERDADERO' checked><label for='verdadero'><strong>VERDADERO</strong></label><br>";
             echo "<input type='radio' name='radio' value='FALSO' ><label for='falso'><strong>FALSO</strong></label>";
           }elseif (($respuestas[$i]->respuesta)=="FALSO") {
