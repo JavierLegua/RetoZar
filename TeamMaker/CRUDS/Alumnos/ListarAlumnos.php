@@ -36,7 +36,40 @@ $alumnos=$consulta->fetchAll();
     <div id="img_header7"></div>
     <div id="img_header8"></div>
   </header>
+
   <div class="listTodo">
+
+  <?php
+
+    $sqlCurso="SELECT idCurso, Nombre from CURSO";
+    $consultaCurso=$conexion->prepare($sqlCurso);
+    $consultaCurso->execute();
+
+    $cursos=$consultaCurso->fetchAll();
+
+    /* print_r($cursos); */
+  
+  ?>
+
+  <select name="curso" id="curso">
+    
+    <option value="0">Seleccione curso</option>
+    <?php
+    
+    for ($i=0; $i < count($cursos); $i++) { 
+      echo "<option>".$cursos[$i]->idCurso."</option>";
+    }
+    
+    ?>
+
+    <br>
+  </select>
+
+
+
+
+
+  
     <table class="table" id="tableAlumno">
       <thead>
         <tr>
