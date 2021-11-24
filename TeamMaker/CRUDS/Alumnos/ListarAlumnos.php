@@ -92,6 +92,7 @@ $alumnos=$consulta->fetchAll();
         for ($i=0; $i < count($alumnos); $i++) { 
           $dni = $alumnos[$i]->DNI;
           $_SESSION['dni']=$dni;
+          $_SESSION['curso']=$curso;
           echo "<tr>
               <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td>
               <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../Grupos/MostrarResultados.php','".$dni."')\"></td></tr>";
@@ -99,8 +100,12 @@ $alumnos=$consulta->fetchAll();
       ?>
       </tbody>
     </table>
-    <input class="buttonList2" type="button" value="ver respuestas del curso" name="Volver" onclick="redirigir_alumnos('../../Grupos/MostrarResultadosGrupo.php',<?php $dni ?>)"><br>
     <?php 
+      for ($i=0; $i < count($alumnos); $i++) { 
+        echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php','".$curso."')\"><br>";
+      }
+    ?>
+      <?php 
       $situacion = $_GET['situacion'];
       if (isset($situacion)) {
         switch ($situacion) {
