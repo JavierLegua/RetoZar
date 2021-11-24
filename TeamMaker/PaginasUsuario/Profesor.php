@@ -25,21 +25,21 @@ session_start();
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div> 
-
     </header>
     
     <main class="profesorMain">
-    <nav class="menuProfesor">
-            <ul>
-                <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumno </a></li>
-                    <ul>
-                        <li><a href="../CRUDS/Alumnos/CrearAlumno.php">Añadir alumno </a></li>
-                        <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos </a></li><
-                    </ul>
-                <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
-                <li><a href="#">Equipos sugeridos</a></li>
-                <li><a href="../Login/Login.php">Salir</a></li>
-            </ul>
+    <nav id="menuProfesor">
+        <ul>
+            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a>
+                <ul>
+                    <li><a href="../CRUDS/Alumnos/CrearAlumno.php">Añadir alumno</a></li>
+                    <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos</a></li>
+                </ul>
+            </li>
+            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            <li><a href="../Login/Login.php">Salir</a></li>
+        </ul>
         </nav>
         <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 

@@ -63,6 +63,63 @@ main {
     background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
 }
 
+#menuProfesor ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+#menuProfesor ul li {
+    background-color: white;
+}
+
+#menuProfesor ul a {
+    display:block;
+    color:rgb(24, 24, 24);
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+
+#menuProfesor ul li {
+    position:relative;
+    display: inline-block;
+    margin:0;
+    padding:0;
+}
+
+#menuProfesor ul li:hover {
+    background:#5b78a7;
+}
+
+#menuProfesor ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+}
+
+#menuProfesor ul ul li {
+    float:none;
+    width:150px
+}
+
+#menuProfesor ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+}
+
+#menuProfesor ul li:hover > ul {
+    display:block;
+}
+
 /*
 se encarga de cambiar la fuente de los enunciados, dandole un formato en negrita y en cursiva además, cambiando el tamaño y el color 
 */
