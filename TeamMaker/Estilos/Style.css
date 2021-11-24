@@ -757,6 +757,10 @@ main.mainEditC {
     display:block;
    }
 
+   .menuAdmin{
+    padding-bottom: 2%;
+}
+
 .menuAdminTop ul {
     list-style:none;
     margin:0;
@@ -785,6 +789,10 @@ main.mainEditC {
    
    /* items del menu */
    
+.menuAdminTop{
+       padding-bottom: 2%;
+   }
+
 .menuAdminTop ul li {
     position:relative;
     display: inline-block;

@@ -25,6 +25,19 @@
     </header>
 
     <main class="Gestion">
+    <nav id="menuProfesor">
+        <ul>
+            <li><a href="#">Gestionar alumnos</a>
+                <ul>
+                    <li><a href="../CRUDS/Alumnos/CrearAlumno.php">Añadir alumno</a></li>
+                    <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos</a></li>
+                </ul>
+            </li>
+            <li><a href="../../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            <li><a href="../../Login/Login.php">Salir</a></li>
+        </ul>
+        </nav>
 
         <input type="button" value="Añadir alumno" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/CrearAlumno.php')"> <br>
         <input type="button" value="Menu alumnos" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/ListarAlumnos.php')"> <br>
