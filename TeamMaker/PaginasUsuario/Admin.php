@@ -26,20 +26,18 @@
     </header>
 
     <main class="mainAdmin">
-            <!-- start nav -->
-            <nav id="menu">
-            <!-- start menu -->
+            <nav class="menuAdmin">
             <ul>
             <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
             <ul>
             <li><a href="../CRUDS/Profesores/CrearProfesor.php">Añadir profesores</a></li>
-            <li><a href="../CRUDS/Administradores/ListarProfesores.php">Menu de profesores</a></li>
+            <li><a href="../CRUDS/Administradores/ListarProfesores.php">Menú de profesores</a></li>
             </ul>
             </li>
             <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a>
             <ul>
             <li><a href="../CRUDS/Cursos/CrearCurso.php">Crear curso</a></li>
-            <li><a href="../CRUDS/Cursos/ListarCurso.php">Menu de cursos</a></li>
+            <li><a href="../CRUDS/Cursos/ListarCurso.php">Menú de cursos</a></li>
             </ul>
             </li>
             <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
@@ -51,9 +49,7 @@
             </li>
             <li><a href="../Login/Login.php">Salir</a></li>
             </ul>
-            <!-- end menu -->
             </nav>
-            <!-- end nav -->
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')">

@@ -29,12 +29,12 @@ session_start();
     </header>
     
     <main class="profesorMain">
-    <nav id="menuProfesor">
+    <nav class="menuProfesor">
             <ul>
                 <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumno </a></li>
                     <ul>
                         <li><a href="../CRUDS/Alumnos/CrearAlumno.php">Añadir alumno </a></li>
-                        <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos </a></li>
+                        <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos </a></li><
                     </ul>
                 <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
                 <li><a href="#">Equipos sugeridos</a></li>

@@ -26,8 +26,7 @@
 
     <main class="adminTopMain">
 
-    <nav id="menu">
-            <!-- start menu -->
+    <nav class="menuAdminTop">
             <ul>
             <li><a href="../Gestiones/GestionarCentros.php">Gestionar centros</a>
             <ul>
@@ -56,7 +55,6 @@
             </li>
             <li><a href="../Login/Login.php">Salir</a></li>
             </ul>
-            <!-- end menu -->
             </nav>
 
         <h1 class="adminTopH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
