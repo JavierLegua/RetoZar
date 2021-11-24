@@ -5,7 +5,10 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$sql = "SELECT USUARIO.DNI as DNI, USUARIO.NOMBRE as nombre, ALUMNO.id_curso as id_curso FROM ALUMNO, USUARIO WHERE ALUMNO.USUARIO_DNI=USUARIO.DNI";
+$curso=$_POST['curso'];
+
+
+$sql = "SELECT USUARIO.DNI as DNI, USUARIO.NOMBRE as nombre, ALUMNO.id_curso as id_curso FROM ALUMNO, USUARIO WHERE ALUMNO.USUARIO_DNI=USUARIO.DNI AND id_curso=\"".$curso."\"";
 
 $consulta=$conexion->prepare($sql);
 $consulta->execute();
@@ -39,36 +42,39 @@ $alumnos=$consulta->fetchAll();
 
   <div class="listTodo">
 
-  <?php
-
-    $sqlCurso="SELECT idCurso, Nombre from CURSO";
-    $consultaCurso=$conexion->prepare($sqlCurso);
-    $consultaCurso->execute();
-
-    $cursos=$consultaCurso->fetchAll();
-
-    /* print_r($cursos); */
-  
-  ?>
-
-  <select name="curso" id="curso">
+    <form id="especialForm" action="ListarAlumnos.php" method="post">
     
-    <option value="0">Seleccione curso</option>
     <?php
-    
-    for ($i=0; $i < count($cursos); $i++) { 
-      echo "<option>".$cursos[$i]->idCurso."</option>";
-    }
-    
+      /* echo "****************";
+      echo $curso;
+      echo "****************"; */
+      $sqlCurso="SELECT idCurso, Nombre from CURSO";
+      $consultaCurso=$conexion->prepare($sqlCurso);
+      $consultaCurso->execute();
+
+      $cursos=$consultaCurso->fetchAll();
+
+      /* print_r($cursos); */
+  
     ?>
 
-    <br>
-  </select>
+    <select name="curso" id="curso">
+      
+      <option value="0">Seleccione curso</option>
+      <?php
+      
+      for ($i=0; $i < count($cursos); $i++) { 
+        echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
+      }
+      
+      ?>
 
+      <br>
+    </select>
 
+    <input type="submit" class="buttonList3" value="Ver clase" onclick="redirigir_curso('ListarAlumnos.php', <?php $curso?>)">
 
-
-
+    </form>
   
     <table class="table" id="tableAlumno">
       <thead>
@@ -93,7 +99,7 @@ $alumnos=$consulta->fetchAll();
       ?>
       </tbody>
     </table>
-
+    <input class="buttonList2" type="button" value="ver respuestas del curso" name="Volver" onclick="redirigir_alumnos('../../Grupos/MostrarResultadosGrupo.php',<?php $dni ?>)"><br>
     <?php 
       $situacion = $_GET['situacion'];
       if (isset($situacion)) {

@@ -629,6 +629,39 @@ main.mainEditC {
     padding-top: 3%;
 }
 
+/*
+especifico de un formulario con id especialForm, cambiando la altura del form
+*/
+form#especialForm{
+    height: 5%;
+}
+
+input.buttonList2{
+    font-size: 100%;
+    outline: none;
+    width: 25%;
+    height: 5%;
+    margin-top: 1%;
+    margin-bottom: 0;
+    margin-right: 1%;
+}
+input.buttonList3{
+    font-size: 100%;
+    outline: none;
+    width: 25%;
+    height: 50%;
+    margin-top: 1%;
+    margin-bottom: 0;
+    margin-right: 1%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
+
+/*
+*Mediaquery diseñada para pantallas con un mínimo de 579px y un máximo de 872px de ancho
+*/
 @media only screen and (min-width: 200px) and (max-width: 577px) {
 
     /*
