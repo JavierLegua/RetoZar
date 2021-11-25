@@ -28,6 +28,36 @@ session_start();
     </header>
     
     <main class="profesorMain">
+    <?php
+        if ($rol == 'Admin') {
+    ?>
+            <nav class="menuAdmin">
+                <ul>
+                    <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
+                <ul>
+                    <li><a href="../CRUDS/Profesores/CrearProfesor.php">Añadir profesores</a></li>
+                    <li><a href="../CRUDS/Administradores/ListarProfesores.php">Menú de profesores</a></li>
+                </ul>
+                    </li>
+                    <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a>
+                <ul>
+                    <li><a href="../CRUDS/Cursos/CrearCurso.php">Crear curso</a></li>
+                    <li><a href="../CRUDS/Cursos/ListarCurso.php">Menú de cursos</a></li>
+                </ul>
+                    </li>
+                    <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+                <ul>
+                    <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
+                    <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+                    <li><a href="#">Equipos sugeridos</a></li>
+                </ul>
+                    </li>
+                    <li><a href="../Login/Login.php">Salir</a></li>
+                </ul>
+            </nav>
+    <?php  
+        } else {
+    ?>
     <nav id="menuProfesor">
         <ul>
             <li><a href="../gestionarAlumno">Gestionar alumnos</a>
@@ -41,6 +71,9 @@ session_start();
             <li><a href="../inicio">Salir</a></li>
         </ul>
         </nav>
+    <?php
+        }
+    ?>
         <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../gestionarAlumno')">

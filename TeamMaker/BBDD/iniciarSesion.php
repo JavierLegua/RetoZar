@@ -14,7 +14,7 @@ session_start();
 </head>
 
 <body>
-    <h4> PRUEBA CONEXIÓN BASE DE DATOS</H4>
+    <!-- <h4> PRUEBA CONEXIÓN BASE DE DATOS</H4> -->
 
     <?php
 
