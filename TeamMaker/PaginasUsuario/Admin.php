@@ -16,12 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
 
-
-    
-    
     <header>
         <div id="img_header0"></div>
         <div id="img_header1"></div>
