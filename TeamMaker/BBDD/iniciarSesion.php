@@ -72,11 +72,11 @@ session_start();
                             $_SESSION['rol']=$fila->Rol;
 
                             if($_SESSION['rol']=='Profesor'){
-                                header("refresh:0;url=../PaginasUsuario/Profesor.php");
+                                header("refresh:0;url=../profesores");
                             }else if($_SESSION['rol']=='SuperAdmin'){
-                                header("refresh:0;url=../PaginasUsuario/Admin_top.php");
+                                header("refresh:0;url=../superAdmins");
                             }else{
-                                header("refresh:0;url=../admin");
+                                header("refresh:0;url=../admins");
                             }
 
                         }else{

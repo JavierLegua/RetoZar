@@ -5,9 +5,19 @@ Options -Indexes
   Options +FollowSymlinks
   RewriteEngine On
 
-  #Redirecciones Login
+  #Redireccion al Login
   RewriteRule ^inicio$ index.php [L,NC]
+
+  #Redirecciones inicio de sesion desde distintos usuarios
   RewriteRule ^alumno$ PaginasUsuario/Alumno.php [L,NC]
-  RewriteRule ^admin$ PaginasUsuario/Admin.php [L,NC]
+  RewriteRule ^admins$ PaginasUsuario/Admin.php [L,NC]
+  RewriteRule ^profesores$ PaginasUsuario/Profesor.php [L,NC]
+  RewriteRule ^superAdmins$ PaginasUsuario/Admin_top.php [L,NC]
+
+  #Redirecciones desde la pagina profesor
+  RewriteRule ^gestionarAlumno$ Gestiones/GestionarAlumno.php [L,NC]
+  RewriteRule ^verRespuesta$ Preguntas/verRespuestas.php [L,NC]
+  RewriteRule ^anadirAlumno$ CRUDS/Alumnos/CrearAlumno.php [L,NC]
+  RewriteRule ^listarAlumno$ CRUDS/Alumnos/ListarAlumnos.php [L,NC]
 </IfModule>
 

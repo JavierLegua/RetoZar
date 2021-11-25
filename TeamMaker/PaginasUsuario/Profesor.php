@@ -30,24 +30,24 @@ session_start();
     <main class="profesorMain">
     <nav id="menuProfesor">
         <ul>
-            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a>
+            <li><a href="../gestionarAlumno">Gestionar alumnos</a>
                 <ul>
-                    <li><a href="../CRUDS/Alumnos/CrearAlumno.php">Añadir alumno</a></li>
-                    <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos</a></li>
+                    <li><a href="../anadirAlumno">Añadir alumno</a></li>
+                    <li><a href="../listarAlumno">Menu alumnos</a></li>
                 </ul>
             </li>
-            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="../verRespuesta">Ver respuestas</a></li>
             <li><a href="#">Equipos sugeridos</a></li>
-            <li><a href="../Login/Login.php">Salir</a></li>
+            <li><a href="../inicio">Salir</a></li>
         </ul>
         </nav>
         <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
-        <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../Gestiones/GestionarAlumno.php')">
-        <input type="button" value="Ver respuestas" class="profesor" onclick="redirigir('../Preguntas/verRespuestas.php')"> <br>
+        <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../gestionarAlumno')">
+        <!-- <input type="button" value="Ver respuestas" class="profesor" onclick="redirigir('../verRespuesta')"> <br> -->
         <!-- <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')" > -->
         <input type="button" value="Equipos sugeridos" class="profesor"> <br>
-        <input type="button" value="Salir" class="profesorSalir" onclick="redirigir('../index.php')">
+        <input type="button" value="Salir" class="profesorSalir" onclick="redirigir('../inicio')">
 
     </main>
 
