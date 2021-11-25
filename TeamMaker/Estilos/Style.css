@@ -108,7 +108,7 @@ main {
 
 #menuProfesor ul ul li {
     float:none;
-    width:150px
+    width:100%
 }
 
 #menuProfesor ul ul a {
@@ -819,7 +819,7 @@ main.mainEditC {
    
    .menuAdminTop ul ul li {
     float:none;
-    width:150px
+    width:100%;
    }
    
    /* enlaces de los items del menu desplegable */
@@ -1869,7 +1869,6 @@ input.buttonList3{
         border-radius: 50px;
         background-color: #a7fabe;
     }
-
 }
 
 /*
