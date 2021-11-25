@@ -114,9 +114,7 @@ $alumnos=$consulta->fetchAll();
       </tbody>
     </table>
     <?php 
-      for ($i=0; $i < count($alumnos); $i++) { 
-        echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php','".$curso."')\"><br>";
-      }
+      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php','".$curso."')\"><br>";
     ?>
       <?php 
       $situacion = $_GET['situacion'];
