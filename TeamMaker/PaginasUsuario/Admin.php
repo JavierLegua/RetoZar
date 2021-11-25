@@ -55,7 +55,6 @@
         $rol=$fila->Rol;
 
         echo "<br>".$rol."<br>";
-
     ?>
     <?php
     if ($rol == 'Admin') {
