@@ -37,6 +37,31 @@ $profesores=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
+  <nav class="menuAdmin">
+            <ul>
+            <li><a href="../../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
+            <ul>
+            <li><a href="../Profesores/CrearProfesor.php">Añadir profesores</a></li>
+            <li><a href="#">Menú de profesores</a></li>
+            </ul>
+            </li>
+            <li><a href="../../Gestiones/GestionarCurso.php">Gestionar cursos</a>
+            <ul>
+            <li><a href="../Cursos/CrearCurso.php">Crear curso</a></li>
+            <li><a href="../Cursos/ListarCurso.php">Menú de cursos</a></li>
+            </ul>
+            </li>
+            <li><a href="../../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+            <ul>
+            <li><a href="../../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
+            <li><a href="../../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            </ul>
+            </li>
+            <li><a href="../../Login/Login.php">Salir</a></li>
+            </ul>
+            </nav>
+
     <table class="table" id="tableProfesor">
       <thead>
         <tr>

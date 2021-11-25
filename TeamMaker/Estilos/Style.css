@@ -27,6 +27,7 @@ header {
     grid-template-rows: 1fr;
 }
 
+
 /*
 divide la última sección de la página en 5 columnas y una fila para poder crear una cabezera con imagenes
 */
@@ -60,6 +61,63 @@ main {
     grid-row-start: 2;
     grid-row-end: 2;
     background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
+}
+
+#menuProfesor ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+#menuProfesor ul li {
+    background-color: white;
+}
+
+#menuProfesor ul a {
+    display:block;
+    color:rgb(24, 24, 24);
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+
+#menuProfesor ul li {
+    position:relative;
+    display: inline-block;
+    margin:0;
+    padding:0;
+}
+
+#menuProfesor ul li:hover {
+    background:#5b78a7;
+}
+
+#menuProfesor ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+}
+
+#menuProfesor ul ul li {
+    float:none;
+    width:150px
+}
+
+#menuProfesor ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+}
+
+#menuProfesor ul li:hover > ul {
+    display:block;
 }
 
 /*
@@ -628,6 +686,154 @@ main.mainEditC {
     padding-bottom: 3%;
     padding-top: 3%;
 }
+
+.menuAdmin ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+   
+   /* items del menu */
+   
+.menuAdmin ul li {
+    background-color: white;
+}
+   
+   /* enlaces del menu */
+   
+.menuAdmin ul a {
+    display:block;
+    color: black;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+   
+   /* items del menu */
+   
+.menuAdmin ul li {
+    position:relative;
+    display: inline-block;
+    margin:0;
+    padding:0;
+}
+   
+   /* efecto al pasar el ratón por los items del menu */
+   
+.menuAdmin ul li:hover {
+    background:#5b78a7;
+}
+
+.menuAdmin ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+   }
+   
+   /* items del menu desplegable */
+   
+   .menuAdmin ul ul li {
+    float:none;
+    width:100%;
+   }
+   
+   /* enlaces de los items del menu desplegable */
+   
+   .menuAdmin ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+   }
+   
+   /* items del menu desplegable al pasar el ratón */
+   
+   .menuAdmin ul li:hover > ul {
+    display:block;
+   }
+
+   .menuAdmin{
+    padding-bottom: 2%;
+}
+
+.menuAdminTop ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+   
+   /* items del menu */
+   
+.menuAdminTop ul li {
+    background-color:white;
+}
+   
+   /* enlaces del menu */
+   
+.menuAdminTop ul a {
+    display:block;
+    color: black;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+   
+   /* items del menu */
+   
+.menuAdminTop{
+       padding-bottom: 2%;
+   }
+
+.menuAdminTop ul li {
+    position:relative;
+    display: inline-block;
+    margin:0;
+    padding:0;
+}
+   
+   /* efecto al pasar el ratón por los items del menu */
+   
+.menuAdminTop ul li:hover {
+    background:#5b78a7;
+}
+
+.menuAdminTop ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+   }
+   
+   /* items del menu desplegable */
+   
+   .menuAdminTop ul ul li {
+    float:none;
+    width:150px
+   }
+   
+   /* enlaces de los items del menu desplegable */
+   
+   .menuAdminTop ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+   }
+   
+   /* items del menu desplegable al pasar el ratón */
+   
+   .menuAdminTop ul li:hover > ul {
+    display:block;
+   }
 
 /*
 especifico de un formulario con id especialForm, cambiando la altura del form

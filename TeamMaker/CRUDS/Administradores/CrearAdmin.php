@@ -29,7 +29,36 @@
     </header>
 
     <main class="crudMainUsuario">
-
+    <nav class="menuAdminTop">
+        <ul>
+        <li><a href="../../Gestiones/GestionarCentros.php">Gestionar centros</a>
+        <ul>
+        <li><a href="../Centros/CrearCentro.php">Crear centro</a></li>
+        <li><a href="../Centros/ListarCentro.php">Menu gestión de centros</a></li>
+        </ul>
+        </li>
+        <li><a href="../../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+        <ul>
+        <li><a href="#">Gestionar alumnos</a></li>
+        <li><a href="../../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+        <li><a href="#">Equipos sugeridos</a></li>
+        </ul>
+        <li><a href="../../Gestiones/GestionarAdmin.php">Gestionar administrador de centros</a>
+        <ul>
+        <li><a href="../Administradores/CrearAdmin.php">Crear administrador</a></li>
+        <li><a href="../Administradores/ListarAdmin.php">Menu de administradores</a></li>
+        </ul>
+        </li>
+        <li><a href="../../PaginasUsuario/Admin.php">Funciones de administrador de centros</a>
+        <ul>
+        <li><a href="../../Gestiones/GestionarProfesor.php">Gestionar profesores</a></li>
+        <li><a href="../../Gestiones/GestionarCurso.php">Gestionar cursos</a></li>
+        <li><a href="../../PaginasUsuario/Profesor.php">Funciones de profesor</a></li>
+        </ul>
+        </li>
+        <li><a href="../../Login/Login.php">Salir</a></li>
+        </ul>
+        </nav>
         <h1 class="crudH1">Creación de administradores</h1>
 
         <form method="post" action="InsertarBBDDAdmin.php">

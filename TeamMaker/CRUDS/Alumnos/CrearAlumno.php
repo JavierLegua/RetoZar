@@ -29,6 +29,19 @@
     </header>
 
     <main class="crudMainUsuario">
+    <nav id="menuProfesor">
+        <ul>
+            <li><a href="../../Gestiones/GestionarAlumno.php">Gestionar alumnos</a>
+                <ul>
+                    <li><a href="#">Añadir alumno</a></li>
+                    <li><a href="../Alumnos/ListarAlumnos.php">Menu alumnos</a></li>
+                </ul>
+            </li>
+            <li><a href="../../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            <li><a href="../../Login/Login.php">Salir</a></li>
+        </ul>
+        </nav>
 
         <h1 class="crudH1">Creación de alumnos</h1>
 
