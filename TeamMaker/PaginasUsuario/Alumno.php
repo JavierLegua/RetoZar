@@ -32,7 +32,7 @@ session_start();
 
         <input type="button" value="Responder test" class="alumno" onclick="redirigir('../Preguntas/Test.php')"> <br>
         <input type="button" value="Revisar respuestas" class="alumno" onclick="redirigir('../Preguntas/revisarPreguntas.php')"> <br>
-        <input type="button" value="Salir" class="alumnoSalir" onclick="redirigir('../Index.php')">
+        <input type="button" value="Salir" class="alumnoSalir" onclick="redirigir('../index.php')">
 
     </main>
 

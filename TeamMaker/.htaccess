@@ -1,8 +1,13 @@
 Options -Indexes
 
 <IfModule mod_rewrite.c>
+  Deny from 192.168.4.52
   Options +FollowSymlinks
   RewriteEngine On
+
+  #Redirecciones Login
   RewriteRule ^inicio$ index.php [L,NC]
-  </IfModule>
+  RewriteRule ^alumno$ PaginasUsuario/Alumno.php [L,NC]
+  RewriteRule ^admin$ PaginasUsuario/Admin.php [L,NC]
+</IfModule>
 
