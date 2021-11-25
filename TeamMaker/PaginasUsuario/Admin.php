@@ -87,7 +87,7 @@
             </nav>
 
             <?php
-    }elseif ($rol == 'SuperAdmin') {
+            }elseif ($rol == 'SuperAdmin') {
         ?>
             <nav id="menu">
             <!-- start menu -->
