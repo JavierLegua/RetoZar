@@ -36,9 +36,9 @@
     </header>
 
     <main class="mainAdmin">
-<<<<<<< Updated upstream
-            <nav class="menuAdmin">
-=======
+
+    <nav class="menuAdmin">
+
     <?php
 
         $conexion=conectarBD();
@@ -59,10 +59,10 @@
     ?>
     <?php
     if ($rol == 'Admin') {
-        ?>hh
+        ?>
         <nav id="menu">
             <!-- start menu -->
->>>>>>> Stashed changes
+
             <ul>
             <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
             <ul>
@@ -86,8 +86,7 @@
             <li><a href="../Login/Login.php">Salir</a></li>
             </ul>
             </nav>
-<<<<<<< Updated upstream
-=======
+
             <?php
     }elseif ($rol == 'SuperAdmin') {
         ?>
@@ -127,7 +126,7 @@
     }
     ?>
 
->>>>>>> Stashed changes
+
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')">
