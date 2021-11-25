@@ -19,5 +19,23 @@ Options -Indexes
   RewriteRule ^verRespuesta$ Preguntas/verRespuestas.php [L,NC]
   RewriteRule ^anadirAlumno$ CRUDS/Alumnos/CrearAlumno.php [L,NC]
   RewriteRule ^listarAlumno$ CRUDS/Alumnos/ListarAlumnos.php [L,NC]
+
+  #Redirecciones desde la pagina alumno
+  RewriteRule ^respondertest$ Preguntas/Test.php [L,NC]
+  RewriteRule ^revisarRespuesta$ Preguntas/revisarPreguntas.php [L,NC]
+
+  #Redirecciones desde la pagina admin
+  RewriteRule ^gestionarCentro$ Gestiones/GestionarCentros.php [L,NC]
+  RewriteRule ^crearCentro$ CRUDS/Centros/CrearCentro.php [L,NC]
+  RewriteRule ^listarCentro$ CRUDS/Centros/ListarCentro.php [L,NC]
+  RewriteRule ^gestionAdmin$ Gestiones/GestionarAdmin.php [L,NC]
+  RewriteRule ^crearAdmin$ CRUDS/Administradores/CrearAdmin.php [L,NC]
+  RewriteRule ^listarAdmin$ CRUDS/Administradores/ListarAdmin.php [L,NC]
+  RewriteRule ^gestionarProfesor$ Gestiones/GestionarProfesor.php [L,NC]
+  RewriteRule ^gestionarCurso$ Gestiones/GestionarCurso.php [L,NC]
+  RewriteRule ^crearProfesor$ CRUDS/Profesores/CrearProfesor.php [L,NC]
+  RewriteRule ^listarProfesor$ CRUDS/Administradores/ListarProfesores.php [L,NC]
+  RewriteRule ^crearCurso$ CRUDS/Cursos/CrearCurso.php [L,NC]
+  RewriteRule ^listarCurso$ CRUDS/Cursos/ListarCurso.php [L,NC]
 </IfModule>
 
