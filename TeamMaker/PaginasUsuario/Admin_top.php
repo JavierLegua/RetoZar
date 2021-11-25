@@ -63,7 +63,7 @@
         <input type="button" value="Funciones de profesor" class="adminTop" onclick="redirigir('Profesor.php')"> <br>
         <input type="button" value="Gestionar administrador de centros" class="adminTop" onclick="redirigir('../Gestiones/GestionarAdmin.php')">
         <input type="button" value="Funciones de administrador de centro" class="adminTop" onclick="redirigir('Admin.php')"> <br>
-        <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('../Index.php')">
+        <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('../index.php')">
         
     </main>
 

@@ -76,7 +76,7 @@ session_start();
                             }else if($_SESSION['rol']=='SuperAdmin'){
                                 header("refresh:0;url=../PaginasUsuario/Admin_top.php");
                             }else{
-                                header("refresh:0;url=../PaginasUsuario/Admin.php");
+                                header("refresh:0;url=../admin");
                             }
 
                         }else{
@@ -85,7 +85,7 @@ session_start();
                             $consulta->execute();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
-                            header("refresh:0;url=../PaginasUsuario/Alumno.php");
+                            header("refresh:0;url=../alumno");
                         }
                     
                     } 
@@ -93,7 +93,7 @@ session_start();
                     {
 
                         echo "Nombre de usuario y/o contraseña incorrecto. Será redireccionado en 2 segundos";
-                        header("refresh:2;url=../Login/Login.php");
+                        header("refresh:2;url=../inicio");
                     }
                 else
                     {

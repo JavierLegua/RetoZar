@@ -48,7 +48,7 @@ $curso=$consulta->fetchAll();
             <li><a href="../../Gestiones/GestionarCurso.php">Gestionar cursos</a>
             <ul>
             <li><a href="../Cursos/CrearCurso.php">Crear curso</a></li>
-            <li><a href=".#">Menú de cursos</a></li>
+            <li><a href="#">Menú de cursos</a></li>
             </ul>
             </li>
             <li><a href="../../PaginasUsuario/Profesor.php">Funciones del profesor</a>
