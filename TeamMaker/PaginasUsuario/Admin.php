@@ -59,7 +59,7 @@
     ?>
     <?php
     if ($rol == 'Admin') {
-        ?>
+        ?>hh
         <nav id="menu">
             <!-- start menu -->
 >>>>>>> Stashed changes
