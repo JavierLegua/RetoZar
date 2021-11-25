@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +15,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
+
+
+    
     
     <header>
         <div id="img_header0"></div>
@@ -26,7 +36,33 @@
     </header>
 
     <main class="mainAdmin">
+<<<<<<< Updated upstream
             <nav class="menuAdmin">
+=======
+    <?php
+
+        $conexion=conectarBD();
+
+        $dni_usuario = $_SESSION['usuario'];
+
+        $sql="SELECT * FROM PROFESOR WHERE USUARIO_DNI = \"$dni_usuario\"";
+        echo $sql;
+
+        $consulta = $conexion->prepare($sql);
+        $consulta->execute();
+
+        $fila = $consulta->fetch();
+        $rol=$fila->Rol;
+
+        echo "<br>".$rol."<br>";
+
+    ?>
+    <?php
+    if ($rol == 'Admin') {
+        ?>
+        <nav id="menu">
+            <!-- start menu -->
+>>>>>>> Stashed changes
             <ul>
             <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
             <ul>
@@ -50,6 +86,48 @@
             <li><a href="../Login/Login.php">Salir</a></li>
             </ul>
             </nav>
+<<<<<<< Updated upstream
+=======
+            <?php
+    }elseif ($rol == 'SuperAdmin') {
+        ?>
+            <nav id="menu">
+            <!-- start menu -->
+            <ul>
+            <li><a href="../Gestiones/GestionarCentros.php">Gestionar centros</a>
+            <ul>
+            <li><a href="../CRUDS/Centros/CrearCentro.php">Crear centro</a></li>
+            <li><a href="../CRUDS/Centros/ListarCentro.php">Menu gestión de centros</a></li>
+            </ul>
+            </li>
+            <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+            <ul>
+            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
+            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            </ul>
+            <li><a href="../Gestiones/GestionarAdmin.php">Gestionar administrador de centros</a>
+            <ul>
+            <li><a href="../CRUDS/Administradores/CrearAdmin.php">Crear administrador</a></li>
+            <li><a href="../CRUDS/Administradores/ListarAdmin.php">Menu de administradores</a></li>
+            </ul>
+            </li>
+            <li><a href="../PaginasUsuario/Admin.php">Funciones de administrador de centros</a>
+            <ul>
+            <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a></li>
+            <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a></li>
+            <li><a href="../PaginasUsuario/Profesor.php">Funciones de profesor</a></li>
+            </ul>
+            </li>
+            <li><a href="../Login/Login.php">Salir</a></li>
+            </ul>
+            <!-- end menu -->
+            </nav>
+            <?php
+    }
+    ?>
+
+>>>>>>> Stashed changes
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')">
