@@ -1,17 +1,3 @@
-<?php
-    // session_start();
-    // include "../../BBDD/includes/funciones.php";
-
-    // $conexion=conectarBD();
-
-    // $sql = "SELECT PROFESOR.Rol, PROFESOR.USUARIO_DNI FROM PROFESOR WHERE PROFESOR.USUARIO_DNI=".$_SESSION['DNI'];
-    // echo $sql;
-
-    // $consulta=$conexion->prepare($sql);
-    // $consulta->execute();
-
-    // $rol=$consulta->fetch();
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,9 +27,9 @@
 
     <main class="mainAdmin">
         <?php
-        if ($_SESSION['rol']== "Admin") {
-            echo $_SESSION['rol'];
-            ?>
+        $rol = $_GET['rol'];
+        if ($rol == 'Admin') {
+        ?>
             <nav class="menuAdmin">
                 <ul>
                     <li><a href="../gestionarProfesor">Gestionar profesores</a>
@@ -103,11 +89,7 @@
             </nav>
             <?php
         }
-
-
-
         ?>
-            
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../gestionarProfesor')">
