@@ -741,7 +741,7 @@ main.mainEditC {
    
    .menuAdmin ul ul li {
     float:none;
-    width:150px
+    width:100%;
    }
    
    /* enlaces de los items del menu desplegable */
