@@ -47,7 +47,7 @@ session_start();
         <input type="button" value="Ver respuestas" class="profesor" onclick="redirigir('../Preguntas/verRespuestas.php')"> <br>
         <!-- <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')" > -->
         <input type="button" value="Equipos sugeridos" class="profesor"> <br>
-        <input type="button" value="Salir" class="profesorSalir" onclick="redirigir('../Index.php')">
+        <input type="button" value="Salir" class="profesorSalir" onclick="redirigir('../index.php')">
 
     </main>
 
