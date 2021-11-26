@@ -56,24 +56,58 @@ session_start();
                 </ul>
             </nav>
     <?php  
-        } else {
-    ?>
-    <nav id="menuProfesor">
-        <ul>
-            <li><a href="../gestionarAlumno">Gestionar alumnos</a>
-                <ul>
-                    <li><a href="../anadirAlumno">Añadir alumno</a></li>
-                    <li><a href="../listarAlumno">Menu alumnos</a></li>
-                </ul>
+        } else if ($rol == 'SuperAdmin') {
+            ?>
+            <nav class="menuAdminTop">
+            <ul>
+            <li><a href="../Gestiones/GestionarCentros.php">Gestionar centros</a>
+            <ul>
+            <li><a href="../CRUDS/Centros/CrearCentro.php">Crear centro</a></li>
+            <li><a href="../CRUDS/Centros/ListarCentro.php">Menu gestión de centros</a></li>
+            </ul>
             </li>
-            <li><a href="../verRespuesta">Ver respuestas</a></li>
+            <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+            <ul>
+            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
+            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
             <li><a href="#">Equipos sugeridos</a></li>
-            <li><a href="../inicio">Salir</a></li>
-        </ul>
-        </nav>
-    <?php
+            </ul>
+            <li><a href="../Gestiones/GestionarAdmin.php">Gestionar administrador de centros</a>
+            <ul>
+            <li><a href="../CRUDS/Administradores/CrearAdmin.php">Crear administrador</a></li>
+            <li><a href="../CRUDS/Administradores/ListarAdmin.php">Menu de administradores</a></li>
+            </ul>
+            </li>
+            <li><a href="../PaginasUsuario/Admin.php">Funciones de administrador de centros</a>
+            <ul>
+            <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a></li>
+            <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a></li>
+            <li><a href="../PaginasUsuario/Profesor.php">Funciones de profesor</a></li>
+            </ul>
+            </li>
+            <li><a href="../Login/Login.php">Salir</a></li>
+            </ul>
+            </nav>
+            <?php
+        }else{
+            ?>
+            <nav id="menuProfesor">
+                <ul>
+                    <li><a href="../gestionarAlumno">Gestionar alumnos</a>
+                        <ul>
+                            <li><a href="../anadirAlumno">Añadir alumno</a></li>
+                            <li><a href="../listarAlumno">Menu alumnos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../verRespuesta">Ver respuestas</a></li>
+                    <li><a href="#">Equipos sugeridos</a></li>
+                    <li><a href="../inicio">Salir</a></li>
+                </ul>
+            </nav>
+            <?php
         }
     ?>
+    
         <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
         <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../gestionarAlumno')">
