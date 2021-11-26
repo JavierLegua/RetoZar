@@ -55,7 +55,7 @@ $alumnos=$consulta->fetchAll();
         </ul>
         </nav>
 
-    <form id="especialForm" action="ListarAlumnos.php" method="post">
+    <form id="especialForm" action="listarAlumno" method="post">
     
     <?php
       /* echo "****************";
@@ -114,7 +114,7 @@ $alumnos=$consulta->fetchAll();
       </tbody>
     </table>
     <?php 
-      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php','".$curso."')\"><br>";
+      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../mostrarResultados','".$curso."')\"><br>";
     ?>
       <?php 
       $situacion = $_GET['situacion'];

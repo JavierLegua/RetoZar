@@ -37,5 +37,6 @@ Options -Indexes
   RewriteRule ^listarProfesor$ CRUDS/Administradores/ListarProfesores.php [L,NC]
   RewriteRule ^crearCurso$ CRUDS/Cursos/CrearCurso.php [L,NC]
   RewriteRule ^listarCurso$ CRUDS/Cursos/ListarCurso.php [L,NC]
+  RewriteRule ^mostrarResultados$ Grupos/MostrarResultadosGrupo.php [L,NC]
 </IfModule>
 
