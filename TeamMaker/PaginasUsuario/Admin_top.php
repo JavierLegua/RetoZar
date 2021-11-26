@@ -62,7 +62,7 @@
         <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('../gestionarCentro')">
         <input type="button" value="Funciones de profesor" class="adminTop" onclick="redirigir('profesores')"> <br>
         <input type="button" value="Gestionar administrador de centros" class="adminTop" onclick="redirigir('../gestionAdmin')">
-        <input type="button" value="Funciones de administrador de centro" class="adminTop" onclick="redirigir('admins')"> <br>
+        <input type="button" value="Funciones de administrador de centro" class="adminTop" onclick="redirigir('admins?=SuperAdmin')"> <br>
         <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('../inicio')">
         
     </main>

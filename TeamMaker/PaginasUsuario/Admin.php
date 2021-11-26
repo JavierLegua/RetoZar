@@ -36,7 +36,7 @@
         ?>
             <nav class="menuAdmin">
                 <ul>
-                    <li><a href="../gestionarProfesor">Gestionar profesores</a>
+                    <li><a href="../gestionarProfesor"><span class="icon-house"></span> Gestionar profesores</a>
                         <ul>
                             <li><a href="../crearProfesor">Añadir profesores</a></li>
                             <li><a href="../listarProfesor">Menú de profesores</a></li>
