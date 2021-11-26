@@ -3,8 +3,8 @@
     function conectarBD()
         {
             $servidor = "localhost";
-            $usuario = "makelele";
-            $password = "Makelele123@";
+            $usuario = "makelelesberry";
+            $password = "Makelelesberry123@";
             $baseDatos = "TeamMaker";
             $opciones = array(
                 PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
