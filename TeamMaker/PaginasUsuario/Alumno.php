@@ -30,9 +30,9 @@ session_start();
     <main class="alumnoMain">
         <h1>Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
-        <input type="button" value="Responder test" class="alumno" onclick="redirigir('../Preguntas/Test.php')"> <br>
-        <input type="button" value="Revisar respuestas" class="alumno" onclick="redirigir('../revisarRespuesta')"> <br>
-        <input type="button" value="Salir" class="alumnoSalir" onclick="redirigir('../inicio')">
+        <input type="button" value="Responder test" class="alumno" onclick="redirigir('respondertest')"> <br>
+        <input type="button" value="Revisar respuestas" class="alumno" onclick="redirigir('revisarRespuesta')"> <br>
+        <input type="button" value="Salir" class="alumnoSalir" onclick="redirigir('inicio')">
 
     </main>
 
