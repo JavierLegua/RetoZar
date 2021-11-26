@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+    include "../BBDD/includes/funciones.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,82 +31,18 @@ session_start();
     <main class="profesorMain">
     <?php
         $rol = $_GET['rol'];
-        if ($rol == 'Admin') {
-    ?>
-            <nav class="menuAdmin">
-                <ul>
-                    <li><a href="../gestionarProfesor">Gestionar profesores</a>
-                <ul>
-                    <li><a href="../crearProfesor">Añadir profesores</a></li>
-                    <li><a href="../listarProfesor">Menú de profesores</a></li>
-                </ul>
-                    </li>
-                    <li><a href="../gestionarCurso">Gestionar cursos</a>
-                <ul>
-                    <li><a href="../crearCurso">Crear curso</a></li>
-                    <li><a href="../listarCurso">Menú de cursos</a></li>
-                </ul>
-                    </li>
-                    <li><a href="../profesores">Funciones del profesor</a>
-                <ul>
-                    <li><a href="../gestionarAlumno">Gestionar alumnos</a></li>
-                    <li><a href="../verRespuesta">Ver respuestas</a></li>
-                    <li><a href="#">Equipos sugeridos</a></li>
-                </ul>
-                    </li>
-                    <li><a href="../inicio">Salir</a></li>
-                </ul>
-            </nav>
-    <?php  
-        } else if ($rol == 'SuperAdmin') {
-            ?>
-            <nav class="menuAdminTop">
-            <ul>
-            <li><a href="../Gestiones/GestionarCentros.php">Gestionar centros</a>
-            <ul>
-            <li><a href="../CRUDS/Centros/CrearCentro.php">Crear centro</a></li>
-            <li><a href="../CRUDS/Centros/ListarCentro.php">Menu gestión de centros</a></li>
-            </ul>
-            </li>
-            <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
-            <ul>
-            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
-            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
-            <li><a href="#">Equipos sugeridos</a></li>
-            </ul>
-            <li><a href="../Gestiones/GestionarAdmin.php">Gestionar administrador de centros</a>
-            <ul>
-            <li><a href="../CRUDS/Administradores/CrearAdmin.php">Crear administrador</a></li>
-            <li><a href="../CRUDS/Administradores/ListarAdmin.php">Menu de administradores</a></li>
-            </ul>
-            </li>
-            <li><a href="../PaginasUsuario/Admin.php">Funciones de administrador de centros</a>
-            <ul>
-            <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a></li>
-            <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a></li>
-            <li><a href="../PaginasUsuario/Profesor.php">Funciones de profesor</a></li>
-            </ul>
-            </li>
-            <li><a href="../Login/Login.php">Salir</a></li>
-            </ul>
-            </nav>
-            <?php
-        }else{
-            ?>
-            <nav id="menuProfesor">
-                <ul>
-                    <li><a href="../gestionarAlumno">Gestionar alumnos</a>
-                        <ul>
-                            <li><a href="../anadirAlumno">Añadir alumno</a></li>
-                            <li><a href="../listarAlumno">Menu alumnos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../verRespuesta">Ver respuestas</a></li>
-                    <li><a href="#">Equipos sugeridos</a></li>
-                    <li><a href="../inicio">Salir</a></li>
-                </ul>
-            </nav>
-            <?php
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
         }
     ?>
     
