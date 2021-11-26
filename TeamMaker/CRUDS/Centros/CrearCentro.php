@@ -83,7 +83,7 @@
                 }
             ?>
             <input id="crear" type="submit" name="Crear Centro" class="inputGrEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentro.php')" class="inputGrVolver">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarCentro')" class="inputGrVolver">
 
         </form>
 
