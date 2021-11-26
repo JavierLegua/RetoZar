@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Funciones.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
 <?php
    
     function conectarBD(){
@@ -37,6 +50,47 @@
                 echo"<nav id='menuProfesor'><ul><li><a href='../gestionarAlumno?rol=Profesor'>Gestionar alumnos</a><ul><li><a href='../anadirAlumno?rol=Profesor'>Añadir alumno</a></li><li><a href='../listarAlumno?rol=Profesor'>Menu alumnos</a></li></ul></li><li><a href='../verRespuesta?rol=Profesor'>Ver respuestas</a></li><li><a href='#'>Equipos sugeridos</a></li><li><a href='../inicio'>Salir</a></li></ul></nav>";
             break;
     
+        }
+    }
+
+    function menuMovil($rol){
+        switch ($rol) {
+            case 'Admin':
+                echo "<section class='navigation'><nav class='navNav'><div class='nav-movil'>
+                  <a id='nav-boton' href='#!'>
+                    <span></span>
+                  </a>
+                </div>
+                <ul class='nav-menu'>
+                  <li><a href='../gestionarProfesor?rol=Admin'>Gestionar Profesores</a></li>
+                        <ul class='nav-submenu'>
+                            <li><a href='../crearProfesor?rol=Admin'>Añadir profesores</a></li>
+                            <li><a href='../listarProfesor?rol=Admin'>Menú profesores</a></li>
+                        </ul>
+                  <li><a href='../gestionarCurso?rol=Admin'>Gestionar cursos</a></li>
+                        <ul class='nav-submenu'>
+                            <li><a href='../crearCurso?rol=Admin'>Crear curso</a></li>
+                            <li><a href='../listarCurso?rol=Admin'>Menú de cursos</a></li>
+                        </ul>
+                  <li>
+                    <a href='../profesores?rol=Admin'>Funciones del profesor</a>
+                    <ul class='nav-submenu'>
+                      <li><a href='../anadirAlumno?rol=Admin'>Gestionar alumnos</a></li>
+                      <li><a href='../verRespuesta?rol=Admin'>Ver respuestas</a></li>
+                      <li><a href='#'>Equipos sugeridos</a></li>
+                    </ul>
+                  </li>
+                  <li><a href='../inicio'>Salir</a></li>
+                </ul>
+              </nav>
+              </section>";    
+                break;
+            case 'SuperAdmin':
+                # code...
+                break;
+            case 'Profesor':
+                # code...
+                break;
         }
     }
 ?>
