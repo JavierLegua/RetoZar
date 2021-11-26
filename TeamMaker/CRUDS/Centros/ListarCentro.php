@@ -36,7 +36,38 @@ $centro=$consulta->fetchAll();
     <div id="img_header7"></div>
     <div id="img_header8"></div>
   </header>
+
   <div class="listTodo">
+  <nav class="menuAdminTop">
+        <ul>
+        <li><a href="../../gestionarCentro">Gestionar centros</a>
+        <ul>
+        <li><a href="../crearCentro">Crear centro</a></li>
+        <li><a href="#">Menu gestión de centros</a></li>
+        </ul>
+        </li>
+        <li><a href="../../profesores">Funciones del profesor</a>
+        <ul>
+        <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
+        <li><a href="../../verRespuesta">Ver respuestas</a></li>
+        <li><a href="#">Equipos sugeridos</a></li>
+        </ul>
+        <li><a href="../../gestionAdmin">Gestionar administrador de centros</a>
+        <ul>
+        <li><a href="../crearAdmin">Crear administrador</a></li>
+        <li><a href="../listarAdmin">Menu de administradores</a></li>
+        </ul>
+        </li>
+        <li><a href="../../admins">Funciones de administrador de centros</a>
+        <ul>
+        <li><a href="../../gestionarProfesor">Gestionar profesores</a></li>
+        <li><a href="../../gestionarCurso">Gestionar cursos</a></li>
+        <li><a href="../../profesores">Funciones de profesor</a></li>
+        </ul>
+        </li>
+        <li><a href="../../inicio">Salir</a></li>
+        </ul>
+        </nav>
     <table class="table" id="tableCentro">
       <thead>
         <tr>
@@ -56,7 +87,28 @@ $centro=$consulta->fetchAll();
       ?>
       </tbody>
     </table>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentros.php')">
+
+    <?php 
+      $situacion = $_GET['situacion'];
+      if (isset($situacion)) {
+        switch ($situacion) {
+          case '0':
+            echo "<br><br><p>Error al editar el centro</p>";
+          break;
+          case '1':
+            echo "<br><br><p>Centro editado correctamente</p>";
+          break;
+          case '2':
+            echo "<br><br><p>Centro borrado correctamente</p>";
+          break;
+          case '3':
+            echo "<br><br><p>Error al borrar el centro</p>";
+          break;
+        }
+      }
+    ?>
+
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarCentro')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>

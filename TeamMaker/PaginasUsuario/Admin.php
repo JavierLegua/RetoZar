@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,15 +26,80 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        
     </header>
 
     <main class="mainAdmin">
+        <?php
+        $rol = $_GET['rol'];
+        if ($rol == 'Admin') {
+        ?>
+            <nav class="menuAdmin">
+                <ul>
+                    <li><a href="../gestionarProfesor">Gestionar profesores</a>
+                        <ul>
+                            <li><a href="../crearProfesor">Añadir profesores</a></li>
+                            <li><a href="../listarProfesor">Menú de profesores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../gestionarCurso">Gestionar cursos</a>
+                        <ul>
+                            <li><a href="../crearCurso">Crear curso</a></li>
+                            <li><a href="../listarCurso">Menú de cursos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../profesores">Funciones del profesor</a>
+                        <ul>
+                            <li><a href="../anadirAlumno">Gestionar alumnos</a></li>
+                            <li><a href="../verRespuesta">Ver respuestas</a></li>
+                            <li><a href="#">Equipos sugeridos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../inicio">Salir</a></li>
+                </ul>
+            </nav>
+            <?php
+        }elseif ($_GET['rol']=='SuperAdmin'){
+            ?>
+              <nav class="menuAdminTop">
+            <ul>
+            <li><a href="../gestionarCentro">Gestionar centros</a>
+            <ul>
+            <li><a href="../crearCentro">Crear centro</a></li>
+            <li><a href="../listarCentro">Menu gestión de centros</a></li>
+            </ul>
+            </li>
+            <li><a href="../profesores">Funciones del profesor</a>
+            <ul>
+            <li><a href="../gestionarAlumno">Gestionar alumnos</a></li>
+            <li><a href="../verRespuesta">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            </ul>
+            <li><a href="../gestionAdmin">Gestionar administrador de centros</a>
+            <ul>
+            <li><a href="../crearAdmin">Crear administrador</a></li>
+            <li><a href="../listarAdmin">Menu de administradores</a></li>
+            </ul>
+            </li>
+            <li><a href="../admins">Funciones de administrador de centros</a>
+            <ul>
+            <li><a href="../gestionarProfesor">Gestionar profesores</a></li>
+            <li><a href="../gestionarCurso">Gestionar cursos</a></li>
+            <li><a href="../profesores">Funciones de profesor</a></li>
+            </ul>
+            </li>
+            <li><a href="../inicio">Salir</a></li>
+            </ul>
+            </nav>
+            <?php
+        }
+        ?>
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
-        <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')">
-        <input type="button" value="Gestionar cursos" class="admin" onclick="redirigir('../Gestiones/GestionarCurso.php')"> <br>
-        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('Profesor.php')"> <br>
-        <input type="button" value="Salir" class="adminSalir" onclick="redirigir('../Login/Login.php')">
+        <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../gestionarProfesor')">
+        <input type="button" value="Gestionar cursos" class="admin" onclick="redirigir('../gestionarCurso')"> <br>
+        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('profesores?rol=Admin')"> <br>
+        <input type="button" value="Salir" class="adminSalir" onclick="redirigir('../inicio')">
 
     </main>
 

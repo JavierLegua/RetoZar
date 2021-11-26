@@ -34,9 +34,9 @@ session_start();
         $consulta = $conexion->prepare($sql1);
         $consulta->execute();
     } catch (Exception $e) {
-        echo("Usuario ya introducido <br>");
-        echo "Redirigiendo al menu de creación de administradores";
-        header("refresh:3;url=CrearAdmin.php");
+        // echo("Usuario ya introducido <br>");
+        // echo "Redirigiendo al menu de creación de administradores";
+        header("refresh:0.01;url=CrearAdmin.php?situacion=0");
     }
     // Ejecutar consulta
 
@@ -63,18 +63,18 @@ session_start();
 /*         echo("$sql");
         echo("$nfilas"); */
         if($nfilas==1){
-            echo "Usuario insertado correctamente <br>";
-            echo "Redirigiendo al menu de creación de administradores";
-            header("refresh:3;url=CrearAdmin.php");
+            // echo "Usuario insertado correctamente <br>";
+            // echo "Redirigiendo al menu de creación de administradores";
+            header("refresh:0.01;url=CrearAdmin.php?situacion=1");
         }else{
-            echo "Error al insertar en tabla profesor<br>";
-            echo "Redirigiendo al menu de creación de administradores";
-            header("refresh:3;url=CrearAdmin.php");
+            // echo "Error al insertar en tabla profesor<br>";
+            // echo "Redirigiendo al menu de creación de administradores";
+            header("refresh:0.01;url=CrearAdmin.php?situacion=2");
         }
 
     }else{
-        header("refresh:3;url=CrearAdmin.php");
-        echo "Redireccionando en 3 segundos";
+        header("refresh:0.01;url=CrearAdmin.php?situacion=3");
+        // echo "Redireccionando en 3 segundos";
     }
           
 

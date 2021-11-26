@@ -25,10 +25,8 @@
     $nfilas=$consulta->rowCount()+$consulta1->rowCount();
 
     if($nfilas==1 || $nfilas==2){
-        echo "Usuario actualizado correctamente <br>";
-        echo "Redirigiendo a la lista de alumnos";
-        header("refresh:3;url=ListarAlumnos.php");
+        header("refresh:0.01;url=ListarAlumnos.php?situacion=1");
     }else{
-        echo "Ha habido un error a la hora de actualizar el alumno";
+        header("refresh:0.01;url=ListarAlumnos.php?situacion=0");
     }
     ?>

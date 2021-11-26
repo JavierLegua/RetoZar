@@ -37,6 +37,31 @@ $profesores=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
+  <nav class="menuAdmin">
+            <ul>
+            <li><a href="../../gestionarProfesor">Gestionar profesores</a>
+            <ul>
+            <li><a href="../crearProfesor">Añadir profesores</a></li>
+            <li><a href="../listarProfesor">Menú de profesores</a></li>
+            </ul>
+            </li>
+            <li><a href="../../gestionarCurso">Gestionar cursos</a>
+            <ul>
+            <li><a href="../crearCurso">Crear curso</a></li>
+            <li><a href="../listarCurso">Menú de cursos</a></li>
+            </ul>
+            </li>
+            <li><a href="../../profesores">Funciones del profesor</a>
+            <ul>
+            <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
+            <li><a href="../../verRespuesta">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            </ul>
+            </li>
+            <li><a href="../../inicio">Salir</a></li>
+            </ul>
+            </nav>
+
     <table class="table" id="tableProfesor">
       <thead>
         <tr>
@@ -52,13 +77,31 @@ $profesores=$consulta->fetchAll();
         for ($i=0; $i < count($profesores); $i++) { 
           $dni = $profesores[$i]->DNI;
           $_SESSION['dni']=$dni;
-          echo "<tr>
-              <td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
+          echo "<tr><td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
     </table>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarProfesor.php')">
+    <?php 
+      $situacion = $_GET['situacion'];
+      if (isset($situacion)) {
+        switch ($situacion) {
+          case '0':
+            echo "<br><br><p>Error al editar al profesor</p>";
+          break;
+          case '1':
+            echo "<br><br><p>Profesor editado correctamente</p>";
+          break;
+          case '2':
+            echo "<br><br><p>Profesor borrado correctamente</p>";
+          break;
+          case '3':
+            echo "<br><br><p>Error al borrar el profesor</p>";
+          break;
+        }
+      }
+    ?>
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarProfesor')">
   </div> 
   <footer class="listFoot">
     <div id="img_footer0"></div>

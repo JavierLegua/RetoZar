@@ -29,7 +29,7 @@
     <main>
         <h1>Bienvenido a TeamMaker</h1>
 
-        <form id="form" action="../ConexionBBDD/iniciarSesion.php" name="form" method="POST">
+        <form id="form" action="../BBDD/iniciarSesion.php" name="form" method="POST">
             
             <input id="usuario" type="text" name="DNI" title="Asegurese de escribir el DNI correctamente"  placeholder="Usuario/DNI">
             <p id="dni_error"></p>

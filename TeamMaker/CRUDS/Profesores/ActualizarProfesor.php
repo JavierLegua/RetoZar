@@ -25,12 +25,12 @@
     $nfilas=$consulta->rowCount()+$consulta1->rowCount();
 
     if($nfilas==1 || $nfilas==2){
-        echo "Usuario actualizado correctamente <br>";
-        echo "Redirigiendo a la lista de profesores";
-        header("refresh:3;url=ListarProfesores.php");
+        // echo "Usuario actualizado correctamente <br>";
+        // echo "Redirigiendo a la lista de profesores";
+        header("refresh:0.01;url=ListarProfesores.php?situacion=1");
     }else{
-        echo "Ha habido un error a la hora de actualizar el profesor<br>";
-        echo "Redirigiendo a la lista de profesores";
-        header("refresh:3;url=ListarProfesores.php");
+        // echo "Ha habido un error a la hora de actualizar el profesor<br>";
+        // echo "Redirigiendo a la lista de profesores";
+        header("refresh:0.01;url=ListarProfesores.php?situacion=0");
     }
     ?>

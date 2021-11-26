@@ -27,12 +27,8 @@
     $nfilas=$consulta->rowCount();
 
     if($nfilas==1){
-        echo "Curso actualizado correctamente <br>";
-        echo "Redirigiendo a la lista de cursos";
-        header("refresh:3;url=ListarCurso.php");
+        header("refresh:0.01;url=ListarCurso.php?situacion=0");
     }else{
-        echo "Ha habido un error a la hora de actualizar el curso <br>";
-        echo "Redirigiendo a la lista de cursos";
-        header("refresh:3;url=ListarCurso.php");
+        header("refresh:0.01;url=ListarCurso.php?situacion=1");
     }
     ?>

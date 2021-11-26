@@ -5,7 +5,10 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$sql = "SELECT USUARIO.DNI as DNI, USUARIO.NOMBRE as nombre, ALUMNO.id_curso as id_curso FROM ALUMNO, USUARIO WHERE ALUMNO.USUARIO_DNI=USUARIO.DNI";
+$curso=$_POST['curso'];
+
+
+$sql = "SELECT USUARIO.DNI as DNI, USUARIO.NOMBRE as nombre, ALUMNO.id_curso as id_curso FROM ALUMNO, USUARIO WHERE ALUMNO.USUARIO_DNI=USUARIO.DNI AND id_curso=\"".$curso."\"";
 
 $consulta=$conexion->prepare($sql);
 $consulta->execute();
@@ -36,7 +39,56 @@ $alumnos=$consulta->fetchAll();
     <div id="img_header7"></div>
     <div id="img_header8"></div>
   </header>
+
   <div class="listTodo">
+  <nav id="menuProfesor">
+        <ul>
+            <li><a href="../../gestionarAlumno">Gestionar alumnos</a>
+                <ul>
+                    <li><a href="../anadirAlumno">Añadir alumno</a></li>
+                    <li><a href="#">Menu alumnos</a></li>
+                </ul>
+            </li>
+            <li><a href="../../verRespuesta">Ver respuestas</a></li>
+            <li><a href="#">Equipos sugeridos</a></li>
+            <li><a href="../../inicio">Salir</a></li>
+        </ul>
+        </nav>
+
+    <form id="especialForm" action="ListarAlumnos.php" method="post">
+    
+    <?php
+      /* echo "****************";
+      echo $curso;
+      echo "****************"; */
+      $sqlCurso="SELECT idCurso, Nombre from CURSO";
+      $consultaCurso=$conexion->prepare($sqlCurso);
+      $consultaCurso->execute();
+
+      $cursos=$consultaCurso->fetchAll();
+
+      /* print_r($cursos); */
+  
+    ?>
+
+    <select name="curso" id="curso">
+      
+      <option value="0">Seleccione curso</option>
+      <?php
+      
+      for ($i=0; $i < count($cursos); $i++) { 
+        echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
+      }
+      
+      ?>
+
+      <br>
+    </select>
+
+    <input type="submit" class="buttonList3" value="Ver clase" onclick="redirigir_curso('listarAlumno', <?php $curso?>)">
+
+    </form>
+  
     <table class="table" id="tableAlumno">
       <thead>
         <tr>
@@ -45,6 +97,7 @@ $alumnos=$consulta->fetchAll();
           <td>Nombre</td>
           <td>Editar alumno</td>
           <td>Borrar alumno</td>
+          <td>Ver respuestas</td>
         </tr>
       </thead>
       <tbody>
@@ -52,13 +105,38 @@ $alumnos=$consulta->fetchAll();
         for ($i=0; $i < count($alumnos); $i++) { 
           $dni = $alumnos[$i]->DNI;
           $_SESSION['dni']=$dni;
+          $_SESSION['curso']=$curso;
           echo "<tr>
-              <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td></tr>";
+              <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td>
+              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../Grupos/MostrarResultados.php','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
     </table>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')">
+    <?php 
+      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php','".$curso."')\"><br>";
+    ?>
+      <?php 
+      $situacion = $_GET['situacion'];
+      if (isset($situacion)) {
+        switch ($situacion) {
+          case '0':
+            echo "<br><br><p>Error al editar el alumno</p>";
+          break;
+          case '1':
+            echo "<br><br><p>Alumno editado correctamente</p>";
+          break;
+          case '2':
+            echo "<br><br><p>Alumno borrado correctamente</p>";
+          break;
+          case '3':
+            echo "<br><br><p>Error al borrar el alumno</p>";
+          break;
+        }
+      }
+    ?>
+
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarAlumno')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>

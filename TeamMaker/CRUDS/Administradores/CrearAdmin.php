@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,7 +26,36 @@
     </header>
 
     <main class="crudMainUsuario">
-
+    <nav class="menuAdminTop">
+        <ul>
+        <li><a href="../../gestionarCentro">Gestionar centros</a>
+        <ul>
+        <li><a href="../crearCentro">Crear centro</a></li>
+        <li><a href="../listarCentro">Menu gestión de centros</a></li>
+        </ul>
+        </li>
+        <li><a href="../../profesores">Funciones del profesor</a>
+        <ul>
+        <li><a href="#">Gestionar alumnos</a></li>
+        <li><a href="../../verRespuesta">Ver respuestas</a></li>
+        <li><a href="#">Equipos sugeridos</a></li>
+        </ul>
+        <li><a href="../../gestionAdmin">Gestionar administrador de centros</a>
+        <ul>
+        <li><a href="../crearAdmin">Crear administrador</a></li>
+        <li><a href="../listarAdmin">Menu de administradores</a></li>
+        </ul>
+        </li>
+        <li><a href="../../admins">Funciones de administrador de centros</a>
+        <ul>
+        <li><a href="../../gestionarProfesor">Gestionar profesores</a></li>
+        <li><a href="../../gestionarCurso">Gestionar cursos</a></li>
+        <li><a href="../../profesores">Funciones de profesor</a></li>
+        </ul>
+        </li>
+        <li><a href="../../inicio">Salir</a></li>
+        </ul>
+        </nav>
         <h1 class="crudH1">Creación de administradores</h1>
 
         <form method="post" action="InsertarBBDDAdmin.php">
@@ -38,8 +64,27 @@
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
             <input type="text" name="Rol" id="Rol" placeholder="Rol" onblur="this.value = 'Admin'" class="inputUs" required><br>
+            <?php 
+                $situacion = $_GET['situacion'];
+                if (isset($situacion)) {
+                    switch ($situacion) {
+                        case '0':
+                            echo "<br><br><p>Usuario ya introducido</p>";
+                        break;
+                        case '1':
+                            echo "<br><br><p>Administrador creado correctamente</p>";
+                        break;
+                        case '2':
+                            echo "<br><br><p>Error al insertar el administrador</p>";
+                        break;                        
+                        case '3':
+                            echo "<br><br><p>Error desconocido</p>";
+                        break;
+                    }
+                }
+            ?>
             <input id="crear" type="submit" name="Crear Admin" class="inputUsEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAdmin.php')" class="inputUsVolver">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionAdmin')" class="inputUsVolver">
 
         </form>
 

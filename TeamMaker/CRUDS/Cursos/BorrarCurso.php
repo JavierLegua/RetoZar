@@ -19,12 +19,8 @@
   
 
     if($nfilas==1){
-        echo "Curso eliminado correctamente <br>";
-        echo "Redirigiendo a la lista de cursos";
-        header("refresh:3;url=ListarCurso.php");
+        header("refresh:0.01;url=ListarCurso.php?situacion=2");
     }else{
-        echo "Ha habido un error a la hora de eliminar el curso";
-        echo "Redirigiendo a la lista de cursos";
-        header("refresh:3;url=ListarCurso.php");
+        header("refresh:0.01;url=ListarCurso.php?situacion=3");
     }
     ?>
