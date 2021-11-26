@@ -59,7 +59,7 @@
                 </ul>
             </nav>
             <?php
-        }elseif ($_SESSION['rol']=='SuperAdmin'){
+        }elseif ($_GET['rol']=='SuperAdmin'){
             ?>
               <nav class="menuAdminTop">
             <ul>
@@ -98,7 +98,7 @@
 
         <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../gestionarProfesor')">
         <input type="button" value="Gestionar cursos" class="admin" onclick="redirigir('../gestionarCurso')"> <br>
-        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('profesores')"> <br>
+        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('profesores?rol=Admin')"> <br>
         <input type="button" value="Salir" class="adminSalir" onclick="redirigir('../inicio')">
 
     </main>
