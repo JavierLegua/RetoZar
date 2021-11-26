@@ -106,15 +106,15 @@ $alumnos=$consulta->fetchAll();
           $dni = $alumnos[$i]->DNI;
           $_SESSION['dni']=$dni;
           $_SESSION['curso']=$curso;
-          echo "<tr>
-              <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td>
-              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../Grupos/MostrarResultados.php','".$dni."')\"></td></tr>";
+          $_GET['rol']=$rol;
+          echo "<tr><td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php?rol=".$rol."','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php?rol=".$rol."','".$dni."')\"></td>
+              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../Grupos/MostrarResultados.php?rol=".$rol."','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
     </table>
     <?php 
-      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php','".$curso."')\"><br>";
+      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php?rol=".$rol."','".$curso."')\"><br>";
     ?>
       <?php 
       $situacion = $_GET['situacion'];
@@ -135,8 +135,9 @@ $alumnos=$consulta->fetchAll();
         }
       }
     ?>
-
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarAlumno')">
+    <?php
+    echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('../../gestionarAlumno?rol=".$rol."')\">";
+    ?>
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>
