@@ -43,15 +43,15 @@ $alumnos=$consulta->fetchAll();
   <div class="listTodo">
   <nav id="menuProfesor">
         <ul>
-            <li><a href="../../Gestiones/GestionarAlumno.php">Gestionar alumnos</a>
+            <li><a href="../../gestionarAlumno">Gestionar alumnos</a>
                 <ul>
-                    <li><a href="../Alumnos/CrearAlumno.php">Añadir alumno</a></li>
+                    <li><a href="../anadirAlumno">Añadir alumno</a></li>
                     <li><a href="#">Menu alumnos</a></li>
                 </ul>
             </li>
-            <li><a href="../../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="../../verRespuesta">Ver respuestas</a></li>
             <li><a href="#">Equipos sugeridos</a></li>
-            <li><a href="../../Login/Login.php">Salir</a></li>
+            <li><a href="../../inicio">Salir</a></li>
         </ul>
         </nav>
 
@@ -85,7 +85,7 @@ $alumnos=$consulta->fetchAll();
       <br>
     </select>
 
-    <input type="submit" class="buttonList3" value="Ver clase" onclick="redirigir_curso('ListarAlumnos.php', <?php $curso?>)">
+    <input type="submit" class="buttonList3" value="Ver clase" onclick="redirigir_curso('listarAlumno', <?php $curso?>)">
 
     </form>
   
@@ -136,7 +136,7 @@ $alumnos=$consulta->fetchAll();
       }
     ?>
 
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')">
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarAlumno')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>

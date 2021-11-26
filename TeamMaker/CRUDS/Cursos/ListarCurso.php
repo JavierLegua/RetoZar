@@ -39,26 +39,26 @@ $curso=$consulta->fetchAll();
   <div class="listTodo">
   <nav class="menuAdmin">
             <ul>
-            <li><a href="../../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
+            <li><a href="../../gestionarProfesor">Gestionar profesores</a>
             <ul>
-            <li><a href="../Profesores/CrearProfesor.php">Añadir profesores</a></li>
-            <li><a href="../Profesores/ListarProfesores.php">Menú de profesores</a></li>
+            <li><a href="../crearProfesor">Añadir profesores</a></li>
+            <li><a href="../listarProfesor">Menú de profesores</a></li>
             </ul>
             </li>
-            <li><a href="../../Gestiones/GestionarCurso.php">Gestionar cursos</a>
+            <li><a href="../../gestionarCurso">Gestionar cursos</a>
             <ul>
-            <li><a href="../Cursos/CrearCurso.php">Crear curso</a></li>
-            <li><a href="#">Menú de cursos</a></li>
+            <li><a href="../crearCurso">Crear curso</a></li>
+            <li><a href="../listarCurso">Menú de cursos</a></li>
             </ul>
             </li>
-            <li><a href="../../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+            <li><a href="../../profesores">Funciones del profesor</a>
             <ul>
-            <li><a href="../../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
-            <li><a href="../../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
+            <li><a href="../../verRespuesta">Ver respuestas</a></li>
             <li><a href="#">Equipos sugeridos</a></li>
             </ul>
             </li>
-            <li><a href="../../Login/Login.php">Salir</a></li>
+            <li><a href="../../inicio">Salir</a></li>
             </ul>
             </nav>
   <table class="table" id="tableCurso">
@@ -101,7 +101,7 @@ $curso=$consulta->fetchAll();
       }
     ?>
 
-  <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')">
+  <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarCurso')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>

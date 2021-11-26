@@ -92,7 +92,7 @@
             <br><br>
         </form>
 
-        <button class="Salir" onclick="redirigir('../PaginasUsuario/Alumno.php')" >Salir del Test</button>
+        <button class="Salir" onclick="redirigir('../alumno')" >Salir del Test</button>
         </main>
 
     <footer>

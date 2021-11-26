@@ -31,15 +31,15 @@
     <main class="crudMainUsuario">
     <nav id="menuProfesor">
         <ul>
-            <li><a href="../../Gestiones/GestionarAlumno.php">Gestionar alumnos</a>
+            <li><a href="../../gestionarAlumno">Gestionar alumnos</a>
                 <ul>
                     <li><a href="#">Añadir alumno</a></li>
-                    <li><a href="../Alumnos/ListarAlumnos.php">Menu alumnos</a></li>
+                    <li><a href="../listarAlumno">Menu alumnos</a></li>
                 </ul>
             </li>
-            <li><a href="../../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="../../verRespuesta">Ver respuestas</a></li>
             <li><a href="#">Equipos sugeridos</a></li>
-            <li><a href="../../Login/Login.php">Salir</a></li>
+            <li><a href="../../inicio">Salir</a></li>
         </ul>
         </nav>
 
@@ -71,7 +71,7 @@
                 }
             ?>
             <input id="crear" type="submit" name="Crear Alumno" class="inputUsEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')" class="inputUsVolver">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarAlumno')" class="inputUsVolver">
 
         </form>
 

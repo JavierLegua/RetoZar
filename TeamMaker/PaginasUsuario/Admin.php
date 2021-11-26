@@ -1,16 +1,6 @@
 <?php
-    // session_start();
-    // include "../../BBDD/includes/funciones.php";
-
-    // $conexion=conectarBD();
-
-    // $sql = "SELECT PROFESOR.Rol, PROFESOR.USUARIO_DNI FROM PROFESOR WHERE PROFESOR.USUARIO_DNI=".$_SESSION['DNI'];
-    // echo $sql;
-
-    // $consulta=$conexion->prepare($sql);
-    // $consulta->execute();
-
-    // $rol=$consulta->fetch();
+    session_start();
+    include "../BBDD/includes/funciones.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,78 +31,74 @@
 
     <main class="mainAdmin">
         <?php
-        if ($_SESSION['rol']== "Admin") {
-            echo $_SESSION['rol'];
-            ?>
+        $rol = $_GET['rol'];
+        if ($rol == 'Admin') {
+        ?>
             <nav class="menuAdmin">
                 <ul>
-                    <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
+                    <li><a href="../gestionarProfesor">Gestionar profesores</a>
                         <ul>
-                            <li><a href="../CRUDS/Profesores/CrearProfesor.php">Añadir profesores</a></li>
-                            <li><a href="../CRUDS/Administradores/ListarProfesores.php">Menú de profesores</a></li>
+                            <li><a href="../crearProfesor">Añadir profesores</a></li>
+                            <li><a href="../listarProfesor">Menú de profesores</a></li>
                         </ul>
                     </li>
-                    <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a>
+                    <li><a href="../gestionarCurso">Gestionar cursos</a>
                         <ul>
-                            <li><a href="../CRUDS/Cursos/CrearCurso.php">Crear curso</a></li>
-                            <li><a href="../CRUDS/Cursos/ListarCurso.php">Menú de cursos</a></li>
+                            <li><a href="../crearCurso">Crear curso</a></li>
+                            <li><a href="../listarCurso">Menú de cursos</a></li>
                         </ul>
                     </li>
-                    <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+                    <li><a href="../profesores">Funciones del profesor</a>
                         <ul>
-                            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
-                            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+                            <li><a href="../anadirAlumno">Gestionar alumnos</a></li>
+                            <li><a href="../verRespuesta">Ver respuestas</a></li>
                             <li><a href="#">Equipos sugeridos</a></li>
                         </ul>
                     </li>
-                    <li><a href="../Login/Login.php">Salir</a></li>
+                    <li><a href="../inicio">Salir</a></li>
                 </ul>
             </nav>
             <?php
-        }elseif ($_SESSION['rol']=='SuperAdmin'){
+        }elseif ($_GET['rol']=='SuperAdmin'){
             ?>
               <nav class="menuAdminTop">
             <ul>
-            <li><a href="../Gestiones/GestionarCentros.php">Gestionar centros</a>
+            <li><a href="../gestionarCentro">Gestionar centros</a>
             <ul>
-            <li><a href="../CRUDS/Centros/CrearCentro.php">Crear centro</a></li>
-            <li><a href="../CRUDS/Centros/ListarCentro.php">Menu gestión de centros</a></li>
+            <li><a href="../crearCentro">Crear centro</a></li>
+            <li><a href="../listarCentro">Menu gestión de centros</a></li>
             </ul>
             </li>
-            <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
+            <li><a href="../profesores">Funciones del profesor</a>
             <ul>
-            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
-            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
+            <li><a href="../gestionarAlumno">Gestionar alumnos</a></li>
+            <li><a href="../verRespuesta">Ver respuestas</a></li>
             <li><a href="#">Equipos sugeridos</a></li>
             </ul>
-            <li><a href="../Gestiones/GestionarAdmin.php">Gestionar administrador de centros</a>
+            <li><a href="../gestionAdmin">Gestionar administrador de centros</a>
             <ul>
-            <li><a href="../CRUDS/Administradores/CrearAdmin.php">Crear administrador</a></li>
-            <li><a href="../CRUDS/Administradores/ListarAdmin.php">Menu de administradores</a></li>
+            <li><a href="../crearAdmin">Crear administrador</a></li>
+            <li><a href="../listarAdmin">Menu de administradores</a></li>
             </ul>
             </li>
-            <li><a href="../PaginasUsuario/Admin.php">Funciones de administrador de centros</a>
+            <li><a href="../admins">Funciones de administrador de centros</a>
             <ul>
-            <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a></li>
-            <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a></li>
-            <li><a href="../PaginasUsuario/Profesor.php">Funciones de profesor</a></li>
+            <li><a href="../gestionarProfesor">Gestionar profesores</a></li>
+            <li><a href="../gestionarCurso">Gestionar cursos</a></li>
+            <li><a href="../profesores">Funciones de profesor</a></li>
             </ul>
             </li>
-            <li><a href="../Login/Login.php">Salir</a></li>
+            <li><a href="../inicio">Salir</a></li>
             </ul>
             </nav>
             <?php
         }
-
-
-
         ?>
-            
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
-        <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')">
-        <input type="button" value="Gestionar cursos" class="admin" onclick="redirigir('../Gestiones/GestionarCurso.php')"> <br>
-        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('Profesor.php')"> <br>
+        <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../gestionarProfesor')">
+        <input type="button" value="Gestionar cursos" class="admin" onclick="redirigir('../gestionarCurso')"> <br>
+        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('profesores?rol=Admin')"> <br>
         <input type="button" value="Salir" class="adminSalir" onclick="redirigir('../inicio')">
 
     </main>
