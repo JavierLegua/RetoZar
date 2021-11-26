@@ -29,6 +29,7 @@ session_start();
     
     <main class="profesorMain">
     <?php
+        $rol = $_GET['rol'];
         if ($rol == 'Admin') {
     ?>
             <nav class="menuAdmin">
