@@ -34,7 +34,7 @@ Options -Indexes
   RewriteRule ^gestionarProfesor$ Gestiones/GestionarProfesor.php [L,NC]
   RewriteRule ^gestionarCurso$ Gestiones/GestionarCurso.php [L,NC]
   RewriteRule ^crearProfesor$ CRUDS/Profesores/CrearProfesor.php [L,NC]
-  RewriteRule ^listarProfesor$ CRUDS/Administradores/ListarProfesores.php [L,NC]
+  RewriteRule ^listarProfesor$ CRUDS/Profesores/ListarProfesores.php [L,NC]
   RewriteRule ^crearCurso$ CRUDS/Cursos/CrearCurso.php [L,NC]
   RewriteRule ^listarCurso$ CRUDS/Cursos/ListarCurso.php [L,NC]
   RewriteRule ^mostrarResultados$ Grupos/MostrarResultadosGrupo.php [L,NC]

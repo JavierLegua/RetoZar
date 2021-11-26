@@ -59,7 +59,7 @@
                 </ul>
             </nav>
             <?php
-        }elseif ($_GET['rol']=='SuperAdmin'){
+        }elseif ($rol=='SuperAdmin'){
             ?>
               <nav class="menuAdminTop">
             <ul>
