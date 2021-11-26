@@ -65,25 +65,26 @@ session_start();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
 
-                            $sql="SELECT Rol from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
-                            $consulta = $conexion->prepare($sql);
-                            $consulta->execute();
-                            $fila = $consulta->fetch();  
-                            $_SESSION['rol']=$fila->Rol;
+                            $sql1="SELECT Rol from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
+                            $consulta1 = $conexion->prepare($sql1);
+                            $consulta1->execute();
+                            $fila1 = $consulta1->fetch();  
+                            $_SESSION['rol']=$fila1->Rol;
+                            /* echo $_SESSION['rol']; */
 
                             if($_SESSION['rol']=='Profesor'){
                                 header("refresh:0;url=../profesores?rol=Profesor");
                             }else if($_SESSION['rol']=='SuperAdmin'){
-                                header("refresh:0;url=../superAdmins");
+                                header("refresh:0;url=../superAdmins?rol=SuperAdmin");
                             }else{
                                 header("refresh:0;url=../admins?rol=Admin");
                             }
 
                         }else{
-                            $sql="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
-                            $consulta = $conexion->prepare($sql);
-                            $consulta->execute();
-                            $fila = $consulta->fetch();  
+                            $sql2="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
+                            $consulta2 = $conexion->prepare($sql);
+                            $consulta2->execute();
+                            $fila = $consulta2->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
                             header("refresh:0;url=../alumno");
                         }
