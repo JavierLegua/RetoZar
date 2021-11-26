@@ -57,7 +57,7 @@
         </nav>
         <input type="button" value="Crear centro" class="Ginput" onclick="redirigir('../CRUDS/Centros/CrearCentro.php')"> <br>
         <input type="button" value="Menu gestión de centros" class="Ginput" onclick="redirigir('../CRUDS/Centros/ListarCentro.php')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../Index.php')"> <br>
+        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../inicio')"> <br>
 
     </main>
 
