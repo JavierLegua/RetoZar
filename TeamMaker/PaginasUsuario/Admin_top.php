@@ -33,6 +33,7 @@
 
     <?php
         echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
+        echo menuMovil('SuperAdmin');
     ?>
         <h1 class="adminTopH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 

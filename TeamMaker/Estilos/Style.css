@@ -687,7 +687,7 @@ main.mainEditC {
     padding-top: 3%;
 }
 
-.menuAdmin ul {
+#menuAdmin ul {
     list-style:none;
     margin:0;
     padding:0;
@@ -695,13 +695,13 @@ main.mainEditC {
    
    /* items del menu */
    
-.menuAdmin ul li {
+#menuAdmin ul li {
     background-color: white;
 }
    
    /* enlaces del menu */
    
-.menuAdmin ul a {
+#menuAdmin ul a {
     display:block;
     color: black;
     text-decoration:none;
@@ -715,7 +715,7 @@ main.mainEditC {
    
    /* items del menu */
    
-.menuAdmin ul li {
+#menuAdmin ul li {
     position:relative;
     display: inline-block;
     margin:0;
@@ -724,11 +724,11 @@ main.mainEditC {
    
    /* efecto al pasar el ratón por los items del menu */
    
-.menuAdmin ul li:hover {
+#menuAdmin ul li:hover {
     background:#5b78a7;
 }
 
-.menuAdmin ul ul {
+#menuAdmin ul ul {
     display:none;
     position:absolute;
     top:100%;
@@ -739,29 +739,29 @@ main.mainEditC {
    
    /* items del menu desplegable */
    
-   .menuAdmin ul ul li {
+   #menuAdmin ul ul li {
     float:none;
     width:100%;
    }
    
    /* enlaces de los items del menu desplegable */
    
-   .menuAdmin ul ul a {
+   #menuAdmin ul ul a {
     line-height:120%;
     padding:10px 15px;
    }
    
    /* items del menu desplegable al pasar el ratón */
    
-   .menuAdmin ul li:hover > ul {
+   #menuAdmin ul li:hover > ul {
     display:block;
    }
 
-   .menuAdmin{
+   #menuAdmin{
     padding-bottom: 2%;
 }
 
-.menuAdminTop ul {
+#menuAdminTop ul {
     list-style:none;
     margin:0;
     padding:0;
@@ -769,13 +769,13 @@ main.mainEditC {
    
    /* items del menu */
    
-.menuAdminTop ul li {
+#menuAdminTop ul li {
     background-color:white;
 }
    
    /* enlaces del menu */
    
-.menuAdminTop ul a {
+#menuAdminTop ul a {
     display:block;
     color: black;
     text-decoration:none;
@@ -789,11 +789,11 @@ main.mainEditC {
    
    /* items del menu */
    
-.menuAdminTop{
+#menuAdminTop{
        padding-bottom: 2%;
    }
 
-.menuAdminTop ul li {
+#menuAdminTop ul li {
     position:relative;
     display: inline-block;
     margin:0;
@@ -802,11 +802,11 @@ main.mainEditC {
    
    /* efecto al pasar el ratón por los items del menu */
    
-.menuAdminTop ul li:hover {
+#menuAdminTop ul li:hover {
     background:#5b78a7;
 }
 
-.menuAdminTop ul ul {
+#menuAdminTop ul ul {
     display:none;
     position:absolute;
     top:100%;
@@ -817,21 +817,21 @@ main.mainEditC {
    
    /* items del menu desplegable */
    
-   .menuAdminTop ul ul li {
+   #menuAdminTop ul ul li {
     float:none;
     width:100%;
    }
    
    /* enlaces de los items del menu desplegable */
    
-   .menuAdminTop ul ul a {
+   #menuAdminTop ul ul a {
     line-height:120%;
     padding:10px 15px;
    }
    
    /* items del menu desplegable al pasar el ratón */
    
-   .menuAdminTop ul li:hover > ul {
+   #menuAdminTop ul li:hover > ul {
     display:block;
    }
 
@@ -1067,7 +1067,7 @@ input.buttonList3{
     */
     main.adminTopMain {
         padding-bottom: 15%;
-        padding-top: 15%;
+        padding-top: 0%;
     }
 
     /*
@@ -1507,6 +1507,75 @@ input.buttonList3{
         padding-top: 25%;
     }
 
+    #menuMovil a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 2px solid #456789;
+        max-width: 200px;
+        background: #234567;
+        font-variant: small-caps;
+        text-shadow: 1px 1px black;
+      }
+       
+      
+      #menuMovil input[type="checkbox"], .respmenu .fa-bars, .respmenu .fa-times {
+        position: absolute;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        top: 0;
+        width: 5%;
+        height: 5%;
+      }
+      
+      #menuMovil .fa-bars, #menuMovil .fa-times {
+        font-size: 6vh;
+        pointer-events: none;
+        position: absolute;
+        box-sizing: border-box;
+      }
+      
+      #menuMovil input[type="checkbox"] {
+        opacity: 0;
+        height: 5vh;
+        width: 10vh;
+      }
+      
+      #menuMovil {
+        color: white;
+        position: relative;
+        background-image: url("Fondo.png");
+        min-height: 48px;
+        display: block;
+      }
+      
+      #menuMovil nav {
+        display: none;
+      }
+
+      #menuMovil nav ul{
+        list-style: none;
+      }
+
+      #menuMovil input:checked ~ nav {
+        display: block;
+        margin-left: 15% ;
+      }
+      
+      #menuMovil input:checked ~ .fa-bars {
+        display: none;
+      }
+      
+      #menuMovil input:not(:checked) ~ .fa-times {
+        display: none;
+      }
+
+      #menuAdminTop{
+          display: none;
+      }
 }
 
 /*

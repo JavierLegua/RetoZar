@@ -39,19 +39,18 @@
     function crear_menu($rol){
         switch ($rol) {
             case "Admin":
-                echo"<nav class='menuAdmin'><ul><li><a href='../gestionarProfesor?rol=Admin'>Gestionar profesores</a><ul><li><a href='../crearProfesor?rol=Admin'>Añadir profesores</a></li><li><a href='../listarProfesor?rol=Admin'>Menú de profesores</a></li></ul></li><li><a href='../gestionarCurso?rol=Admin'>Gestionar cursos</a><ul><li><a href='../crearCurso?rol=Admin'>Crear curso</a></li><li><a href='../listarCurso?rol=Admin'>Menú de cursos</a></li></ul></li><li><a href='../profesores?rol=Admin'>Funciones del profesor</a><ul><li><a href='../anadirAlumno?rol=Admin'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul></li><li><a href='../inicio'>Salir</a></li></ul></nav>"; 
+                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesores</a></li><li><a href='listarProfesor'>Menú de profesores</a></li></ul></li><li><a href=gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCurso'>Crear curso</a></li><li><a href='listarCurso'>Menú de cursos</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='anadirAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>"; 
             break;
-    
+
             case "SuperAdmin":
-                echo"<nav class='menuAdminTop'><ul><li><a href='../gestionarCentro?rol=SuperAdmin'>Gestionar centros</a><ul><li><a href='../crearCentro?rol=SuperAdmin'>Crear centro</a></li><li><a href='../listarCentro?rol=SuperAdmin'>Menu gestión de centros</a></li></ul></li><li><a href='../profesores?rol=SuperAdmin'>Funciones del profesor</a><ul><li><a href='../gestionarAlumno?rol=SuperAdmin'>Gestionar alumnos</a></li><li><a href='#?rol=SuperAdmin'>Equipos sugeridos</a></li></ul><li><a href='../gestionAdmin?rol=SuperAdmin'>Gestionar administrador de centros</a><ul><li><a href='../crearAdmin?rol=SuperAdmin'>Crear administrador</a></li><li><a href='../listarAdmin?rol=SuperAdmin'>Menu de administradores</a></li></ul></li><li><a href='../admins?rol=SuperAdmin'>Funciones de administrador de centros</a><ul><li><a href='../gestionarProfesor?rol=SuperAdmin'>Gestionar profesores</a></li><li><a href='../gestionarCurso?rol=SuperAdmin'>Gestionar cursos</a></li><li><a href='../profesores?rol=SuperAdmin'>Funciones de profesor</a></li></ul></li><li><a href='../inicio'>Salir</a></li></ul></nav>";
+                echo"<nav class='menuAdminTop'><ul><li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
-    
+
             case "Profesor":
-                echo"<nav id='menuProfesor?rol=Profesor'><ul><li><a href='../gestionarAlumno?rol=Profesor'>Gestionar alumnos</a><ul><li><a href='../anadirAlumno?rol=Profesor'>Añadir alumno</a></li><li><a href='../listarAlumno?rol=Profesor'>Menu alumnos</a></li></ul></li><li><a href='#?rol=Profesor'>Equipos sugeridos</a></li><li><a href='../inicio'>Salir</a></li></ul></nav>";
+                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='#'>Equipos sugeridos</a></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
-    
-        }
     }
+}
 
     function menuMovil($rol){
         switch ($rol) {
@@ -62,24 +61,25 @@
                 <i class='fas fa-times'></i>
                 <nav>
                   <ul>
-                    <li><a href='../gestionarProfesor?rol=Admin'>Gestionar Profesores</a></li>
-                    <li><a href='../gestionarCurso?rol=Admin'>Gestionar Cursos</a></li>
-                    <li><a href='../profesores?rol=Admin'>Funciones del profesor</a></li>
+                    <li><a href='gestionarProfesor'>Gestionar Profesores</a></li>
+                    <li><a href='gestionarCurso'>Gestionar Cursos</a></li>
+                    <li><a href='profesores'>Funciones del profesor</a></li>
                   </ul>
                 </nav>
               </div>";    
                 break;
+
             case 'SuperAdmin':
-                echo "<div class='menuMovil'>
+                echo "<div id='menuMovil'>
                 <input type='checkbox'>
                 <i class='fas fa-bars'></i>
                 <i class='fas fa-times'></i>
                 <nav>
                   <ul>
-                    <li><a href='../gestionarCentro?rol=SuperAdmin'>Gestionar Centros</a></li>
-                    <li><a href='../profesores?rol=SuperAdmin'>Funciones del profesor</a></li>
-                    <li><a href='../gestionAdmin?rol=SuperAdmin'>Gestionar Administrador de Centros</a></li>
-                    <li><a href='../admins?rol=SuperAdmin'>Funciones de Administrador de Centros</a></li>
+                    <li><a href='gestionarCentro'>Gestionar Centros</a></li>
+                    <li><a href='profesores'>Funciones del profesor</a></li>
+                    <li><a href='gestionAdmin'>Gestionar Administrador de Centros</a></li>
+                    <li><a href='admins'>Funciones de Administrador de Centros</a></li>
                   </ul>
                 </nav>
               </div>"; 
@@ -91,9 +91,8 @@
                 <i class='fas fa-times'></i>
                 <nav>
                   <ul>
-                    <li><a href='../gestionarProfesor?rol=Admin'>Gestionar Profesores</a></li>
-                    <li><a href='../gestionarCurso?rol=Admin'>Gestionar Cursos</a></li>
-                    <li><a href='../profesores?rol=Admin'>Funciones del profesor</a></li>
+                    <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
+                    <li><a href='#'>Equipos sugeridos</a></li>
                   </ul>
                 </nav>
               </div>";  
@@ -101,4 +100,3 @@
         }
     }
 ?>
-
