@@ -14,7 +14,7 @@ session_start();
 </head>
 
 <body>
-    <h4> PRUEBA CONEXIÓN BASE DE DATOS</H4>
+    <!-- <h4> PRUEBA CONEXIÓN BASE DE DATOS</H4> -->
 
     <?php
 
@@ -65,27 +65,28 @@ session_start();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
 
-                            $sql="SELECT Rol from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
-                            $consulta = $conexion->prepare($sql);
-                            $consulta->execute();
-                            $fila = $consulta->fetch();  
-                            $_SESSION['rol']=$fila->Rol;
+                            $sql1="SELECT Rol from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
+                            $consulta1 = $conexion->prepare($sql1);
+                            $consulta1->execute();
+                            $fila1 = $consulta1->fetch();  
+                            $_SESSION['rol']=$fila1->Rol;
+                            /* echo $_SESSION['rol']; */
 
                             if($_SESSION['rol']=='Profesor'){
-                                header("refresh:0;url=../PaginasUsuario/Profesor.php");
+                                header("refresh:0;url=../profesores");
                             }else if($_SESSION['rol']=='SuperAdmin'){
-                                header("refresh:0;url=../PaginasUsuario/Admin_top.php");
+                                header("refresh:0;url=../superAdmins");
                             }else{
-                                header("refresh:0;url=../PaginasUsuario/Admin.php");
+                                header("refresh:0;url=../admins");
                             }
 
                         }else{
-                            $sql="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
-                            $consulta = $conexion->prepare($sql);
-                            $consulta->execute();
-                            $fila = $consulta->fetch();  
+                            $sql2="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
+                            $consulta2 = $conexion->prepare($sql);
+                            $consulta2->execute();
+                            $fila = $consulta2->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
-                            header("refresh:0;url=../PaginasUsuario/Alumno.php");
+                            header("refresh:0;url=../alumno");
                         }
                     
                     } 
@@ -93,7 +94,7 @@ session_start();
                     {
 
                         echo "Nombre de usuario y/o contraseña incorrecto. Será redireccionado en 2 segundos";
-                        header("refresh:2;url=../Login/Login.php");
+                        header("refresh:2;url=../inicio");
                     }
                 else
                     {

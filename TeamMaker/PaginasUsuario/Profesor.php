@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+    include "../BBDD/includes/funciones.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,26 +29,31 @@ session_start();
     </header>
     
     <main class="profesorMain">
-    <nav id="menuProfesor">
-        <ul>
-            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a>
-                <ul>
-                    <li><a href="../CRUDS/Alumnos/CrearAlumno.php">Añadir alumno</a></li>
-                    <li><a href="../CRUDS/Alumnos/ListarAlumnos.php">Menu alumnos</a></li>
-                </ul>
-            </li>
-            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
-            <li><a href="#">Equipos sugeridos</a></li>
-            <li><a href="../Login/Login.php">Salir</a></li>
-        </ul>
-        </nav>
-        <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
+    <?php
+        $rol = $_GET['rol'];
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
 
-        <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../Gestiones/GestionarAlumno.php')">
-        <input type="button" value="Ver respuestas" class="profesor" onclick="redirigir('../Preguntas/verRespuestas.php')"> <br>
-        <!-- <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')" > -->
-        <input type="button" value="Equipos sugeridos" class="profesor"> <br>
-        <input type="button" value="Salir" class="profesorSalir" onclick="redirigir('../Login/Login.php')">
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+    ?>
+    
+        <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
+        <?php
+        echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('../gestionarAlumno?rol=".$rol."')\">";
+        // <input type="button" value="Ver respuestas" class="profesor" onclick="redirigir('../verRespuesta')"><br>
+        // <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')">
+        echo"<input type='button' value='Equipos sugeridos' class='profesor'><br>";
+        echo"<input type='button' value='Salir' class='profesorSalir' onclick=\"redirigir('../inicio')\">";
+        ?>
 
     </main>
 
