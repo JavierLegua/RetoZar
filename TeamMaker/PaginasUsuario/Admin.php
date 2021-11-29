@@ -50,15 +50,15 @@
         <?php
 
         if ($rol=="Admin") {
-            echo"<input type='button' value='Gestionar profesores' class='admin' onclick=\"redirigir('../gestionarProfesor)\">";
-            echo"<input type='button' value='Gestionar cursos' class='admin' onclick=\"redirigir('../gestionarCurso?rol=".$rol."')\"><br>";
-            echo"<input type='button' value='Funciones de profesor' class='admin' onclick=\"redirigir('profesores?rol=".$rol."')\"><br>";
-            echo"<input type='button' value='Salir' class='adminSalir' onclick=\"redirigir('../inicio')\">";
+            echo"<input type='button' value='Gestionar profesores' class='admin' onclick=\"redirigir('gestionarProfesor')\">";
+            echo"<input type='button' value='Gestionar cursos' class='admin' onclick=\"redirigir('gestionarCurso')\"><br>";
+            echo"<input type='button' value='Funciones de profesor' class='admin' onclick=\"redirigir('profesores')\"><br>";
+            echo"<input type='button' value='Salir' class='adminSalir' onclick=\"redirigir('inicio')\">";
         }else{
-            echo"<input type='button' value='Gestionar profesores' class='admin' onclick=\"redirigir('../gestionarProfesor?rol=".$rol."')\">";
-            echo"<input type='button' value='Gestionar cursos' class='admin' onclick=\"redirigir('../gestionarCurso?rol=".$rol."')\"><br>";
-            echo"<input type='button' value='Funciones de profesor' class='admin' onclick=\"redirigir('profesores?rol=".$rol."')\"><br>";
-            echo"<input type='button' value='Volver' class='adminSalir' onclick=\"redirigir('../superAdmins')\">";
+            echo"<input type='button' value='Gestionar profesores' class='admin' onclick=\"redirigir('gestionarProfesor')\">";
+            echo"<input type='button' value='Gestionar cursos' class='admin' onclick=\"redirigir('gestionarCurso')\"><br>";
+            echo"<input type='button' value='Funciones de profesor' class='admin' onclick=\"redirigir('profesores')\"><br>";
+            echo"<input type='button' value='Volver' class='adminSalir' onclick=\"redirigir('superAdmins')\">";
         }
 
         

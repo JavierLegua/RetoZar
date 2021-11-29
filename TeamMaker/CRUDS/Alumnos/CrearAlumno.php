@@ -31,7 +31,7 @@
 
     <main class="crudMainUsuario">
     <?php
-        $rol = $_GET['rol'];
+        $rol = $_SESSION['rol'];
         switch ($rol) {
             case 'SuperAdmin':
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
@@ -74,7 +74,7 @@
                 }
         
                 echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviar'><br>";
-                echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('../../gestionarAlumno?rol=".$rol."')\" class='inputUsVolver'>";
+                echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\" class='inputUsVolver'>";
 
             ?>
 
