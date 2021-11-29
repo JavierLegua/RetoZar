@@ -137,7 +137,7 @@ $alumnos=$consulta->fetchAll();
       }
     ?>
     <?php
-    echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('../../gestionarAlumno?rol=".$rol."')\">";
+    echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\">";
     ?>
   </div>
   <footer class="listFoot">
