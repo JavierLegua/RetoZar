@@ -57,7 +57,7 @@
         </nav>
         <input type="button" value="Crear curso" class="Ginput" onclick="redirigir('../crearCentro')"> <br>
         <input type="button" value="Menu de cursos" class="Ginput" onclick="redirigir('../listarCentro')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../inicio')"> <br>
+        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('../admins')"> <br>
 
     </main>
 
