@@ -30,7 +30,7 @@
     
     <main class="profesorMain">
     <?php
-        $rol = $_GET['rol'];
+        $rol = $_SESSION['rol'];
         switch ($rol) {
             case 'SuperAdmin':
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    

@@ -32,22 +32,19 @@
     <main class="mainAdmin">
    
         <?php
-        $rol = $_GET['rol'];
-        echo "hola"."<br>";
-        echo $rol;
+        $rol = $_SESSION['rol'];
 
-/*
         switch ($rol) {
             case 'SuperAdmin':
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";  
-                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";  
+                /* echo "<div class='menuMovil'>".menuMovil($rol)."</div>"; */  
             break;
             
             case 'Admin':
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-                echo "<div class='menuMovil'>".menuMovil($rol)."</div>"; 
+                /* echo "<div class='menuMovil'>".menuMovil($rol)."</div>";  */
             break;
-        }*/
+        }
         ?>
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
         <?php
