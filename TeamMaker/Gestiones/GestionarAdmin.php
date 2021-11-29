@@ -57,7 +57,7 @@
         </nav>
         <input type="button" value="Crear administrador" class="Ginput" onclick="redirigir('../crearAdmin')"> <br>
         <input type="button" value="Menu de administradores" class="Ginput" onclick="redirigir('../listarAdmin')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../inicio')"> <br>
+        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('../superAdmins')"> <br>
 
     </main>
 

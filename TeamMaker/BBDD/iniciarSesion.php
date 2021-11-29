@@ -73,11 +73,11 @@ session_start();
                             /* echo $_SESSION['rol']; */
 
                             if($_SESSION['rol']=='Profesor'){
-                                header("refresh:0;url=../profesores?rol=Profesor");
+                                header("refresh:0;url=../profesores");
                             }else if($_SESSION['rol']=='SuperAdmin'){
-                                header("refresh:0;url=../superAdmins?rol=SuperAdmin");
+                                header("refresh:0;url=../superAdmins");
                             }else{
-                                header("refresh:0;url=../admins?rol=Admin");
+                                header("refresh:0;url=../admins");
                             }
 
                         }else{

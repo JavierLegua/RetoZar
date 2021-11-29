@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,23 +29,27 @@
     </header>
 
     <main class="Gestion">
-    <nav id="menuProfesor">
-        <ul>
-            <li><a href="#">Gestionar alumnos</a>
-                <ul>
-                    <li><a href="../anadirAlumno">Añadir alumno</a></li>
-                    <li><a href="../listarAlumno">Menu alumnos</a></li>
-                </ul>
-            </li>
-            <li><a href="../../verRespuesta">Ver respuestas</a></li>
-            <li><a href="#">Equipos sugeridos</a></li>
-            <li><a href="../../inicio">Salir</a></li>
-        </ul>
-        </nav>
+    <?php
+        $rol = $_GET['rol'];
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
 
-        <input type="button" value="Añadir alumno" class="Ginput" onclick="redirigir('../anadirAlumno')"> <br>
-        <input type="button" value="Menu alumnos" class="Ginput" onclick="redirigir('../listarAlumno')"> <br>
-        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('../profesores')"> <br>
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+
+        echo"<input type='button' value='Añadir alumno' class='Ginput' onclick=\"redirigir('../anadirAlumno?rol=".$rol."')\"><br>";
+        echo"<input type='button' value='Menu alumnos' class='Ginput' onclick=\"redirigir('../listarAlumno?rol=".$rol."')\"><br>";
+        echo"<input type='button' value='Volver' class='GinputSalir' onclick=\"redirigir('../profesores?rol=".$rol."')\"><br>";
+    
+    ?>
 
     </main>
 
