@@ -41,23 +41,24 @@ $alumnos=$consulta->fetchAll();
   </header>
 
   <div class="listTodo">
-  <nav id="menuProfesor">
-        <ul>
-            <li><a href="../../gestionarAlumno">Gestionar alumnos</a>
-                <ul>
-                    <li><a href="../anadirAlumno">Añadir alumno</a></li>
-                    <li><a href="#">Menu alumnos</a></li>
-                </ul>
-            </li>
-            <li><a href="../../verRespuesta">Ver respuestas</a></li>
-            <li><a href="#">Equipos sugeridos</a></li>
-            <li><a href="../../inicio">Salir</a></li>
-        </ul>
-        </nav>
-
-    <form id="especialForm" action="listarAlumno" method="post">
-    
     <?php
+      $rol = $_GET['rol'];
+      switch ($rol) {
+          case 'SuperAdmin':
+            echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+          break;
+            
+          case 'Admin':
+            echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+          break;
+
+          case 'Profesor':
+            echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+          break;
+      }
+
+    echo"<form id='especialForm' action='listarAlumno?rol=".$rol."' method='post'>";
+    
       /* echo "****************";
       echo $curso;
       echo "****************"; */
@@ -84,8 +85,9 @@ $alumnos=$consulta->fetchAll();
 
       <br>
     </select>
-
-    <input type="submit" class="buttonList3" value="Ver clase" onclick="redirigir_curso('listarAlumno', <?php $curso?>)">
+    <?php
+    echo"<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir_curso('listarAlumno?rol=".$rol."',".$curso.")\">"
+    ?>
 
     </form>
   
@@ -106,15 +108,14 @@ $alumnos=$consulta->fetchAll();
           $dni = $alumnos[$i]->DNI;
           $_SESSION['dni']=$dni;
           $_SESSION['curso']=$curso;
-          echo "<tr>
-              <td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php','".$dni."')\"></td>
-              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../Grupos/MostrarResultados.php','".$dni."')\"></td></tr>";
+          echo "<tr><td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php?rol=".$rol."','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php?rol=".$rol."','".$dni."')\"></td>
+              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../mostrarResultados?rol=".$rol."','".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
     </table>
     <?php 
-      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../mostrarResultados','".$curso."')\"><br>";
+      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php?rol=".$rol."','".$curso."')\"><br>";
     ?>
       <?php 
       $situacion = $_GET['situacion'];
@@ -135,8 +136,9 @@ $alumnos=$consulta->fetchAll();
         }
       }
     ?>
-
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarAlumno')">
+    <?php
+    echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('../../gestionarAlumno?rol=".$rol."')\">";
+    ?>
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>
