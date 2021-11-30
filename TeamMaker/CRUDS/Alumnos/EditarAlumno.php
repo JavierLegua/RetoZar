@@ -55,7 +55,7 @@ $curso=$alumnos->id_curso;
         <form action="actualizarAlumno" method="post">
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>         
             <input type="hidden" name="dni" value="<?php echo $dni?>">
-            <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required>
+            <!-- <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required> -->
             <input class="inputEditUs" type="text" name="curso" id="curso" placeholder="<?php echo $curso?>" required><br>
             <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAlumno,<?php $dni?>)">
             <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">

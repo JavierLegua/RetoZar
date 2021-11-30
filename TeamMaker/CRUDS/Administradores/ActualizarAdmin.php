@@ -6,13 +6,12 @@
 
     $nombre=$_POST['nombre'];
     $usuario=$_POST['DNI'];
-    $clave=$_POST['Clave'];
+    /* $clave=$_POST['Clave']; */
     $rol=$_POST['Rol'];
-    $dni = $_SESSION['DNI_VIEJO'];
 
     $sql3 = "UPDATE PROFESOR SET Rol=\"".$rol."\" WHERE USUARIO_DNI=\"$usuario\"";
 
-    $sql2 = "UPDATE USUARIO SET DNI=\"".$usuario."\", nombre=\"".$nombre."\",Clave =\"".$clave."\" WHERE DNI=\"".$dni."\"";
+    $sql2 = "UPDATE USUARIO SET DNI=\"".$usuario."\", nombre=\"".$nombre."\" WHERE DNI=\"".$usuario."\"";
 
 
     $consulta1=$conexion->prepare($sql2);

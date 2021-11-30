@@ -54,10 +54,11 @@ $rol=$admins->Rol;
         <h1 class="h1EditUs">Introduce los nuevos datos del administrador</h1>
         <form action="actualizarAdmin" method="post">
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>         
-            <input class="inputEditUs" type="text" name="DNI" id="DNI" placeholder="<?php echo $dni?>" required>
-            <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required>
+            <input type="hidden" name="dni" value="<?php echo $dni?>">
+            <!-- <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required> -->
             <input class="inputEditUs" type="text" name="Rol" id="Rol" placeholder="Admin" onblur="this.value = 'Admin'" required><br>
             <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAdmin,<?php $dni?>)">
+            <input type='button' value='Volver' class='adminSalir' onclick="redirigir('listarAdmin')">
         </form>
     </main>
     <footer>
