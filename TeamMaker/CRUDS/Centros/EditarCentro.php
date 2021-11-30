@@ -8,7 +8,7 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$idCentroViejo=$_GET['centro'];
+$idCentroViejo=$_GET['idCentro'];
 
 $sql = "SELECT * FROM CENTRO WHERE idCentro=\"".$idCentroViejo."\"";
 

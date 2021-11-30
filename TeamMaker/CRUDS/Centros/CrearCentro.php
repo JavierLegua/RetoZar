@@ -32,19 +32,11 @@
     </header>
 
     <main class="crudMain">
-    <?php
-        $rol = $_SESSION['rol'];
-        
-        switch ($rol) {
-            case 'SuperAdmin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
-            break;
-            
-            case 'Admin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
-        }
-    ?>
+    
+        <nav class='menuAdminTop'>
+        <ul>
+            <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>
+    
         <h1 class="crudH1">Creación de centros</h1>
 
         <form method="post" action="insertarCentro">

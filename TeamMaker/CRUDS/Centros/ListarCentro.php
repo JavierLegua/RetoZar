@@ -13,6 +13,7 @@ $consulta->execute();
 $centro=$consulta->fetchAll();
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -64,8 +65,9 @@ $centro=$consulta->fetchAll();
       <tbody>
       <?php
         for ($i=0; $i < count($centro); $i++) { 
+          $idCentro = $centro[$i]->idCentro;
           echo "<tr>
-              <td>".$centro[$i]->idCentro."</td><td>".$centro[$i]->Nombre."</td><td>".$centro[$i]->Direccion."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_centro('editarCentro','".$centro[$i]->idCentro."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_centro('borrarCentro','".$centro[$i]->idCentro."')\"></td></tr>";
+              <td>".$centro[$i]->idCentro."</td><td>".$centro[$i]->Nombre."</td><td>".$centro[$i]->Direccion."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_centro('editarCentro?idCentro=','".$idCentro."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_centro('borrarCentro?idCentro=','".$idCentro."')\"></td></tr>";
         }
       ?>
       </tbody>
