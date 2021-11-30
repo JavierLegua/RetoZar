@@ -42,7 +42,7 @@ $alumnos=$consulta->fetchAll();
 
   <div class="listTodo">
     <?php
-      $rol = $_GET['rol'];
+      $rol = $_SESSION['rol'];
       switch ($rol) {
           case 'SuperAdmin':
             echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
@@ -137,7 +137,7 @@ $alumnos=$consulta->fetchAll();
       }
     ?>
     <?php
-    echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('../../gestionarAlumno?rol=".$rol."')\">";
+    echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\">";
     ?>
   </div>
   <footer class="listFoot">

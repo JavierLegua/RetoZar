@@ -38,36 +38,9 @@ $admins=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
-  <nav class="menuAdminTop">
-        <ul>
-        <li><a href="../../gestionarCentro">Gestionar centros</a>
-        <ul>
-        <li><a href="../crearCentro">Crear centro</a></li>
-        <li><a href="../listarCentro">Menu gestión de centros</a></li>
-        </ul>
-        </li>
-        <li><a href="../../profesores">Funciones del profesor</a>
-        <ul>
-        <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
-        <li><a href="../../verRespuesta">Ver respuestas</a></li>
-        <li><a href="#">Equipos sugeridos</a></li>
-        </ul>
-        <li><a href="../../gestionAdmin">Gestionar administrador de centros</a>
-        <ul>
-        <li><a href="../crearAdmin">Crear administrador</a></li>
-        <li><a href="#">Menu de administradores</a></li>
-        </ul>
-        </li>
-        <li><a href="../../admins">Funciones de administrador de centros</a>
-        <ul>
-        <li><a href="../../gestionarProfesor">Gestionar profesores</a></li>
-        <li><a href="../../gestionarCurso">Gestionar cursos</a></li>
-        <li><a href="../../profesores">Funciones de profesor</a></li>
-        </ul>
-        </li>
-        <li><a href="../../inicio">Salir</a></li>
-        </ul>
-        </nav>
+    <?php
+        echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
+    ?>
     <table class="table" id="tableAdmin">
       <thead>
         <tr>
@@ -107,7 +80,7 @@ $admins=$consulta->fetchAll();
         }
       }
     ?>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionAdmin')">
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('gestionAdmin')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>
