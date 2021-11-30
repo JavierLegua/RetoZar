@@ -55,6 +55,7 @@ $direccion=$centro->Direccion;
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
             <input class="inputEditUs" type="text" name="direccion" id="direccion" placeholder="<?php echo $direccion?>" required><br>
             <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCentro)">
+            <input type='button' value='Volver' class='adminSalir' onclick="redirigir('listarCentro')">
         </form>
     </main>
     <footer>
