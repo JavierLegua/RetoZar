@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/fonts.css">
     <title>Document</title>
+    <script src="jquery-latest.js"></script>
     <script src="Funciones.js"></script>
 </head>
 <body>
@@ -58,33 +60,50 @@
         switch ($rol) {
             case 'Admin':
                 echo "<div class='menuMovil'>
-                <input type='checkbox'>
-                <i class='fas fa-bars'></i>
-                <i class='fas fa-times'></i>
+                        <a href='#' class='bt-menu'><span class='icon-menu2'></span></a>
+                      </div>
                 <nav>
                   <ul>
                     <li><a href='gestionarProfesor'>Gestionar Profesores</a></li>
                     <li><a href='gestionarCurso'>Gestionar Cursos</a></li>
                     <li><a href='profesores'>Funciones del profesor</a></li>
                   </ul>
-                </nav>
-              </div>";    
+                </nav>";    
                 break;
 
             case 'SuperAdmin':
-                echo "<div id='menuMovil'>
-                <input type='checkbox'>
-                <i class='fas fa-bars'></i>
-                <i class='fas fa-times'></i>
-                <nav>
-                  <ul>
-                    <li><a href='gestionarCentro'>Gestionar Centros</a></li>
-                    <li><a href='profesores'>Funciones del profesor</a></li>
-                    <li><a href='gestionAdmin'>Gestionar Administrador de Centros</a></li>
-                    <li><a href='admins'>Funciones de Administrador de Centros</a></li>
-                  </ul>
-                </nav>
-              </div>"; 
+                echo "<div class='menuMovil'>
+                        <a href='#' class='bt-menu'><span class='icon-menu2'></span></a>
+                      </div>
+                  <nav id='navMovil'>
+                    <ul>
+                      <li class='submenu'><a href='gestionarCentro'>Gestionar Centros</a>
+                          <ul class='children'>
+                              <li><a href='crearCentro'>Crear Centro</a></li>
+                              <li><a href='listarCentro'>Menú Centro</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='profesores'>Funciones del profesor</a>
+                          <ul class='children'>
+                              <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
+                              <li><a href='#'>Equipos sugeridos</a></li>
+                          </ul>
+                      </li>
+                      <li><a href='gestionAdmin'>Gestionar Administrador de Centros</a>
+                          <ul class='children'>
+                              <li><a href='crearAdmin'>Crear Administradores de Centros</a></li>
+                              <li><a href='listarAdmin'>Menú Admins</a></li>
+                          </ul>
+                      </li>
+                      <li><a href='admins'>Funciones de Administrador de Centros</a>
+                          <ul class='children'>
+                              <li><a href='gestionarProfesor'>Gestionar Profesores</a></li>
+                              <li><a href='gestionarCurso'>Gestionar Cursos</a></li>
+                              <li><a href='profesores'>Funciones del profesor</a></li>
+                          </ul>
+                      </li>
+                    </ul>
+                  </nav>"; 
                 break;
             case 'Profesor':
                 echo "<div class='menuMovil'>

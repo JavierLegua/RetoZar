@@ -38,13 +38,13 @@
 
         switch ($rol) {
             case 'SuperAdmin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";  
-                /* echo "<div class='menuMovil'>".menuMovil($rol)."</div>"; */  
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
             break;
             
             case 'Admin':
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-                /* echo "<div class='menuMovil'>".menuMovil($rol)."</div>";  */
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
             break;
         }
         ?>

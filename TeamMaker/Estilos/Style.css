@@ -864,8 +864,76 @@ input.buttonList3{
     background-color: #a7fabe;
     color: rgb(24, 24, 24);
 }
+/* .navMovil {
+	background:#023859;
+	z-index:1000;
+	max-width: 1000px;
+	width:95%;
+	margin:20px auto;
+}
+
+.navMovil ul {
+	list-style:none;
+}
+
+.navMovil ul li {
+	display:inline-block;
+	position: relative;
+}
+
+.navMovil ul li:hover {
+	background:#E6344A;
+}
+
+.navMovil ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+
+.navMovil ul li a span {
+	margin-right:10px;
+}
+
+.navMovil ul li:hover .children {
+	display:block;
+}
+
+.navMovil ul li .children {
+	display: none;
+	background:#011826;
+	position: absolute;
+	width: 150%;
+	z-index:1000;
+}
+
+.navMovil ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+.navMovil ul li .children li a {
+	display: block;
+}
+
+.navMovil ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+
+.navMovil ul li .caret {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
+} */
 /*
-*Mediaquery diseñada para pantallas con un mínimo de 579px y un máximo de 872px de ancho
+*Mediaquery diseñada para pantallas con un mínimo de 200px y un máximo de 577px de ancho
 */
 @media only screen and (min-width: 200px) and (max-width: 577px) {
 
@@ -1507,7 +1575,7 @@ input.buttonList3{
         padding-top: 25%;
     }
 
-    #menuMovil a {
+/*     #menuMovil a {
         color: inherit;
         text-decoration: none;
         display: block;
@@ -1539,7 +1607,7 @@ input.buttonList3{
       }
       
       #menuMovil input[type="checkbox"] {
-        opacity: 0;
+        opacity: 1;
         height: 5vh;
         width: 10vh;
       }
@@ -1573,9 +1641,9 @@ input.buttonList3{
         display: none;
       }
 
-      #menuAdminTop{
+      .menuAdminTop{
           display: none;
-      }
+      } */
 }
 
 /*
@@ -2299,5 +2367,72 @@ Mediaquery utilizada para moviles en horizontal, tablets y ventanas minimizadas
         border-radius: 50px;
         background-color: #a7fabe;
     }
+}
 
+@media screen and (max-width: 800px) {
+	body {
+		padding-top:80px;
+	}
+
+	.menuMovil {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background-image: url("Fondo.png");
+	}
+
+	.menuMovil .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.menuMovil span {
+		float: left;
+		font-size: 40px;
+	}
+
+	#navMovil {
+		width: 80%;
+		height: calc(100% - 80px);
+		position: fixed;
+		left: -100%;
+		margin: 0;
+		overflow: scroll;
+        background-image: url("Fondo.png");
+	}
+
+	#navMovil ul li {
+		display: block;
+		border-bottom:1px solid rgba(255,255,255,.5);
+	}
+
+	#navMovil ul li a {
+		display: block;
+	}
+
+	#navMovil ul li:hover .children {
+		display: none;
+	}
+
+	#navMovil ul li .children {
+		width: 100%;
+		position: relative;
+	}
+
+	#navMovil ul li .children li a {
+		margin-left:20px;
+	}
+
+	#navMovil ul li .caret {
+		float: right;
+	}
+    .menuAdminTop{
+        display: none;
+    }
 }
