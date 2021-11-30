@@ -19,6 +19,9 @@ Options -Indexes
   RewriteRule ^verRespuesta$ Preguntas/verRespuestas.php [L,NC]
   RewriteRule ^anadirAlumno$ CRUDS/Alumnos/CrearAlumno.php [L,NC]
   RewriteRule ^listarAlumno$ CRUDS/Alumnos/ListarAlumnos.php [L,NC]
+  RewriteRule ^editarAlumno$ CRUDS/Alumnos/EditarAlumno.php [L,NC]
+  RewriteRule ^borrarAlumno$ CRUDS/Alumnos/BorrarAlumno.php [L,NC]
+
 
   #Redirecciones desde la pagina alumno
   RewriteRule ^respondertest$ Preguntas/Test.php [L,NC]

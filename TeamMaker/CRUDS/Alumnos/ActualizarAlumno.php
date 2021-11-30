@@ -25,8 +25,8 @@
     $nfilas=$consulta->rowCount()+$consulta1->rowCount();
 
     if($nfilas==1 || $nfilas==2){
-        header("refresh:0.01;url=ListarAlumnos.php?situacion=1");
+        header("refresh:0.01;url=listarAlumno?situacion=1");
     }else{
-        header("refresh:0.01;url=ListarAlumnos.php?situacion=0");
+        header("refresh:0.01;url=listarAlumno?situacion=0");
     }
     ?>
