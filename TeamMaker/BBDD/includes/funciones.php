@@ -39,7 +39,7 @@
     function crear_menu($rol){
         switch ($rol) {
             case "Admin":
-                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor'>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesor</a></li><li><a href='listarProfesor'>Menu de profesores</a></li></ul></li><li><a href='gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestion de centros</a></li></ul></li><li><a href='profesores'>Funciones de profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor'>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesor</a></li><li><a href='listarProfesor'>Menu de profesores</a></li></ul></li><li><a href='gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCurso'>Crear curso</a></li><li><a href='listarCurso'>Menu de centros</a></li></ul></li><li><a href='profesores'>Funciones de profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
     
             case "SuperAdmin":
