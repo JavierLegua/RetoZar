@@ -31,6 +31,7 @@
     <main class="profesorMain">
     <?php
         $rol = $_SESSION['rol'];
+        
         switch ($rol) {
             case 'SuperAdmin':
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
