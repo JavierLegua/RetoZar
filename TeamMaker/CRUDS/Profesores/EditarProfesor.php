@@ -57,6 +57,7 @@ $rol=$profesores->Rol;
             <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required>
             <input class="inputEditUs" type="text" name="Rol" id="Rol" placeholder="<?php echo $rol?>" required><br>
             <input class="inputEditUsEnviar"id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarProfesor,<?php $dni?>)">
+            <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarProfesor')">
         </form>
     </main>
     <footer>
