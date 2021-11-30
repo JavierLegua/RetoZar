@@ -30,7 +30,7 @@
 
     <main class="Gestion">
         <?php
-            $rol = $_GET['rol'];
+            $rol = $_SESSION['rol'];
             switch ($rol) {
                 case 'SuperAdmin':
                     echo"<div class='crear_menu'>".crear_menu($rol)."</div>";  
@@ -46,9 +46,9 @@
             
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
     
-        <input type="button" value="Añadir profesor" class="Ginput" onclick="redirigir('../crearProfesor')"> <br>
-        <input type="button" value="Menu de profesores" class="Ginput" onclick="redirigir('../listarProfesor')"> <br>
-        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('../admins')"> <br>
+        <input type="button" value="Añadir profesor" class="Ginput" onclick="redirigir('crearProfesor')"> <br>
+        <input type="button" value="Menu de profesores" class="Ginput" onclick="redirigir('listarProfesor')"> <br>
+        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('admins')"> <br>
 
     </main>
 

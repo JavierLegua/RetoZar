@@ -1,5 +1,8 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
 
-
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -29,36 +32,19 @@
     </header>
 
     <main class="crudMain">
-    <nav class="menuAdminTop">
-        <ul>
-        <li><a href="../../gestionarCentro">Gestionar centros</a>
-        <ul>
-        <li><a href="../crearCentro">Crear centro</a></li>
-        <li><a href="../listarCentro">Menu gestión de centros</a></li>
-        </ul>
-        </li>
-        <li><a href="../../profesores">Funciones del profesor</a>
-        <ul>
-        <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
-        <li><a href="../../verRespuesta">Ver respuestas</a></li>
-        <li><a href="#">Equipos sugeridos</a></li>
-        </ul>
-        <li><a href="../../gestionAdmin">Gestionar administrador de centros</a>
-        <ul>
-        <li><a href="../crearAdmin">Crear administrador</a></li>
-        <li><a href="../listarAdmin">Menu de administradores</a></li>
-        </ul>
-        </li>
-        <li><a href="../../admins">Funciones de administrador de centros</a>
-        <ul>
-        <li><a href="../../gestionarProfesor">Gestionar profesores</a></li>
-        <li><a href="../../gestionarCurso">Gestionar cursos</a></li>
-        <li><a href="../../profesores">Funciones de profesor</a></li>
-        </ul>
-        </li>
-        <li><a href="../../inicio">Salir</a></li>
-        </ul>
-        </nav>
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+    ?>
         <h1 class="crudH1">Creación de centros</h1>
 
         <form method="post" action="InsertarBBDDCentro.php">
@@ -83,7 +69,7 @@
                 }
             ?>
             <input id="crear" type="submit" name="Crear Centro" class="inputGrEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarCentro')" class="inputGrVolver">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarCentro')" class="inputGrVolver">
 
         </form>
 

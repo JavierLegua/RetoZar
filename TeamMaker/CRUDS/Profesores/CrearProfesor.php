@@ -81,7 +81,7 @@
                 }
             ?>
             <input id="crear" type="submit" name="Crear Profesor" class="inputUsEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarProfesor')" class="inputUsVolver">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarProfesor')" class="inputUsVolver">
 
         </form>
 

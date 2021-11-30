@@ -13,7 +13,7 @@ aparte no permite que se pueda scrollear en la pagina
 body {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 30% 100% 20%;
+    grid-template-rows: 20% 100% 15%;
     overflow: hidden;
 }
 
@@ -553,7 +553,7 @@ especifico las paginas listar, cambiando el tamaño de las 3 filas que se genera
 body.listarBody {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 200px 100% 20%;
+    grid-template-rows: 175px 100% 20%;
     overflow: visible;
 }
 
