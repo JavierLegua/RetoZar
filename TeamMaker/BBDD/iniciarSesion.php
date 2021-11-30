@@ -82,7 +82,7 @@ session_start();
 
                         }else{
                             $sql2="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
-                            $consulta2 = $conexion->prepare($sql);
+                            $consulta2 = $conexion->prepare($sql2);
                             $consulta2->execute();
                             $fila = $consulta2->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
@@ -94,7 +94,7 @@ session_start();
                     {
 
                         echo "Nombre de usuario y/o contraseña incorrecto. Será redireccionado en 2 segundos";
-                        header("refresh:2;url=../inicio");
+                        header("refresh:0;url=../inicio");
                     }
                 else
                     {
