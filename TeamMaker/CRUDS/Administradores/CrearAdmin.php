@@ -58,7 +58,7 @@
         </nav>
         <h1 class="crudH1">Creación de administradores</h1>
 
-        <form method="post" action="InsertarBBDDAdmin.php">
+        <form method="post" action="insertarAdmin">
 
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputUs" required>
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>

@@ -27,10 +27,10 @@
     if($nfilas==1 || $nfilas==2){
         // echo "Usuario actualizado correctamente <br>";
         // echo "Redirigiendo a la lista de profesores";
-        header("refresh:0.01;url=ListarProfesores.php?situacion=1");
+        header("refresh:0.01;url=listarProfesor?situacion=1");
     }else{
         // echo "Ha habido un error a la hora de actualizar el profesor<br>";
         // echo "Redirigiendo a la lista de profesores";
-        header("refresh:0.01;url=ListarProfesores.php?situacion=0");
+        header("refresh:0.01;url=listarProfesor?situacion=0");
     }
     ?>

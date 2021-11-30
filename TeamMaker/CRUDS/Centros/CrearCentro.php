@@ -47,7 +47,7 @@
     ?>
         <h1 class="crudH1">Creación de centros</h1>
 
-        <form method="post" action="InsertarBBDDCentro.php">
+        <form method="post" action="insertarCentro">
 
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputGr" required><br>
             <input type="text" name="direccion" id="direccion" placeholder="direccion" class="inputGr" required><br>

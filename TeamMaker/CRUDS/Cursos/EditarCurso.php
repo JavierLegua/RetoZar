@@ -50,11 +50,11 @@ $centro=$curso->CENTRO_idCentro;
     </header>
     <main class="mainEditC">
     <h1 class="h1EditUs">Introduce los nuevos datos del curso</h1>
-        <form action="ActualizarCurso.php" method="post">
+        <form action="actualizarCurso" method="post">
             <input class="inputEditUs" type="text" name="idCurso" id="idCurso" placeholder="<?php echo $idCurso?>" required>         
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
             <input class="inputEditUs" type="text" name="idCentro" id="idCentro" placeholder="<?php echo $centro?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(EditarCurso.php)">
+            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCurso)">
         </form>
     </main>
     <footer>

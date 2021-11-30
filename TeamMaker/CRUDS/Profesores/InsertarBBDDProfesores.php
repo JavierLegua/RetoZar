@@ -36,7 +36,7 @@ session_start();
     } catch (Exception $e) {
         // echo("Usuario ya introducido <br>");
         // echo "Redirigiendo al menu de creación de profesores";
-        header("refresh:0.01;url=CrearProfesor.php?situacion=0");
+        header("refresh:0.01;url=crearProfesor?situacion=0");
     }
     // Ejecutar consulta
 
@@ -65,15 +65,15 @@ session_start();
         if($nfilas==1){
             // echo "Usuario insertado correctamente <br>";
             // echo "Redirigiendo al menu de creación de profesores";
-            header("refresh:0.01;url=CrearProfesor.php?situacion=1");
+            header("refresh:0.01;url=crearProfesor?situacion=1");
         }else{
             // echo "Error al insertar en tabla profesor<br>";
             // echo "Redirigiendo al menu de creación de profesores";
-            header("refresh:0.01;url=CrearProfesor.php?situacion=2");
+            header("refresh:0.01;url=crearProfesor?situacion=2");
         }
 
     }else{
-        header("refresh:0.01;url=CrearProfesor.php?situacion=3");
+        header("refresh:0.01;url=crearProfesor?situacion=3");
         // echo "Redireccionando en 3 segundos";
     }
           

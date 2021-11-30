@@ -52,12 +52,12 @@ $curso=$alumnos->id_curso;
     </header>
     <main class="mainEditUs">
         <h1 class="h1EditUs">Introduce los nuevos datos del alumno</h1>
-        <form action="ActualizarAlumno.php" method="post">
+        <form action="actualizarAlumno" method="post">
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>         
             <input class="inputEditUs" type="text" name="DNI" id="DNI" placeholder="<?php echo $dni?>" required>
             <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required>
             <input class="inputEditUs" type="text" name="curso" id="curso" placeholder="<?php echo $curso?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(EditarAlumno.php,<?php $dni?>)">
+            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAlumno,<?php $dni?>)">
         </form>
     </main>
     <footer>

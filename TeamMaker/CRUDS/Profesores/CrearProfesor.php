@@ -56,7 +56,7 @@
 
         <h1 class="crudH1">Creación de profesores</h1>
 
-        <form method="post" action="InsertarBBDDProfesores.php">
+        <form method="post" action="insertarProfesor">
 
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputUs" required>
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>

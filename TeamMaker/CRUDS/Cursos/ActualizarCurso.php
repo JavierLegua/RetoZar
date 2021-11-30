@@ -27,8 +27,8 @@
     $nfilas=$consulta->rowCount();
 
     if($nfilas==1){
-        header("refresh:0.01;url=ListarCurso.php?situacion=0");
+        header("refresh:0.01;url=listarCurso?situacion=0");
     }else{
-        header("refresh:0.01;url=ListarCurso.php?situacion=1");
+        header("refresh:0.01;url=listarCurso?situacion=1");
     }
     ?>

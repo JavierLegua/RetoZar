@@ -56,7 +56,7 @@
 
         <h1 class="crudH1">Creación de cursos</h1>
 
-        <form method="post" action="InsertarBBDDCurso.php">
+        <form method="post" action="insertarCurso">
 
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputGr" required><br>
             <input type="text" name="idCurso" id="idCurso" placeholder="idCurso" class="inputGr" required><br>

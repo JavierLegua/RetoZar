@@ -48,7 +48,7 @@
     ?>
         <h1 class="crudH1">Creación de alumnos</h1>
 
-        <form method="post" action="InsertarBBDD.php">
+        <form method="post" action="insertarAlumno">
             <?php
             echo"<input type='text' name='nombre' id='nombre' placeholder='Nombre' class='inputUs' required>";
             echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' required>";
