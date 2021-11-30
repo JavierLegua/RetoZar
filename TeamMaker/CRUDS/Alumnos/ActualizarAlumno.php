@@ -8,11 +8,10 @@
     $usuario=$_POST['DNI'];
     $clave=$_POST['Clave'];
     $curso=$_POST['curso'];
-    $dni = $_SESSION['DNI_VIEJO'];
 
     $sql3 = "UPDATE ALUMNO SET id_curso=\"".$curso."\" WHERE USUARIO_DNI=\"$usuario\"";
 
-    $sql2 = "UPDATE USUARIO SET DNI=\"".$usuario."\", nombre=\"".$nombre."\",Clave =\"".$clave."\" WHERE DNI=\"".$dni."\"";
+    $sql2 = "UPDATE USUARIO SET DNI=\"".$usuario."\", nombre=\"".$nombre."\",Clave =\"".$clave."\" WHERE DNI=\"".$usuario."\"";
 
 
     $consulta1=$conexion->prepare($sql2);

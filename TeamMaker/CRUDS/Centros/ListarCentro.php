@@ -78,10 +78,10 @@ $centro=$consulta->fetchAll();
       if (isset($situacion)) {
         switch ($situacion) {
           case '0':
-            echo "<br><br><p>Error al editar el centro</p>";
+            echo "<br><br><p>Centro editado correctamente</p>";
           break;
           case '1':
-            echo "<br><br><p>Centro editado correctamente</p>";
+            echo "<br><br><p>Error al editar el centro</p>";
           break;
           case '2':
             echo "<br><br><p>Centro borrado correctamente</p>";

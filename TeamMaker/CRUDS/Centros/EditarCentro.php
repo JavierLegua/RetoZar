@@ -51,8 +51,7 @@ $direccion=$centro->Direccion;
     <main class="mainEditC">
         <h1 class="h1EditUs">Introduce los nuevos datos del centro</h1>
         <form action="actualizarCentro" method="post">
-            <input value="hidden" >
-            <input class="inputEditUs" type="text" name="idCentro" id="idCentro" placeholder="<?php echo $idCentro?>" required>         
+            <input type="hidden" name="idCentro" value="<?php echo $idCentro?>">         
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
             <input class="inputEditUs" type="text" name="direccion" id="direccion" placeholder="<?php echo $direccion?>" required><br>
             <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCentro)">

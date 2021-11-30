@@ -5,10 +5,10 @@
     $conexion=conectarBD();
 
 
-    $idCentroViejo=$_GET['idCentro'];
+    $idCentro=$_GET['idCentro'];
 
 
-    $sql = "DELETE FROM CENTRO WHERE idCentro=\"".$idCentroViejo."\"";
+    $sql = "DELETE FROM CENTRO WHERE idCentro=\"".$idCentro."\"";
 
 
     $consulta=$conexion->prepare($sql);
