@@ -50,6 +50,7 @@
 
     </form>
 
+    <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
 
 </body>
 </html>

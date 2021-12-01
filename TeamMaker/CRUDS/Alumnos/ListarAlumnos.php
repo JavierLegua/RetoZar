@@ -59,14 +59,18 @@ $alumnos=$consulta->fetchAll();
 
     echo"<form id='especialForm' action='listarAlumno' method='post'>";
     
+
+      $dniProfesor= $_SESSION['usuario'];
+
       /* echo "****************";
       echo $curso;
       echo "****************"; */
-      $sqlCurso="SELECT idCurso, Nombre from CURSO";
+      $sqlCurso="SELECT CURSO_idCurso from pertenece WHERE PROFESOR_USUARIO_DNI=\"".$dniProfesor."\"";
       $consultaCurso=$conexion->prepare($sqlCurso);
       $consultaCurso->execute();
 
       $cursos=$consultaCurso->fetchAll();
+
 
       /* print_r($cursos); */
   
@@ -78,7 +82,7 @@ $alumnos=$consulta->fetchAll();
       <?php
       
       for ($i=0; $i < count($cursos); $i++) { 
-        echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
+        echo "<option value=\"".$cursos[$i]->CURSO_idCurso."\">".$cursos[$i]->CURSO_idCurso."</option>";
       }
       
       ?>

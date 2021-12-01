@@ -5,7 +5,7 @@
     $conexion=conectarBD();
 
     $nombre=$_POST['nombre'];
-    $usuario=$_POST['DNI'];
+    $usuario=$_POST['dni'];
     /* $clave=$_POST['Clave']; */
     $curso=$_POST['curso'];
 
