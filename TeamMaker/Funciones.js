@@ -31,33 +31,15 @@ function redirigir(ruta){
     location.href=ruta;
 }
 
-function redirigir_alumnos(ruta, dni){
-    location.href=ruta+'&dni='+dni;
+function redirigir_alumnos(ruta){
+    location.href=ruta;
 }
 
-function redirigir_curso(ruta, curso){
-    location.href=ruta+'&curso='+curso;
+function redirigir_curso(ruta){
+    location.href=ruta;
 }
 
 function redirigir_centro(ruta, centro){
-    location.href=ruta+'&centro='+centro;
+    location.href=ruta+centro;
 }
 
-document.ready(function() {
-
-    ('nav ul li > a:not(:only-child)').click(function(e) {
-      (this).siblings('.nav-submenu').toggle();
-      ('.nav-submenu').not($(this).siblings()).hide();
-      e.stopPropagation();
-    });
-  
-    ('html').click(function() {
-      ('.nav-submenu').hide();
-    });
-    
-    ('#nav-boton').click(function() {
-      ('nav ul').toggle()
-      ('#nav-boton').toggleClass("activo");
-    })
-  
-  });

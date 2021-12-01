@@ -19,7 +19,9 @@ Options -Indexes
   RewriteRule ^verRespuesta$ Preguntas/verRespuestas.php [L,NC]
   RewriteRule ^anadirAlumno$ CRUDS/Alumnos/CrearAlumno.php [L,NC]
   RewriteRule ^listarAlumno$ CRUDS/Alumnos/ListarAlumnos.php [L,NC]
-
+  RewriteRule ^generarEquipos$ Grupos/GenerarEquipos.php [L,NC]
+  RewriteRule ^verGrupos$ Grupos/Grupos.php [L,NC]
+  
   #Redirecciones desde la pagina alumno
   RewriteRule ^respondertest$ Preguntas/Test.php [L,NC]
   RewriteRule ^revisarRespuesta$ Preguntas/revisarPreguntas.php [L,NC]
@@ -38,5 +40,31 @@ Options -Indexes
   RewriteRule ^crearCurso$ CRUDS/Cursos/CrearCurso.php [L,NC]
   RewriteRule ^listarCurso$ CRUDS/Cursos/ListarCurso.php [L,NC]
   RewriteRule ^mostrarResultados$ Grupos/MostrarResultadosGrupo.php [L,NC]
+  RewriteRule ^mostrarResultadosAlumno$ Grupos/MostrarResultados.php [L,NC]
+
+  #Rutas CRUDS
+  RewriteRule ^insertarAlumno$ CRUDS/Alumnos/InsertarBBDD.php [L,NC]
+  RewriteRule ^insertarAdmin$ CRUDS/Administradores/InsertarBBDDAdmin.php [L,NC]
+  RewriteRule ^insertarCentro$ CRUDS/Centros/InsertarBBDDCentro.php [L,NC]
+  RewriteRule ^insertarCurso$ CRUDS/Cursos/InsertarBBDDCurso.php [L,NC]
+  RewriteRule ^insertarProfesor$ CRUDS/Profesores/InsertarBBDDProfesores.php [L,NC]
+  RewriteRule ^editarAlumno$ CRUDS/Alumnos/EditarAlumno.php [L,NC]
+  RewriteRule ^editarAdmin$ CRUDS/Administradores/EditarAdmin.php [L,NC]
+  RewriteRule ^editarCentro$ CRUDS/Centros/EditarCentro.php [L,NC]
+  RewriteRule ^editarCurso$ CRUDS/Cursos/EditarCurso.php [L,NC]
+  RewriteRule ^editarProfesor$ CRUDS/Profesores/EditarProfesor.php [L,NC]
+  RewriteRule ^actualizarAdmin$ CRUDS/Administradores/ActualizarAdmin.php [L,NC]
+  RewriteRule ^actualizarAlumno$ CRUDS/Alumnos/ActualizarAlumno.php [L,NC]
+  RewriteRule ^actualizarCentro$ CRUDS/Centros/ActualizarCentro.php [L,NC]
+  RewriteRule ^actualizarCurso$ CRUDS/Cursos/ActualizarCurso.php [L,NC]
+  RewriteRule ^actualizarProfesor$ CRUDS/Profesores/ActualizarProfesor.php [L,NC]
+  RewriteRule ^borrarAdmin$ CRUDS/Administradores/BorrarAdmin.php [L,NC]
+  RewriteRule ^borrarAlumno$ CRUDS/Alumnos/BorrarAlumno.php [L,NC]
+  RewriteRule ^borrarCentro$ CRUDS/Centros/BorrarCentro.php [L,NC]
+  RewriteRule ^borrarCurso$ CRUDS/Cursos/BorrarCurso.php [L,NC]
+  RewriteRule ^borrarProfesor$ CRUDS/Profesores/BorrarProfesor.php [L,NC]
+  
+ 
 </IfModule>
+
 

@@ -8,7 +8,7 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$idCentroViejo=$_GET['centro'];
+$idCentroViejo=$_GET['idCentro'];
 
 $sql = "SELECT * FROM CENTRO WHERE idCentro=\"".$idCentroViejo."\"";
 
@@ -50,11 +50,12 @@ $direccion=$centro->Direccion;
     </header>
     <main class="mainEditC">
         <h1 class="h1EditUs">Introduce los nuevos datos del centro</h1>
-        <form action="ActualizarCentro.php" method="post">
-            <input class="inputEditUs" type="text" name="idCentro" id="idCentro" placeholder="<?php echo $idCentro?>" required>         
+        <form action="actualizarCentro" method="post">
+            <input type="hidden" name="idCentro" value="<?php echo $idCentro?>">         
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
             <input class="inputEditUs" type="text" name="direccion" id="direccion" placeholder="<?php echo $direccion?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(EditarCentro.php)">
+            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCentro)">
+            <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarCentro')">
         </form>
     </main>
     <footer>

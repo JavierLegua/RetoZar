@@ -57,7 +57,7 @@ $alumnos=$consulta->fetchAll();
           break;
       }
 
-    echo"<form id='especialForm' action='listarAlumno?rol=".$rol."' method='post'>";
+    echo"<form id='especialForm' action='listarAlumno' method='post'>";
     
       /* echo "****************";
       echo $curso;
@@ -86,7 +86,7 @@ $alumnos=$consulta->fetchAll();
       <br>
     </select>
     <?php
-    echo"<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir_curso('listarAlumno?rol=".$rol."',".$curso.")\">"
+    echo"<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir_curso('listarAlumno?curso=".$curso."')\">"
     ?>
 
     </form>
@@ -108,14 +108,14 @@ $alumnos=$consulta->fetchAll();
           $dni = $alumnos[$i]->DNI;
           $_SESSION['dni']=$dni;
           $_SESSION['curso']=$curso;
-          echo "<tr><td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAlumno.php?rol=".$rol."','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAlumno.php?rol=".$rol."','".$dni."')\"></td>
-              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('../../mostrarResultados?rol=".$rol."','".$dni."')\"></td></tr>";
+          echo "<tr><td>".$alumnos[$i]->DNI."</td><td>".$alumnos[$i]->id_curso."</td><td>".$alumnos[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('editarAlumno?dni=".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('borrarAlumno?dni=".$dni."')\"></td>
+              <td><input class=\"buttonList\" type=\"button\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('mostrarResultadosAlumno?dni=".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
     </table>
     <?php 
-      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('../../Grupos/MostrarResultadosGrupo.php?rol=".$rol."','".$curso."')\"><br>";
+      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('mostrarResultados?curso=".$curso."')\"><br>";
     ?>
       <?php 
       $situacion = $_GET['situacion'];
@@ -150,5 +150,3 @@ $alumnos=$consulta->fetchAll();
   </footer>
 </body>
 </html>
-
-

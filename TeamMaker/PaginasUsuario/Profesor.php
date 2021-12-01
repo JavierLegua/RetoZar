@@ -52,15 +52,15 @@
 
         if ($rol=="Profesor") {
             echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
-            echo"<input type='button' value='Equipos sugeridos' class='profesor'><br>";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
             echo"<input type='button' value='Salir' class='profesorSalir' onclick=\"redirigir('inicio')\">";
         }elseif ($rol=="Admin") {
             echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('/gestionarAlumno')\">";
-            echo"<input type='button' value='Equipos sugeridos' class='profesor'><br>";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
             echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('admins')\">";
         }else{
             echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
-            echo"<input type='button' value='Equipos sugeridos' class='profesor'><br>";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
             echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('superAdmins')\">";
         }
         

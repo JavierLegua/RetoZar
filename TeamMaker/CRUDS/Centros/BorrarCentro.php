@@ -5,10 +5,10 @@
     $conexion=conectarBD();
 
 
-    $idCentroViejo=$_GET['centro'];
+    $idCentro=$_GET['idCentro'];
 
 
-    $sql = "DELETE FROM CENTRO WHERE idCentro=\"".$idCentroViejo."\"";
+    $sql = "DELETE FROM CENTRO WHERE idCentro=\"".$idCentro."\"";
 
 
     $consulta=$conexion->prepare($sql);
@@ -19,8 +19,8 @@
   
 
     if($nfilas==1){
-        header("refresh:0.01;url=ListarCentro.php?situacion=2");
+        header("refresh:0.01;url=listarCentro?situacion=2");
     }else{
-        header("refresh:0.01;url=ListarCentro.php?situacion=3");
+        header("refresh:0.01;url=listarCentro?situacion=3");
     }
     ?>
