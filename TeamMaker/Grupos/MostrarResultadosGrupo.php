@@ -100,6 +100,8 @@
         
             
         ?>
+
+    <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">
   </main>
   <footer class="listFoot">
     <div id="img_footer0"></div>
