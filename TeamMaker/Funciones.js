@@ -42,3 +42,4 @@ function redirigir_curso(ruta){
 function redirigir_centro(ruta, centro){
     location.href=ruta+centro;
 }
+

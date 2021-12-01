@@ -150,5 +150,3 @@ $alumnos=$consulta->fetchAll();
   </footer>
 </body>
 </html>
-
-
