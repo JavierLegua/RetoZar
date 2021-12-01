@@ -27,8 +27,9 @@
   <main>
     <?php
         $conexion=conectarBD();
-        $rol = $_GET['rol'];
+        
         $curso = $_GET['curso'];
+        $rol=$_SESSION['rol'] ;
         $azul = 0;
         $rojo = 0;
         $verde = 0;

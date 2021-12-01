@@ -35,8 +35,8 @@ function redirigir_alumnos(ruta){
     location.href=ruta;
 }
 
-function redirigir_curso(ruta, curso){
-    location.href=ruta+curso;
+function redirigir_curso(ruta){
+    location.href=ruta;
 }
 
 function redirigir_centro(ruta, centro){
