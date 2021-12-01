@@ -1,4 +1,29 @@
+<?php
 
+session_start();
+include "../../BBDD/includes/funciones.php";
+
+$conexion=conectarBD();
+
+
+/* Desplegable centro */
+$sqlCentro="SELECT Nombre from CENTRO";
+$consultaCentro=$conexion->prepare($sqlCentro);
+$consultaCentro->execute();
+
+$centros=$consultaCentro->fetchAll();
+
+
+/*Desplegable de curso*/
+$sqlCurso="SELECT idCurso from CURSO";
+
+$consultaCurso=$conexion->prepare($sqlCurso);
+$consultaCurso->execute();
+
+$cursos=$consultaCurso->fetchAll();
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -9,6 +34,7 @@
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear Profesor</title>
     <script src="../../Funciones.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -49,7 +75,46 @@
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputUs" required>
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
-            <input type="text" name="Rol" id="Rol" placeholder="Rol" class="inputUs" required><br>
+            <input type="text" name="Rol" id="Rol" placeholder="Rol" class="inputUs" required><br><br>
+            <select name="centro" id="centro">
+                <option value="0">Selecciona un centro</option>
+                <?php
+                for ($i=0; $i < count($centros) ; $i++) { 
+                    echo "<option value=\"".$centros[$i]->Nombre."\">".$centros[$i]->Nombre."</option>";
+                }
+                
+                
+                ?>
+                
+            </select><br><br>
+
+            <div id="curso"></div>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+
+                    recargarLista();
+
+                    $('#centro').change(function(){
+                        recargarLista();
+                    });
+                })
+            </script>
+
+            <script type="text/javascript"> 
+                function recargarLista(){
+                    $.ajax({
+                        type:"POST",
+                        url:"datos.php",
+                        data:"centro=" + $('#centro').val(),
+                        success:function(r){
+                            $('#curso').html(r);
+                        }
+                    });
+                }
+
+            </script>
+           <br>
             <?php
                 if (isset($situacion)) {
                     switch ($situacion) {
