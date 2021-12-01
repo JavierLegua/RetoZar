@@ -53,3 +53,5 @@
     
 
 ?>
+
+<input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">
