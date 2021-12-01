@@ -23,6 +23,8 @@
 </head>
 <body>
     
+    <form action="verGrupos" method="post">
+
     <select name="curso" id="curso">
         <option value="0">Seleccione un curso</option>
         <?php
@@ -41,9 +43,13 @@
         <option value="4">4</option>
     </select>
 
+    
     <?php
-        echo"<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir('verGrupo?curso=".$curso."')\">"
+        echo"<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir('verGrupos')\">"
     ?>
+
+    </form>
+
 
 </body>
 </html>

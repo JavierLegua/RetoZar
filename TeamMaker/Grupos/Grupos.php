@@ -6,4 +6,9 @@
     $conexion=conectarBD();
 
 
+    $curso = $_POST['curso'];
+    $numPersonas = $_POST['numPersonas'];
+
+    echo $curso."-----------------".$numPersonas;
+
 ?>
