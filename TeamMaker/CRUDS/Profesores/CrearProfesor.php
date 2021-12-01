@@ -7,20 +7,22 @@ $conexion=conectarBD();
 
 
 /* Desplegable centro */
-$sqlCentro="SELECT Nombre from CENTRO";
+$sqlCentro="SELECT idCentro, Nombre from CENTRO";
 $consultaCentro=$conexion->prepare($sqlCentro);
 $consultaCentro->execute();
 
 $centros=$consultaCentro->fetchAll();
 
+/* print_r($centros); */
+
 
 /*Desplegable de curso*/
-$sqlCurso="SELECT idCurso from CURSO";
+/* $sqlCurso="SELECT idCurso from CURSO";
 
 $consultaCurso=$conexion->prepare($sqlCurso);
 $consultaCurso->execute();
 
-$cursos=$consultaCurso->fetchAll();
+$cursos=$consultaCurso->fetchAll(); */
 
 
 ?>
@@ -34,10 +36,43 @@ $cursos=$consultaCurso->fetchAll();
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear Profesor</title>
     <script src="../../Funciones.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    
+    <!--   Comienzo con AJAX   -->
+    <!--   Implementamos la libreria de JQUERY -->
+    <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+
+    <!-- Iniciamos el segmento de codigo javascript -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var curso = $('#curso');
+
+            //Ejecutar accion al cambiar de opcion en el select de las curso
+            $('#centro').change(function(){
+                var id_Centro = $(this).val();  //Obtenemos el id seleccionado
+
+                if(id_Centro !== ''){ //Verificamos haber escogido una opcion valida
+                    /*Inicio de llamada de AJAX*/
+                    $.ajax({
+                        data: {id_Centro:id_Centro}, //Variable o parametros a enviar
+                        dataType: 'html', //tipo de datos que esperamos de regreso
+                        type: 'POST', //mandamos las variables por el metodo post
+                        url: 'getCursos.php'  //url que recibe los parametros
+                    }).done(function(data){ //metodo que se ejecuta cuando ajax haya completado su ejecucion
+                        cursos.html(data); //establecemos el contenido html que regresa ajax
+                        cursos.prop('disabled', false); //habilitamos el select
+                    });
+                    /*fin de la llamada de ajax*/
+                }else{ //en caso de no haber seleccionado una opcion valida
+                    cursos.val(''); //seleccionar la opcion 'seleccione un curso'
+                    discos.prop('disabled', true); //deshabilitamos el select
+                } 
+            });
+        });
+    </script>
 </head>
 <body>
     
@@ -76,11 +111,12 @@ $cursos=$consultaCurso->fetchAll();
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
             <input type="text" name="Rol" id="Rol" placeholder="Rol" class="inputUs" required><br><br>
+
             <select name="centro" id="centro">
                 <option value="0">Selecciona un centro</option>
                 <?php
                 for ($i=0; $i < count($centros) ; $i++) { 
-                    echo "<option value=\"".$centros[$i]->Nombre."\">".$centros[$i]->Nombre."</option>";
+                    echo "<option value=\"".$centros[$i]->idCentro."\">".$centros[$i]->Nombre."</option>";
                 }
                 
                 
@@ -88,9 +124,12 @@ $cursos=$consultaCurso->fetchAll();
                 
             </select><br><br>
 
-            <div id="curso"></div>
+            <select name="curso" id="curso" disabled="">
+            <option value="">Seleccione un curso</option>
+            
+            </select>
 
-            <script type="text/javascript">
+           <!--  <script type="text/javascript">
                 $(document).ready(function(){
 
                     recargarLista();
@@ -113,7 +152,7 @@ $cursos=$consultaCurso->fetchAll();
                     });
                 }
 
-            </script>
+            </script> -->
            <br>
             <?php
                 if (isset($situacion)) {
