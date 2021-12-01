@@ -27,6 +27,9 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+            echo menuMovil('SuperAdmin');
+        ?>
     </header>
 
     <main class="adminTopMain">

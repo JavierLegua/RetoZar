@@ -26,6 +26,23 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+            $rol = $_SESSION['rol'];
+            
+            switch ($rol) {
+                case 'SuperAdmin':    
+                    echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+                break;
+                
+                case 'Admin':
+                    echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+                break;
+
+                case 'Profesor':
+                    echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+                break;
+            }
+        ?>
     </header>
 
     <main class="Gestion">

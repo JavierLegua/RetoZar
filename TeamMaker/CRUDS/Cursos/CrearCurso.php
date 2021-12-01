@@ -1,4 +1,9 @@
+<?php
 
+session_start();
+include "../../BBDD/includes/funciones.php";
+
+?>
 
 
 <!DOCTYPE html>
@@ -25,24 +30,33 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
-
+        <?php
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo menuMovil($rol);    
+                break;
+                
+                case 'Admin':
+                    echo menuMovil($rol);
+                break;
+            }
+    ?>
     </header>
 
     <main class="crudMain">
     <?php
-        $rol = $_SESSION['rol'];
-        
-        switch ($rol) {
-            case 'SuperAdmin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
-            break;
-            
-            case 'Admin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
-        }
-        ?>
-
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+                break;
+                
+                case 'Admin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                break;
+            }
+    ?>
         <h1 class="crudH1">Creación de cursos</h1>
 
         <form method="post" action="insertarCurso">
