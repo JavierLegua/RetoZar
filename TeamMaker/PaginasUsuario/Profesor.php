@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+    include "../BBDD/includes/funciones.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,17 +25,46 @@ session_start();
         <div id="img_header5"></div>
         <div id="img_header6"></div>
         <div id="img_header7"></div>
-        <div id="img_header8"></div>
+        <div id="img_header8"></div> 
     </header>
-
+    
     <main class="profesorMain">
-        <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
 
-        <input type="button" value="Gestionar alumnos" class="profesor" onclick="redirigir('../Gestiones/GestionarAlumno.php')">
-        <input type="button" value="Ver respuestas" class="profesor" onclick="redirigir('../Preguntas/verRespuestas.php')"> <br>
-        <!-- <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')" > -->
-        <input type="button" value="Equipos sugeridos" class="profesor"> <br>
-        <input type="button" value="Salir" class="profesorSalir" onclick="redirigir('../Login/Login.php')">
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+    ?>
+    
+        <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
+        <?php
+
+        if ($rol=="Profesor") {
+            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Salir' class='profesorSalir' onclick=\"redirigir('inicio')\">";
+        }elseif ($rol=="Admin") {
+            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('/gestionarAlumno')\">";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('admins')\">";
+        }else{
+            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('superAdmins')\">";
+        }
+        
+        ?>
 
     </main>
 

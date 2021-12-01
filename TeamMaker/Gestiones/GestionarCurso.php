@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,10 +29,22 @@
     </header>
 
     <main class="Gestion">
-
-        <input type="button" value="Crear curso" class="Ginput" onclick="redirigir('../CRUDS/Cursos/CrearCurso.php')"> <br>
-        <input type="button" value="Menu de cursos" class="Ginput" onclick="redirigir('../CRUDS/Cursos/ListarCurso.php')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../Login/Login.php')"> <br>
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+        ?>
+        <input type="button" value="Crear curso" class="Ginput" onclick="redirigir('crearCurso')"> <br>
+        <input type="button" value="Menu de cursos" class="Ginput" onclick="redirigir('listarCurso')"> <br>
+        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('admins')"> <br>
 
     </main>
 

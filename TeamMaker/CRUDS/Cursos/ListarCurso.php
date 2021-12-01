@@ -37,6 +37,21 @@ $curso=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
+  
+  <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+        ?>
+        
   <table class="table" id="tableCurso">
     <thead>
       <tr>
@@ -50,8 +65,9 @@ $curso=$consulta->fetchAll();
     <tbody>
     <?php
       for ($i=0; $i < count($curso); $i++) { 
+        $idcurso = $curso[$i]->idCurso;
         echo "<tr>
-            <td>".$curso[$i]->idCurso."</td><td>".$curso[$i]->Nombre."</td><td>".$curso[$i]->CENTRO_idCentro."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('EditarCurso.php','".$curso[$i]->idCurso."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('BorrarCurso.php','".$curso[$i]->idCurso."')\"></td></tr>";
+            <td>".$curso[$i]->idCurso."</td><td>".$curso[$i]->Nombre."</td><td>".$curso[$i]->CENTRO_idCentro."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('editarCurso?curso=','".$idcurso."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('borrarCurso?curso=','".$idcurso."')\"></td></tr>";
       }
     ?>
     </tbody>
@@ -77,7 +93,7 @@ $curso=$consulta->fetchAll();
       }
     ?>
 
-  <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCurso.php')">
+  <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarCurso')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>

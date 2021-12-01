@@ -81,7 +81,7 @@
 
         <br><br>
 
-        <form action="Test.php" name="form" method="post">
+        <form action="respondertest" name="form" method="post">
             <input type="hidden" name="idPregunta" value="<?php echo $idPregunta; ?>">
             <input type="radio" name="radio" value="VERDADERO" class="radio" required>
             <label for="verdadero"><strong><h3>VERDADERO</h3></strong></label>
@@ -92,7 +92,7 @@
             <br><br>
         </form>
 
-        <button class="Salir" onclick="redirigir('../PaginasUsuario/Alumno.php')" >Salir del Test</button>
+        <button class="Salir" onclick="redirigir('../alumno')" >Salir del Test</button>
         </main>
 
     <footer>

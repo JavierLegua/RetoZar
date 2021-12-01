@@ -1,6 +1,7 @@
-
-
-
+<?php
+    session_start();
+    include "../../BBDD/includes/funciones.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,16 +30,31 @@
     </header>
 
     <main class="crudMainUsuario">
+    <?php
+        $rol = $_SESSION['rol'];
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
 
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+    ?>
         <h1 class="crudH1">Creación de alumnos</h1>
 
-        <form method="post" action="InsertarBBDD.php">
-
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputUs" required>
-            <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
-            <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
-            <input type="text" name="curso" id="curso" placeholder="Curso" class="inputUs" required><br>
-            <?php 
+        <form method="post" action="insertarAlumno">
+            <?php
+            echo"<input type='text' name='nombre' id='nombre' placeholder='Nombre' class='inputUs' required>";
+            echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' required>";
+            echo"<input type='password' name='Clave' id='Clave' placeholder='Clave' onblur=\"this.value = document.getElementById('DNI').value\" class='inputUs' required>";
+            echo"<input type='text' name='curso' id='curso' placeholder='Curso' class='inputUs' required><br>";
+ 
                 $situacion = $_GET['situacion'];
                 if (isset($situacion)) {
                     switch ($situacion) {
@@ -56,9 +72,11 @@
                         break;
                     }
                 }
+        
+                echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviar'><br>";
+                echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\" class='inputUsVolver'>";
+
             ?>
-            <input id="crear" type="submit" name="Crear Alumno" class="inputUsEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarAlumno.php')" class="inputUsVolver">
 
         </form>
 

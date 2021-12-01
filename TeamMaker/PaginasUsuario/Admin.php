@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,8 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <header>
         <div id="img_header0"></div>
         <div id="img_header1"></div>
@@ -26,40 +32,37 @@
     </header>
 
     <main class="mainAdmin">
-            <!-- start nav -->
-            <nav id="menu">
-            <!-- start menu -->
-            <ul>
-            <li><a href="../Gestiones/GestionarProfesor.php">Gestionar profesores</a>
-            <ul>
-            <li><a href="../CRUDS/Profesores/CrearProfesor.php">Añadir profesores</a></li>
-            <li><a href="../CRUDS/Administradores/ListarProfesores.php">Menu de profesores</a></li>
-            </ul>
-            </li>
-            <li><a href="../Gestiones/GestionarCurso.php">Gestionar cursos</a>
-            <ul>
-            <li><a href="../CRUDS/Cursos/CrearCurso.php">Crear curso</a></li>
-            <li><a href="../CRUDS/Cursos/ListarCurso.php">Menu de cursos</a></li>
-            </ul>
-            </li>
-            <li><a href="../PaginasUsuario/Profesor.php">Funciones del profesor</a>
-            <ul>
-            <li><a href="../Gestiones/GestionarAlumno.php">Gestionar alumnos</a></li>
-            <li><a href="../Preguntas/verRespuestas.php">Ver respuestas</a></li>
-            <li><a href="#">Equipos sugeridos</a></li>
-            </ul>
-            </li>
-            <li><a href="../Login/Login.php">Salir</a></li>
-            </ul>
-            <!-- end menu -->
-            </nav>
-            <!-- end nav -->
+   
+        <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+        ?>
         <h1 class="adminH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
+        <?php
 
-        <input type="button" value="Gestionar profesores" class="admin" onclick="redirigir('../Gestiones/GestionarProfesor.php')">
-        <input type="button" value="Gestionar cursos" class="admin" onclick="redirigir('../Gestiones/GestionarCurso.php')"> <br>
-        <input type="button" value="Funciones de profesor" class="admin" onclick="redirigir('Profesor.php')"> <br>
-        <input type="button" value="Salir" class="adminSalir" onclick="redirigir('../Login/Login.php')">
+        if ($rol=="Admin") {
+            echo"<input type='button' value='Gestionar profesores' class='admin' onclick=\"redirigir('gestionarProfesor')\">";
+            echo"<input type='button' value='Gestionar cursos' class='admin' onclick=\"redirigir('gestionarCurso')\"><br>";
+            echo"<input type='button' value='Funciones de profesor' class='admin' onclick=\"redirigir('profesores')\"><br>";
+            echo"<input type='button' value='Salir' class='adminSalir' onclick=\"redirigir('inicio')\">";
+        }else{
+            echo"<input type='button' value='Gestionar profesores' class='admin' onclick=\"redirigir('gestionarProfesor')\">";
+            echo"<input type='button' value='Gestionar cursos' class='admin' onclick=\"redirigir('gestionarCurso')\"><br>";
+            echo"<input type='button' value='Funciones de profesor' class='admin' onclick=\"redirigir('profesores')\"><br>";
+            echo"<input type='button' value='Volver' class='adminSalir' onclick=\"redirigir('superAdmins')\">";
+        }
+
+        
+        ?>
 
     </main>
 

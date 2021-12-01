@@ -29,10 +29,22 @@
     </header>
 
     <main class="crudMainUsuario">
-
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+        ?>
         <h1 class="crudH1">Creación de profesores</h1>
 
-        <form method="post" action="InsertarBBDDProfesores.php">
+        <form method="post" action="insertarProfesor">
 
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputUs" required>
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
@@ -57,7 +69,7 @@
                 }
             ?>
             <input id="crear" type="submit" name="Crear Profesor" class="inputUsEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarProfesor.php')" class="inputUsVolver">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarProfesor')" class="inputUsVolver">
 
         </form>
 

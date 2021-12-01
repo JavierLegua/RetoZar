@@ -13,6 +13,7 @@ $consulta->execute();
 $centro=$consulta->fetchAll();
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +37,21 @@ $centro=$consulta->fetchAll();
     <div id="img_header7"></div>
     <div id="img_header8"></div>
   </header>
+
   <div class="listTodo">
+      <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+      ?>
     <table class="table" id="tableCentro">
       <thead>
         <tr>
@@ -50,8 +65,9 @@ $centro=$consulta->fetchAll();
       <tbody>
       <?php
         for ($i=0; $i < count($centro); $i++) { 
+          $idCentro = $centro[$i]->idCentro;
           echo "<tr>
-              <td>".$centro[$i]->idCentro."</td><td>".$centro[$i]->Nombre."</td><td>".$centro[$i]->Direccion."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_centro('EditarCentro.php','".$centro[$i]->idCentro."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_centro('BorrarCentro.php','".$centro[$i]->idCentro."')\"></td></tr>";
+              <td>".$centro[$i]->idCentro."</td><td>".$centro[$i]->Nombre."</td><td>".$centro[$i]->Direccion."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_centro('editarCentro?idCentro=','".$idCentro."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_centro('borrarCentro?idCentro=','".$idCentro."')\"></td></tr>";
         }
       ?>
       </tbody>
@@ -62,10 +78,10 @@ $centro=$consulta->fetchAll();
       if (isset($situacion)) {
         switch ($situacion) {
           case '0':
-            echo "<br><br><p>Error al editar el centro</p>";
+            echo "<br><br><p>Centro editado correctamente</p>";
           break;
           case '1':
-            echo "<br><br><p>Centro editado correctamente</p>";
+            echo "<br><br><p>Error al editar el centro</p>";
           break;
           case '2':
             echo "<br><br><p>Centro borrado correctamente</p>";
@@ -77,7 +93,7 @@ $centro=$consulta->fetchAll();
       }
     ?>
 
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarCentros.php')">
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarCentro')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>

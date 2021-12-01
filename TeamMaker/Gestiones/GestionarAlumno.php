@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,10 +29,27 @@
     </header>
 
     <main class="Gestion">
+    <?php
+        $rol = $_SESSION['rol'];
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
 
-        <input type="button" value="Añadir alumno" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/CrearAlumno.php')"> <br>
-        <input type="button" value="Menu alumnos" class="Ginput" onclick="redirigir('../CRUDS/Alumnos/ListarAlumnos.php')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../Login/Login.php')"> <br>
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+
+        echo"<input type='button' value='Añadir alumno' class='Ginput' onclick=\"redirigir('anadirAlumno')\"><br>";
+        echo"<input type='button' value='Menu alumnos' class='Ginput' onclick=\"redirigir('listarAlumno')\"><br>";
+        echo"<input type='button' value='Volver' class='GinputSalir' onclick=\"redirigir('profesores')\"><br>";
+    
+    ?>
 
     </main>
 

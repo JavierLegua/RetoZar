@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,10 +30,24 @@
     </header>
 
     <main class="Gestion">
+    
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+        ?>
 
-        <input type="button" value="Crear centro" class="Ginput" onclick="redirigir('../CRUDS/Centros/CrearCentro.php')"> <br>
-        <input type="button" value="Menu gestión de centros" class="Ginput" onclick="redirigir('../CRUDS/Centros/ListarCentro.php')"> <br>
-        <input type="button" value="Salir" class="GinputSalir" onclick="redirigir('../Login/Login.php')"> <br>
+        <input type="button" value="Crear centro" class="Ginput" onclick="redirigir('crearCentro')"> <br>
+        <input type="button" value="Menu gestión de centros" class="Ginput" onclick="redirigir('listarCentro')"> <br>
+        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('admins')"> <br>
 
     </main>
 

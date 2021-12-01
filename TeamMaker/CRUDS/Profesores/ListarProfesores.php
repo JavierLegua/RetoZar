@@ -37,6 +37,20 @@ $profesores=$consulta->fetchAll();
     <div id="img_header8"></div>
   </header>
   <div class="listTodo">
+  <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+        ?>
+
     <table class="table" id="tableProfesor">
       <thead>
         <tr>
@@ -52,7 +66,7 @@ $profesores=$consulta->fetchAll();
         for ($i=0; $i < count($profesores); $i++) { 
           $dni = $profesores[$i]->DNI;
           $_SESSION['dni']=$dni;
-          echo "<tr><td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
+          echo "<tr><td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('editarProfesor?dni=".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('borrarProfesor?dni=".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
@@ -76,7 +90,7 @@ $profesores=$consulta->fetchAll();
         }
       }
     ?>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../Gestiones/GestionarProfesor.php')">
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarProfesor')">
   </div> 
   <footer class="listFoot">
     <div id="img_footer0"></div>

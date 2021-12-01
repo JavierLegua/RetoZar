@@ -31,14 +31,15 @@ function redirigir(ruta){
     location.href=ruta;
 }
 
-function redirigir_alumnos(ruta, dni){
-    location.href=ruta+'?dni='+dni;
+function redirigir_alumnos(ruta){
+    location.href=ruta;
 }
 
-function redirigir_curso(ruta, curso){
-    location.href=ruta+'?curso='+curso;
+function redirigir_curso(ruta){
+    location.href=ruta;
 }
 
 function redirigir_centro(ruta, centro){
-    location.href=ruta+'?centro='+centro;
+    location.href=ruta+centro;
 }
+
