@@ -27,13 +27,15 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+            echo menuMovil('SuperAdmin');
+        ?>
     </header>
 
     <main class="adminTopMain">
 
     <?php
         echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
-        echo menuMovil('SuperAdmin');
     ?>
         <h1 class="adminTopH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 

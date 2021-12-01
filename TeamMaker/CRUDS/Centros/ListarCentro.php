@@ -35,22 +35,15 @@ $centro=$consulta->fetchAll();
     <div id="img_header6"></div>
     <div id="img_header7"></div>
     <div id="img_header8"></div>
+    <?php
+            echo menuMovil('SuperAdmin');
+        ?>
   </header>
 
   <div class="listTodo">
-      <?php
-        $rol = $_SESSION['rol'];
-        
-        switch ($rol) {
-            case 'SuperAdmin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
-            break;
-            
-            case 'Admin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
-        }
-      ?>
+     <?php
+         echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
+    ?>
     <table class="table" id="tableCentro">
       <thead>
         <tr>

@@ -1,4 +1,9 @@
+<?php
 
+session_start();
+include "../../BBDD/includes/funciones.php";
+
+?>
 
 
 <!DOCTYPE html>
@@ -25,35 +30,33 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
-
+        <?php
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo menuMovil($rol);    
+                break;
+                
+                case 'Admin':
+                    echo menuMovil($rol);
+                break;
+            }
+    ?>
     </header>
 
     <main class="crudMainUsuario">
-    <nav class="menuAdmin">
-            <ul>
-            <li><a href="../../gestionarProfesor">Gestionar profesores</a>
-            <ul>
-            <li><a href="../crearProfesor">Añadir profesores</a></li>
-            <li><a href="../listarProfesor">Menú de profesores</a></li>
-            </ul>
-            </li>
-            <li><a href="../../gestionarCurso">Gestionar cursos</a>
-            <ul>
-            <li><a href="../crearCurso">Crear curso</a></li>
-            <li><a href="../listarCurso">Menú de cursos</a></li>
-            </ul>
-            </li>
-            <li><a href="../../profesores">Funciones del profesor</a>
-            <ul>
-            <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
-            <li><a href="../../verRespuesta">Ver respuestas</a></li>
-            <li><a href="#">Equipos sugeridos</a></li>
-            </ul>
-            </li>
-            <li><a href="../../inicio">Salir</a></li>
-            </ul>
-            </nav>
-
+    <?php
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+                break;
+                
+                case 'Admin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                break;
+            }
+    ?>
         <h1 class="crudH1">Creación de profesores</h1>
 
         <form method="post" action="InsertarBBDDProfesores.php">

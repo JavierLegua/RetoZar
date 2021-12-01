@@ -26,25 +26,40 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo menuMovil($rol);    
+                break;
+                
+                case 'Admin':
+                    echo menuMovil($rol);
+                break;
 
+                case 'Profesor':
+                    echo menuMovil($rol);
+                break;
+            }
+    ?>
     </header>
 
     <main class="crudMainUsuario">
     <?php
-        $rol = $_SESSION['rol'];
-        switch ($rol) {
-            case 'SuperAdmin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
-            break;
-            
-            case 'Admin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+                break;
+                
+                case 'Admin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                break;
 
-            case 'Profesor':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
-        }
+                case 'Profesor':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                break;
+            }
     ?>
         <h1 class="crudH1">Creación de alumnos</h1>
 

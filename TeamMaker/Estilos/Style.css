@@ -864,74 +864,15 @@ input.buttonList3{
     background-color: #a7fabe;
     color: rgb(24, 24, 24);
 }
-/* .navMovil {
-	background:#023859;
-	z-index:1000;
-	max-width: 1000px;
-	width:95%;
-	margin:20px auto;
+
+.menuMovil{
+    display: none;
 }
 
-.navMovil ul {
-	list-style:none;
+#navMovil{
+    display: none;
 }
 
-.navMovil ul li {
-	display:inline-block;
-	position: relative;
-}
-
-.navMovil ul li:hover {
-	background:#E6344A;
-}
-
-.navMovil ul li a {
-	color:#fff;
-	display:block;
-	text-decoration:none;
-	padding: 20px;
-}
-
-.navMovil ul li a span {
-	margin-right:10px;
-}
-
-.navMovil ul li:hover .children {
-	display:block;
-}
-
-.navMovil ul li .children {
-	display: none;
-	background:#011826;
-	position: absolute;
-	width: 150%;
-	z-index:1000;
-}
-
-.navMovil ul li .children li {
-	display:block;
-	overflow: hidden;
-	border-bottom: 1px solid rgba(255,255,255,.5);
-}
-
-.navMovil ul li .children li a {
-	display: block;
-}
-
-.navMovil ul li .children li a span {
-	float: right;
-	position: relative;
-	top:3px;
-	margin-right:0;
-	margin-left:10px;
-}
-
-.navMovil ul li .caret {
-	position: relative;
-	top:3px;
-	margin-left:10px;
-	margin-right:0px;
-} */
 /*
 *Mediaquery diseñada para pantallas con un mínimo de 200px y un máximo de 577px de ancho
 */
@@ -2369,10 +2310,12 @@ Mediaquery utilizada para moviles en horizontal, tablets y ventanas minimizadas
     }
 }
 
-@media screen and (max-width: 800px) {
-	body {
+@media screen and (max-width: 872px) {
+
+    body {
 		padding-top:80px;
 	}
+
 
 	.menuMovil {
 		display:block;
@@ -2395,12 +2338,14 @@ Mediaquery utilizada para moviles en horizontal, tablets y ventanas minimizadas
 	.menuMovil span {
 		float: left;
 		font-size: 40px;
+        margin-left: 10px;
 	}
 
 	#navMovil {
-		width: 80%;
-		height: calc(100% - 80px);
-		position: fixed;
+        display: block;
+		width: 100%;
+		height: 120%;
+		position: absolute;
 		left: -100%;
 		margin: 0;
 		overflow: scroll;
@@ -2413,7 +2358,10 @@ Mediaquery utilizada para moviles en horizontal, tablets y ventanas minimizadas
 	}
 
 	#navMovil ul li a {
-		display: block;
+		color:#fff;
+        display:block;
+        text-decoration:none;
+        padding: 20px;
 	}
 
 	#navMovil ul li:hover .children {
@@ -2423,6 +2371,9 @@ Mediaquery utilizada para moviles en horizontal, tablets y ventanas minimizadas
 	#navMovil ul li .children {
 		width: 100%;
 		position: relative;
+        display: none;
+        background:#011826;
+        z-index:1000;
 	}
 
 	#navMovil ul li .children li a {
@@ -2431,8 +2382,33 @@ Mediaquery utilizada para moviles en horizontal, tablets y ventanas minimizadas
 
 	#navMovil ul li .caret {
 		float: right;
+        position: relative;
+        top:3px;
+        margin-left:1px;
+        margin-right:-5px;
 	}
+
+    #navMovil ul li .children li a span {
+        float: right;
+        position: relative;
+        top:3px;
+        margin-right:0;
+        margin-left:10px;
+    }
+
     .menuAdminTop{
         display: none;
+    }
+
+    .menuAdmin{
+        display: none;
+    }
+
+    #menuProfesor{
+        display: none;
+    }
+
+    #navMovil ul li:hover{
+        background:#E6344A;
     }
 }

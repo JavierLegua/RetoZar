@@ -28,22 +28,14 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
-
+        <?php
+            echo menuMovil('SuperAdmin');
+        ?>
     </header>
 
     <main class="crudMain">
     <?php
-        $rol = $_SESSION['rol'];
-        
-        switch ($rol) {
-            case 'SuperAdmin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
-            break;
-            
-            case 'Admin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
-        }
+        echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
     ?>
         <h1 class="crudH1">Creación de centros</h1>
 

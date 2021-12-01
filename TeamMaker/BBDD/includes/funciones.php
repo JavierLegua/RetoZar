@@ -62,13 +62,28 @@
                 echo "<div class='menuMovil'>
                         <a href='#' class='bt-menu'><span class='icon-menu2'></span></a>
                       </div>
-                <nav>
-                  <ul>
-                    <li><a href='gestionarProfesor'>Gestionar Profesores</a></li>
-                    <li><a href='gestionarCurso'>Gestionar Cursos</a></li>
-                    <li><a href='profesores'>Funciones del profesor</a></li>
-                  </ul>
-                </nav>";    
+                  <nav id='navMovil'>
+                    <ul>
+                      <li class='submenu'><a href='#'>Gestionar Profesores<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearProfesor'>Crear Profesores</a></li>
+                              <li><a href='listarProfesor'>Menú Profesores</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Gestionar Cursos<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearCurso'>Crear Cursos</a></li>
+                              <li><a href='listarCurso'>Menú Cursos</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
+                              <li><a href='#'>Equipos sugeridos</a></li>
+                          </ul>
+                      </li>
+                    </ul>
+                  </nav>";
                 break;
 
             case 'SuperAdmin':
@@ -77,25 +92,25 @@
                       </div>
                   <nav id='navMovil'>
                     <ul>
-                      <li class='submenu'><a href='gestionarCentro'>Gestionar Centros</a>
+                      <li class='submenu'><a href='#'>Gestionar Centros<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='crearCentro'>Crear Centro</a></li>
                               <li><a href='listarCentro'>Menú Centro</a></li>
                           </ul>
                       </li>
-                      <li class='submenu'><a href='profesores'>Funciones del profesor</a>
+                      <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
                               <li><a href='#'>Equipos sugeridos</a></li>
                           </ul>
                       </li>
-                      <li><a href='gestionAdmin'>Gestionar Administrador de Centros</a>
+                      <li class='submenu'><a href='#'>Gestionar Administrador de Centros<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='crearAdmin'>Crear Administradores de Centros</a></li>
                               <li><a href='listarAdmin'>Menú Admins</a></li>
                           </ul>
                       </li>
-                      <li><a href='admins'>Funciones de Administrador de Centros</a>
+                      <li class='submenu'><a href='#'>Funciones de Administrador de Centros<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='gestionarProfesor'>Gestionar Profesores</a></li>
                               <li><a href='gestionarCurso'>Gestionar Cursos</a></li>
@@ -107,16 +122,19 @@
                 break;
             case 'Profesor':
                 echo "<div class='menuMovil'>
-                <input type='checkbox'>
-                <i class='fas fa-bars'></i>
-                <i class='fas fa-times'></i>
-                <nav>
-                  <ul>
-                    <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
-                    <li><a href='#'>Equipos sugeridos</a></li>
-                  </ul>
-                </nav>
-              </div>";  
+                        <a href='#' class='bt-menu'><span class='icon-menu2'></span></a>
+                      </div>
+                  <nav id='navMovil'>
+                    <ul>
+                      <li class='submenu'><a href='#'>Gestionar Alumnos<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearAlumno'>Crear Alumnos</a></li>
+                              <li><a href='listarAlumno'>Menú Alumnos</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Equipos sugeridos</a></li>
+                    </ul>
+                  </nav>";
                 break;
         }
     }

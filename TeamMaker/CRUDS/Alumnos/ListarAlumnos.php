@@ -38,6 +38,22 @@ $alumnos=$consulta->fetchAll();
     <div id="img_header6"></div>
     <div id="img_header7"></div>
     <div id="img_header8"></div>
+    <?php
+      $rol = $_SESSION['rol'];
+      switch ($rol) {
+          case 'SuperAdmin': 
+            echo menuMovil($rol);  
+          break;
+            
+          case 'Admin':
+            echo menuMovil($rol);
+          break;
+
+          case 'Profesor':
+            echo menuMovil($rol);
+          break;
+      }
+      ?>
   </header>
 
   <div class="listTodo">
@@ -46,17 +62,14 @@ $alumnos=$consulta->fetchAll();
       switch ($rol) {
           case 'SuperAdmin':
             echo"<div class='crear_menu'>".crear_menu($rol)."</div>";  
-            echo "<div class='menuMovil'>".menuMovil($rol)."</div>";  
           break;
             
           case 'Admin':
             echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
           break;
 
           case 'Profesor':
             echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
           break;
       }
 
