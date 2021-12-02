@@ -68,7 +68,7 @@
         <form method="post" action="insertarAlumno">
             <?php
             echo"<input type='text' name='nombre' id='nombre' placeholder='Nombre' class='inputUs' required>";
-            echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' required>";
+            echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' onfocusout='comprobacionDni()' required>";
             echo"<input type='password' name='Clave' id='Clave' placeholder='Clave' onblur=\"this.value = document.getElementById('DNI').value\" class='inputUs' required>";
             echo"<input type='text' name='curso' id='curso' placeholder='Curso' class='inputUs' required><br>";
  

@@ -13,8 +13,8 @@
    
     function conectarBD(){
         $servidor = "localhost";
-        $usuario = "makelele";
-        $password = "Makelele123@";
+        $usuario = "makelelesberry";
+        $password = "Makelelesberry123@";
         $baseDatos = "TeamMaker";
         $opciones = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
@@ -32,6 +32,21 @@
         }
          
 
+    }
+
+    function calcularGrupos($alumnosClase, $numPersonas){
+        $numGrupos = $alumnosClase/$numPersonas;
+        $restoNumGrupos = $alumnosClase%$numPersonas;
+ 
+        if ($restoNumGrupos/$numGrupos >= 0.75) {
+            $numGrupos++;
+        } elseif ($numPersonas > $alumnosClase) {
+            echo "<br>Error";
+            $numGrupos = 0;
+        }
+
+        $numGrupos = intval($numGrupos);
+        return $numGrupos;
     }
 
     function crear_menu($rol){

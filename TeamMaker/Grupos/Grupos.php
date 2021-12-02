@@ -10,7 +10,14 @@
     $rojo = 0;
     $verde = 0;
     $amarillo = 0;
+    $colorPrincipal="";
+    $colorPrincipalRojo=0;
+    $colorPrincipalVerde=0;
+    $colorPrincipalAzul=0;
+    $colorPrincipalAmarillo=0;
     $numPersonas = $_POST['numPersonas'];
+
+
 
     echo $curso."-----------------".$numPersonas."<br>";
     $sql1="SELECT ALUMNO.USUARIO_DNI as dni FROM ALUMNO WHERE ALUMNO.id_curso =\"".$curso."\"";
@@ -31,6 +38,7 @@
         $pregunta=$respuestas->Enunciado;
         $usuario=$respuestas->USUARIO_DNI;
         $respuesta=$respuestas->RESPUESTA_Valor_Respuesta;
+
 
         for ($j=0; $j < count($respuestas); $j++) { 
             // echo $respuestas[$i]->Enunciado."-------".$respuestas[$i]->USUARIO_DNI."-------".$respuestas[$i]->RESPUESTA_Valor_Respuesta."<br>";
@@ -53,12 +61,35 @@
         
         }
 
+        if ($rojo > $azul && $rojo > $verde && $rojo > $amarillo) {
+            $colorPrincipal = "rojo";
+            $colorPrincipalRojo++;
+        }elseif ($azul > $rojo && $azul > $verde && $azul > $amarillo) {
+            $colorPrincipal = "azul";
+            $colorPrincipalAzul++;
+        }elseif ($verde > $rojo && $verde > $azul && $verde > $amarillo) {
+            $colorPrincipal = "verde";
+            $colorPrincipalVerde++;
+        }else {
+            $colorPrincipal = "amarillo";
+            $colorPrincipalAmarillo++;
+        }
+
         echo "<br>Usuario ".$respuestas1[$i]->dni;
         echo "-----Azul(Cientifico) = ".(($azul/20)*100)."%";
         echo "-----Verde(Mediador) = ".(($verde/20)*100)."%";
         echo "-----Rojo(Lider) = ".(($rojo/20)*100)."%";
         echo "-----Amarillo(Creativo) = ".(($amarillo/20)*100)."%";
 
+    }
+
+    $numGrupos = calcularGrupos(count($respuestas1),$numPersonas);
+    //echo "<br>Grupos : ".$numGrupos;
+    
+    if ($colorPrincipalRojo >= $numGrupos) {
+        echo"<br>Hay suficientes lideres";
+    } else {
+        echo"<br>Faltan lideres";
     }
 
 ?>
@@ -73,4 +104,4 @@
 <body>
     <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
 </body>
-</html>l
+</html>
