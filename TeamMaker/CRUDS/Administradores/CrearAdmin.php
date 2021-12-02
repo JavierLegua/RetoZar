@@ -20,7 +20,9 @@ $centros=$consultaCentro->fetchAll();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/fonts.css">
+    <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear Administrador</title>
     <script src="../../Funciones.js"></script>
@@ -44,40 +46,15 @@ $centros=$consultaCentro->fetchAll();
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
-
+        <?php
+            echo menuMovil('SuperAdmin');
+        ?>
     </header>
 
     <main class="crudMainUsuario">
-    <nav class="menuAdminTop">
-        <ul>
-        <li><a href="gestionarCentro">Gestionar centros</a>
-        <ul>
-        <li><a href="crearCentro">Crear centro</a></li>
-        <li><a href="listarCentro">Menu gestión de centros</a></li>
-        </ul>
-        </li>
-        <li><a href="profesores">Funciones del profesor</a>
-        <ul>
-        <li><a href="#">Gestionar alumnos</a></li>
-        <li><a href="verRespuesta">Ver respuestas</a></li>
-        <li><a href="#">Equipos sugeridos</a></li>
-        </ul>
-        <li><a href="gestionAdmin">Gestionar administrador de centros</a>
-        <ul>
-        <li><a href="crearAdmin">Crear administrador</a></li>
-        <li><a href="listarAdmin">Menu de administradores</a></li>
-        </ul>
-        </li>
-        <li><a href="admins">Funciones de administrador de centros</a>
-        <ul>
-        <li><a href="gestionarProfesor">Gestionar profesores</a></li>
-        <li><a href="gestionarCurso">Gestionar cursos</a></li>
-        <li><a href="profesores">Funciones de profesor</a></li>
-        </ul>
-        </li>
-        <li><a href="inicio">Salir</a></li>
-        </ul>
-        </nav>
+    <?php
+        echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
+    ?>
         <h1 class="crudH1">Creación de administradores</h1>
 
         <form method="post" action="insertarAdmin">

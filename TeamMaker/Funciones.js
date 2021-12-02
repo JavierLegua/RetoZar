@@ -43,3 +43,29 @@ function redirigir_centro(ruta, centro){
     location.href=ruta+centro;
 }
 
+$(document).ready(menu);
+
+var contador = 1;
+
+function menu () {
+	$('.icon-menu2').unbind().click(function(){
+		if (contador == 1) {
+			$('#navMovil').animate({
+				left: '0'
+			});
+           contador = 0
+          //  console.log(contador)
+		} else {
+            contador=1
+            $('#navMovil').animate({
+				left: '-100%'
+			});
+          // console.log(contador)
+        }
+	});
+
+	// Mostramos y ocultamos submenus
+	$('.submenu').unbind().click(function(){
+		$(this).children('.children').slideToggle();
+	});
+}
