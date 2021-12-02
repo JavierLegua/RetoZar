@@ -22,7 +22,9 @@ $alumnos=$consulta->fetchAll();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/fonts.css">
+    <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar alumnos</title>
     <script src="../../Funciones.js"></script>
@@ -38,6 +40,22 @@ $alumnos=$consulta->fetchAll();
     <div id="img_header6"></div>
     <div id="img_header7"></div>
     <div id="img_header8"></div>
+    <?php
+      $rol = $_SESSION['rol'];
+      switch ($rol) {
+          case 'SuperAdmin': 
+            echo menuMovil($rol);  
+          break;
+            
+          case 'Admin':
+            echo menuMovil($rol);
+          break;
+
+          case 'Profesor':
+            echo menuMovil($rol);
+          break;
+      }
+      ?>
   </header>
 
   <div class="listTodo">
@@ -45,7 +63,7 @@ $alumnos=$consulta->fetchAll();
       $rol = $_SESSION['rol'];
       switch ($rol) {
           case 'SuperAdmin':
-            echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            echo"<div class='crear_menu'>".crear_menu($rol)."</div>";  
           break;
             
           case 'Admin':
@@ -59,14 +77,18 @@ $alumnos=$consulta->fetchAll();
 
     echo"<form id='especialForm' action='listarAlumno' method='post'>";
     
+
+      $dniProfesor= $_SESSION['usuario'];
+
       /* echo "****************";
       echo $curso;
       echo "****************"; */
-      $sqlCurso="SELECT idCurso, Nombre from CURSO";
+      $sqlCurso="SELECT CURSO_idCurso from pertenece WHERE PROFESOR_USUARIO_DNI=\"".$dniProfesor."\"";
       $consultaCurso=$conexion->prepare($sqlCurso);
       $consultaCurso->execute();
 
       $cursos=$consultaCurso->fetchAll();
+
 
       /* print_r($cursos); */
   
@@ -78,7 +100,7 @@ $alumnos=$consulta->fetchAll();
       <?php
       
       for ($i=0; $i < count($cursos); $i++) { 
-        echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
+        echo "<option value=\"".$cursos[$i]->CURSO_idCurso."\">".$cursos[$i]->CURSO_idCurso."</option>";
       }
       
       ?>

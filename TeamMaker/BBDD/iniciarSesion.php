@@ -65,11 +65,12 @@ session_start();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
 
-                            $sql1="SELECT Rol from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
+                            $sql1="SELECT Rol, DNI from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
                             $consulta1 = $conexion->prepare($sql1);
                             $consulta1->execute();
                             $fila1 = $consulta1->fetch();  
                             $_SESSION['rol']=$fila1->Rol;
+                            $_SESSION['DNI']=$fila1->dni;
                             /* echo $_SESSION['rol']; */
 
                             if($_SESSION['rol']=='Profesor'){

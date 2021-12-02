@@ -63,6 +63,7 @@ Options -Indexes
   RewriteRule ^borrarCentro$ CRUDS/Centros/BorrarCentro.php [L,NC]
   RewriteRule ^borrarCurso$ CRUDS/Cursos/BorrarCurso.php [L,NC]
   RewriteRule ^borrarProfesor$ CRUDS/Profesores/BorrarProfesor.php [L,NC]
+  RewriteRule ^obtenerCurso$ CRUDS/Profesores/getCursos.php [L,NC]
   
  
 </IfModule>

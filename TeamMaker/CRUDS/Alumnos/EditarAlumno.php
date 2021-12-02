@@ -8,7 +8,6 @@ include "../../BBDD/includes/funciones.php";
 $dni = $_GET['dni'];
 $rol = $_GET['rol'];
 
-$_SESSION['DNI_VIEJO']=$dni;
 
 $conexion=conectarBD();
 
