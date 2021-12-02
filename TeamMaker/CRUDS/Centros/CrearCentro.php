@@ -1,6 +1,18 @@
 <?php
-    session_start();
-    include "../BBDD/includes/funciones.php";
+
+session_start();
+include "../../BBDD/includes/funciones.php";
+
+$conexion=conectarBD();
+
+$sql = "SELECT * FROM CENTRO";
+
+$consulta=$conexion->prepare($sql);
+$consulta->execute();
+
+$centro=$consulta->fetchAll();
+
+
 
 ?>
 
