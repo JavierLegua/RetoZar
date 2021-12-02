@@ -5,29 +5,23 @@ include "../../BBDD/includes/funciones.php";
 
 $conexion=conectarBD();
 
-$idCentro = filter_input(INPUT_POST, 'id_Centro') //obtenemos el parametro que mandamos desde la otra pagina
+$idCentro = $_POST['codCentro'];
 
-if ($idCentro != '') { //verificamos de nuevo que la opcion sea valida
-    if (!$conexion) {
-        die("<br>Sin conexion");
-    }
 
 
     /*Obtenemos los cursos del centro seleccionado*/
     $sql = "SELECT idCurso, Nombre from CURSO where CENTRO_idCentro=".$idCentro;
-    $consulta=$conexion->prepare($sql);
-    $consulta->execute();
+    $consulta=$conexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    $idCurso = array_unique(array_column($consulta, 'idCurso'));
+    $nombreCurso = array_unique(array_column($consulta, 'Nombre'));
+  
+    $cad="<select name='curso' id='curso'><option value=''>Seleccione curso</option>";
 
-    $cursos=$consulta->fetchAll();
+    foreach ($idCurso as $i => $idCurso) {
+        $cad=$cad.'<option value='.$idCurso.'>'.$nombreCurso[$i].'</option>';
+    }
+    print_r($cad."</select>");
 
-    print_r($cursos);
-}
-    /**
-     * Vamos a generar el codigo html para devolver al select de curso
-     */
+
+    $conexion = null; 
 ?>
-
-<option value="">Seleccione un curso</option>
-<?php foreach($cursos as $op): //creamos las opciones a partir de los datos obtenidos ?>
-<option value="<?= $op['idCurso'] ?>"><?= $op['Nombre'] ?></option>
-<?php endforeach; ?>
