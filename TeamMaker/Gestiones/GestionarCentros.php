@@ -60,7 +60,7 @@
 
         <input type="button" value="Crear centro" class="Ginput" onclick="redirigir('crearCentro')"> <br>
         <input type="button" value="Menu gestión de centros" class="Ginput" onclick="redirigir('listarCentro')"> <br>
-        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('admins')"> <br>
+        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('superAdmins')"> <br>
 
     </main>
 
