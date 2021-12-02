@@ -19,8 +19,8 @@
   
 
     if($nfilas==1){
-        header("refresh:0.01;url=ListarAlumnos.php?situacion=2");
+        header("refresh:0.01;url=listarAlumno?situacion=2");
     }else{
-        header("refresh:0.01;url=ListarAlumnos.php?situacion=3");
+        header("refresh:0.01;url=listarAlumno?situacion=3");
     }
     ?>

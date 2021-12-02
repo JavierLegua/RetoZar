@@ -1,14 +1,38 @@
+<?php
+
+session_start();
+include "../../BBDD/includes/funciones.php";
+
+$conexion=conectarBD();
+
+
+/* Desplegable centro */
+$sqlCentro="SELECT idCentro, Nombre from CENTRO";
+$consultaCentro=$conexion->prepare($sqlCentro);
+$consultaCentro->execute();
+
+$centros=$consultaCentro->fetchAll();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/fonts.css">
+    <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear Administrador</title>
     <script src="../../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -22,48 +46,39 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
-
+        <?php
+            echo menuMovil('SuperAdmin');
+        ?>
     </header>
 
     <main class="crudMainUsuario">
-    <nav class="menuAdminTop">
-        <ul>
-        <li><a href="../../gestionarCentro">Gestionar centros</a>
-        <ul>
-        <li><a href="../crearCentro">Crear centro</a></li>
-        <li><a href="../listarCentro">Menu gestión de centros</a></li>
-        </ul>
-        </li>
-        <li><a href="../../profesores">Funciones del profesor</a>
-        <ul>
-        <li><a href="#">Gestionar alumnos</a></li>
-        <li><a href="../../verRespuesta">Ver respuestas</a></li>
-        <li><a href="#">Equipos sugeridos</a></li>
-        </ul>
-        <li><a href="../../gestionAdmin">Gestionar administrador de centros</a>
-        <ul>
-        <li><a href="../crearAdmin">Crear administrador</a></li>
-        <li><a href="../listarAdmin">Menu de administradores</a></li>
-        </ul>
-        </li>
-        <li><a href="../../admins">Funciones de administrador de centros</a>
-        <ul>
-        <li><a href="../../gestionarProfesor">Gestionar profesores</a></li>
-        <li><a href="../../gestionarCurso">Gestionar cursos</a></li>
-        <li><a href="../../profesores">Funciones de profesor</a></li>
-        </ul>
-        </li>
-        <li><a href="../../inicio">Salir</a></li>
-        </ul>
-        </nav>
+    <?php
+        echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
+    ?>
         <h1 class="crudH1">Creación de administradores</h1>
 
-        <form method="post" action="InsertarBBDDAdmin.php">
+        <form method="post" action="insertarAdmin">
 
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="inputUs" required>
             <input type="text" name="DNI" id="DNI" placeholder="DNI" class="inputUs" required>
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
             <input type="text" name="Rol" id="Rol" placeholder="Rol" onblur="this.value = 'Admin'" class="inputUs" required><br>
+
+            <select name="centro" id="centro">
+                <option value="0">Selecciona un centro</option>
+                <?php
+                for ($i=0; $i < count($centros) ; $i++) { 
+                    echo "<option value=\"".$centros[$i]->idCentro."\">".$centros[$i]->Nombre."</option>";
+                }
+                
+                
+                ?>
+                
+            </select><br><br>
+            <div id="clase"></div>
+            
+            </select>
+
             <?php 
                 $situacion = $_GET['situacion'];
                 if (isset($situacion)) {
@@ -84,7 +99,7 @@
                 }
             ?>
             <input id="crear" type="submit" name="Crear Admin" class="inputUsEnviar"><br>
-            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionAdmin')" class="inputUsVolver">
+            <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('gestionAdmin')" class="inputUsVolver">
 
         </form>
 
@@ -103,3 +118,25 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+            $('#centro').val(0);
+            recargarCurso();
+
+            $('#centro').change(function () {
+                recargarCurso();
+            });
+    })
+
+    function recargarCurso() {
+        $.ajax({
+            type: "POST",
+            url: "obtenerCurso",
+            data: "codCentro=" + $('#centro').val(),
+            success: function (r) {
+                $('#clase').html(r);
+            }
+        });
+    }
+    </script>

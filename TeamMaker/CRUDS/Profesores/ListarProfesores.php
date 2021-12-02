@@ -19,7 +19,9 @@ $profesores=$consulta->fetchAll();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/fonts.css">
+    <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar profesores</title>
     <script src="../../Funciones.js"></script>
@@ -35,32 +37,33 @@ $profesores=$consulta->fetchAll();
     <div id="img_header6"></div>
     <div id="img_header7"></div>
     <div id="img_header8"></div>
-  </header>
+    <?php
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo menuMovil($rol);    
+                break;
+                
+                case 'Admin':
+                    echo menuMovil($rol);
+                break;
+            }
+    ?>
+    </header>
+
   <div class="listTodo">
-  <nav class="menuAdmin">
-            <ul>
-            <li><a href="../../gestionarProfesor">Gestionar profesores</a>
-            <ul>
-            <li><a href="../crearProfesor">Añadir profesores</a></li>
-            <li><a href="../listarProfesor">Menú de profesores</a></li>
-            </ul>
-            </li>
-            <li><a href="../../gestionarCurso">Gestionar cursos</a>
-            <ul>
-            <li><a href="../crearCurso">Crear curso</a></li>
-            <li><a href="../listarCurso">Menú de cursos</a></li>
-            </ul>
-            </li>
-            <li><a href="../../profesores">Funciones del profesor</a>
-            <ul>
-            <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
-            <li><a href="../../verRespuesta">Ver respuestas</a></li>
-            <li><a href="#">Equipos sugeridos</a></li>
-            </ul>
-            </li>
-            <li><a href="../../inicio">Salir</a></li>
-            </ul>
-            </nav>
+  <?php
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+                break;
+                
+                case 'Admin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                break;
+            }
+    ?>
 
     <table class="table" id="tableProfesor">
       <thead>
@@ -77,7 +80,7 @@ $profesores=$consulta->fetchAll();
         for ($i=0; $i < count($profesores); $i++) { 
           $dni = $profesores[$i]->DNI;
           $_SESSION['dni']=$dni;
-          echo "<tr><td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarProfesor.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarProfesor.php','".$dni."')\"></td></tr>";
+          echo "<tr><td>".$profesores[$i]->DNI."</td><td>".$profesores[$i]->Rol."</td><td>".$profesores[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('editarProfesor?dni=".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('borrarProfesor?dni=".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
@@ -101,7 +104,7 @@ $profesores=$consulta->fetchAll();
         }
       }
     ?>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionarProfesor')">
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarProfesor')">
   </div> 
   <footer class="listFoot">
     <div id="img_footer0"></div>

@@ -7,7 +7,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/fonts.css">
+    <script src="../jquery-latest.js"></script>
     <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Administrador supremo</title>
     <script src="../Funciones.js"></script>
@@ -27,6 +29,9 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+            echo menuMovil('SuperAdmin');
+        ?>
     </header>
 
     <main class="adminTopMain">
@@ -36,11 +41,11 @@
     ?>
         <h1 class="adminTopH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
 
-        <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('../gestionarCentro')">
-        <input type="button" value="Funciones de profesor" class="adminTop" onclick="redirigir('profesores?rol=SuperAdmin')"> <br>
-        <input type="button" value="Gestionar administrador de centros" class="adminTop" onclick="redirigir('../gestionAdmin')">
-        <input type="button" value="Funciones de administrador de centro" class="adminTop" onclick="redirigir('admins?rol=SuperAdmin')"> <br>
-        <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('../inicio')">
+        <input type="button" value="Gestionar centros" class="adminTop" onclick="redirigir('gestionarCentro')">
+        <input type="button" value="Funciones de profesor" class="adminTop" onclick="redirigir('profesores')"> <br>
+        <input type="button" value="Gestionar administrador de centros" class="adminTop" onclick="redirigir('gestionAdmin')">
+        <input type="button" value="Funciones de administrador de centro" class="adminTop" onclick="redirigir('admins')"> <br>
+        <input type="button" value="Salir" class="adminTopSalir" onclick="redirigir('inicio')">
         
     </main>
 

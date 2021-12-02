@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/fonts.css">
+    <script src="jquery-latest.js"></script>
     <script src="Funciones.js"></script>
 </head>
-<body>
-    
-</body>
 </html>
 <?php
    
@@ -39,59 +37,101 @@
     function crear_menu($rol){
         switch ($rol) {
             case "Admin":
-                echo"<nav class='menuAdmin'><ul><li><a href='../gestionarProfesor?rol=Admin'>Gestionar profesores</a><ul><li><a href='../crearProfesor?rol=Admin'>Añadir profesores</a></li><li><a href='../listarProfesor?rol=Admin'>Menú de profesores</a></li></ul></li><li><a href='../gestionarCurso?rol=Admin'>Gestionar cursos</a><ul><li><a href='../crearCurso?rol=Admin'>Crear curso</a></li><li><a href='../listarCurso?rol=Admin'>Menú de cursos</a></li></ul></li><li><a href='../profesores?rol=Admin'>Funciones del profesor</a><ul><li><a href='../anadirAlumno?rol=Admin'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul></li><li><a href='../inicio'>Salir</a></li></ul></nav>"; 
+                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor'>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesor</a></li><li><a href='listarProfesor'>Menu de profesores</a></li></ul></li><li><a href='gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCurso'>Crear curso</a></li><li><a href='listarCurso'>Menu de cursos</a></li></ul></li><li><a href='profesores'>Funciones de profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
-    
+
             case "SuperAdmin":
-                echo"<nav class='menuAdminTop'><ul><li><a href='../gestionarCentro?'>Gestionar centros</a><ul><li><a href='../crearCentro'>Crear centro</a></li><li><a href='../listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='../profesores?rol=SuperAdmin'>Funciones del profesor</a><ul><li><a href='../gestionarAlumno?rol=SuperAdmin'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul><li><a href='../gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='../crearAdmin'>Crear administrador</a></li><li><a href='../listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='../admins?rol=SuperAdmin'>Funciones de administrador de centros</a><ul><li><a href='../gestionarProfesor?rol=SuperAdmin'>Gestionar profesores</a></li><li><a href='../gestionarCurso?rol=SuperAdmin'>Gestionar cursos</a></li><li><a href='../profesores?rol=SuperAdmin'>Funciones de profesor</a></li></ul></li><li><a href='../inicio'>Salir</a></li></ul></nav>";
+                echo"<nav class='menuAdminTop'>
+                <ul>
+                    <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
-    
+
             case "Profesor":
-                echo"<nav id='menuProfesor'><ul><li><a href='../gestionarAlumno?rol=Profesor'>Gestionar alumnos</a><ul><li><a href='../anadirAlumno?rol=Profesor'>Añadir alumno</a></li><li><a href='../listarAlumno?rol=Profesor'>Menu alumnos</a></li></ul></li><li><a href='#'>Equipos sugeridos</a></li><li><a href='../inicio'>Salir</a></li></ul></nav>";
+                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='#'>Equipos sugeridos</a></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
-    
-        }
     }
+}
 
     function menuMovil($rol){
         switch ($rol) {
             case 'Admin':
-                echo "<section class='navigation'><nav class='navNav'><div class='nav-movil'>
-                  <a id='nav-boton' href='#!'>
-                    <span></span>
-                  </a>
-                </div>
-                <ul class='nav-menu'>
-                  <li><a href='../gestionarProfesor?rol=Admin'>Gestionar Profesores</a></li>
-                        <ul class='nav-submenu'>
-                            <li><a href='../crearProfesor?rol=Admin'>Añadir profesores</a></li>
-                            <li><a href='../listarProfesor?rol=Admin'>Menú profesores</a></li>
-                        </ul>
-                  <li><a href='../gestionarCurso?rol=Admin'>Gestionar cursos</a></li>
-                        <ul class='nav-submenu'>
-                            <li><a href='../crearCurso?rol=Admin'>Crear curso</a></li>
-                            <li><a href='../listarCurso?rol=Admin'>Menú de cursos</a></li>
-                        </ul>
-                  <li>
-                    <a href='../profesores?rol=Admin'>Funciones del profesor</a>
-                    <ul class='nav-submenu'>
-                      <li><a href='../anadirAlumno?rol=Admin'>Gestionar alumnos</a></li>
-                      <li><a href='../verRespuesta?rol=Admin'>Ver respuestas</a></li>
-                      <li><a href='#'>Equipos sugeridos</a></li>
+                echo "<div class='menuMovil'>
+                        <a href='#' class='bt-menu'><span class='icon-menu2'></span></a>
+                      </div>
+                  <nav id='navMovil'>
+                    <ul>
+                      <li class='submenu'><a href='#'>Gestionar Profesores<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearProfesor'>Crear Profesores</a></li>
+                              <li><a href='listarProfesor'>Menú Profesores</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Gestionar Cursos<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearCurso'>Crear Cursos</a></li>
+                              <li><a href='listarCurso'>Menú Cursos</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
+                              <li><a href='#'>Equipos sugeridos</a></li>
+                          </ul>
+                      </li>
                     </ul>
-                  </li>
-                  <li><a href='../inicio'>Salir</a></li>
-                </ul>
-              </nav>
-              </section>";    
+                  </nav>";
                 break;
+
             case 'SuperAdmin':
-                # code...
+                echo "<div class='menuMovil'>
+                        <a href='#' class='bt-menu'><span class='icon-menu2'></span></a>
+                      </div>
+                  <nav id='navMovil'>
+                    <ul>
+                      <li class='submenu'><a href='#'>Gestionar Centros<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearCentro'>Crear Centro</a></li>
+                              <li><a href='listarCentro'>Menú Centro</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
+                              <li><a href='#'>Equipos sugeridos</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Gestionar Administrador de Centros<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearAdmin'>Crear Administradores de Centros</a></li>
+                              <li><a href='listarAdmin'>Menú Admins</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Funciones de Administrador de Centros<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='gestionarProfesor'>Gestionar Profesores</a></li>
+                              <li><a href='gestionarCurso'>Gestionar Cursos</a></li>
+                              <li><a href='profesores'>Funciones del profesor</a></li>
+                          </ul>
+                      </li>
+                    </ul>
+                  </nav>"; 
                 break;
             case 'Profesor':
-                # code...
+                echo "<div class='menuMovil'>
+                        <a href='#' class='bt-menu'><span class='icon-menu2'></span></a>
+                      </div>
+                  <nav id='navMovil'>
+                    <ul>
+                      <li class='submenu'><a href='#'>Gestionar Alumnos<span class='caret icon-circle-down'</span></a>
+                          <ul class='children'>
+                              <li><a href='crearAlumno'>Crear Alumnos</a></li>
+                              <li><a href='listarAlumno'>Menú Alumnos</a></li>
+                          </ul>
+                      </li>
+                      <li class='submenu'><a href='#'>Equipos sugeridos</a></li>
+                    </ul>
+                  </nav>";
                 break;
         }
     }
 ?>
-

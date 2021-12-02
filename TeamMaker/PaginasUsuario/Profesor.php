@@ -6,7 +6,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/fonts.css">
+    <script src="../jquery-latest.js"></script>
     <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Profesor</title>
     <script src="../Funciones.js"></script>
@@ -26,11 +28,29 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div> 
+        <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':    
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+            
+            case 'Admin':
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+
+            case 'Profesor':
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+        }
+    ?>
     </header>
     
     <main class="profesorMain">
     <?php
-        $rol = $_GET['rol'];
+        $rol = $_SESSION['rol'];
+        
         switch ($rol) {
             case 'SuperAdmin':
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
@@ -48,11 +68,21 @@
     
         <h1 class="profesorH1">Bienvenido <?php echo $_SESSION['nombre'] ?></h1>
         <?php
-        echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('../gestionarAlumno?rol=".$rol."')\">";
-        // <input type="button" value="Ver respuestas" class="profesor" onclick="redirigir('../verRespuesta')"><br>
-        // <input type="button" value="Gestionar clase" class="profesor" onclick="redirigir('../Gestiones/GestionarClase.php')">
-        echo"<input type='button' value='Equipos sugeridos' class='profesor'><br>";
-        echo"<input type='button' value='Salir' class='profesorSalir' onclick=\"redirigir('../inicio')\">";
+
+        if ($rol=="Profesor") {
+            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Salir' class='profesorSalir' onclick=\"redirigir('inicio')\">";
+        }elseif ($rol=="Admin") {
+            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('/gestionarAlumno')\">";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('admins')\">";
+        }else{
+            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
+            echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('superAdmins')\">";
+        }
+        
         ?>
 
     </main>

@@ -1,8 +1,15 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/fonts.css">
+    <script src="../jquery-latest.js"></script>
     <link rel="stylesheet" href="../Estilos/Style.css">
     <title>Gestionar Centro</title>
     <script src="../Funciones.js"></script>
@@ -22,42 +29,40 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin': 
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>"; 
+            break;
+            
+            case 'Admin':
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+        }
+        ?>
     </header>
 
     <main class="Gestion">
-    <nav class="menuAdminTop">
-        <ul>
-        <li><a href="../gestionarCentro">Gestionar centros</a>
-        <ul>
-        <li><a href="../crearCentro">Crear centro</a></li>
-        <li><a href="../listarCentro">Menu gestión de centros</a></li>
-        </ul>
-        </li>
-        <li><a href="../../profesores">Funciones del profesor</a>
-        <ul>
-        <li><a href="../gestionarAlumno">Gestionar alumnos</a></li>
-        <li><a href="../../verRespuesta">Ver respuestas</a></li>
-        <li><a href="#">Equipos sugeridos</a></li>
-        </ul>
-        <li><a href="../gestionAdmin">Gestionar administrador de centros</a>
-        <ul>
-        <li><a href="../crearAdmin">Crear administrador</a></li>
-        <li><a href="../listarAdmin">Menu de administradores</a></li>
-        </ul>
-        </li>
-        <li><a href="../../admins">Funciones de administrador de centros</a>
-        <ul>
-        <li><a href="../gestionarProfesor">Gestionar profesores</a></li>
-        <li><a href="../gestionarCurso">Gestionar cursos</a></li>
-        <li><a href="../../profesores">Funciones de profesor</a></li>
-        </ul>
-        </li>
-        <li><a href="../../inicio">Salir</a></li>
-        </ul>
-        </nav>
-        <input type="button" value="Crear centro" class="Ginput" onclick="redirigir('../CRUDS/Centros/CrearCentro.php')"> <br>
-        <input type="button" value="Menu gestión de centros" class="Ginput" onclick="redirigir('../CRUDS/Centros/ListarCentro.php')"> <br>
-        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('../superAdmins')"> <br>
+    
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+        ?>
+
+        <input type="button" value="Crear centro" class="Ginput" onclick="redirigir('crearCentro')"> <br>
+        <input type="button" value="Menu gestión de centros" class="Ginput" onclick="redirigir('listarCentro')"> <br>
+        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('superAdmins')"> <br>
 
     </main>
 

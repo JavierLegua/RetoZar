@@ -31,33 +31,41 @@ function redirigir(ruta){
     location.href=ruta;
 }
 
-function redirigir_alumnos(ruta, dni){
-    location.href=ruta+'&dni='+dni;
+function redirigir_alumnos(ruta){
+    location.href=ruta;
 }
 
-function redirigir_curso(ruta, curso){
-    location.href=ruta+'&curso='+curso;
+function redirigir_curso(ruta){
+    location.href=ruta;
 }
 
 function redirigir_centro(ruta, centro){
-    location.href=ruta+'&centro='+centro;
+    location.href=ruta+centro;
 }
 
-document.ready(function() {
+$(document).ready(menu);
 
-    ('nav ul li > a:not(:only-child)').click(function(e) {
-      (this).siblings('.nav-submenu').toggle();
-      ('.nav-submenu').not($(this).siblings()).hide();
-      e.stopPropagation();
-    });
-  
-    ('html').click(function() {
-      ('.nav-submenu').hide();
-    });
-    
-    ('#nav-boton').click(function() {
-      ('nav ul').toggle()
-      ('#nav-boton').toggleClass("activo");
-    })
-  
-  });
+var contador = 1;
+
+function menu () {
+	$('.icon-menu2').unbind().click(function(){
+		if (contador == 1) {
+			$('#navMovil').animate({
+				left: '0'
+			});
+           contador = 0
+          //  console.log(contador)
+		} else {
+            contador=1
+            $('#navMovil').animate({
+				left: '-100%'
+			});
+          // console.log(contador)
+        }
+	});
+
+	// Mostramos y ocultamos submenus
+	$('.submenu').unbind().click(function(){
+		$(this).children('.children').slideToggle();
+	});
+}

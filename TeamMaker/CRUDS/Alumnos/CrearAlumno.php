@@ -6,7 +6,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/fonts.css">
+    <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,29 +28,44 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo menuMovil($rol);    
+                break;
+                
+                case 'Admin':
+                    echo menuMovil($rol);
+                break;
 
+                case 'Profesor':
+                    echo menuMovil($rol);
+                break;
+            }
+    ?>
     </header>
 
     <main class="crudMainUsuario">
     <?php
-        $rol = $_GET['rol'];
-        switch ($rol) {
-            case 'SuperAdmin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
-            break;
-            
-            case 'Admin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
+            $rol = $_SESSION['rol'];
+            switch ($rol) {
+                case 'SuperAdmin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+                break;
+                
+                case 'Admin':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                break;
 
-            case 'Profesor':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
-        }
+                case 'Profesor':
+                    echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+                break;
+            }
     ?>
         <h1 class="crudH1">Creación de alumnos</h1>
 
-        <form method="post" action="InsertarBBDD.php">
+        <form method="post" action="insertarAlumno">
             <?php
             echo"<input type='text' name='nombre' id='nombre' placeholder='Nombre' class='inputUs' required>";
             echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' required>";
@@ -74,7 +91,7 @@
                 }
         
                 echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviar'><br>";
-                echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('../../gestionarAlumno?rol=".$rol."')\" class='inputUsVolver'>";
+                echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\" class='inputUsVolver'>";
 
             ?>
 

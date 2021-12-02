@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "../../BBDD/includes/funciones.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
-    <title>Editar alumnos</title>
+    <title>Ver respuestas grupo</title>
     <script src="../../Funciones.js"></script>
 </head>
 <body class="listarBody">
@@ -27,8 +27,9 @@
   <main>
     <?php
         $conexion=conectarBD();
-        $rol = $_GET['rol'];
+        
         $curso = $_GET['curso'];
+        $rol=$_SESSION['rol'] ;
         $azul = 0;
         $rojo = 0;
         $verde = 0;
@@ -99,6 +100,8 @@
         
             
         ?>
+
+    <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">
   </main>
   <footer class="listFoot">
     <div id="img_footer0"></div>

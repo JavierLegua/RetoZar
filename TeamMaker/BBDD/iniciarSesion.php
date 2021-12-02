@@ -65,11 +65,12 @@ session_start();
                             $fila = $consulta->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
 
-                            $sql1="SELECT Rol from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
+                            $sql1="SELECT Rol, DNI from USUARIO,PROFESOR WHERE USUARIO.DNI=\"$usuario\" and USUARIO.DNI = PROFESOR.USUARIO_DNI";
                             $consulta1 = $conexion->prepare($sql1);
                             $consulta1->execute();
                             $fila1 = $consulta1->fetch();  
                             $_SESSION['rol']=$fila1->Rol;
+                            $_SESSION['DNI']=$fila1->dni;
                             /* echo $_SESSION['rol']; */
 
                             if($_SESSION['rol']=='Profesor'){
@@ -82,7 +83,7 @@ session_start();
 
                         }else{
                             $sql2="SELECT * from USUARIO WHERE USUARIO.DNI=\"$usuario\"";
-                            $consulta2 = $conexion->prepare($sql);
+                            $consulta2 = $conexion->prepare($sql2);
                             $consulta2->execute();
                             $fila = $consulta2->fetch();  
                             $_SESSION['nombre']=$fila->Nombre;
@@ -94,7 +95,7 @@ session_start();
                     {
 
                         echo "Nombre de usuario y/o contraseña incorrecto. Será redireccionado en 2 segundos";
-                        header("refresh:2;url=../inicio");
+                        header("refresh:0;url=../inicio");
                     }
                 else
                     {

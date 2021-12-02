@@ -20,7 +20,9 @@ $admins=$consulta->fetchAll();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/fonts.css">
+    <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar administradores</title>
     <script src="../../Funciones.js"></script>
@@ -36,38 +38,14 @@ $admins=$consulta->fetchAll();
     <div id="img_header6"></div>
     <div id="img_header7"></div>
     <div id="img_header8"></div>
+    <?php
+        echo menuMovil('SuperAdmin');
+    ?>
   </header>
   <div class="listTodo">
-  <nav class="menuAdminTop">
-        <ul>
-        <li><a href="../../gestionarCentro">Gestionar centros</a>
-        <ul>
-        <li><a href="../crearCentro">Crear centro</a></li>
-        <li><a href="../listarCentro">Menu gestión de centros</a></li>
-        </ul>
-        </li>
-        <li><a href="../../profesores">Funciones del profesor</a>
-        <ul>
-        <li><a href="../../gestionarAlumno">Gestionar alumnos</a></li>
-        <li><a href="../../verRespuesta">Ver respuestas</a></li>
-        <li><a href="#">Equipos sugeridos</a></li>
-        </ul>
-        <li><a href="../../gestionAdmin">Gestionar administrador de centros</a>
-        <ul>
-        <li><a href="../crearAdmin">Crear administrador</a></li>
-        <li><a href="#">Menu de administradores</a></li>
-        </ul>
-        </li>
-        <li><a href="../../admins">Funciones de administrador de centros</a>
-        <ul>
-        <li><a href="../../gestionarProfesor">Gestionar profesores</a></li>
-        <li><a href="../../gestionarCurso">Gestionar cursos</a></li>
-        <li><a href="../../profesores">Funciones de profesor</a></li>
-        </ul>
-        </li>
-        <li><a href="../../inicio">Salir</a></li>
-        </ul>
-        </nav>
+    <?php
+        echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
+    ?>
     <table class="table" id="tableAdmin">
       <thead>
         <tr>
@@ -83,7 +61,7 @@ $admins=$consulta->fetchAll();
           $dni = $admins[$i]->DNI;
           $_SESSION['dni']=$dni;
           echo "<tr>
-              <td>".$admins[$i]->DNI."</td><td>".$admins[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('EditarAdmin.php','".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('BorrarAdmin.php','".$dni."')\"></td></tr>";
+              <td>".$admins[$i]->DNI."</td><td>".$admins[$i]->nombre."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_alumnos('editarAdmin?dni=".$dni."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_alumnos('borrarAdmin?dni=".$dni."')\"></td></tr>";
         }
       ?>
       </tbody>
@@ -107,7 +85,7 @@ $admins=$consulta->fetchAll();
         }
       }
     ?>
-    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('../../gestionAdmin')">
+    <input class="volverListUs" type="button" value="Volver" name="Volver" onclick="redirigir('gestionAdmin')">
   </div>
   <footer class="listFoot">
     <div id="img_footer0"></div>
