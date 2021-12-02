@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="../Estilos/fonts.css">
-    <title>Document</title>
-    <script src="jquery-latest.js"></script>
-    <script src="Funciones.js"></script>
-</head>
-<body>
-    
-</body>
-</html>
 <?php
    
     function conectarBD(){
         $servidor = "localhost";
-        $usuario = "makelele";
-        $password = "Makelele123@";
+        $usuario = "makelelesberry";
+        $password = "Makelelesberry123@";
         $baseDatos = "TeamMaker";
         $opciones = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
