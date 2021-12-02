@@ -12,6 +12,8 @@
     $amarillo = 0;
     $numPersonas = $_POST['numPersonas'];
 
+    
+
     echo $curso."-----------------".$numPersonas."<br>";
     $sql1="SELECT ALUMNO.USUARIO_DNI as dni FROM ALUMNO WHERE ALUMNO.id_curso =\"".$curso."\"";
     $consulta1=$conexion->prepare($sql1);
@@ -31,6 +33,7 @@
         $pregunta=$respuestas->Enunciado;
         $usuario=$respuestas->USUARIO_DNI;
         $respuesta=$respuestas->RESPUESTA_Valor_Respuesta;
+
 
         for ($j=0; $j < count($respuestas); $j++) { 
             // echo $respuestas[$i]->Enunciado."-------".$respuestas[$i]->USUARIO_DNI."-------".$respuestas[$i]->RESPUESTA_Valor_Respuesta."<br>";
