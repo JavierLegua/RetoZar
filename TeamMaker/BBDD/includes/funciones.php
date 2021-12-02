@@ -34,6 +34,21 @@
 
     }
 
+    function calcularGrupos($alumnosClase, $numPersonas){
+        $numGrupos = $alumnosClase/$numPersonas;
+        $restoNumGrupos = $alumnosClase%$numPersonas;
+ 
+        if ($restoNumGrupos/$numGrupos >= 0.75) {
+            $numGrupos++;
+        } elseif ($numPersonas > $alumnosClase) {
+            echo "<br>Error";
+            $numGrupos = 0;
+        }
+
+        $numGrupos = intval($numGrupos);
+        return $numGrupos;
+    }
+
     function crear_menu($rol){
         switch ($rol) {
             case "Admin":
