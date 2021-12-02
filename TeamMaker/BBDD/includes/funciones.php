@@ -13,8 +13,8 @@
    
     function conectarBD(){
         $servidor = "localhost";
-        $usuario = "makelelesberry";
-        $password = "Makelelesberry123@";
+        $usuario = "makelele";
+        $password = "Makelele123@";
         $baseDatos = "TeamMaker";
         $opciones = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
@@ -52,7 +52,7 @@
     function crear_menu($rol){
         switch ($rol) {
             case "Admin":
-                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor'>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesor</a></li><li><a href='listarProfesor'>Menu de profesores</a></li></ul></li><li><a href='gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCurso'>Crear curso</a></li><li><a href='listarCurso'>Menu de cursos</a></li></ul></li><li><a href='profesores'>Funciones de profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor'>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesor</a></li><li><a href='listarProfesor'>Menu de profesores</a></li></ul></li><li><a href='gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCurso'>Crear curso</a></li><li><a href='listarCurso'>Menu de cursos</a></li></ul></li><li><a href='profesores'>Funciones de profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='generarEquipos'>Equipos sugeridos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
 
             case "SuperAdmin":
@@ -62,7 +62,7 @@
             break;
 
             case "Profesor":
-                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='#'>Equipos sugeridos</a></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='generarEquipos'>Equipos sugeridos</a></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
     }
 }
