@@ -62,7 +62,7 @@
             break;
 
             case "Profesor":
-                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='#'>Equipos sugeridos</a></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='generarEquipos'>Equipos sugeridos</a></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
     }
 }
