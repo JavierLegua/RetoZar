@@ -99,8 +99,11 @@
 
     for ($i = 0; $i < $numGrupos; $i++) { 
         $grupo[$i]= "grupo ".($i + 1);
-        
         echo "<br>".$grupo[$i]." Liderazgo : ".$colores["rojo"][$i]." Cientifico : ".$colores["azul"][$i]." Mediador : ".$colores["verde"][$i]." Creativo : ".$colores["amarillo"][$i];
+        $colores["rojo"][$i]=null;
+        $colores["azul"][$i]=null;
+        $colores["verde"][$i]=null;
+        $colores["amarillo"][$i]=null;
     }
 
 ?>
