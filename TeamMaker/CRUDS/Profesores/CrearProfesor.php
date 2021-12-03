@@ -88,8 +88,8 @@ $centros=$consultaCentro->fetchAll();
  -->            <br><br>
             <select name="Rol" id="Rol">
                 <option value="0">Seleccionar Rol</option>
-                <option value="1">Profesor</option>
-                <option value="2">Admin</option>
+                <option value="Profesor">Profesor</option>
+                <option value="Admin">Admin</option>
             </select>
 
             <select name="centro" id="centro">
