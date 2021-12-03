@@ -85,21 +85,24 @@
         $colores["amarillo"][] = $amarillo;
 
         echo "<br>Usuario ".$respuestas1[$i]->dni;
-        echo "-----Azul(Cientifico) = ".$azul;
-        echo "-----Verde(Mediador) = ".$verde;
-        echo "-----Rojo(Lider) = ".$rojo;
-        echo "-----Amarillo(Creativo) = ".$amarillo;
+        echo "-----Azul(Cientifico) = ".$azul."/20";
+        echo "-----Verde(Mediador) = ".$verde."/20";
+        echo "-----Rojo(Lider) = ".$rojo."/20";
+        echo "-----Amarillo(Creativo) = ".$amarillo."/20";
 
     }
 
     rsort($colores["rojo"]);
-    sort($colores["azul"]);
-    rsort($colores["verde"]);
-    sort($colores["amarillo"]);
+    shuffle($colores["azul"]);
+    shuffle($colores["verde"]);
+    shuffle($colores["amarillo"]);
+
+
+    echo "<br><br>";
 
     for ($i = 0; $i < $numGrupos; $i++) { 
         $grupo[$i]= "grupo ".($i + 1);
-        echo "<br>".$grupo[$i]." Liderazgo : ".$colores["rojo"][$i]." Cientifico : ".$colores["azul"][$i]." Mediador : ".$colores["verde"][$i]." Creativo : ".$colores["amarillo"][$i];
+        echo "<br>".$grupo[$i]." Liderazgo : ".$colores["rojo"][$i]."/20"." Cientifico : ".$colores["azul"][$i]."/20"." Mediador : ".$colores["verde"][$i]."/20"." Creativo : ".$colores["amarillo"][$i]."/20";
         $colores["rojo"][$i]=null;
         $colores["azul"][$i]=null;
         $colores["verde"][$i]=null;
@@ -116,6 +119,6 @@
     <title>Equipos</title>
 </head>
 <body>
-    <br><input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
+    <br><br><br><input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
 </body>
 </html>
