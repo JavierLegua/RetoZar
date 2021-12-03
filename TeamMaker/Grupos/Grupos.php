@@ -15,6 +15,7 @@
     $colorPrincipalVerde=0;
     $colorPrincipalAzul=0;
     $colorPrincipalAmarillo=0;
+    $arrayRojo = [];
     $numPersonas = $_POST['numPersonas'];
 
 
@@ -24,6 +25,9 @@
     $consulta1=$conexion->prepare($sql1);
     $consulta1->execute();
     $respuestas1=$consulta1->fetchAll();
+
+    $numGrupos = calcularGrupos(count($respuestas1),$numPersonas);
+    echo "<br>Grupos : ".$numGrupos;
 
     for ($i=0; $i < count($respuestas1); $i++) {
 
@@ -71,25 +75,35 @@
             $colorPrincipal = "verde";
             $colorPrincipalVerde++;
         }else {
-            $colorPrincipal = "amarillo";
+            $colorPrincipal = "amarillo"; 
             $colorPrincipalAmarillo++;
         }
 
+        $colores["rojo"][] = $rojo;
+        $colores["azul"][] = $azul;
+        $colores["verde"][] = $verde;
+        $colores["amarillo"][] = $amarillo;
+
         echo "<br>Usuario ".$respuestas1[$i]->dni;
-        echo "-----Azul(Cientifico) = ".(($azul/20)*100)."%";
-        echo "-----Verde(Mediador) = ".(($verde/20)*100)."%";
-        echo "-----Rojo(Lider) = ".(($rojo/20)*100)."%";
-        echo "-----Amarillo(Creativo) = ".(($amarillo/20)*100)."%";
+        echo "-----Azul(Cientifico) = ".$azul;
+        echo "-----Verde(Mediador) = ".$verde;
+        echo "-----Rojo(Lider) = ".$rojo;
+        echo "-----Amarillo(Creativo) = ".$amarillo;
 
     }
 
-    $numGrupos = calcularGrupos(count($respuestas1),$numPersonas);
-    //echo "<br>Grupos : ".$numGrupos;
-    
-    if ($colorPrincipalRojo >= $numGrupos) {
-        echo"<br>Hay suficientes lideres";
-    } else {
-        echo"<br>Faltan lideres";
+    rsort($colores["rojo"]);
+    sort($colores["azul"]);
+    rsort($colores["verde"]);
+    sort($colores["amarillo"]);
+
+    for ($i = 0; $i < $numGrupos; $i++) { 
+        $grupo[$i]= "grupo ".($i + 1);
+        echo "<br>".$grupo[$i]." Liderazgo : ".$colores["rojo"][$i]." Cientifico : ".$colores["azul"][$i]." Mediador : ".$colores["verde"][$i]." Creativo : ".$colores["amarillo"][$i];
+        $colores["rojo"][$i]=null;
+        $colores["azul"][$i]=null;
+        $colores["verde"][$i]=null;
+        $colores["amarillo"][$i]=null;
     }
 
 ?>
@@ -102,6 +116,6 @@
     <title>Equipos</title>
 </head>
 <body>
-    <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
+    <br><input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
 </body>
 </html>
