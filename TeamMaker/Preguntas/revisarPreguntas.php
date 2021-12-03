@@ -24,6 +24,9 @@
 
     $respuestas=$consulta->fetchAll();
 
+    // contar numero de filas
+    $nfilas=$consulta->rowCount();
+
     
 
     ?>
@@ -40,6 +43,10 @@
       <tbody>
       <?php
        
+        if ($nfilas==0) {
+          echo "<h1>Primero debes contestar a las preguntas</h1><br>";
+          echo "<input type='button' value='Volver' class='inputEditUsEnviar' onclick='redirigir(\"alumno\")'>";
+        }else{
         for ($i=0; $i < count($respuestas); $i++) {   
           echo $respuestas[$i]->idPregunta. "-". $respuestas[$i]->enunciado."<br>";
 
@@ -60,11 +67,13 @@
           
           echo "<br><br>";
 
-          echo "<input type='submit' name='modificar' value='MODIFICAR' id='MODIFICAR'>";
+          echo "<input type='submit' name='modificar' value='MODIFICAR' id='MODIFICAR'><br>";
+          echo "<input type='button' value='Volver' class='inputEditUsEnviar' onclick='redirigir(\"alumno\")'>";
 
           echo "<br><br><br><br>";
           
           echo "</form>";
+        }
         }
       ?>
       </tbody>
