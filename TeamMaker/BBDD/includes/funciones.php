@@ -34,20 +34,24 @@
 
     }
 
-    function calcularGrupos($alumnosClase, $numPersonas){
-        $numGrupos = $alumnosClase/$numPersonas;
-        $restoNumGrupos = $alumnosClase%$numPersonas;
+    
+    function calcularPersonas($alumnosClase, $numGrupos){
+        $numPersonas = $alumnosClase/$numGrupos;
+        //$restoNumGrupos = $alumnosClase%$numGrupos;
  
-        if ($restoNumGrupos/$numGrupos >= 0.75) {
-            $numGrupos++;
-        } elseif ($numPersonas > $alumnosClase) {
+        /*
+        if ($restoNumGrupos/$numGrupos >= 0.01) {
+            $numPersonas++;
+        } elseif ($numGrupos > $alumnosClase) {
             echo "<br>Error";
             $numGrupos = 0;
         }
+        */
 
-        $numGrupos = intval($numGrupos);
-        return $numGrupos;
+        $numPersonas = intval($numPersonas);
+        return $numPersonas;
     }
+    
 
     function crear_menu($rol){
         switch ($rol) {
