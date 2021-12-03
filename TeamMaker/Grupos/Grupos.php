@@ -16,18 +16,18 @@
     $colorPrincipalAzul=0;
     $colorPrincipalAmarillo=0;
     $arrayRojo = [];
-    $numPersonas = $_POST['numPersonas'];
+    $numGrupos = $_POST['numGrupos'];
 
 
 
-    echo $curso."-----------------".$numPersonas."<br>";
+    echo $curso."-----------------".$numGrupos."<br>";
     $sql1="SELECT ALUMNO.USUARIO_DNI as dni FROM ALUMNO WHERE ALUMNO.id_curso =\"".$curso."\"";
     $consulta1=$conexion->prepare($sql1);
     $consulta1->execute();
     $respuestas1=$consulta1->fetchAll();
 
-    $numGrupos = calcularGrupos(count($respuestas1),$numPersonas);
-    echo "<br>Grupos : ".$numGrupos;
+    $numPersonas = calcularPersonas(count($respuestas1),$numGrupos);
+    echo "<br>Personas por grupo : ".$numPersonas;
 
     for ($i=0; $i < count($respuestas1); $i++) {
 
@@ -91,24 +91,40 @@
         echo "-----Amarillo(Creativo) = ".$amarillo."/20";
 
     }
+    
 
+    /*El rol principal a la hora de crear grupos seria el rojo*/
     rsort($colores["rojo"]);
     shuffle($colores["azul"]);
     shuffle($colores["verde"]);
     shuffle($colores["amarillo"]);
 
+    $arrayAlumnos = array_merge($colores["rojo"],$colores["azul"],$colores["verde"],$colores["amarillo"]);
 
+    /*Definimos la matriz de grupos*/
+        $grupo=new Array(); 
+
+     for ($i=0; $i < $numGrupos; $i++) { 
+        $grupo[$i] = new Array();
+        $grupo[$i][0] = "grupo ".($i + 1);
+        $grupo[$i][1] = new Array();
+    } 
+/*
     echo "<br><br>";
 
-    for ($i = 0; $i < $numGrupos; $i++) { 
-        $grupo[$i]= "grupo ".($i + 1);
-        echo "<br>".$grupo[$i]." Liderazgo : ".$colores["rojo"][$i]."/20"." Cientifico : ".$colores["azul"][$i]."/20"." Mediador : ".$colores["verde"][$i]."/20"." Creativo : ".$colores["amarillo"][$i]."/20";
-        $colores["rojo"][$i]=null;
-        $colores["azul"][$i]=null;
-        $colores["verde"][$i]=null;
-        $colores["amarillo"][$i]=null;
-    }
+    $cont=0;
 
+    for ($i = 0; $i < count($arrayAlumnos); $i++) { 
+        array_push($grupos[$cont][1], $arrayAlumnos[$i]); 
+        if ($cont==$numGrupos-1) {
+            $cont=0;
+        }else{
+            $cont++;
+        }
+        
+        
+    }
+*/
 ?>
 
 <!DOCTYPE html>

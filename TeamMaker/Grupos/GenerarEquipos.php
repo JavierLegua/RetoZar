@@ -35,9 +35,8 @@
       <br>
     </select>
 
-    <select name="numPersonas" id="numPersonas">
-        <option value="0">Seleccione un numero de personas</option>
-        <option value="1">1</option>
+    <select name="numGrupos" id="numGrupos">
+        <option value="1">Seleccione un numero de grupos</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
