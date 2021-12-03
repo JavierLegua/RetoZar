@@ -17,7 +17,7 @@
 
     }
 
-    $sql="SELECT PREGUNTA.Enunciado as enunciado, PREGUNTA.idPregunta, responde.RESPUESTA_Valor_Respuesta as respuesta FROM responde, PREGUNTA WHERE responde.ALUMNO_USUARIO_DNI = \"$dni_usuario\" AND PREGUNTA.idPregunta=responde.PREGUNTA_idPregunta";
+    $sql="SELECT PREGUNTA.Definicion as definicion, PREGUNTA.Enunciado as enunciado, PREGUNTA.idPregunta, responde.RESPUESTA_Valor_Respuesta as respuesta FROM responde, PREGUNTA WHERE responde.ALUMNO_USUARIO_DNI = \"$dni_usuario\" AND PREGUNTA.idPregunta=responde.PREGUNTA_idPregunta";
 
     $consulta = $conexion->prepare($sql);
     $consulta->execute();  
@@ -48,13 +48,15 @@
           echo "<input type='button' value='Volver' class='inputEditUsEnviar' onclick='redirigir(\"alumno\")'>";
         }else{
         for ($i=0; $i < count($respuestas); $i++) {   
-          echo $respuestas[$i]->idPregunta. "-". $respuestas[$i]->enunciado."<br>";
+
+          echo "<h1>MODIFICA TUS RESPUESTAS</h1>";
+
+          echo '<h4 title="' .$respuestas[$i]->definicion.'">'.$respuestas[$i]->idPregunta. '-'. $respuestas[$i]->enunciado.'</h4>'. '<br>';
 
           $id=$respuestas[$i]->idPregunta;
           
           echo "<form action='revisarRespuesta' name='form' method='post'>";
           echo "<input type='hidden' name='idPregunta' value='$id'>";
-          echo "<br>";
           if (($respuestas[$i]->respuesta)=="VERDADERO") {
             echo "<input type='radio' name='radio' value='VERDADERO' checked><label for='verdadero'><strong>VERDADERO</strong></label><br>";
             echo "<input type='radio' name='radio' value='FALSO' ><label for='falso'><strong>FALSO</strong></label>";
