@@ -32,13 +32,13 @@ include "../../BBDD/includes/funciones.php";
         <div id="img_header7"></div>
         <div id="img_header8"></div>
         <?php
-            echo menuMovil('SuperAdmin');
+            /*echo menuMovil('SuperAdmin');*/
         ?>
     </header>
 
     <main class="Gestion">
     <?php
-        echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";
+        /*echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";*/
     ?>
         <input type="button" value="Crear administrador" class="Ginput" onclick="redirigir('crearAdmin')"> <br>
         <input type="button" value="Menu de administradores" class="Ginput" onclick="redirigir('listarAdmin')"> <br>
