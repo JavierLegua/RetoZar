@@ -54,9 +54,6 @@
                 echo"<div class='crear_menu'>".crear_menu($rol)."</div>";   
             break;
             
-            case 'Admin':
-                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
-            break;
         }
         ?>
 

@@ -79,10 +79,10 @@
             $colorPrincipalAmarillo++;
         }
 
-        $colores["rojo"][] = $rojo;
-        $colores["azul"][] = $azul;
-        $colores["verde"][] = $verde;
-        $colores["amarillo"][] = $amarillo;
+        $colores["rojo"][] = $respuestas1[$i]->dni;
+        $colores["azul"][] = $respuestas1[$i]->dni;
+        $colores["verde"][] = $respuestas1[$i]->dni;
+        $colores["amarillo"][] = $respuestas1[$i]->dni;
 
         echo "<br>Usuario ".$respuestas1[$i]->dni;
         echo "-----Azul(Cientifico) = ".$azul."/20";
@@ -99,32 +99,41 @@
     shuffle($colores["verde"]);
     shuffle($colores["amarillo"]);
 
+    /* print_r($colores["rojo"]); */
+
     $arrayAlumnos = array_merge($colores["rojo"],$colores["azul"],$colores["verde"],$colores["amarillo"]);
 
+    print_r($arrayAlumnos);
+
     /*Definimos la matriz de grupos*/
-        $grupo=new Array(); 
+        $grupo = []; 
 
      for ($i=0; $i < $numGrupos; $i++) { 
-        $grupo[$i] = new Array();
+        $grupo[$i] = [];
         $grupo[$i][0] = "grupo ".($i + 1);
-        $grupo[$i][1] = new Array();
+        $grupo[$i][1] = [];
     } 
-/*
+
     echo "<br><br>";
 
     $cont=0;
 
+    /* echo count($arrayAlumnos)."<br>"; */
+
     for ($i = 0; $i < count($arrayAlumnos); $i++) { 
-        array_push($grupos[$cont][1], $arrayAlumnos[$i]); 
-        if ($cont==$numGrupos-1) {
+        array_push($grupo[$cont][1], $arrayAlumnos[$i]); 
+        /* print_r ($cont."-------".$i."<br>"); */
+        if ($cont==$numPersonas-1) {
             $cont=0;
         }else{
             $cont++;
         }
-        
+        unset($arrayAlumnos[$i]);
         
     }
-*/
+
+    print_r($grupo);
+
 ?>
 
 <!DOCTYPE html>
@@ -135,6 +144,6 @@
     <title>Equipos</title>
 </head>
 <body>
-    <br><input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
+    <br><br><br><input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
 </body>
 </html>

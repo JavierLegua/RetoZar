@@ -17,12 +17,15 @@
 
     }
 
-    $sql="SELECT PREGUNTA.Enunciado as enunciado, PREGUNTA.idPregunta, responde.RESPUESTA_Valor_Respuesta as respuesta FROM responde, PREGUNTA WHERE responde.ALUMNO_USUARIO_DNI = \"$dni_usuario\" AND PREGUNTA.idPregunta=responde.PREGUNTA_idPregunta";
+    $sql="SELECT PREGUNTA.Definicion as definicion, PREGUNTA.Enunciado as enunciado, PREGUNTA.idPregunta, responde.RESPUESTA_Valor_Respuesta as respuesta FROM responde, PREGUNTA WHERE responde.ALUMNO_USUARIO_DNI = \"$dni_usuario\" AND PREGUNTA.idPregunta=responde.PREGUNTA_idPregunta";
 
     $consulta = $conexion->prepare($sql);
     $consulta->execute();  
 
     $respuestas=$consulta->fetchAll();
+
+    // contar numero de filas
+    $nfilas=$consulta->rowCount();
 
     
 
@@ -40,14 +43,20 @@
       <tbody>
       <?php
        
+        if ($nfilas==0) {
+          echo "<h1>Primero debes contestar a las preguntas</h1><br>";
+          echo "<input type='button' value='Volver' class='inputEditUsEnviar' onclick='redirigir(\"alumno\")'>";
+        }else{
         for ($i=0; $i < count($respuestas); $i++) {   
-          echo $respuestas[$i]->idPregunta. "-". $respuestas[$i]->enunciado."<br>";
+
+          echo "<h1>MODIFICA TUS RESPUESTAS</h1>";
+
+          echo '<h4 title="' .$respuestas[$i]->definicion.'">'.$respuestas[$i]->idPregunta. '-'. $respuestas[$i]->enunciado.'</h4>'. '<br>';
 
           $id=$respuestas[$i]->idPregunta;
           
-          echo "<form action='revisarPreguntas.php' name='form' method='post'>";
+          echo "<form action='revisarRespuesta' name='form' method='post'>";
           echo "<input type='hidden' name='idPregunta' value='$id'>";
-          echo "<br>";
           if (($respuestas[$i]->respuesta)=="VERDADERO") {
             echo "<input type='radio' name='radio' value='VERDADERO' checked><label for='verdadero'><strong>VERDADERO</strong></label><br>";
             echo "<input type='radio' name='radio' value='FALSO' ><label for='falso'><strong>FALSO</strong></label>";
@@ -60,11 +69,13 @@
           
           echo "<br><br>";
 
-          echo "<input type='submit' name='modificar' value='MODIFICAR' id='MODIFICAR'>";
+          echo "<input type='submit' name='modificar' value='MODIFICAR' id='MODIFICAR'><br>";
+          echo "<input type='button' value='Volver' class='inputEditUsEnviar' onclick='redirigir(\"alumno\")'>";
 
           echo "<br><br><br><br>";
           
           echo "</form>";
+        }
         }
       ?>
       </tbody>

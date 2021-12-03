@@ -51,7 +51,8 @@
 
           $fila = $consulta->fetch();
           $idPregunta=$fila->idPregunta;
-          $enunciado=$fila->Enunciado;     
+          $enunciado=$fila->Enunciado;   
+          $definicion=$fila->Definicion; 
              
     ?>
 
@@ -70,27 +71,27 @@
     <main class="alumnoMain">
         <h1> <?php if ($enunciado == "") {
             echo "TEST FINALIZADO, GRACIAS POR COMPLETARLO<br><br>";
-            header("refresh:2;url=revisarPreguntas.php");
+            header("refresh:2;url=revisarRespuesta");
+            echo "</h1>";
           }else{
+            echo "<h1>";
             echo "RESPONDE A LA PREGUNTA ";
             echo "<br>Te quedan ".$nfilas." preguntas";
-          }?>  </h1>
-        <br><br>
-
-        <?php echo $enunciado; ?>
-
-        <br><br>
-
-        <form action="respondertest" name="form" method="post">
-            <input type="hidden" name="idPregunta" value="<?php echo $idPregunta; ?>">
-            <input type="radio" name="radio" value="VERDADERO" class="radio" required>
-            <label for="verdadero"><strong><h3>VERDADERO</h3></strong></label>
-            <input type="radio" name="radio" value="FALSO" class="radio" required>
-            <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
-            <br><br>
-            <input type="submit" name="siguiente" value="Siguiente" id="Siguiente" >
-            <br><br>
-        </form>
+            echo "</h1>";
+            echo '<br><br> <p title="'. $definicion. '">'.$enunciado.'<br><br>';
+            ?>
+            <form action='respondertest' name='form' method='post'>
+                <input type='hidden' name='idPregunta' value=<?php echo $idPregunta; ?> >
+                <input type='radio' name='radio' value='VERDADERO' class='radio' required>
+                <label for='verdadero'><strong><h3>VERDADERO</h3></strong></label>
+                <input type='radio' name='radio' value='FALSO' class='radio' required>
+                <label for='falso'><strong><h3>FALSO</h3></strong></label><br>
+                <br><br>
+                <input type='submit' name='siguiente' value='Siguiente' id='Siguiente' >
+                <br><br>
+            </form>
+            <?php
+          }?>  
 
         <button class="Salir" onclick="redirigir('../alumno')" >Salir del Test</button>
         </main>
