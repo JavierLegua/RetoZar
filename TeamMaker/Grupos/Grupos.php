@@ -101,36 +101,78 @@
 
     /* print_r($colores["rojo"]); */
 
-    $arrayAlumnos = array_merge($colores["rojo"],$colores["azul"],$colores["verde"],$colores["amarillo"]);
-
-    print_r($arrayAlumnos);
-
+    // $arrayAlumnos = array_merge($colores["rojo"],$colores["azul"],$colores["verde"],$colores["amarillo"]);
     /*Definimos la matriz de grupos*/
-        $grupo = []; 
+    $grupo = [];
 
-     for ($i=0; $i < $numGrupos; $i++) { 
+    $newGroup = shouldCreateGroup((count($respuestas1) % $numGrupos), $numPersonas);
+
+    if ($newGroup) {
+        $numGrupos++;
+    }
+
+    for ($i=0; $i < $numGrupos; $i++) {
         $grupo[$i] = [];
         $grupo[$i][0] = "grupo ".($i + 1);
-        $grupo[$i][1] = [];
-    } 
+        $grupo[$i][1][] = $colores["rojo"][0];
+
+        array_shift($colores["rojo"]);
+    }
+
+    shuffle($colores["rojo"]);
+    $arrayAlumnos = $colores["rojo"];
+
+    echo "<br>Numero personas: $numPersonas<br>";
+
+    for ($i = 0; $i < $numGrupos; $i++) {
+        echo "<br>Iteracion $i de grupos";
+        for ($j = count($grupo[$i][1]); $j < $numPersonas && count($arrayAlumnos) > 0; $j++) {
+            echo "<br>Iteracion $j de personas";
+            // Array push y el statement de abajo son lo mismo
+            array_push($grupo[$i][1], $arrayAlumnos[0]);
+            // $grupo[$i][1][] = $arrayAlumnos[0];
+            echo "<br>".$arrayAlumnos[0];
+            
+            array_shift($arrayAlumnos);
+        }
+    }
+
+    if (!$newGroup && count($respuestas1) % $numGrupos > 0) {
+        for ($i = 0; $i < count($arrayAlumnos); $i++) {
+            $grupo[$i % count($grupo)][1][] = $arrayAlumnos[$i];
+
+            // con tres grupos
+            // primer alumno => primer grupo (0 % 3 = 0)
+            // segundo alumno => segundo grupo (1 % 3 = 1)
+            // tercer alumno => tercer grupo (2 % 3 = 2)
+            // cuarto alumno => primer grupo (3 % 3 = 0)
+            // y asi sucesivamente...
+        }
+    }
+
+    echo "<br>";
+
+    foreach ($grupo as $g) {
+        echo "<br>$g[0]<br>";
+        foreach ($g[1] as $alumno) {
+            echo "$alumno<br>";
+        }
+    }
 
     echo "<br><br>";
 
-    $cont=0;
-
-    /* echo count($arrayAlumnos)."<br>"; */
-
-    for ($i = 0; $i < count($arrayAlumnos); $i++) { 
-        array_push($grupo[$cont][1], $arrayAlumnos[$i]); 
-        /* print_r ($cont."-------".$i."<br>"); */
-        if ($cont==$numPersonas-1) {
-            $cont=0;
-        }else{
-            $cont++;
-        }
-        unset($arrayAlumnos[$i]);
+    // for ($i = 0; $i < count($arrayAlumnos); $i++) { 
+    //     // $grupo[$cont][1][] = $arrayAlumnos[$i]; // Esto hace lo mismo que array push
+    //     array_push($grupo[$cont][1], $arrayAlumnos[$i]); 
+    //     /* print_r ($cont."-------".$i."<br>"); */
+    //     if ($cont==$numPersonas-1) {
+    //         $cont=0;
+    //     } else {
+    //         $cont++;
+    //     }
+    //     unset($arrayAlumnos[$i]);
         
-    }
+    // }
 
     print_r($grupo);
 

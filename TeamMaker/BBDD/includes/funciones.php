@@ -13,8 +13,8 @@
    
     function conectarBD(){
         $servidor = "localhost";
-        $usuario = "makelele";
-        $password = "Makelele123@";
+        $usuario = "makelelesberry";
+        $password = "Makelelesberry123@";
         $baseDatos = "TeamMaker";
         $opciones = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
@@ -37,21 +37,20 @@
     
     function calcularPersonas($alumnosClase, $numGrupos){
         $numPersonas = $alumnosClase/$numGrupos;
-        //$restoNumGrupos = $alumnosClase%$numGrupos;
- 
-        /*
-        if ($restoNumGrupos/$numGrupos >= 0.01) {
-            $numPersonas++;
-        } elseif ($numGrupos > $alumnosClase) {
-            echo "<br>Error";
-            $numGrupos = 0;
-        }
-        */
-
         $numPersonas = intval($numPersonas);
         return $numPersonas;
     }
     
+    function shouldCreateGroup($numPersonasRestantes, $numPersonasPorGrupo) {
+        // if ($numPersonasRestantes / $numPersonasPorGrupo > 0.75) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+
+        // Esto sería lo mismo que poner el if else de arriba
+        return $numPersonasRestantes / $numPersonasPorGrupo > 0.75;
+    }
 
     function crear_menu($rol){
         switch ($rol) {
