@@ -52,7 +52,7 @@
 
           $id=$respuestas[$i]->idPregunta;
           
-          echo "<form action='revisarPreguntas.php' name='form' method='post'>";
+          echo "<form action='revisarRespuesta' name='form' method='post'>";
           echo "<input type='hidden' name='idPregunta' value='$id'>";
           echo "<br>";
           if (($respuestas[$i]->respuesta)=="VERDADERO") {
