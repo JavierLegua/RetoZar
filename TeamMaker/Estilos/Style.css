@@ -842,6 +842,18 @@ form#especialForm{
     height: 5%;
 }
 
+input.TeamButton{
+
+    font-size: 100%;
+    outline: none;
+    width: 20%;
+    height: 7%;
+    margin-top: 1%;
+    margin-bottom: 0;
+    margin-right: 1%;
+
+}
+
 input.buttonList2{
     font-size: 100%;
     outline: none;
