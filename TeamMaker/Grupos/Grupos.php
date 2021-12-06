@@ -49,6 +49,7 @@
             $consulta1->execute();
             $respuestas1=$consulta1->fetchAll();
             $nombre=$respuestas1->nombre;
+            $dni=$respuestas1->dni;
             /*
             for ($i=0; $i < count($respuestas1); $i++) { 
                 echo "<br>".$respuestas1[$i]->nombre; 
@@ -95,16 +96,16 @@
                 }
 
                 if ($rojo > $azul && $rojo > $verde && $rojo > $amarillo) {
-                    $colorPrincipal = "rojo";
+                    $colorPrincipal = "red";
                     $colorPrincipalRojo++;
                 }elseif ($azul > $rojo && $azul > $verde && $azul > $amarillo) {
-                    $colorPrincipal = "azul";
+                    $colorPrincipal = "blue";
                     $colorPrincipalAzul++;
                 }elseif ($verde > $rojo && $verde > $azul && $verde > $amarillo) {
-                    $colorPrincipal = "verde";
+                    $colorPrincipal = "green";
                     $colorPrincipalVerde++;
                 }else {
-                    $colorPrincipal = "amarillo"; 
+                    $colorPrincipal = "yellow"; 
                     $colorPrincipalAmarillo++;
                 }
 
@@ -180,7 +181,7 @@
             foreach ($grupo as $g) {
                 echo "<br><strong>$g[0]</strong><br><br>";
                 foreach ($g[1] as $alumno) {
-                    echo "$alumno<br>";
+                    echo "<p style='background-color:$colorPrincipal'>$alumno</p><br>";
                 }
             }
 
@@ -200,6 +201,20 @@
             // }
 
             //print_r($grupo);
+
+
+            //Falta revisar el DNI a la hora de insertar los participantes de un equipo
+            
+            /*
+            $insertarGrupo="insert into EQUIPO values(\"".$curso+$grupo[0]."\",\"".$grupo[0]."\",\"".$curso."\" )";      
+            $insertarParticipantesEquipo="insert into ALUMNO_PERTENECE_EQUIPO values(\"".$grupo[0]=$respuestas1->dni."\",\"".$curso+$grupo[0]."\")";
+
+            $consulta2=$conexion->prepare($insertarGrupo);
+            $consulta2->execute();
+
+            $consulta3=$conexion->prepare($insertarParticipantesEquipo);
+            $consulta3->execute();
+            */
 
         ?>
 
