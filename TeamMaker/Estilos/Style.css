@@ -218,7 +218,95 @@ especifico del input con id acceder, situado en la pagina Login dándole un esti
     border-radius: 50px;
     background-color: #a7fabe;
 }
+.Modificar{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 100%;
+    outline: none;
+    width: 10%;
+    height: 10%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);    
+}
+.inputEditUsVolver{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 10%;
+        height: 6%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+        color: rgb(24, 24, 24);
+}
+/*
+especifico del radio button del test dándole un estilo personalizado cambiando tamaño, formato...
+*/
+.labels{
+    text-align: center;
+}
+.testH3{
+    text-align: center;
+}
+.radio{
+    justify-content: center;
+    margin-left: 45%;
+    margin-right: 45%;
+    float: left;
+    margin-top: 1%;
+    width: 10%;
+    height: 10%;
+    outline: none;
+}
+.radioRev{
+    justify-content: center;
+    margin-left: 45%;
+    margin-right: 45%;
+    float: left;
+    margin-top: 1%;
+    width: 10%;
+    height: 3%;
+    outline: none;
+}
+.listaBody{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 175px 100% 20%;
+    overflow: scroll;
 
+}
+/*
+especifico del botón Siguiente del test dándole un estilo personalizado cambiando color, formato...
+*/
+#Siguiente{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    font-size: 100%;
+    outline: none;
+    width: 10%;
+    height: 20%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
+/*
+especifico del botón Salir del test dándole un estilo personalizado cambiando color, formato...
+*/
+.Salir{
+    margin-top: 1.5%;
+    font-size: 100%;
+    outline: none;
+    width: 10%;
+    height: 10%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
 /*
 especifico de todos los input que sean de tipo boton, dándole un estilo personalizado cambiando color, formato...
 */

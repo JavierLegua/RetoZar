@@ -109,10 +109,11 @@
                     $colorPrincipalAmarillo++;
                 }
 
-                $colores["rojo"][] = $respuestas1[$i]->nombre;
-                $colores["azul"][] = $respuestas1[$i]->nombre;
-                $colores["verde"][] = $respuestas1[$i]->nombre;
-                $colores["amarillo"][] = $respuestas1[$i]->nombre;
+                $colores["rojo"][] = [$respuestas1[$i]->nombre, $respuestas1[$i]->dni] ;
+                $colores["azul"][] = [$respuestas1[$i]->nombre, $respuestas1[$i]->dni];
+                $colores["verde"][] = [$respuestas1[$i]->nombre, $respuestas1[$i]->dni];
+                $colores["amarillo"][] = [$respuestas1[$i]->nombre, $respuestas1[$i]->dni];
+
 
                 //echo "<br>Usuario ".$respuestas1[$i]->dni;
                 //echo "-----Azul(Cientifico) = ".$azul."/20";
@@ -143,7 +144,7 @@
 
             for ($i=0; $i < $numGrupos; $i++) {
                 $grupo[$i] = [];
-                $grupo[$i][0] = "grupo ".($i + 1);
+                $grupo[$i][0] = "Grupo ".($i + 1);
                 $grupo[$i][1][] = $colores["rojo"][0];
 
                 array_shift($colores["rojo"]);
@@ -177,11 +178,23 @@
             }
 
             echo "<br>";
-
+      
             foreach ($grupo as $g) {
                 echo "<br><strong>$g[0]</strong><br><br>";
+                /* echo $dni=$respuestas1->dni."<br>"; */
+                $insertarGrupo="insert into EQUIPO values(\"".$curso.$g[0]."\",\"".$g[0]."\",\"".$curso."\" )";
+                $consulta2=$conexion->prepare($insertarGrupo);
+
+                $consulta2->execute();
+
                 foreach ($g[1] as $alumno) {
-                    echo "<p style='background-color:$colorPrincipal'>$alumno</p><br>";
+                    //var_dump($alumno);
+                    echo "<br>".$alumno[0]."<br>";
+
+                    $insertarParticipantesEquipo="insert into ALUMNO_PERTENECE_EQUIPO values(\"".$alumno[1]."\",\"".$curso.$g[0]."\")";
+                    /* echo $insertarGrupo."<br>".$insertarParticipantesEquipo; */
+                    $consulta3=$conexion->prepare($insertarParticipantesEquipo);
+                    $consulta3->execute();
                 }
             }
 
@@ -201,20 +214,6 @@
             // }
 
             //print_r($grupo);
-
-
-            //Falta revisar el DNI a la hora de insertar los participantes de un equipo
-            
-            /*
-            $insertarGrupo="insert into EQUIPO values(\"".$curso+$grupo[0]."\",\"".$grupo[0]."\",\"".$curso."\" )";      
-            $insertarParticipantesEquipo="insert into ALUMNO_PERTENECE_EQUIPO values(\"".$grupo[0]=$respuestas1->dni."\",\"".$curso+$grupo[0]."\")";
-
-            $consulta2=$conexion->prepare($insertarGrupo);
-            $consulta2->execute();
-
-            $consulta3=$conexion->prepare($insertarParticipantesEquipo);
-            $consulta3->execute();
-            */
 
         ?>
 

@@ -61,7 +61,7 @@
             case "SuperAdmin":
                 echo"<nav class='menuAdminTop'>
                 <ul>
-                    <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                    <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='generarEquipos'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
 
             case "Profesor":
@@ -93,7 +93,7 @@
                       <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
-                              <li><a href='#'>Equipos sugeridos</a></li>
+                              <li><a href='generarEquipos'>Equipos sugeridos</a></li>
                           </ul>
                       </li>
                     </ul>
@@ -115,7 +115,7 @@
                       <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
-                              <li><a href='#'>Equipos sugeridos</a></li>
+                              <li><a href='generarEquipos'>Equipos sugeridos</a></li>
                           </ul>
                       </li>
                       <li class='submenu'><a href='#'>Gestionar Administrador de Centros<span class='caret icon-circle-down'</span></a>
@@ -146,7 +146,7 @@
                               <li><a href='listarAlumno'>Menú Alumnos</a></li>
                           </ul>
                       </li>
-                      <li class='submenu'><a href='#'>Equipos sugeridos</a></li>
+                      <li class='submenu'><a href='generarEquipos'>Equipos sugeridos</a></li>
                     </ul>
                   </nav>";
                 break;

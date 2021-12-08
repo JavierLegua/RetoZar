@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../Estilos/Style.css"> -->
+    <link rel="stylesheet" href="../Estilos/Style.css">
     <title>TEST</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,18 +74,18 @@
             header("refresh:2;url=revisarRespuesta");
             echo "</h1>";
           }else{
-            echo "<h1>";
+            echo "<h2>";
             echo "RESPONDE A LA PREGUNTA ";
             echo "<br>Te quedan ".$nfilas." preguntas";
-            echo "</h1>";
+            echo "</h2>";
             echo '<br><br> <p title="'. $definicion. '">'.$enunciado.'<br><br>';
             ?>
-            <form action='respondertest' name='form' method='post'>
+            <form class='formulario' action='respondertest' name='form' method='post'>
                 <input type='hidden' name='idPregunta' value=<?php echo $idPregunta; ?> >
+                <label for='verdadero' class='labels'><strong><h3 class='testH3'>VERDADERO</h3></strong></label>
                 <input type='radio' name='radio' value='VERDADERO' class='radio' required>
-                <label for='verdadero'><strong><h3>VERDADERO</h3></strong></label>
+                <label for='falso' class='labels'><strong><h3 class='testH3'>FALSO</h3></strong></label>
                 <input type='radio' name='radio' value='FALSO' class='radio' required>
-                <label for='falso'><strong><h3>FALSO</h3></strong></label><br>
                 <br><br>
                 <input type='submit' name='siguiente' value='Siguiente' id='Siguiente' >
                 <br><br>

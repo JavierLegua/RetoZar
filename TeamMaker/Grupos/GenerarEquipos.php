@@ -33,8 +33,42 @@
         <div id="img_header6"></div>
         <div id="img_header7"></div>
         <div id="img_header8"></div>
+        <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':    
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+            
+            case 'Admin':
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+
+            case 'Profesor':
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+        }
+    ?>
     </header>
     <main>
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+    ?>
         <form action="verGrupos" method="post">
 
         <select name="curso" id="curso" class="genEquipos">
@@ -58,7 +92,7 @@
         <br>
         
         <?php
-            echo"<input type='submit' class='genEquiposButton' value='Ver clase' onclick=\"redirigir('verGrupos')\">"
+            echo"<input type='submit' class='genEquiposButton' value='Generar equipos' onclick=\"redirigir('verGrupos')\">"
         ?>
 
         </form>
