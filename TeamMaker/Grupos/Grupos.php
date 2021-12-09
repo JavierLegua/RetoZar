@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
-    <script src="../../Funciones.js"></script>
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
+    <script src="../Funciones.js"></script>
     <title>Equipos</title>
 </head>
 <body class="listarBody">
@@ -152,7 +153,7 @@
             }
 
             shuffle($colores["rojo"]);
-            $arrayAlumnos = $colores["rojo"];
+            $arrayAlumnos = $colores["rojo"]; 
 
             //echo "<br>Numero personas: $numPersonas<br>";
 
@@ -181,22 +182,13 @@
             echo "<br>";
       
             foreach ($grupo as $g) {
-                echo "<div class='divGrupo' style='background-color:lightblue; padding-bottom:5%;' ondragover='allowDrop(ev)'><strong>$g[0]</strong></div>";
+                echo "<br><div class='divGrupo' id='$g[0]' ondrop='drop(event)' ondragover='allowDrop(event)'><strong>$g[0]</strong>";
                 /* echo $dni=$respuestas1->dni."<br>"; */
-                $insertarGrupo="insert into EQUIPO values(\"".$curso.$g[0]."\",\"".$g[0]."\",\"".$curso."\" )";
-                // $consulta2=$conexion->prepare($insertarGrupo);
-
-                // $consulta2->execute();
-
                 foreach ($g[1] as $alumno) {
                     //var_dump($alumno);
-                    echo "<div class='divAlumno' style='background-color:orange;' draggable='true' ondragstart='drag()'>".$alumno[0]."</div>";
-
-                    $insertarParticipantesEquipo="insert into ALUMNO_PERTENECE_EQUIPO values(\"".$alumno[1]."\",\"".$curso.$g[0]."\")";
-                    /* echo $insertarGrupo."<br>".$insertarParticipantesEquipo; */
-                    // $consulta3=$conexion->prepare($insertarParticipantesEquipo);
-                    // $consulta3->execute();
+                    echo "<div class='divAlumno' id='$alumno[0]' draggable='true' ondragstart='drag(event)'>".$alumno[0]."</div>";
                 }
+                echo "</div>";
             }
 
             echo "<br><br>";
@@ -216,7 +208,11 @@
 
             //print_r($grupo);
 
+            
+
         ?>
+
+        <br><input type='button' value='Confirmar equipos' class='TeamButton' onclick="redirigir('insertarGrupos')">
 
         <br><br><br><input type='button' value='Volver' class='TeamButton' onclick="redirigir('profesores')">
     </main>

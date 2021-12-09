@@ -23,6 +23,7 @@ $centros=$consultaCentro->fetchAll();
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/fonts.css">
     <script src="../../jquery-latest.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear Administrador</title>
     <script src="../../Funciones.js"></script>

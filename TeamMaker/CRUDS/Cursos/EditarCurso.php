@@ -31,6 +31,7 @@ $centro=$curso->CENTRO_idCentro;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar Curso</title>
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <script src="../../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

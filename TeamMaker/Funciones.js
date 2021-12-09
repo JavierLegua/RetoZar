@@ -69,20 +69,43 @@ function menu () {
 		$(this).children('.children').slideToggle();
 	});
 
+}
 
-    //Editar grupos funciones de drag and drop
-    function allowDrop(ev) {
-        ev.preventDefault();
+ //Editar grupos funciones de drag and drop
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+  
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+  
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+
+    if ( ev.target.className == "divGrupo" ) {
+        //document.getElementById("demo").style.color = "";
+        ev.target.style.border = "";
+        var newT=ev.target 
+        newT.appendChild(document.getElementById(data));
+    } 
+
+    if ( ev.target.parentElement.className == "divGrupo" ) { 
+        ev.target.style.border = "";
+        var newT=ev.target.parentElement
+        newT.appendChild(document.getElementById(data));     
     }
-      
-    function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
+
+    if ( ev.target.parentElement.parentElement.className == "divGrupo" ) {
+        ev.target.style.border = "";
+        var newT=ev.target.parentElement.parentElement
+        newT.appendChild(document.getElementById(data));    
     }
-      
-    function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        ev.target.appendChild(document.getElementById(data));
-        document.getElementsByClassName("papelera").setAttribute("src","#")
-    }
+
+    if ( ev.target.parentElement.parentElement.parentElement.className == "divGrupo" ) {
+        ev.target.style.border = "";
+        var newT=ev.target.parentElement.parentElement.parentElement
+        newT.appendChild(document.getElementById(data));     }
 }

@@ -63,6 +63,19 @@ main {
     background-image: linear-gradient(to bottom right, #F0F0F0, #A8FFC1);
 }
 
+div.divGrupo{
+    background-image: -o-linear-gradient(to bottom right, #F0F0F0, #A8FFC0); 
+    width: 20%; 
+    margin-left: 40%; 
+    padding-bottom:3%; 
+    padding-top:0.5%;
+}
+
+div.divAlumno{
+    background-image: linear-gradient(to bottom right, #A8FFC0, #A8FFC0); 
+    margin-top:1%;
+}
+
 #menuProfesor ul{
     list-style:none;
     margin:0;

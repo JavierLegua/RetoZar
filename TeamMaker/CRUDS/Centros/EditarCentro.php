@@ -32,6 +32,7 @@ $direccion=$centro->Direccion;
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar Curso</title>
     <script src="../../Funciones.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">

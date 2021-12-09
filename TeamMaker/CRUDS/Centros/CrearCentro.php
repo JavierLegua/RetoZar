@@ -24,6 +24,7 @@ $centro=$consulta->fetchAll();
     <link rel="stylesheet" href="../../Estilos/fonts.css">
     <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <title>Crear centro</title>
     <script src="../../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

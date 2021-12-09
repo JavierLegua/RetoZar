@@ -19,6 +19,7 @@
     <meta charset="UTF-8">
     <script src="../Funciones.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Generar equipos</title>
 </head>
