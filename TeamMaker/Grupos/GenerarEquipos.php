@@ -69,33 +69,33 @@
             break;
         }
     ?>
-        <form action="verGrupos" method="post">
+        <form action="verGrupos" class="formEquipo" method="post">
 
-        <select name="curso" id="curso" class="genEquipos">
-            <option value="0">Seleccione un curso</option>
+            <select name="curso" id="curso" class="genEquipos">
+                <option value="0">Seleccione un curso</option>
+                <?php
+                    for ($i=0; $i < count($cursos); $i++) { 
+                        echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
+                    }
+                ?>
+            </select>
+            <br>
+
+            <select name="numGrupos" id="numGrupos" class="genEquipos">
+                <option value="1">Seleccione un numero de grupos</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <br>
+            
             <?php
-                for ($i=0; $i < count($cursos); $i++) { 
-                    echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
-                }
+                echo"<input type='submit' class='genEquiposButton' value='Generar equipos' onclick=\"redirigir('verGrupos')\">"
             ?>
-        </select>
-        <br>
 
-        <select name="numGrupos" id="numGrupos" class="genEquipos">
-            <option value="1">Seleccione un numero de grupos</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-
-        <br>
-        
-        <?php
-            echo"<input type='submit' class='genEquiposButton' value='Generar equipos' onclick=\"redirigir('verGrupos')\">"
-        ?>
-
-        </form>
+            </form>
 
         <input type='button' value='Volver' class='genEquiposButtonSalir' onclick="redirigir('profesores')">
     </main>
