@@ -816,6 +816,10 @@ main.mainEditC {
     background:#5b78a7;
 }
 
+form.formEquipos{
+    height: 25%;
+}
+
 .menuAdmin ul ul {
     display:none;
     position:absolute;
