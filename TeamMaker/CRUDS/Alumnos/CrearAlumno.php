@@ -47,7 +47,7 @@
     ?>
     </header>
 
-    <main class="crudMainUsuario">
+    <main class="crudMainUsuarioAlumno">
     <?php
             $rol = $_SESSION['rol'];
             switch ($rol) {
@@ -91,7 +91,7 @@
                     }
                 }
         
-                echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviar'><br>";
+                echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviarAlumno'><br>";
                 echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\" class='inputUsVolver'>";
 
             ?>

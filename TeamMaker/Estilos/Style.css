@@ -55,7 +55,7 @@ hace que si hay un fallo con la contraseña en la ventana de Login, esta marque 
 le da estilo a la seccion main, centrando los objetos y dandole un color de fondo especifico
 */
 main {
-    padding-bottom: 5%;
+    padding-bottom: 6%;
     padding-top: 4%;
     text-align: center;
     grid-row-start: 2;
@@ -404,7 +404,7 @@ input.adminTopSalir {
     margin-top: 2.5%;
     margin-bottom: 8.5%;
     width: 15%;
-    height: 15%;
+    height: 10%;
 
 }
 
@@ -455,7 +455,7 @@ h1.alumnoH1 {
 especifico del main con clase profesorMain, dándole espacio en la parte superior e inferior del main
 */
 main.profesorMain {
-    padding-bottom: 3%;
+    
     padding-top: 1.5%;
 }
 
@@ -493,8 +493,17 @@ h1.profesorH1 {
 especifico del main con clase Gestion, dándole espacio en la parte superior e inferior del main
 */
 main.Gestion {
-    padding-bottom: 3%;
-    padding-top: 3%;
+    padding-top: 2%;
+}
+
+main.GestionCentros {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+main.GestionAlumno {
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 /*
@@ -554,7 +563,12 @@ especifico del main con clase crudMainUsuario, dándole espacio en la parte supe
 */
 main.crudMainUsuario {
     padding-bottom: 3%;
-    padding-top: 3%;
+    padding-top: 1%;
+}
+
+main.crudMainUsuarioAlumno {
+    padding-bottom: 6%;
+    padding-top: 1%;
 }
 
 /*
@@ -574,30 +588,47 @@ input.inputUs {
 especifico de todos los input que tengan la clase inputUsEnviar, dándole un estilo personalizado cambiando tamaño, posicion y color
 */
 input.inputUsEnviar {
-    margin-top: 4%;
+    margin-top: 0.5%;
     margin-bottom: 1%;
     font-size: 100%;
     outline: none;
     width: 15%;
-    height: 25%;
+    height: 20%;
     border: solid 2px #78C48D;
     border-radius: 50px;
     background-color: #a7fabe;
+    float: right;
+    margin-right: 44%;
+}
+
+input.inputUsEnviarAlumno {
+    margin-top: 2.5%;
+    margin-bottom: 1%;
+    font-size: 100%;
+    outline: none;
+    width: 15%;
+    height: 20%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    float: right;
+    margin-right: 44%;
 }
 
 /*
 especifico de todos los input que tengan la clase inputUsVolver, dándole un estilo personalizado cambiando tamaño, posicion y color
 */
 input.inputUsVolver {
-    margin-top: 2%;
+    margin-top: 1%;
     margin-bottom: 8%;
     font-size: 100%;
     outline: none;
-    width: 10%;
-    height: 25%;
+    width: 11%;
     border: solid 2px #78C48D;
     border-radius: 50px;
     background-color: #a7fabe;
+    float: left;
+    margin-left: 43%;
 }
 
 /*
@@ -670,6 +701,7 @@ div.listTodo {
     padding-top: 5%;
     padding-bottom: 0;
     height: 100%;
+    margin-bottom: -20%;
 }
 
 /*
@@ -728,7 +760,7 @@ cambia el tamaño y la posicion de los input pertenecientes a la clase volverLis
 input.volverListUs {
     height: 4%;
     width: 10%;
-    margin-top: 10%;
+    
 }
 
 /*
@@ -1018,6 +1050,26 @@ input.buttonList3{
     display: none;
 }
 
+select.crearAdmin{
+    margin-top: 1%;
+    margin-bottom: 1.5%;
+    height: 15%;
+    width: 40.3%;
+    float: left;
+    margin-left: 8.6%;
+}
+
+select.crearAdmin2{
+    margin-bottom: 1.5%;
+    height: 100%;
+    width: 40.3%;
+    margin-top: 1%;
+    margin-right: 8.4%;
+}
+
+div.creadAdminDiv{
+    height: 15%;
+}
 /*
 *Mediaquery diseñada para pantallas con un mínimo de 200px y un máximo de 577px de ancho
 */
@@ -1515,6 +1567,8 @@ input.buttonList3{
         padding-bottom: 0;
         height: 100%;
         align-items: center;
+        
+       
     }
 
     /*
@@ -1605,7 +1659,7 @@ input.buttonList3{
         Le da estilo al footer de la lista
     */
     footer.listFoot {
-        height: 100px;
+        height: 100%;
     }
 
     /*

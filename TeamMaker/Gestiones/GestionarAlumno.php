@@ -48,7 +48,7 @@
         ?>
     </header>
 
-    <main class="Gestion">
+    <main class="GestionAlumno">
     <?php
         $rol = $_SESSION['rol'];
         switch ($rol) {
