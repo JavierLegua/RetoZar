@@ -68,4 +68,21 @@ function menu () {
 	$('.submenu').unbind().click(function(){
 		$(this).children('.children').slideToggle();
 	});
+
+
+    //Editar grupos funciones de drag and drop
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+      
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+      
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+        document.getElementsByClassName("papelera").setAttribute("src","#")
+    }
 }

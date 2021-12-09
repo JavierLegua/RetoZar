@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
+    <script src="../../Funciones.js"></script>
     <title>Equipos</title>
 </head>
 <body class="listarBody">
@@ -180,21 +181,21 @@
             echo "<br>";
       
             foreach ($grupo as $g) {
-                echo "<br><strong>$g[0]</strong><br><br>";
+                echo "<div class='divGrupo' style='background-color:lightblue; padding-bottom:5%;' ondragover='allowDrop(ev)'><strong>$g[0]</strong></div>";
                 /* echo $dni=$respuestas1->dni."<br>"; */
                 $insertarGrupo="insert into EQUIPO values(\"".$curso.$g[0]."\",\"".$g[0]."\",\"".$curso."\" )";
-                $consulta2=$conexion->prepare($insertarGrupo);
+                // $consulta2=$conexion->prepare($insertarGrupo);
 
-                $consulta2->execute();
+                // $consulta2->execute();
 
                 foreach ($g[1] as $alumno) {
                     //var_dump($alumno);
-                    echo "<br>".$alumno[0]."<br>";
+                    echo "<div class='divAlumno' style='background-color:orange;' draggable='true' ondragstart='drag()'>".$alumno[0]."</div>";
 
                     $insertarParticipantesEquipo="insert into ALUMNO_PERTENECE_EQUIPO values(\"".$alumno[1]."\",\"".$curso.$g[0]."\")";
                     /* echo $insertarGrupo."<br>".$insertarParticipantesEquipo; */
-                    $consulta3=$conexion->prepare($insertarParticipantesEquipo);
-                    $consulta3->execute();
+                    // $consulta3=$conexion->prepare($insertarParticipantesEquipo);
+                    // $consulta3->execute();
                 }
             }
 
