@@ -13,8 +13,8 @@
    
     function conectarBD(){
         $servidor = "localhost";
-        $usuario = "makelele";
-        $password = "Makelele123@";
+        $usuario = "makelelesberry";
+        $password = "Makelelesberry123@";
         $baseDatos = "TeamMaker";
         $opciones = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
@@ -37,21 +37,20 @@
     
     function calcularPersonas($alumnosClase, $numGrupos){
         $numPersonas = $alumnosClase/$numGrupos;
-        //$restoNumGrupos = $alumnosClase%$numGrupos;
- 
-        /*
-        if ($restoNumGrupos/$numGrupos >= 0.01) {
-            $numPersonas++;
-        } elseif ($numGrupos > $alumnosClase) {
-            echo "<br>Error";
-            $numGrupos = 0;
-        }
-        */
-
         $numPersonas = intval($numPersonas);
         return $numPersonas;
     }
     
+    function shouldCreateGroup($numPersonasRestantes, $numPersonasPorGrupo) {
+        // if ($numPersonasRestantes / $numPersonasPorGrupo > 0.75) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+
+        // Esto sería lo mismo que poner el if else de arriba
+        return $numPersonasRestantes / $numPersonasPorGrupo > 0.75;
+    }
 
     function crear_menu($rol){
         switch ($rol) {
@@ -62,7 +61,7 @@
             case "SuperAdmin":
                 echo"<nav class='menuAdminTop'>
                 <ul>
-                    <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='#'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                    <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='generarEquipos'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
 
             case "Profesor":
@@ -94,7 +93,7 @@
                       <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
-                              <li><a href='#'>Equipos sugeridos</a></li>
+                              <li><a href='generarEquipos'>Equipos sugeridos</a></li>
                           </ul>
                       </li>
                     </ul>
@@ -116,7 +115,7 @@
                       <li class='submenu'><a href='#'>Funciones del profesor<span class='caret icon-circle-down'</span></a>
                           <ul class='children'>
                               <li><a href='gestionarAlumno'>Gestionar Alumnos</a></li>
-                              <li><a href='#'>Equipos sugeridos</a></li>
+                              <li><a href='generarEquipos'>Equipos sugeridos</a></li>
                           </ul>
                       </li>
                       <li class='submenu'><a href='#'>Gestionar Administrador de Centros<span class='caret icon-circle-down'</span></a>
@@ -147,7 +146,7 @@
                               <li><a href='listarAlumno'>Menú Alumnos</a></li>
                           </ul>
                       </li>
-                      <li class='submenu'><a href='#'>Equipos sugeridos</a></li>
+                      <li class='submenu'><a href='generarEquipos'>Equipos sugeridos</a></li>
                     </ul>
                   </nav>";
                 break;

@@ -36,20 +36,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Revisar respuestas</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
 </head>
-<body>
+<body class='listarBody'>
+  <header class="listarHeader">
+    <div id="img_header0"></div>
+    <div id="img_header1"></div>
+    <div id="img_header2"></div>
+    <div id="img_header3"></div>
+    <div id="img_header4"></div>
+    <div id="img_header5"></div>
+    <div id="img_header6"></div>
+    <div id="img_header7"></div>
+    <div id="img_header8"></div>
+  </header>
 <div class="listTodo">
     <table class="table" id="tableProfesor">
       <tbody>
       <?php
-       
         if ($nfilas==0) {
           echo "<h1>Primero debes contestar a las preguntas</h1><br>";
           echo "<input type='button' value='Volver' class='inputEditUsEnviar' onclick='redirigir(\"alumno\")'>";
         }else{
         for ($i=0; $i < count($respuestas); $i++) {   
 
-          echo "<h1>MODIFICA TUS RESPUESTAS</h1>";
+          echo "<h2>MODIFICA TUS RESPUESTAS</h2>";
 
           echo '<h4 title="' .$respuestas[$i]->definicion.'">'.$respuestas[$i]->idPregunta. '-'. $respuestas[$i]->enunciado.'</h4>'. '<br>';
 
@@ -58,19 +69,19 @@
           echo "<form action='revisarRespuesta' name='form' method='post'>";
           echo "<input type='hidden' name='idPregunta' value='$id'>";
           if (($respuestas[$i]->respuesta)=="VERDADERO") {
-            echo "<input type='radio' name='radio' value='VERDADERO' checked><label for='verdadero'><strong>VERDADERO</strong></label><br>";
-            echo "<input type='radio' name='radio' value='FALSO' ><label for='falso'><strong>FALSO</strong></label>";
+            echo "<input type='radio' class='radioRev' name='radio' value='VERDADERO' checked><label for='verdadero' class='labels'><strong>VERDADERO</strong></label><br>";
+            echo "<input type='radio' class='radioRev' name='radio' value='FALSO' ><label for='falso' class='labels'><strong>FALSO</strong></label>";
           }elseif (($respuestas[$i]->respuesta)=="FALSO") {
 
-            echo "<input type='radio' name='radio' value='VERDADERO' ><label for='verdadero'><strong>VERDADERO</strong></label><br>";
-            echo "<input type='radio' name='radio' value='FALSO' checked><label for='falso'><strong>FALSO</strong></label>";
+            echo "<input type='radio' class='radioRev' name='radio' value='VERDADERO' ><label for='verdadero' class='labels'><strong>VERDADERO</strong></label><br>";
+            echo "<input type='radio' class='radioRev' name='radio' value='FALSO' checked><label for='falso' class='labels'><strong>FALSO</strong></label>";
           }
           
           
           echo "<br><br>";
 
-          echo "<input type='submit' name='modificar' value='MODIFICAR' id='MODIFICAR'><br>";
-          echo "<input type='button' value='Volver' class='inputEditUsEnviar' onclick='redirigir(\"alumno\")'>";
+          echo "<input type='submit' class='Modificar' name='modificar' value='MODIFICAR' id='MODIFICAR'><br>";
+          echo "<input class='inputEditUsVolver' type='button' value='Volver' onclick='redirigir(\"alumno\")'>";
 
           echo "<br><br><br><br>";
           
@@ -81,5 +92,13 @@
       </tbody>
     </table>
   </div> 
+  <footer class="listFoot">
+    <div id="img_footer0"></div>
+    <div id="img_footer1"></div>
+    <div id="img_footer2"></div>
+    <div id="img_footer3"></div>
+    <div id="img_footer4"></div>
+    <div id="img_footer5"></div>
+  </footer> 
 </body>
 </html>
