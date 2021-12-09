@@ -69,7 +69,7 @@
             break;
         }
     ?>
-        <form action="verGrupos" class="formEquipos" method="post">
+        <form action="verGrupos" class="formEquipo" method="post">
 
             <select name="curso" id="curso" class="genEquipos">
                 <option value="0">Seleccione un curso</option>
@@ -95,7 +95,7 @@
                 echo"<input type='submit' class='genEquiposButton' value='Generar equipos' onclick=\"redirigir('verGrupos')\">"
             ?>
 
-        </form>
+            </form>
 
         <input type='button' value='Volver' class='genEquiposButtonSalir' onclick="redirigir('profesores')">
     </main>

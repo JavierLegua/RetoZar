@@ -343,14 +343,17 @@ input.admin {
     height: 15%;
 }
 
+form.formEquipo{
+    height: 60%;
+}
 /*
 especifico de todos los input que pertenezcan a la clas adminSalir, dándole un estilo personalizado cambiando tamaño y posicion
 */
 input.adminSalir {
     margin-top: 2.5%;
-    margin-bottom: 8.5%;
-    width: 15%;
-    height: 15%;
+    margin-bottom: 12%;
+    width: 12.5%;
+    height: 20%;
 
 }
 
@@ -748,7 +751,7 @@ cambia el formato, colores y posicion de los input con clase inputEditUsEnviar
 */
 input.inputEditUsEnviar {
     margin-top: 2%;
-    margin-bottom: 13%;
+    margin-bottom: 3%;
     font-size: 100%;
     outline: none;
     width: 15%;
@@ -935,8 +938,8 @@ form#especialForm{
 }
 
 select.genEquipos{
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
     height: 20%;
     width: 40%;
 }
