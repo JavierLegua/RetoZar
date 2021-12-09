@@ -59,7 +59,7 @@ $alumnos=$consulta->fetchAll();
       ?>
   </header>
 
-  <div class="listTodo">
+  <div class="listAlumno">
     <?php
       $rol = $_SESSION['rol'];
       switch ($rol) {
@@ -76,7 +76,7 @@ $alumnos=$consulta->fetchAll();
           break;
       }
 
-    echo"<form id='especialForm' action='listarAlumno' method='post'>";
+    echo"<form id='especialFormAlumno' action='listarAlumno' method='post'>";
     
 
       $dniProfesor= $_SESSION['usuario'];

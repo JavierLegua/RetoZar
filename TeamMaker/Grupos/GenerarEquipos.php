@@ -52,7 +52,7 @@
         }
     ?>
     </header>
-    <main>
+    <main class="generarEquipos">
     <?php
         $rol = $_SESSION['rol'];
         
