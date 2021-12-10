@@ -13,13 +13,11 @@
     $equipos=$consulta1->fetchAll();
 
     $nombreGrupo=$equipos->Nombre;
-    $idCurso=$equipos->CURSO_idCurso; 
+    $idCurso=$equipos->CURSO_idCurso;
+    $idEquipo=$equipos->idEquipo;
+
+    /* echo $idEquipo."hellooooooooo<br><br><br><br><br>"; */
     
-    for ($i=0; $i < count($equipos); $i++) {
-        echo $equipos[$i]->Nombre."------";
-        echo $equipos[$i]->CURSO_idCurso."<br>";
-    }
-    echo $nombreGrupo;
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +35,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="listarBody">
 
-   <!--  <header>
+   <header class="listarHeader">
             <div id="img_header0"></div>
             <div id="img_header1"></div>
             <div id="img_header2"></div>
@@ -49,22 +47,44 @@
             <div id="img_header6"></div>
             <div id="img_header7"></div>
             <div id="img_header8"></div> 
-    </header> -->
+    </header>
 
     <main>
 
+    <h2>Aquí se muestran los equipos:</h2><br><br>
 
+    <table class="table" id="tableProfesor">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>IdCurso</td>
+          <td>Editar Equipos</td>
+          <td>Borrar Equipos</td>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+        for ($i=0; $i < count($equipos); $i++) {
+            echo "<tr><td>".$equipos[$i]->Nombre."</td><td>".$equipos[$i]->CURSO_idCurso."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/ver_usuarios.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir('verMiembros?idEquipo=".$equipos[$i]->idEquipo."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir('borrarGrupo?idEquipo=".$equipos[$i]->idEquipo."'))\"></td>";
+        }
+      ?>
+     </tbody>
+    </table>
+
+    <?php
+        echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('profesores')\">";
+    ?>
 
     </main>
 
-   <!--  <footer>
-        <div id="img_footer0"></div>
-        <div id="img_footer1"></div>
-        <div id="img_footer2"></div>
-        <div id="img_footer3"></div>
-        <div id="img_footer4"></div>
-        <div id="img_footer5"></div>
-    </footer> -->
+    <footer class="listFoot">
+    <div id="img_footer0"></div>
+    <div id="img_footer1"></div>
+    <div id="img_footer2"></div>
+    <div id="img_footer3"></div>
+    <div id="img_footer4"></div>
+    <div id="img_footer5"></div>
+  </footer> 
     
 </body>
 </html>

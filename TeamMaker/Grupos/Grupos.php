@@ -146,7 +146,7 @@
 
             for ($i=0; $i < $numGrupos; $i++) {
                 $grupo[$i] = [];
-                $grupo[$i][0] = "Grupo ".($i + 1);
+                $grupo[$i][0] = "Grupo".($i + 1);
                 $grupo[$i][1][] = $colores["rojo"][0];
 
                 array_shift($colores["rojo"]);
