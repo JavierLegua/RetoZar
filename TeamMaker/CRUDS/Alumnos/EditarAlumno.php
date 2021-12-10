@@ -57,7 +57,7 @@ $curso=$alumnos->id_curso;
             <input type="hidden" name="dni" value="<?php echo $dni?>">
             <!-- <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required> -->
             <input class="inputEditUs" type="text" name="curso" id="curso" placeholder="<?php echo $curso?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAlumno,<?php $dni?>)">
+            <input class="inputEditUsEnviarEditarAlum" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAlumno,<?php $dni?>)"><br>
             <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">
         </form>
     </main>

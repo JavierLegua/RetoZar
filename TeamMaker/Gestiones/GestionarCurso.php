@@ -43,7 +43,7 @@
         ?>
     </header>
 
-    <main class="Gestion">
+    <main class="GestionCurso">
     <?php
         $rol = $_SESSION['rol'];
         

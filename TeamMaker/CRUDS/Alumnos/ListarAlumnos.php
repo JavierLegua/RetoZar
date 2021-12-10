@@ -108,8 +108,9 @@ $alumnos=$consulta->fetchAll();
 
       <br>
     </select>
+    
     <?php
-    echo"<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir_curso('listarAlumno?curso=".$curso."')\">"
+    echo "<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir('listarAlumno?curso=".$curso."')\">";
     ?>
 
     </form>
@@ -138,7 +139,7 @@ $alumnos=$consulta->fetchAll();
       </tbody>
     </table>
     <?php 
-      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir_curso('mostrarResultados?curso=".$curso."')\"><br>";
+      echo "<input class=\"buttonList2\" type=\"button\" value=\"ver respuestas del curso\" name=\"Volver\" onclick=\"redirigir('mostrarResultados?curso=".$curso."')\"><br>";
     ?>
       <?php 
       $situacion = $_GET['situacion'];

@@ -55,7 +55,7 @@ $centro=$curso->CENTRO_idCentro;
             <input type="hidden" name="idCurso" value="<?php echo $idCurso?>">
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
             <input class="inputEditUs" type="text" name="idCentro" id="idCentro" placeholder="<?php echo $centro?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCurso)"><br>
+            <input class="inputEditUsEnviar" id="crearTeacher" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCurso)"><br>
             <input type='button' value='Volver' class='adminSalir' onclick="redirigir('listarCurso')">
         </form>
     </main>

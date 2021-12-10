@@ -58,8 +58,8 @@ $rol=$admins->Rol;
             <input type="hidden" name="dni" value="<?php echo $dni?>">
             <!-- <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required> -->
             <input class="inputEditUs" type="text" name="Rol" id="Rol" placeholder="Admin" onblur="this.value = 'Admin'" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAdmin,<?php $dni?>)"><br>
-            <input type='button' value='Volver' class='adminSalir' onclick="redirigir('listarAdmin')">
+            <input class="editarEditarAdmin" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAdmin,<?php $dni?>)"><br>
+            <input type='button' value='Volver' class='adminSalireditarAdmin' onclick="redirigir('listarAdmin')">
         </form>
     </main>
     <footer>

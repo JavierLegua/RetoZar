@@ -69,7 +69,7 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="alumnoMain">
+    <main class="alumnoMainTest">
         <h1> <?php if ($enunciado == "") {
             echo "TEST FINALIZADO, GRACIAS POR COMPLETARLO<br><br>";
             header("refresh:2;url=revisarRespuesta");
@@ -94,7 +94,7 @@
             <?php
           }?>  
 
-        <button class="Salir" onclick="redirigir('../alumno')" >Salir del Test</button>
+        <button class="Salir" onclick="redirigir('alumno')" >Salir del Test</button>
         </main>
 
     <footer>

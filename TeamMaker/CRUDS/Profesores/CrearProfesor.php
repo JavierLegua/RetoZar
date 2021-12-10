@@ -37,7 +37,8 @@ $centros=$consultaCentro->fetchAll();
     <script
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
 </head>
 <body>
     
@@ -87,13 +88,13 @@ $centros=$consultaCentro->fetchAll();
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
 <!--        <input type="text" name="Rol" id="Rol" placeholder="Rol" class="inputUs" required><br><br>
  -->            <br><br>
-            <select name="Rol" id="Rol">
+            <select class="opcionProf" name="Rol" id="Rol">
                 <option value="0">Seleccionar Rol</option>
                 <option value="Profesor">Profesor</option>
                 <option value="Admin">Admin</option>
             </select>
 
-            <select name="centro" id="centro">
+            <select class="opcionProf" name="centro" id="centro">
                 <option value="0">Selecciona un centro</option>
                 <?php
                 for ($i=0; $i < count($centros) ; $i++) { 
@@ -127,7 +128,7 @@ $centros=$consultaCentro->fetchAll();
                     }
                 }
             ?>
-            <input id="crear" type="submit" name="Crear Profesor" class="inputUsEnviar"><br>
+            <input id="crear" type="submit" name="Crear Profesor" class="inputUsEnviarCrearProfesor"><br>
             <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('gestionarProfesor')" class="inputUsVolver">
 
         </form>

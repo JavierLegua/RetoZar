@@ -69,7 +69,7 @@
         <form method="post" action="insertarAlumno">
             <?php
             echo"<input type='text' name='nombre' id='nombre' placeholder='Nombre' class='inputUs' required>";
-            echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' onfocusout='comprobacionDni()' required>";
+            echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' pattern='[0-9]{8}[A-Z]{1}' onblur='comprobarDni(this.value)' required>";
             echo"<input type='password' name='Clave' id='Clave' placeholder='Clave' onblur=\"this.value = document.getElementById('DNI').value\" class='inputUs' required>";
             echo"<input type='text' name='curso' id='curso' placeholder='Curso' class='inputUs' required><br>";
  
@@ -91,7 +91,7 @@
                     }
                 }
         
-                echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviarAlumno'><br>";
+                echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviarAnadirAlum'><br>";
                 echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\" class='inputUsVolver'>";
 
             ?>

@@ -49,14 +49,14 @@ $direccion=$centro->Direccion;
         <div id="img_header7"></div>
         <div id="img_header8"></div>
     </header>
-    <main class="mainEditC">
+    <main class="mainEditCentro">
         <h1 class="h1EditUs">Introduce los nuevos datos del centro</h1>
         <form action="actualizarCentro" method="post">
             <input type="hidden" name="idCentro" value="<?php echo $idCentro?>">         
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
             <input class="inputEditUs" type="text" name="direccion" id="direccion" placeholder="<?php echo $direccion?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCentro)">
-            <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarCentro')">
+            <input class="inputEditUsEnviarCentro"  type="submit" value="Editar" name="Editar" onclick="redirigir(editarCentro)"><br>
+            <input type='button' value='Volver' class='volverEditarCentro' onclick="redirigir('listarCentro')">
         </form>
     </main>
     <footer>

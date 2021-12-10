@@ -1,14 +1,13 @@
-    
-function comprobacionDni(dni_user){
+function comprobarDni(dni_user){
 
     var vLetras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
     var numerosDni= dni_user.substring(0,8);
     var letraDni= dni_user.substring(8,9);
     var resto = parseInt(numerosDni)%23;
     if(vLetras[resto] != letraDni){
-        document.getElementById("errorDni").innerHTML="El dni introduciodo no es correcto";
+        alert("El dni introducido no es valido");
     } else  {
-        document.getElementById("errorDni").innerHTML="";
+        console.log();
     }
 
 }
@@ -77,35 +76,36 @@ function allowDrop(ev) {
 }
   
 function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+    ev.dataTransfer.setData("dragElementId", ev.target.id);
 }
-  
-function drop(ev) {
+
+function drop(ev, grupos) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
 
-    if ( ev.target.className == "divGrupo" ) {
-        //document.getElementById("demo").style.color = "";
-        ev.target.style.border = "";
-        var newT=ev.target 
-        newT.appendChild(document.getElementById(data));
-    } 
+    let dragElementId = ev.dataTransfer.getData("dragElementId");
+    let groupId = ev.currentTarget.id;
 
-    if ( ev.target.parentElement.className == "divGrupo" ) { 
-        ev.target.style.border = "";
-        var newT=ev.target.parentElement
-        newT.appendChild(document.getElementById(data));     
+    // ev.currentTarget es el contenedor donde sueltas el elemento
+    ev.currentTarget.appendChild(document.getElementById(dragElementId));
+
+    let alumno;
+
+    let selectedGroupIndex;
+    let foundStudent = false;
+    let foundGroup = false;
+    for (let i = 0; i < grupos.length && (!foundStudent || !foundGroup); i++) {
+        if (!foundGroup && grupos[i][0] == groupId) {
+            selectedGroupIndex = i;
+            foundGroup = true;
+        }
+        for (let j = 0; j < grupos[i][1].length && !foundStudent; j++) {
+            if (grupos[i][1][j][1] == dragElementId) { // La ID del elemento es el DNI del alumno
+                // Se elimina el alumno del grupo
+                alumno = grupos[i][1].splice(j, 1)[0];
+                foundStudent = true;
+            }
+        }
     }
 
-    if ( ev.target.parentElement.parentElement.className == "divGrupo" ) {
-        ev.target.style.border = "";
-        var newT=ev.target.parentElement.parentElement
-        newT.appendChild(document.getElementById(data));    
-    }
-
-    if ( ev.target.parentElement.parentElement.parentElement.className == "divGrupo" ) {
-        ev.target.style.border = "";
-        var newT=ev.target.parentElement.parentElement.parentElement
-        newT.appendChild(document.getElementById(data));     }
+    grupos[selectedGroupIndex][1].push(alumno);
 }

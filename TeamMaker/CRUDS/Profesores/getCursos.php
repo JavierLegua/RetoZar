@@ -15,7 +15,7 @@ $idCentro = $_POST['codCentro'];
     $idCurso = array_unique(array_column($consulta, 'idCurso'));
     $nombreCurso = array_unique(array_column($consulta, 'Nombre'));
   
-    $cad="<select name='curso' id='curso' class='crearAdmin2'><option value=''>Seleccione curso</option>";
+    $cad="<select id='opcionProfe' name='curso' id='curso' class='crearAdmin2'><option value=''>Seleccione curso</option>";
 
     foreach ($idCurso as $i => $idCurso) {
         $cad=$cad.'<option value='.$idCurso.'>'.$nombreCurso[$i].'</option>';

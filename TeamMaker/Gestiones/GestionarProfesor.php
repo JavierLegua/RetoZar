@@ -43,7 +43,7 @@
         ?>
     </header>
 
-    <main class="Gestion">
+    <main class="GestionProfesor">
         <?php
             $rol = $_SESSION['rol'];
             switch ($rol) {
@@ -61,7 +61,7 @@
     
         <input type="button" value="Añadir profesor" class="Ginput" onclick="redirigir('crearProfesor')"> <br>
         <input type="button" value="Menu de profesores" class="Ginput" onclick="redirigir('listarProfesor')"> <br>
-        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('admins')"> <br>
+        <input type="button" value="Volver" class="GinputSalirGestionarProfesor" onclick="redirigir('admins')"> <br>
 
     </main>
 

@@ -55,7 +55,7 @@ hace que si hay un fallo con la contraseña en la ventana de Login, esta marque 
 le da estilo a la seccion main, centrando los objetos y dandole un color de fondo especifico
 */
 main {
-    padding-bottom: 6%;
+    padding-bottom: 8%;
     padding-top: 4%;
     text-align: center;
     grid-row-start: 2;
@@ -64,8 +64,8 @@ main {
 }
 
 main.generarEquipos {
-    padding-bottom: 7%;
-    padding-top: 4%;
+    padding-bottom: 8.3%;
+    padding-top: 6%;
     text-align: center;
     grid-row-start: 2;
     grid-row-end: 2;
@@ -246,12 +246,30 @@ especifico del input con id acceder, situado en la pagina Login dándole un esti
     font-size: 100%;
     outline: none;
     width: 10%;
-    height: 10%;
+    height: 6%;
     border: solid 2px #78C48D;
     border-radius: 50px;
     background-color: #a7fabe;
     color: rgb(24, 24, 24);    
 }
+
+#formRev{
+    height: 300px;
+}
+
+#MODIFICAREV{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 100%;
+    outline: none;
+    width: 200px;
+    height: 45px;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);    
+}
+
 .inputEditUsVolver{
         margin-top: 1%;
         margin-bottom: 1%;
@@ -264,12 +282,67 @@ especifico del input con id acceder, situado en la pagina Login dándole un esti
         background-color: #a7fabe;
         color: rgb(24, 24, 24);
 }
+
+#inputEditUsRev{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 100%;
+    outline: none;
+    width: 200px;
+    height: 45px;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
+
+select.opcionProf{
+    height: 15%;
+    width: 40%;
+}
+
+#crearTeacher{
+    width: 30%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
+
+#opcionProfe{
+    height: 55px;
+    width: 600px;
+}
+
+#confirmarTeam{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 100%;
+    outline: none;
+    width: 200px;
+    height: 45px;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
 /*
 especifico del radio button del test dándole un estilo personalizado cambiando tamaño, formato...
 */
 .labels{
     text-align: center;
 }
+
+#ButtonMRG{
+    width: 10%;
+    height: 6%;
+}
+
+#mainMRI{
+    padding-bottom: 7.5%;
+    padding-top: 14.3%;
+}
+
 .testH3{
     text-align: center;
 }
@@ -285,12 +358,9 @@ especifico del radio button del test dándole un estilo personalizado cambiando 
 }
 .radioRev{
     justify-content: center;
-    margin-left: 45%;
-    margin-right: 45%;
-    float: left;
-    margin-top: 1%;
-    width: 10%;
-    height: 3%;
+    margin-top: 10px;
+    width: 10px;
+    height: 10px;
     outline: none;
 }
 .listaBody{
@@ -337,7 +407,7 @@ input[type='button'] {
     margin-bottom: 7%;
     font-size: 100%;
     outline: none;
-    width: 15%;
+    width: 10%;
     height: 15%;
     border: solid 2px #78C48D;
     border-radius: 50px;
@@ -349,8 +419,8 @@ input[type='button'] {
 especifico del main con clase mainAdmin, dándole espacio en la parte superior e inferior del main
 */
 main.mainAdmin {
-    padding-bottom: 3%;
-    padding-top: 1.5%;
+    padding-bottom: 1%;
+    padding-top: 2%;
 }
 
 /*
@@ -374,9 +444,15 @@ especifico de todos los input que pertenezcan a la clas adminSalir, dándole un 
 input.adminSalir {
     margin-top: 2.5%;
     margin-bottom: 12%;
-    width: 12.5%;
-    height: 20%;
+    width: 10.5%;
+    height: 9%;
+}
 
+input.adminSalireditarAdmin {
+    margin-top: 2.5%;
+    margin-bottom: 8.1%;
+    width: 10.5%;
+    height: 9%;
 }
 
 /*
@@ -428,7 +504,12 @@ h1.adminTopH1 {
 especifico del main con clase alumnoMain, dándole espacio en la parte superior e inferior del main
 */
 main.alumnoMain {
-    padding-bottom: 3%;
+    padding-bottom: 5.2%;
+    padding-top: 5%;
+}
+
+main.alumnoMainTest {
+    padding-bottom: 9.5%;
     padding-top: 5%;
 }
 
@@ -465,7 +546,7 @@ especifico del main con clase profesorMain, dándole espacio en la parte superio
 */
 main.profesorMain {
     
-    padding-top: 1.5%;
+    padding-top: 2.5%;
 }
 
 /*
@@ -502,16 +583,31 @@ h1.profesorH1 {
 especifico del main con clase Gestion, dándole espacio en la parte superior e inferior del main
 */
 main.Gestion {
-    padding-top: 2%;
+    padding-top: 3%;
 }
 
 main.GestionCentros {
     padding-top: 2%;
-    padding-bottom: 2%;
+    padding-bottom: 4%;
 }
 
 main.GestionAlumno {
     padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+main.GestionProfesor {
+    padding-top: 3%;
+    margin-bottom: -10%;
+}
+
+main.GestionCurso {
+    padding-top: 3%;
+    padding-bottom: 2.1%;
+}
+
+main.GestionAdmin {
+    padding-top: 3%;
     padding-bottom: 2%;
 }
 
@@ -524,7 +620,7 @@ input.Ginput {
     margin-left: 0.5%;
     margin-right: 0.5%;
     width: 30%;
-    height: 15%;
+    height: 10%;
 }
 
 /*
@@ -535,6 +631,13 @@ input.GinputSalir {
     margin-bottom: 12%;
     width: 15%;
     height: 15%;
+}
+
+input.GinputSalirGestionarProfesor {
+    margin-top: 1%;
+    margin-bottom: 12%;
+    width: 15%;
+    height: 8%;
 }
 
 /*
@@ -571,13 +674,13 @@ input.GinputSalir2 {
 especifico del main con clase crudMainUsuario, dándole espacio en la parte superior e inferior del main
 */
 main.crudMainUsuario {
-    padding-bottom: 3%;
+    padding-bottom: 4%;
     padding-top: 1%;
 }
 
 main.crudMainUsuarioAlumno {
-    padding-bottom: 6%;
-    padding-top: 1%;
+    padding-bottom: 7%;
+    padding-top: 3%;
 }
 
 /*
@@ -610,7 +713,22 @@ input.inputUsEnviar {
     margin-right: 44%;
 }
 
-input.inputUsEnviarAlumno {
+input.inputUsEnviarCrearProfesor {
+    margin-top: -1.5%;
+    margin-bottom: 0%;
+    font-size: 100%;
+    outline: none;
+    width: 15%;
+    height: 20%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    float: right;
+    margin-right: 44%;
+}
+
+
+input.inputUsEnviarAnadirAlum {
     margin-top: 2.5%;
     margin-bottom: 1%;
     font-size: 100%;
@@ -623,6 +741,7 @@ input.inputUsEnviarAlumno {
     float: right;
     margin-right: 44%;
 }
+
 
 /*
 especifico de todos los input que tengan la clase inputUsVolver, dándole un estilo personalizado cambiando tamaño, posicion y color
@@ -710,7 +829,7 @@ div.listTodo {
     padding-top: 5%;
     padding-bottom: 0;
     height: 100%;
-    margin-bottom: -20%;
+    margin-bottom: -10%;
 }
 
 div.listAlumno {
@@ -719,7 +838,7 @@ div.listAlumno {
     padding-top: 5%;
     padding-bottom: 0;
     height: 100%;
-    margin-bottom: -10%;
+    margin-bottom: -7.5%;
 }
 
 /*
@@ -789,7 +908,7 @@ footer.listFoot {
 }
 
 /*
-aplica estilo a los input pertenecientes a la clase inputEditUs cambiando el tamaño y el posicionamiento
+aplica estilo a los input pertenecientes a la clase inputttUs cambiando el tamaño y el posicionamiento
 */
 input.inputEditUs {
     font-size: 100%;
@@ -812,13 +931,53 @@ h1.h1EditUs {
 /*
 cambia el formato, colores y posicion de los input con clase inputEditUsEnviar
 */
-input.inputEditUsEnviar {
+input.inputEditUsEnviarEditarAlum {
     margin-top: 2%;
     margin-bottom: 3%;
     font-size: 100%;
     outline: none;
+    width: 12%;
+    height: 15%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
+
+input.inputEditUsEnviarCentro {
+        margin-top: 2%;
+        margin-bottom: 1%;
+        font-size: 100%;
+        outline: none;
+        width: 16%;
+        height: 17%;
+        border: solid 2px #78C48D;
+        border-radius: 50px;
+        background-color: #a7fabe;
+        color: rgb(24, 24, 24);
+    }
+
+input.volverEditarCentro{
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-size: 100%;
+    outline: none;
+    width: 11%;
+    height: 17%;
+    border: solid 2px #78C48D;
+    border-radius: 50px;
+    background-color: #a7fabe;
+    color: rgb(24, 24, 24);
+}
+  
+
+input.editarEditarAdmin{
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-size: 100%;
+    outline: none;
     width: 15%;
-    height: 25%;
+    height: 17%;
     border: solid 2px #78C48D;
     border-radius: 50px;
     background-color: #a7fabe;
@@ -829,15 +988,30 @@ input.inputEditUsEnviar {
 especifico del main con clase mainEditUs, dándole espacio en la parte superior e inferior del main
 */
 main.mainEditUs {
+    padding-bottom: 7%;
+    padding-top: 3%;
+}
+
+main.mainEditProfesor {
+    padding-bottom: 11%;
+    padding-top: 5%;
+}
+
+main.mainEditAlum {
     padding-bottom: 1.5%;
-    padding-top: 1.5%;
+    padding-top: 3%;
 }
 
 /*
 especifico del main con clase mainEditC, dándole espacio en la parte superior e inferior del main
 */
 main.mainEditC {
-    padding-bottom: 3%;
+    padding-bottom: 17%;
+    padding-top: 3%;
+}
+
+main.mainEditCentro {
+    padding-bottom: 15%;
     padding-top: 3%;
 }
 
@@ -1721,6 +1895,8 @@ div.creadAdminDiv{
         background-color: #a7fabe;
         color: rgb(24, 24, 24);
     }
+
+
 
     /*
         Le da estilo al main de la pagina editar usuario

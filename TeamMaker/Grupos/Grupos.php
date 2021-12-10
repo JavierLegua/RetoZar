@@ -182,13 +182,13 @@
             echo "<br>";
       
             foreach ($grupo as $g) {
-                echo "<br><div class='divGrupo' id='$g[0]' ondrop='drop(event)' ondragover='allowDrop(event)'><strong>$g[0]</strong>";
+                echo "<br><div class='divGrupo' id='$g[0]' ondragover='allowDrop(event)'><strong>$g[0]</strong>";
                 /* echo $dni=$respuestas1->dni."<br>"; */
                 foreach ($g[1] as $alumno) {
                     //var_dump($alumno);
-                    echo "<div class='divAlumno' id='$alumno[0]' draggable='true' ondragstart='drag(event)'>".$alumno[0]."</div>";
+                    echo "<div class='divAlumno' id='$alumno[1]' draggable='true' ondragstart='drag(event)'>".$alumno[0]."</div>";
                 }
-                echo "</div>";
+                echo "</div>"; 
             }
 
             echo "<br><br>";
@@ -211,9 +211,11 @@
             
 
         ?>
-
-        <br><input type='button' value='Confirmar equipos' class='TeamButton' onclick="redirigir('insertarGrupos')">
-
+        <form action="insertarGrupos" method="post" id="formGrupos">
+            <input type="hidden" name="curso" value="<?php echo $curso ?>">
+            <input type="hidden" name="grupos" id="arrayGrupos">
+            <br><input id="confirmarTeam" type='submit' value='Confirmar equipos' class='TeamButton'>
+        </form>
         <br><br><br><input type='button' value='Volver' class='TeamButton' onclick="redirigir('profesores')">
     </main>
 
@@ -225,5 +227,29 @@
         <div id="img_footer4"></div>
         <div id="img_footer5"></div>
     </footer>
+
+    <script>
+        // $arrayEjemplo = ["hola", "mundo"];
+
+        // { 0: "hola", 1: "mundo" }
+        
+        // $arrayEjemplo = ["palabra1" = "hola", "palabra2" = "mundo"];
+
+        // { palabra1: "hola", palabra2: "mundo" }
+
+        var grupos = <?php echo json_encode($grupo); ?>;
+
+        let divGrupos = document.querySelectorAll(".divGrupo");
+
+        for (let divGrupo of divGrupos) {
+            divGrupo.addEventListener("drop", (e) => drop(e, grupos));
+        }
+
+        document.getElementById("formGrupos").addEventListener("submit", function(e) {
+            document.getElementById("arrayGrupos").setAttribute("value", JSON.stringify(grupos));
+
+            return true;
+        });
+    </script>
 </body>
 </html>
