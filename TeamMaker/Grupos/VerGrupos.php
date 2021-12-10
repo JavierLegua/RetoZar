@@ -14,9 +14,12 @@
 
     $nombreGrupo=$equipos->Nombre;
     $idCurso=$equipos->CURSO_idCurso; 
-    var_dump ($nombreGrupo);
     
-    /* echo "Nombre: ".$nombreGrupo; */
+    for ($i=0; $i < count($equipos); $i++) {
+        echo $equipos[$i]->Nombre."------";
+        echo $equipos[$i]->CURSO_idCurso."<br>";
+    }
+    echo $nombreGrupo;
 ?>
 
 <!DOCTYPE html>
