@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estilos/Style.css">
     <title>TEST</title>
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -68,7 +69,7 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="alumnoMain">
+    <main class="alumnoMainTest">
         <h1> <?php if ($enunciado == "") {
             echo "TEST FINALIZADO, GRACIAS POR COMPLETARLO<br><br>";
             header("refresh:2;url=revisarRespuesta");
@@ -93,7 +94,7 @@
             <?php
           }?>  
 
-        <button class="Salir" onclick="redirigir('../alumno')" >Salir del Test</button>
+        <button class="Salir" onclick="redirigir('alumno')" >Salir del Test</button>
         </main>
 
     <footer>

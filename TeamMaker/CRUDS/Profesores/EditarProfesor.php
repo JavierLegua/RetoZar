@@ -49,14 +49,14 @@ $rol=$profesores->Rol;
         <div id="img_header7"></div>
         <div id="img_header8"></div>
     </header>
-    <main class="mainEditUs">
+    <main class="mainEditProfesor">
     <h1 class="h1EditUs">Introduce los nuevos datos del profesor</h1>
         <form action="actualizarProfesor" method="post">
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>         
             <input type="hidden" name="DNI" value="<?php echo $dni?>">
             <!-- <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required> -->
             <input class="inputEditUs" type="text" name="Rol" id="Rol" placeholder="<?php echo $rol?>" required><br>
-            <input class="inputEditUsEnviar"id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarProfesor,<?php $dni?>)">
+            <input class="inputEditUsEnviar" id="crearTeacher" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarProfesor,<?php $dni?>)"><br>
             <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarProfesor')">
         </form>
     </main>

@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-include "../../BBDD/includes/funciones.php";
+include "../BBDD/includes/funciones.php";
+$rol = $_SESSION['rol'];
 
 ?>
 
@@ -13,6 +14,7 @@ include "../../BBDD/includes/funciones.php";
     <link rel="stylesheet" href="../Estilos/fonts.css">
     <script src="../jquery-latest.js"></script>
     <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <title>Gestionar Administrador</title>
     <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +34,15 @@ include "../../BBDD/includes/funciones.php";
         <div id="img_header7"></div>
         <div id="img_header8"></div>
         <?php
-            /*echo menuMovil('SuperAdmin');*/
+           echo menuMovil($rol);
         ?>
     </header>
 
-    <main class="Gestion">
-    <?php
-        /*echo"<div class='crear_menu'>".crear_menu('SuperAdmin')."</div>";*/
-    ?>
+    <main class="GestionAdmin">
+        <?php
+            
+            echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+        ?>
         <input type="button" value="Crear administrador" class="Ginput" onclick="redirigir('crearAdmin')"> <br>
         <input type="button" value="Menu de administradores" class="Ginput" onclick="redirigir('listarAdmin')"> <br>
         <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('superAdmins')"> <br>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../Estilos/fonts.css">
     <script src="../jquery-latest.js"></script>
     <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <title>Gestionar Profesor</title>
     <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +43,7 @@
         ?>
     </header>
 
-    <main class="Gestion">
+    <main class="GestionProfesor">
         <?php
             $rol = $_SESSION['rol'];
             switch ($rol) {
@@ -60,7 +61,7 @@
     
         <input type="button" value="Añadir profesor" class="Ginput" onclick="redirigir('crearProfesor')"> <br>
         <input type="button" value="Menu de profesores" class="Ginput" onclick="redirigir('listarProfesor')"> <br>
-        <input type="button" value="Volver" class="GinputSalir" onclick="redirigir('admins')"> <br>
+        <input type="button" value="Volver" class="GinputSalirGestionarProfesor" onclick="redirigir('admins')"> <br>
 
     </main>
 

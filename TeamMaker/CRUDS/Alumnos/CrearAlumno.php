@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../Estilos/fonts.css">
     <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -46,7 +47,7 @@
     ?>
     </header>
 
-    <main class="crudMainUsuario">
+    <main class="crudMainUsuarioAlumno">
     <?php
             $rol = $_SESSION['rol'];
             switch ($rol) {
@@ -68,7 +69,7 @@
         <form method="post" action="insertarAlumno">
             <?php
             echo"<input type='text' name='nombre' id='nombre' placeholder='Nombre' class='inputUs' required>";
-            echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' onfocusout='comprobacionDni()' required>";
+            echo"<input type='text' name='DNI' id='DNI' placeholder='DNI' class='inputUs' pattern='[0-9]{8}[A-Z]{1}' onblur='comprobarDni(this.value)' required>";
             echo"<input type='password' name='Clave' id='Clave' placeholder='Clave' onblur=\"this.value = document.getElementById('DNI').value\" class='inputUs' required>";
             echo"<input type='text' name='curso' id='curso' placeholder='Curso' class='inputUs' required><br>";
  
@@ -90,7 +91,7 @@
                     }
                 }
         
-                echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviar'><br>";
+                echo"<input id='crear' type='submit' name='Crear Alumno' class='inputUsEnviarAnadirAlum'><br>";
                 echo"<input id='crear' type='button' value='Volver' name='Volver' onclick=\"redirigir('gestionarAlumno')\" class='inputUsVolver'>";
 
             ?>

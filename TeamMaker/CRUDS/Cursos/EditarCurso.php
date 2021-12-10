@@ -31,6 +31,7 @@ $centro=$curso->CENTRO_idCentro;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar Curso</title>
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <script src="../../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +55,7 @@ $centro=$curso->CENTRO_idCentro;
             <input type="hidden" name="idCurso" value="<?php echo $idCurso?>">
             <input class="inputEditUs" type="text" name="nombre" id="nombre" placeholder="<?php echo $nombre?>" required>
             <input class="inputEditUs" type="text" name="idCentro" id="idCentro" placeholder="<?php echo $centro?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCurso)">
+            <input class="inputEditUsEnviar" id="crearTeacher" type="submit" value="Editar" name="Editar" onclick="redirigir(editarCurso)"><br>
             <input type='button' value='Volver' class='adminSalir' onclick="redirigir('listarCurso')">
         </form>
     </main>
