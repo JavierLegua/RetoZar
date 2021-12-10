@@ -56,17 +56,17 @@
     function crear_menu($rol){
         switch ($rol) {
             case "Admin":
-                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor'>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesor</a></li><li><a href='listarProfesor'>Menu de profesores</a></li></ul></li><li><a href='gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCurso'>Crear curso</a></li><li><a href='listarCurso'>Menu de cursos</a></li></ul></li><li><a href='profesores'>Funciones de profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='generarEquipos'>Equipos sugeridos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                echo"<nav class='menuAdmin'><ul><li><a href='gestionarProfesor'>Gestionar profesores</a><ul><li><a href='crearProfesor'>Añadir profesor</a></li><li><a href='listarProfesor'>Menu de profesores</a></li></ul></li><li><a href='gestionarCurso'>Gestionar cursos</a><ul><li><a href='crearCurso'>Crear curso</a></li><li><a href='listarCurso'>Menu de cursos</a></li></ul></li><li><a href='profesores'>Funciones de profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='generarEquipos'>Equipos sugeridos</a></li><li><a href='verEquipos'>Ver Equipos</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
 
             case "SuperAdmin":
                 echo"<nav class='menuAdminTop'>
                 <ul>
-                    <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='generarEquipos'>Equipos sugeridos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                    <li><a href='gestionarCentro'>Gestionar centros</a><ul><li><a href='crearCentro'>Crear centro</a></li><li><a href='listarCentro'>Menu gestión de centros</a></li></ul></li><li><a href='profesores'>Funciones del profesor</a><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a></li><li><a href='generarEquipos'>Equipos sugeridos</a></li><li><a href='verEquipos'>Ver Equipos</a></li></ul><li><a href='gestionAdmin'>Gestionar administrador de centros</a><ul><li><a href='crearAdmin'>Crear administrador</a></li><li><a href='listarAdmin'>Menu de administradores</a></li></ul></li><li><a href='admins'>Funciones de administrador de centros</a><ul><li><a href='gestionarProfesor'>Gestionar profesores</a></li><li><a href='gestionarCurso'>Gestionar cursos</a></li><li><a href='profesores'>Funciones de profesor</a></li></ul></li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
 
             case "Profesor":
-                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='generarEquipos'>Equipos sugeridos</a></li><li><a href='inicio'>Salir</a></li></ul></nav>";
+                echo"<nav id='menuProfesor'><ul><li><a href='gestionarAlumno'>Gestionar alumnos</a><ul><li><a href='anadirAlumno'>Añadir alumno</a></li><li><a href='listarAlumno'>Menu alumnos</a></li></ul></li><li><a href='generarEquipos'>Equipos sugeridos</a></li><li><a href='verEquipos'>Ver Equipos</li><li><a href='inicio'>Salir</a></li></ul></nav>";
             break;
     }
 }
