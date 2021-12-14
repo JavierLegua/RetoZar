@@ -7,7 +7,7 @@
 
     $idEquipo=$_GET['idEquipo'];
 
-    $borrar="delete from EQUIPOS where idEquipo=\"".$idEquipo."\"";
+    $borrar="delete from EQUIPO where idEquipo='$idEquipo'";
 
     $consulta=$conexion->prepare($borrar);
     $consulta->execute(); 
@@ -16,9 +16,9 @@
   
 
     if($nfilas==1){
-        header("refresh:0.01;url=verGrupos");
+        header("refresh:0.01;url=verEquipos");
     }else{
-        header("refresh:0.01;url=verGrupos");
+        header("refresh:0.01;url=verEquipos");
     }
 
 ?>

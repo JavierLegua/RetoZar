@@ -1,4 +1,30 @@
+<?php
+    session_start();
+    include "../BBDD/includes/funciones.php";
 
+    $conexion=conectarBD();
+
+    $idEquipo=$_GET['idEquipo'];
+    $nombreEquipo=$_GET['Nombre'];
+
+    $sqlVerParticipantes="SELECT ALUMNO_PERTENECE_EQUIPO.ALUMNO_DNI as Dni, ALUMNO_PERTENECE_EQUIPO.GRUPO as Grupo, USUARIO.Nombre as Nombre FROM ALUMNO_PERTENECE_EQUIPO, USUARIO where ALUMNO_PERTENECE_EQUIPO.GRUPO='$idEquipo' AND ALUMNO_PERTENECE_EQUIPO.ALUMNO_DNI = USUARIO.DNI";
+    
+    /* echo $sqlVerParticipantes; */
+
+    $consulta=$conexion->prepare($sqlVerParticipantes);
+    $consulta->execute(); 
+
+    $equipos1=$consulta->fetchAll();
+
+    $dniAlum=$equipos1->Dni;
+
+    $grupo=$equipos1->Grupo;
+
+    $nombreAlum=$equipos1->Nombre;
+
+    /* $nombreEquipo=$equipos1->nombreEquipo; */
+    /* echo $nombreEquipo; */
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -30,35 +56,18 @@
     </header>
 
     <main>
+
+
+        <h2>Aqui se muestran los participantes del equipo: <?php echo $nombreEquipo ?> </h2><br><br>
         <?php
-            session_start();
-            include "../BBDD/includes/funciones.php";
-
-            $conexion=conectarBD();
-
-            $idEquipo=$_GET['idEquipo'];
-            
-            $sqlVerParticipantes="SELECT ALUMNO_PERTENECE_EQUIPO.ALUMNO_DNI as Dni, ALUMNO_PERTENECE_EQUIPO.GRUPO as Grupo, USUARIO.Nombre as Nombre FROM ALUMNO_PERTENECE_EQUIPO, USUARIO where
-            ALUMNO_PERTENECE_EQUIPO.GRUPO='$idEquipo' AND ALUMNO_PERTENECE_EQUIPO.ALUMNO_DNI = USUARIO.DNI";
-            /* echo $sqlVerParticipantes; */
-            $consulta=$conexion->prepare($sqlVerParticipantes);
-            $consulta->execute(); 
-
-            $equipos1=$consulta->fetchAll();
-
-            $dniAlum=$equipos1->Dni;
-
-            $grupo=$equipos1->Grupo;
-
-            $nombreAlum=$equipos1->Nombre;
-
-
             for ($i=0; $i < count($equipos1); $i++) {
-
-                
                 echo $equipos1[$i]->Nombre."<br><br><br><br><br>"; 
             }
  
+        ?>
+
+        <?php
+            echo"<input class='volverListUs' type='button' value='Volver' name='Volver' onclick=\"redirigir('verEquipos')\">";
         ?>
     </main>
 

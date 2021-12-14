@@ -58,14 +58,14 @@
         <tr>
           <td>Nombre</td>
           <td>IdCurso</td>
-          <td>Editar Equipos</td>
+          <td>Ver participantes</td>
           <td>Borrar Equipos</td>
         </tr>
       </thead>
       <tbody>
       <?php
         for ($i=0; $i < count($equipos); $i++) {
-            echo "<tr><td>".$equipos[$i]->Nombre."</td><td>".$equipos[$i]->CURSO_idCurso."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/ver_usuarios.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir('verMiembros?idEquipo=".$equipos[$i]->idEquipo."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir('borrarGrupo?idEquipo=".$equipos[$i]->idEquipo."'))\"></td>";
+            echo "<tr><td>".$equipos[$i]->Nombre."</td><td>".$equipos[$i]->CURSO_idCurso."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/ver_usuarios.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir('verMiembros?idEquipo=".$equipos[$i]->idEquipo."&Nombre=".$equipos[$i]->Nombre."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir('borrarGrupo?idEquipo=".$equipos[$i]->idEquipo."')\"></td>";
         }
       ?>
      </tbody>
