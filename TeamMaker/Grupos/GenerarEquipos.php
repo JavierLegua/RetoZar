@@ -19,38 +19,99 @@
     <meta charset="UTF-8">
     <script src="../Funciones.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
+    <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Generar equipos</title>
 </head>
 <body>
-    
-    <form action="verGrupos" method="post">
-
-    <select name="curso" id="curso">
-        <option value="0">Seleccione un curso</option>
+    <header>
+        <div id="img_header0"></div>
+        <div id="img_header1"></div>
+        <div id="img_header2"></div>
+        <div id="img_header3"></div>
+        <div id="img_header4"></div>
+        <div id="img_header5"></div>
+        <div id="img_header6"></div>
+        <div id="img_header7"></div>
+        <div id="img_header8"></div>
         <?php
-            for ($i=0; $i < count($cursos); $i++) { 
-            echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
-            }
-        ?>
-      <br>
-    </select>
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':    
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+            
+            case 'Admin':
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
 
-    <select name="numPersonas" id="numPersonas">
-        <option value="0">Seleccione un numero de personas</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-
-    
-    <?php
-        echo"<input type='submit' class='buttonList3' value='Ver clase' onclick=\"redirigir('verGrupos')\">"
+            case 'Profesor':
+                echo "<div class='menuMovil'>".menuMovil($rol)."</div>";
+            break;
+        }
     ?>
+    </header>
+    <main class="generarEquipos">
+    <?php
+        $rol = $_SESSION['rol'];
+        
+        switch ($rol) {
+            case 'SuperAdmin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";    
+            break;
+            
+            case 'Admin':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
 
-    </form>
+            case 'Profesor':
+                echo"<div class='crear_menu'>".crear_menu($rol)."</div>";
+            break;
+        }
+    ?>
+        <form action="verGrupos" class="formEquipo" method="post">
 
-    <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('profesores')">
+            <select name="curso" id="curso" class="genEquipos">
+                <option value="0">Seleccione un curso</option>
+                <?php
+                    for ($i=0; $i < count($cursos); $i++) { 
+                        echo "<option value=\"".$cursos[$i]->idCurso."\">".$cursos[$i]->idCurso."</option>";
+                    }
+                ?>
+            </select>
+            <br>
 
+            <select name="numGrupos" id="numGrupos" class="genEquipos">
+                <option value="1">Seleccione un numero de grupos</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+
+            <br>
+            
+            <?php
+                echo"<input type='submit' class='genEquiposButton' value='Generar equipos' onclick=\"redirigir('verGrupos')\">"
+            ?>
+
+            </form>
+
+        <input type='button' value='Volver' class='genEquiposButtonSalir' onclick="redirigir('profesores')">
+    </main>
+    <footer>
+        <div id="img_footer0"></div>
+        <div id="img_footer1"></div>
+        <div id="img_footer2"></div>
+        <div id="img_footer3"></div>
+        <div id="img_footer4"></div>
+        <div id="img_footer5"></div>
+    </footer>
 </body>
 </html>

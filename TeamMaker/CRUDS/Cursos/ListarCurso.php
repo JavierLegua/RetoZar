@@ -23,6 +23,7 @@ $curso=$consulta->fetchAll();
     <link rel="stylesheet" href="../../Estilos/fonts.css">
     <script src="../../jquery-latest.js"></script>
     <link rel="stylesheet" href="../../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <title>Editar Cursos</title>
     <script src="../../Funciones.js"></script>
 </head>
@@ -79,8 +80,7 @@ $curso=$consulta->fetchAll();
     <?php
       for ($i=0; $i < count($curso); $i++) { 
         $idcurso = $curso[$i]->idCurso;
-        echo "<tr>
-            <td>".$curso[$i]->idCurso."</td><td>".$curso[$i]->Nombre."</td><td>".$curso[$i]->CENTRO_idCentro."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('editarCurso?curso=','".$idcurso."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('borrarCurso?curso=','".$idcurso."')\"></td></tr>";
+        echo "<tr><td>".$curso[$i]->idCurso."</td><td>".$curso[$i]->Nombre."</td><td>".$curso[$i]->CENTRO_idCentro."</td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Editar.png\" value=\"x\" name=\"Volver\" onclick=\"redirigir_curso('editarCurso?curso=','".$curso[$i]->idCurso."')\"></td><td><input class=\"buttonList\" type=\"image\" src=\"../../Estilos/Eliminar.png\" value=\"X\" name=\"Volver\" onclick=\"redirigir_curso('borrarCurso?curso=','".$curso[$i]->idCurso."')\"></td></tr>";
       }
     ?>
     </tbody>

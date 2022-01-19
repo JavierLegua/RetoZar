@@ -64,6 +64,10 @@ Options -Indexes
   RewriteRule ^borrarCurso$ CRUDS/Cursos/BorrarCurso.php [L,NC]
   RewriteRule ^borrarProfesor$ CRUDS/Profesores/BorrarProfesor.php [L,NC]
   RewriteRule ^obtenerCurso$ CRUDS/Profesores/getCursos.php [L,NC]
+  RewriteRule ^insertarGrupos$ Grupos/InsertarGrupos.php [L,NC]
+  RewriteRule ^verEquipos$ Grupos/VerGrupos.php [L,NC]
+  RewriteRule ^verMiembros$ Grupos/VerParticipantesGrupo.php [L,NC]
+  RewriteRule ^borrarGrupo$ Grupos/BorrarGrupo.php [L,NC]
   
  
 </IfModule>

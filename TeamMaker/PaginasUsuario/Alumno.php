@@ -8,6 +8,7 @@ include "../../BBDD/includes/funciones.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <title>Alumno</title>
     <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -34,6 +34,7 @@ $rol=$admins->Rol;
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar administrador</title>
     <script src="../../Funciones.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -57,8 +58,8 @@ $rol=$admins->Rol;
             <input type="hidden" name="dni" value="<?php echo $dni?>">
             <!-- <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required> -->
             <input class="inputEditUs" type="text" name="Rol" id="Rol" placeholder="Admin" onblur="this.value = 'Admin'" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAdmin,<?php $dni?>)">
-            <input type='button' value='Volver' class='adminSalir' onclick="redirigir('listarAdmin')">
+            <input class="editarEditarAdmin" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAdmin,<?php $dni?>)"><br>
+            <input type='button' value='Volver' class='adminSalireditarAdmin' onclick="redirigir('listarAdmin')">
         </form>
     </main>
     <footer>

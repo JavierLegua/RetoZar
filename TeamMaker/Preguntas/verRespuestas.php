@@ -18,6 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Revisar respuestas</title>
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
 </head>
 <body>
 <div class="listTodo">

@@ -8,8 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../Estilos/Style.css"> -->
+    <link rel="stylesheet" href="../Estilos/Style.css">
     <title>TEST</title>
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -51,7 +52,8 @@
 
           $fila = $consulta->fetch();
           $idPregunta=$fila->idPregunta;
-          $enunciado=$fila->Enunciado;     
+          $enunciado=$fila->Enunciado;   
+          $definicion=$fila->Definicion; 
              
     ?>
 
@@ -67,32 +69,32 @@
         <div id="img_header8"></div>
     </header>
 
-    <main class="alumnoMain">
+    <main class="alumnoMainTest">
         <h1> <?php if ($enunciado == "") {
             echo "TEST FINALIZADO, GRACIAS POR COMPLETARLO<br><br>";
-            header("refresh:2;url=revisarPreguntas.php");
+            header("refresh:2;url=revisarRespuesta");
+            echo "</h1>";
           }else{
+            echo "<h2>";
             echo "RESPONDE A LA PREGUNTA ";
             echo "<br>Te quedan ".$nfilas." preguntas";
-          }?>  </h1>
-        <br><br>
+            echo "</h2>";
+            echo '<br><br> <p title="'. $definicion. '">'.$enunciado.'<br><br>';
+            ?>
+            <form class='formulario' action='respondertest' name='form' method='post'>
+                <input type='hidden' name='idPregunta' value=<?php echo $idPregunta; ?> >
+                <label for='verdadero' class='labels'><strong><h3 class='testH3'>VERDADERO</h3></strong></label>
+                <input type='radio' name='radio' value='VERDADERO' class='radio' required>
+                <label for='falso' class='labels'><strong><h3 class='testH3'>FALSO</h3></strong></label>
+                <input type='radio' name='radio' value='FALSO' class='radio' required>
+                <br><br>
+                <input type='submit' name='siguiente' value='Siguiente' id='Siguiente' >
+                <br><br>
+            </form>
+            <?php
+          }?>  
 
-        <?php echo $enunciado; ?>
-
-        <br><br>
-
-        <form action="respondertest" name="form" method="post">
-            <input type="hidden" name="idPregunta" value="<?php echo $idPregunta; ?>">
-            <input type="radio" name="radio" value="VERDADERO" class="radio" required>
-            <label for="verdadero"><strong><h3>VERDADERO</h3></strong></label>
-            <input type="radio" name="radio" value="FALSO" class="radio" required>
-            <label for="falso"><strong><h3>FALSO</h3></strong></label><br>
-            <br><br>
-            <input type="submit" name="siguiente" value="Siguiente" id="Siguiente" >
-            <br><br>
-        </form>
-
-        <button class="Salir" onclick="redirigir('../alumno')" >Salir del Test</button>
+        <button class="Salir" onclick="redirigir('alumno')" >Salir del Test</button>
         </main>
 
     <footer>

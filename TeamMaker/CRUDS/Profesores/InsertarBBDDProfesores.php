@@ -20,7 +20,10 @@ session_start();
            $centro=$_POST['centro'];
            $curso=$_POST['curso'];
 
-          /*  echo $centro."----------".$curso; */
+           /* echo $centro."----------".$curso."-----".$rol; 
+        
+
+          */
 
     
     //Escribir Consulta

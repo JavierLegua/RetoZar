@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <title>Ver respuestas grupo</title>
     <script src="../../Funciones.js"></script>
 </head>
@@ -101,7 +102,7 @@
             
         ?>
 
-    <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">
+    <br><br><input id="ButtonMRG" type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">
   </main>
   <footer class="listFoot">
     <div id="img_footer0"></div>

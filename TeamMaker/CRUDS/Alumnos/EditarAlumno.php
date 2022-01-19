@@ -33,6 +33,7 @@ $curso=$alumnos->id_curso;
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Editar alumno</title>
     <script src="../../Funciones.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -56,7 +57,7 @@ $curso=$alumnos->id_curso;
             <input type="hidden" name="dni" value="<?php echo $dni?>">
             <!-- <input class="inputEditUs" type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" required> -->
             <input class="inputEditUs" type="text" name="curso" id="curso" placeholder="<?php echo $curso?>" required><br>
-            <input class="inputEditUsEnviar" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAlumno,<?php $dni?>)">
+            <input class="inputEditUsEnviarEditarAlum" id="crear" type="submit" value="Editar" name="Editar" onclick="redirigir_alumnos(editarAlumno,<?php $dni?>)"><br>
             <input type='button' value='Volver' class='inputEditUsEnviar' onclick="redirigir('listarAlumno')">
         </form>
     </main>

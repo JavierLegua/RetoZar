@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../Estilos/fonts.css">
     <script src="../jquery-latest.js"></script>
     <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="icon" type="image/x-icon" href="../Estilos/Logo.png">
     <title>Profesor</title>
     <script src="../Funciones.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,14 +73,17 @@
         if ($rol=="Profesor") {
             echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
             echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Ver equipos' class='profesor' onclick=\"redirigir('verEquipos')\"><br>";
             echo"<input type='button' value='Salir' class='profesorSalir' onclick=\"redirigir('inicio')\">";
         }elseif ($rol=="Admin") {
-            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('/gestionarAlumno')\">";
+            echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
             echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Ver equipos' class='profesor' onclick=\"redirigir('verEquipos')\"><br>";
             echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('admins')\">";
         }else{
             echo"<input type='button' value='Gestionar alumnos' class='profesor' onclick=\"redirigir('gestionarAlumno')\">";
             echo"<input type='button' value='Equipos sugeridos' class='profesor' onclick=\"redirigir('generarEquipos')\"><br>";
+            echo"<input type='button' value='Ver equipos' class='profesor' onclick=\"redirigir('verEquipos')\"><br>";
             echo"<input type='button' value='Volver' class='profesorSalir' onclick=\"redirigir('superAdmins')\">";
         }
         

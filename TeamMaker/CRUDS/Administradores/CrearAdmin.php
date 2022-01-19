@@ -23,6 +23,7 @@ $centros=$consultaCentro->fetchAll();
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../Estilos/fonts.css">
     <script src="../../jquery-latest.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../Estilos/Logo.png">
     <link rel="stylesheet" href="../../Estilos/Style.css">
     <title>Crear Administrador</title>
     <script src="../../Funciones.js"></script>
@@ -64,7 +65,7 @@ $centros=$consultaCentro->fetchAll();
             <input type="password" name="Clave" id="Clave" placeholder="Clave" onblur="this.value = document.getElementById('DNI').value" class="inputUs" required>
             <input type="text" name="Rol" id="Rol" placeholder="Rol" onblur="this.value = 'Admin'" class="inputUs" required><br>
 
-            <select name="centro" id="centro">
+            <select name="centro" id="centro" class="crearAdmin">
                 <option value="0">Selecciona un centro</option>
                 <?php
                 for ($i=0; $i < count($centros) ; $i++) { 
@@ -74,8 +75,9 @@ $centros=$consultaCentro->fetchAll();
                 
                 ?>
                 
-            </select><br><br>
-            <div id="clase"></div>
+            </select >
+            
+            <div id="clase" class="creadAdminDiv"></div>
             
             </select>
 
@@ -97,8 +99,8 @@ $centros=$consultaCentro->fetchAll();
                         break;
                     }
                 }
-            ?>
-            <input id="crear" type="submit" name="Crear Admin" class="inputUsEnviar"><br>
+            ?><br><br>
+            <input id="crear" type="submit" name="Crear Admin" class="inputUsEnviar"><br><br>
             <input id="crear" type="button" value="Volver" name="Volver" onclick="redirigir('gestionAdmin')" class="inputUsVolver">
 
         </form>
